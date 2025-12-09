@@ -113,7 +113,7 @@ const Navbar = () => {
       { title: "Media Coverage", desc: "Press and mentions", link: "/sph" },
       { title: "Community", desc: "Chat and connect", link: "/sph" },
       { title: "Meetups", desc: "Events and gatherings", link: "/sph" },
-      { title: "Contact", desc: "Support and inquiries", link: "/sph" },
+      { title: "Contact", desc: "Support and inquiries", link: "/contact" },
     ],
   };
 

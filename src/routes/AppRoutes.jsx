@@ -7,6 +7,7 @@ import IntroPage from "../pages/IntroPage";
 import ResourcesPage from "@/pages/ResourcesPage";
 import LegalPage from "@/pages/legal/LegalPage";
 import LegalDetail from "@/pages/legal/LegalDetail";
+import Contact from "@/pages/Contact";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -24,13 +25,14 @@ export default function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route element={<TrailingSlashWrapper />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+        
           <Route path="/sph" element={<IntroPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/about" element={<About />} />
           <Route path="/legal" element={<LegalPage />} />
-            <Route path="/legal/:slug" element={<LegalDetail />} />
+          <Route path="/legal/:slug" element={<LegalDetail />} />
+            <Route path="/contact" element={<Contact />} />
         </Route>
-      
       </Route>
     </Routes>
   );

@@ -1,5 +1,6 @@
 import FloatingChains from "@/components/FloatingChains";
 import ResourcesFeaturesSection from "@/components/Resources/ResourcesFeaturesSection";
+import VideoSection from "@/components/Resources/VideoSection";
 import React from "react";
 
 const ResourcesPage = () => {
@@ -21,6 +22,8 @@ const ResourcesPage = () => {
        <div className="max-w-7xl mx-auto bg-white p-10">
          <ResourcesFeaturesSection />
        </div>
+
+       <VideoSection />
       </div>
 
    
