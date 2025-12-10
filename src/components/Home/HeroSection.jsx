@@ -140,8 +140,7 @@ const HeroSection = () => {
       className="w-full h-[80vh] relative text-white bg-cover bg-center"
       style={{ backgroundImage: `url('/background.gif')` }}
     >
-
-       <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
       {/* HERO SECTION */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center">
         {/* Canvas Background */}
@@ -220,12 +219,17 @@ const HeroSection = () => {
             Sapher
           </span>
         </h1> */}
-        <h1 className="absolute text-[300px] font-extrabold text-white/20 tracking-tight">
+        {/* <h1 className="absolute text-[300px] font-extrabold text-white/20 tracking-tight">
           Sapher
-        </h1>
-        <h2 className="text-5xl font-semibold z-10 mt-10 pt-7">
-          DECENTRALIZE THE WEB
-        </h2>
+        </h1> */}
+        <div className="absolute text-center z-20 font-['Dancing_Script']">
+          <h2 className="text-5xl font-medium italic uppercase leading-tight mt-14">
+            The Future of Decentralized
+          </h2>
+          <h2 className="text-5xl font-medium italic uppercase leading-tight -mt-1">
+            Governance
+          </h2>
+        </div>
       </section>
 
       {/* STATS SECTION */}

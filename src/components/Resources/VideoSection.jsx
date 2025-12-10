@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import video_1 from "../../assets/video-1.gif";
-import video_2 from "../../assets/video-2.gif";
+import React from "react";
+import video_1 from "../../assets/gif/video-1.gif";
+import video_2 from "../../assets/gif/video-2.gif";
 
 const videos = [
   {
@@ -45,7 +45,7 @@ export default function VideoSection() {
   );
 }
 
-function HoverVideoCard({ title, thumb, preview, gif }) {
+function HoverVideoCard({ title, thumb, gif }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (

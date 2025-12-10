@@ -34,7 +34,7 @@ const IntroSection = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-6xl font-bold mb-6 tracking-wide text-black">
+        <h1 className="text-3xl md:text-6xl font-semibold mb-6 tracking-wide text-black font-['Dancing_Script']">
           Introducing the{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 via-indigo-700 to-blue-700">
             SPH Coin

@@ -53,7 +53,7 @@ const SupportSection = () => {
               ref={leftRef}
               className="space-y-10 will-change-transform transition-transform duration-75"
             >
-              <div className="space-y-8">
+              <div className="space-y-4">
                 <h1 className="text-3xl font-semibold leading-tight">
                   Get support
                 </h1>
@@ -62,11 +62,16 @@ const SupportSection = () => {
                   onClick={() =>
                     window.open("https://support.sapherchain.com", "_blank")
                   }
-                  className="inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-bold text-xl shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+                  className="relative px-6 py-3 bg-black text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/40 transform hover:scale-105 hover:cursor-pointer"
                 >
-                  <Ticket size={26} />
-                  Raise Ticket
-                  <span className="ml-2 text-2xl">→</span>
+                  {/* Gradient Background that slides in on hover */}
+                  <span className="absolute inset-0 bg-indigo-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full"></span>
+                  <span className="relative z-10 flex items-center gap-1">
+                    Raise Ticket
+                    <span className="group-hover:translate-x-2 transition-transform duration-300">
+                      →
+                    </span>
+                  </span>
                 </button>
               </div>
 

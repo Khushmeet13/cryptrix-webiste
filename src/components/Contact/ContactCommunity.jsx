@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../../assets/community.jpg";
+import backgroundImage from "../../assets/images/community.jpg";
 
 const ContactCommunity = () => {
   return (
