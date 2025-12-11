@@ -119,6 +119,17 @@
   }
 }
 
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE + Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
 @keyframes ripple {
   0% {
     transform: scale(0.4);
@@ -443,3 +454,50 @@
 .delay-700 {
   animation-delay: 0.7s;
 }
+
+
+/* community.jsx */
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 40s linear infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 40s linear infinite;
+}
+
+.animate-slide-down-slow {
+  animation: slide-down 50s linear infinite;
+}
+
+/* Awards section */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 18s linear infinite;
+}
+

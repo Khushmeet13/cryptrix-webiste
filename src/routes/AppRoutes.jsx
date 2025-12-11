@@ -10,6 +10,7 @@ import LegalDetail from "@/pages/legal/LegalDetail";
 import Contact from "@/pages/Contact";
 import Events from "@/pages/Events";
 import Community from "@/pages/Community";
+import MediaPage from "@/pages/MediaPage";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -34,6 +35,7 @@ export default function AppRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/legal" element={<LegalPage />} />
           <Route path="/legal/:slug" element={<LegalDetail />} />
+          <Route path="/media" element={<MediaPage />} />
           <Route path="/community" element={<Community />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />

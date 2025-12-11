@@ -25,8 +25,8 @@ const videos = [
 
 export default function VideoSection() {
   return (
-    <div className="w-full py-20 px-6 md:px-16 bg-white text-black">
-      <h2 className="text-center text-4xl font-semibold mb-12">Video</h2>
+    <div className="w-full py-22 pt-10 px-6 md:px-16 bg-gray-100 text-black">
+      <h2 className="text-center text-3xl font-semibold mb-12">Video</h2>
 
       {/* Video Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -37,7 +37,7 @@ export default function VideoSection() {
 
       {/* Button */}
       <div className="flex justify-center mt-12">
-        <button className="bg-black text-white px-8 py-4 rounded-md text-lg hover:bg-neutral-900 transition">
+        <button className="bg-black text-white px-8 py-4 rounded-full text-md hover:bg-neutral-900 transition">
           More Videos on Youtube
         </button>
       </div>
@@ -50,7 +50,7 @@ function HoverVideoCard({ title, thumb, gif }) {
 
   return (
     <div
-      className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg"
+      className="group relative  overflow-hidden cursor-pointer "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -62,7 +62,7 @@ function HoverVideoCard({ title, thumb, gif }) {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500" />
+      <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500" />
 
       {/* Play Button */}
       <div className="absolute inset-0 flex items-center justify-center">

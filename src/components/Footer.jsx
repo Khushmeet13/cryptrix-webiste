@@ -84,13 +84,14 @@ const Footer = () => {
     {
       title: "Ecosystem",
       links: [
-        "USDD",
-        "JustLend DAO",
-        "SUN.io",
-        "BTTC",
-        "BTFS",
-        "AINFT",
-        "WINkLink",
+        "Fast speed",
+        "Low fee",
+        "Smart contracts",
+        "Security",
+        "Scalability",
+        "Payments",
+        "Gaming",
+        "NFTs",
       ],
     },
     {
@@ -104,7 +105,7 @@ const Footer = () => {
     },
     {
       title: "More",
-      links: ["Resources", "Careers", "About"],
+      links: ["Resources", "About", "Legal", "Media Coverage", "Community", "Meetups", "Contact"],
     },
   ];
 
@@ -175,7 +176,6 @@ const Footer = () => {
                   className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition"
                 >
                   <item.icon className="w-4 h-4" />
-                
                 </a>
               ))}
             </div>

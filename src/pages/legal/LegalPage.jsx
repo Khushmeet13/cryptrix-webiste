@@ -28,8 +28,7 @@ const LegalPage = () => {
     <div className="w-full min-h-screen">
       {/* Top Section */}
       <section className="relative h-[50vh] bg-gradient-to-br from-black via-indigo-950/40 to-black flex items-start justify-center pt-32 text-white text-5xl font-semibold">
-        {/* Floating Real Chains Background */}
-        <FloatingChains />
+
 
         <div className="relative z-10">Legal Terms</div>
       </section>

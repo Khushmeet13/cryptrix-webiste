@@ -39,67 +39,66 @@ const Navbar = () => {
       {
         title: "Use Cases",
         desc: "Explore real examples and practical applications.",
-        ink: "/sph",
+        ink: "/",
       },
-      { title: "FAQs", desc: "Get answers to common questions.", link: "/sph" },
-      { title: "Get SPH coin", desc: "Wallet details", link: "/sph" },
+      { title: "FAQs", desc: "Get answers to common questions.", link: "/" },
+      { title: "Get SPH coin", desc: "Wallet details", link: "/" },
       {
         title: "Wallet",
         desc: "Manage your SPH coins with ease using wallet tools.",
-        link: "/sph",
+        link: "/",
       },
       {
         title: "Explorer",
         desc: "Track transactions, addresses, and blockchain activity.",
-        link: "/sph",
+        link: "/",
       },
-      { title: "How to stake", desc: "Earn rewards by staking", link: "/sph" },
+      { title: "How to stake", desc: "Earn rewards by staking", link: "/" },
     ],
     Build: [
-      { title: "API", desc: "Developer API docs", link: "/sph" },
-      { title: "SDK", desc: "Software development kit", link: "/sph" },
+      { title: "API", desc: "Developer API docs", link: "/" },
+      { title: "SDK", desc: "Software development kit", link: "/" },
       {
         title: "Smart contract guide",
         desc: "Guide for contracts",
-        link: "/sph",
+        link: "/",
       },
-      { title: "Node setup", desc: "Run your own node", link: "/sph" },
-      { title: "Testnet info", desc: "Information on testnet", link: "/sph" },
-      { title: "RPC Endpoints", desc: "Remote procedure calls", link: "/sph" },
+      { title: "Node setup", desc: "Run your own node", link: "/" },
+      { title: "Testnet info", desc: "Information on testnet", link: "/" },
+      { title: "RPC Endpoints", desc: "Remote procedure calls", link: "/" },
       {
         title: "Websocket Endpoints",
         desc: "Realtime connections",
-        link: "/sph",
+        link: "/",
       },
-      { title: "SDK Downloads", desc: "Download SDKs", link: "/sph" },
-      { title: "Code Playground", desc: "Test your code online", link: "/sph" },
+      { title: "SDK Downloads", desc: "Download SDKs", link: "/" },
     ],
     Ecosystem: [
-      { title: "Fast speed", desc: "High performance", link: "/sph" },
-      { title: "Low fee", desc: "Minimal transaction fees", link: "/sph" },
-      { title: "Smart contracts", desc: "Automated agreements", link: "/sph" },
-      { title: "Security", desc: "Secure & reliable", link: "/sph" },
-      { title: "Scalability", desc: "Grow without limits", link: "/sph" },
-      { title: "Payments", desc: "Seamless payments", link: "/sph" },
-      { title: "Gaming", desc: "Blockchain gaming", link: "/sph" },
-      { title: "NFTs", desc: "Digital collectibles", link: "/sph" },
+      { title: "Fast speed", desc: "High performance", link: "/" },
+      { title: "Low fee", desc: "Minimal transaction fees", link: "/" },
+      { title: "Smart contracts", desc: "Automated agreements", link: "/" },
+      { title: "Security", desc: "Secure & reliable", link: "/" },
+      { title: "Scalability", desc: "Grow without limits", link: "/" },
+      { title: "Payments", desc: "Seamless payments", link: "/" },
+      { title: "Gaming", desc: "Blockchain gaming", link: "/" },
+      { title: "NFTs", desc: "Digital collectibles", link: "/" },
     ],
     Governance: [
       {
         title: "Voting system",
         desc: "Blockchain voting process",
-        link: "/sph",
+        link: "/",
       },
-      { title: "Staking", desc: "Earn rewards by locking coins", link: "/sph" },
+      { title: "Staking", desc: "Earn rewards by locking coins", link: "/" },
       {
         title: "Proposals",
         desc: "Learn more about committee proposals",
-        link: "/sph",
+        link: "/",
       },
       {
         title: "Community rules",
         desc: "Guidelines for participation",
-        link: "/sph",
+        link: "/",
       },
     ],
     More: [
@@ -110,7 +109,7 @@ const Navbar = () => {
       },
       { title: "About", desc: "Mission, vision, purpose", link: "/about" },
       { title: "Legal", desc: "Terms, privacy, policies", link: "/legal" },
-      { title: "Media Coverage", desc: "Press and mentions", link: "/sph" },
+      { title: "Media Coverage", desc: "Press and mentions", link: "/media" },
       { title: "Community", desc: "Chat and connect", link: "/community" },
       { title: "Meetups", desc: "Events and gatherings", link: "/events" },
       { title: "Contact", desc: "Support and inquiries", link: "/contact" },
@@ -120,7 +119,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"
+        isScrolled ? "bg-indigo-900 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
