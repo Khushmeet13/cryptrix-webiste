@@ -39,7 +39,7 @@ const Navbar = () => {
       {
         title: "Use Cases",
         desc: "Explore real examples and practical applications.",
-        ink: "/",
+        link: "/use-cases",
       },
       { title: "FAQs", desc: "Get answers to common questions.", link: "/" },
       { title: "Get SPH coin", desc: "Wallet details", link: "/" },

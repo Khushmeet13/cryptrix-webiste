@@ -11,6 +11,8 @@ import Contact from "@/pages/Contact";
 import Events from "@/pages/Events";
 import Community from "@/pages/Community";
 import MediaPage from "@/pages/MediaPage";
+import UseCases from "@/pages/usecases/UseCases";
+import UsecaseDetail from "@/pages/usecases/UsecaseDetail";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -29,6 +31,8 @@ export default function AppRoutes() {
         <Route element={<TrailingSlashWrapper />}>
           <Route path="/" element={<Home />} />
           <Route path="/sph" element={<IntroPage />} />
+          <Route path="/use-cases" element={<UseCases />} />
+           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />
