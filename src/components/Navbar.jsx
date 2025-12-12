@@ -41,7 +41,7 @@ const Navbar = () => {
         desc: "Explore real examples and practical applications.",
         link: "/use-cases",
       },
-      { title: "FAQs", desc: "Get answers to common questions.", link: "/" },
+      { title: "FAQs", desc: "Get answers to common questions.", link: "/faqs" },
       { title: "Get SPH coin", desc: "Wallet details", link: "/" },
       {
         title: "Wallet",
@@ -113,6 +113,7 @@ const Navbar = () => {
       { title: "Community", desc: "Chat and connect", link: "/community" },
       { title: "Meetups", desc: "Events and gatherings", link: "/events" },
       { title: "Contact", desc: "Support and inquiries", link: "/contact" },
+      { title: "Status", desc: "Live uptime & incidents", link: "/status" },
     ],
   };
 

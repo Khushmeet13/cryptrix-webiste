@@ -13,6 +13,9 @@ import Community from "@/pages/Community";
 import MediaPage from "@/pages/MediaPage";
 import UseCases from "@/pages/usecases/UseCases";
 import UsecaseDetail from "@/pages/usecases/UsecaseDetail";
+import FaqPage from "@/pages/FaqPage";
+import NotFound from "@/components/NotFound";
+import StatusPage from "@/pages/StatusPage";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -32,7 +35,8 @@ export default function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/sph" element={<IntroPage />} />
           <Route path="/use-cases" element={<UseCases />} />
-           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
+          <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
+          <Route path="/faqs" element={<FaqPage />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />
@@ -43,8 +47,10 @@ export default function AppRoutes() {
           <Route path="/community" element={<Community />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/status" element={<StatusPage />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

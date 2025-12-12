@@ -105,7 +105,7 @@ const Footer = () => {
     },
     {
       title: "More",
-      links: ["Resources", "About", "Legal", "Media Coverage", "Community", "Meetups", "Contact"],
+      links: ["Resources", "About", "Legal", "Media Coverage", "Community", "Meetups", "Contact", "Status"],
     },
   ];
 
