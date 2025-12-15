@@ -49,22 +49,22 @@ const Community = () => {
         </div>
 
         <div className="relative z-10 text-center px-6 mb-22">
-          <h1 className="text-3xl font-semibold text-white">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-white">
             Building the Future of Decentralized Governance Together
           </h1>
         </div>
       </section>
 
-      <section className="bg-white w-full h-[60vh] -mt-20 relative"></section>
+      <section className="bg-white w-full h-[40vh] sm:h-[60vh] -mt-20 relative"></section>
 
       {/* Overlapping White Section */}
       <div className="absolute top-[25vh] left-1/2 -translate-x-1/2 w-full z-30">
         <div className="max-w-7xl mx-auto bg-white ">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* LEFT: Text + CTAs */}
-            <div className="space-y-12 px-22">
+            <div className="space-y-12 px-8 py-5 sm:px-22">
               <div className="space-y-4">
-                <h1 className="text-5xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
                   Join the{" "}
                   <span className="text-indigo-600">Sapher Community</span>
                 </h1>
@@ -105,7 +105,7 @@ const Community = () => {
             </div>
 
             {/* RIGHT: Infinite Sliding Columns */}
-            <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+            <div className="relative hidden sm:block h-[500px] md:h-[600px] overflow-hidden">
               <div className="grid grid-cols-3 gap-4 h-full">
                 {/* Column 1: Top to Bottom */}
                 <div className="flex flex-col gap-4 animate-slide-down">

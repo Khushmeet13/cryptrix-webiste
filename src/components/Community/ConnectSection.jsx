@@ -13,7 +13,7 @@ import {
 const ConnectSection = () => {
   const communities = [
     {
-      icon: <Send className="w-8 h-8" />,
+      icon: <Send className="w-6 h-6 sm:w-8 h-8" />,
       title: "Telegram",
       desc: "The official Telegram group.",
       stats: "563K Members",
@@ -21,7 +21,7 @@ const ConnectSection = () => {
       color: "hover:bg-blue-500/10"
     },
     {
-      icon: <MessageCircle className="w-8 h-8" />,
+      icon: <MessageCircle className="w-6 h-6 sm:w-8 h-8" />,
       title: "Sapher Discord",
       desc: "Hub to hang, find info on apps and projects, and get support.",
       stats: "180K Members",
@@ -29,7 +29,7 @@ const ConnectSection = () => {
       color: "hover:bg-indigo-500/10"
     },
     {
-      icon: <Gitlab className="w-8 h-8" />,
+      icon: <Gitlab className="w-6 h-6 sm:w-8 h-8" />,
       title: "Sapher Labs",
       desc: "Follow for news, updates, and good vibes",
       stats: "2M Followers",
@@ -37,7 +37,7 @@ const ConnectSection = () => {
       color: "hover:bg-sky-500/10"
     },
     {
-      icon: <Sprout className="w-8 h-8" />,
+      icon: <Sprout className="w-6 h-6 sm:w-8 h-8" />,
       title: "Sapher Ecosystem",
       desc: "Supporting projects in the Polygon ecosystem.",
       stats: "183.8K Followers",
@@ -45,7 +45,7 @@ const ConnectSection = () => {
       color: "hover:bg-cyan-500/10"
     },
     {
-      icon: <Twitter className="w-8 h-8" />,
+      icon: <Twitter className="w-6 h-6 sm:w-8 h-8" />,
       title: "Twitter",
       desc: "Follow to get updates on Protocols & Governance.",
       stats: "177.6K Followers",
@@ -53,7 +53,7 @@ const ConnectSection = () => {
       color: "hover:bg-purple-500/10"
     },
     {
-      icon: <Bot className="w-8 h-8" />,
+      icon: <Bot className="w-6 h-6 sm:w-8 h-8" />,
       title: "Reddit",
       desc: "The biggest Polygon community on Reddit, moderated by ecosystem contributors.",
       stats: "61K Members",
@@ -61,7 +61,7 @@ const ConnectSection = () => {
       color: "hover:bg-orange-500/10"
     },
     {
-      icon: <Youtube className="w-8 h-8" />,
+      icon: <Youtube className="w-6 h-6 sm:w-8 h-8" />,
       title: "Youtube",
       desc: "Bite-sized clips and deep-dives, for the visual learners.",
       stats: "13.4K Subscribers",
@@ -69,7 +69,7 @@ const ConnectSection = () => {
       color: "hover:bg-red-500/10"
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-6 h-6 sm:w-8 h-8" />,
       title: "News",
       desc: "Follow for all the onchain chatter",
       stats: "1.1K Followers",
@@ -83,10 +83,10 @@ const ConnectSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-start mb-12">
-          <h2 className="text-3xl font-semibold text-black mb-2">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-2">
             Connect
           </h2>
-          <p className="text-xl text-gray-500 max-w-3xl">
+          <p className="text-base sm:text-xl text-gray-500 max-w-3xl">
             Find friends, build things, use stuff. Discover your community
           </p>
         </div>
@@ -108,7 +108,7 @@ const ConnectSection = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-semibold text-black mb-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-black mb-3">
                   {community.title}
                 </h3>
 
@@ -118,7 +118,7 @@ const ConnectSection = () => {
                 </p>
 
                 {/* Stats */}
-                <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">
+                <div className="text-xs sm:text-sm text-gray-500 font-medium uppercase tracking-wider">
                   {community.stats}
                 </div>
 

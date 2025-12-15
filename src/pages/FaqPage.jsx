@@ -106,22 +106,22 @@ const FaqPage = () => {
       {/* Top Section */}
       <section className="relative h-[40vh] bg-gradient-to-br from-indigo-900 via-indigo-950/40 to-black flex flex-col items-center justify-center text-white pt-20">
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl font-semibold mb-6 text-center">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold mb-6 text-center">
           Frequently Asked Questions
         </h1>
 
         {/* Search Bar */}
-        <div className="w-full max-w-xl px-6">
+        <div className="w-full max-w-md sm:max-w-xl px-6">
           <div className="relative">
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search your question..."
-              className="w-full px-5 py-3 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              className="w-full px-5 py-3 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-xs sm:text-base"
             />
             <svg
-              className="w-5 h-5 absolute right-5 top-1/2 -translate-y-1/2 text-white/70"
+              className="w-3 h-3 md:w-5 md:h-5 absolute right-5 top-1/2 -translate-y-1/2 text-white/70"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -138,7 +138,7 @@ const FaqPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="bg-white min-h-screen py-2 px-20">
+      <section className="bg-white min-h-screen py-2 px-8 md:px-20">
         {faqData
           .filter(
             (item) =>

@@ -13,6 +13,27 @@ const HeroSection = () => {
   const particleData = useMemo(() => particles, []);
   const globeRef = useRef();
   const canvasRef = useRef(null);
+  const globeContainerRef = useRef(null);
+  const [globeSize, setGlobeSize] = React.useState(500);
+
+  useEffect(() => {
+    const updateGlobeSize = () => {
+      const w = window.innerWidth;
+
+      if (w < 650) {
+        setGlobeSize(360); // mobile
+      } else if (w < 1024) {
+        setGlobeSize(680); // tablet
+      } else {
+        setGlobeSize(800); // desktop
+      }
+    };
+
+    updateGlobeSize();
+    window.addEventListener("resize", updateGlobeSize);
+
+    return () => window.removeEventListener("resize", updateGlobeSize);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -144,11 +165,12 @@ const HeroSection = () => {
       {/* HERO SECTION */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center">
         {/* Canvas Background */}
-        <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+        {/* <canvas ref={canvasRef} className="absolute inset-0 z-0" /> */}
         {/* <HexagonParticles /> */}
 
         {/* Animated Background Particles & Glow */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Particles */}
           <div className="absolute inset-0 opacity-60">
             {particleData.map((p, i) => (
               <div
@@ -164,11 +186,64 @@ const HeroSection = () => {
             ))}
           </div>
 
-          {/* Large glowing orbs */}
-          <div className="absolute top-0 -left-10 w-66 h-66 bg-cyan-600/30 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute top-20 right-20 w-66 h-66 bg-cyan-600/50 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute top-32 left-32 w-80 h-80 bg-cyan-600/40 rounded-full blur-2xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-pink-600/10 via-transparent to-pink-600/10 rounded-full blur-3xl" />
+          {/* Glowing Orbs */}
+
+          {/* Left Top Orb */}
+          <div
+            className="
+              absolute 
+              top-4 left-4
+              sm:top-0 sm:-left-10
+              w-40 h-40
+              sm:w-56 sm:h-56
+              lg:w-66 lg:h-66
+              bg-cyan-600/30
+              rounded-full blur-2xl animate-pulse
+            "
+          />
+
+          {/* Right Orb */}
+          <div
+            className="
+              absolute 
+              top-20 right-6
+              sm:right-20
+              w-44 h-44
+              sm:w-56 sm:h-56
+              lg:w-66 lg:h-66
+              bg-cyan-600/50
+              rounded-full blur-2xl animate-pulse
+            "
+          />
+
+          {/* Mid Left Orb */}
+          <div
+            className="
+              absolute 
+              top-40 left-1/4
+              sm:top-32 sm:left-32
+              w-52 h-52
+              sm:w-64 sm:h-64
+              lg:w-80 lg:h-80
+              bg-cyan-600/40
+              rounded-full blur-2xl animate-pulse delay-1000
+            "
+          />
+
+          {/* Center Glow */}
+          <div
+            className="
+              absolute 
+              top-1/2 left-1/2
+              -translate-x-1/2 -translate-y-1/2
+              w-[300px] h-[300px]
+              sm:w-[500px] sm:h-[500px]
+              lg:w-[800px] lg:h-[800px]
+              bg-gradient-to-r
+              from-pink-600/10 via-transparent to-pink-600/10
+              rounded-full blur-3xl
+            "
+          />
         </div>
 
         {/* Subtle grid */}
@@ -179,25 +254,32 @@ const HeroSection = () => {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="absolute inset-0">
-          <Globe
-            ref={globeRef}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-            bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            backgroundColor="rgba(0,0,0,0)"
-            atmosphereAltitude={0.25}
-            pointLightColor="#818cf8"
-            pointLightIntensity={2}
-            ambientLightColor="#4f46e5"
-            enableGlow={true}
-            // Hex grid on globe surface
-            hexBinPointsData={particleData}
-            hexBinResolution={4}
-            hexAltitude={0.008}
-            hexTopColor={() => "#818cf8"}
-            hexSideColor={() => "#4f46e5"}
-          />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-10">
+          <div
+            ref={globeContainerRef}
+            className="flex items-center justify-center"
+          >
+            <Globe
+              ref={globeRef}
+              width={globeSize}
+              height={globeSize}
+              globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+              backgroundColor="rgba(0,0,0,0)"
+              atmosphereAltitude={0.25}
+              pointLightColor="#818cf8"
+              pointLightIntensity={2}
+              ambientLightColor="#4f46e5"
+              enableGlow={true}
+              hexBinPointsData={particleData}
+              hexBinResolution={4}
+              hexAltitude={0.008}
+              hexTopColor={() => "#818cf8"}
+              hexSideColor={() => "#4f46e5"}
+            />
+          </div>
         </div>
+
         {/* Background gradient */}
         <div className="absolute inset-0 bg-linear-to-r from-indigo-900/60 via-black/10 to-black/60"></div>
 
@@ -223,10 +305,10 @@ const HeroSection = () => {
           Sapher
         </h1> */}
         <div className="absolute text-center z-20 font-['Dancing_Script']">
-          <h2 className="text-5xl font-medium italic uppercase leading-tight mt-14">
+          <h2 className="sm:text-3xl lg:text-5xl font-medium italic uppercase leading-tight mt-14">
             The Future of Decentralized
           </h2>
-          <h2 className="text-5xl font-medium italic uppercase leading-tight -mt-1">
+          <h2 className="sm:text-3xl lg:text-5xl font-medium italic uppercase leading-tight -mt-1">
             Governance
           </h2>
         </div>
@@ -234,20 +316,28 @@ const HeroSection = () => {
 
       {/* STATS SECTION */}
       <section className="relative w-full flex justify-center">
-        <div className="bg-white w-[92%] md:w-[85%] shadow-xl -mt-14 z-30">
-          {/* Red Top Strip */}
+        <div
+          className="bg-white w-[92%] md:w-[85%] shadow-xl -mt-20 lg:-mt-14 z-30"
+          style={{
+            marginTop: window.innerWidth < 504 ? "-6.5rem" : undefined,
+          }}
+        >
+          {/* Top Strip */}
           <div className="bg-indigo-900/80 text-white py-4 text-center text-base">
             Boasting over 349 million accounts and 12.2 billion transactions,
             SAPHER is the world’s fastest-growing public chain.
           </div>
 
-          {/* Content Box */}
-          <div className="py-5 px-6">
-            {/* Four Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-4 text-center gap-10">
+          {/* Stats Grid */}
+          <div className="py-0 lg:py-4 lg:px-6 px-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
               <StatBox label="Total Number of Accounts" value="349,751,624" />
-              <StatBox label="Transaction Count" value="12,230,172,672" />
-              <StatBox label="Total Value Locked" value="$22,956,679,239" />
+              <StatBox
+                label="Transaction Count"
+                value="12,230,172,672"
+                isSecond={true}
+              />
+              <StatBox label="Total Value Locked" value="$22,956,679,23" />
               <StatBox label="Transfer Volume (24h)" value="$29,923,907,157" />
             </div>
           </div>
@@ -257,10 +347,17 @@ const HeroSection = () => {
   );
 };
 
-const StatBox = ({ label, value }) => (
-  <div className="bg-white/10 border-r border-gray-200 last:border-r-0">
-    <h3 className="text-2xl text-black">{value}</h3>
-    <p className="text-gray-400 mt-2">{label}</p>
+const StatBox = ({ label, value, isSecond }) => (
+  <div
+    className={`
+    py-4 lg:py-0 px-4 text-center
+    border-b border-gray-200
+    lg:border-b-0
+    last:border-r-0 ${isSecond ? "border-r-0 lg:border-r" : "sm:border-r "}
+  `}
+  >
+    <h3 className="text-2xl font-medium text-black">{value}</h3>
+    <p className="text-gray-400 mt-2 text-sm">{label}</p>
   </div>
 );
 

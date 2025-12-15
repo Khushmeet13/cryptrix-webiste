@@ -55,7 +55,7 @@ const MediaHighlights = () => {
   return (
     <>
     <div className="w-full py-22 bg-white text-black ">
-      <h2 className="text-3xl font-semibold text-gray-900 mb-10 px-20">Media Highlights</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-10 px-20">Media Highlights</h2>
       <div className="relative flex overflow-x-auto scrollbar-hide pl-20">
         {events.map((item, i) => (
           <div key={i} className="relative flex flex-col items-center">

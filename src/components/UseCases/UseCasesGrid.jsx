@@ -41,8 +41,8 @@ const UseCasesGrid = () => {
 
       {/* Heading Section */}
       <div className="text-center max-w-xl mx-auto mb-16">
-        <h2 className="text-3xl font-semibold mb-3">Explore Sapher Use Cases</h2>
-        <p className="text-gray-500 text-md leading-relaxed">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-3">Explore Sapher Use Cases</h2>
+        <p className="text-gray-500 text-xs sm:text-base leading-relaxed">
           Powerful identity, security, and automation layers—built for real industries,
           real users, and real impact.
         </p>

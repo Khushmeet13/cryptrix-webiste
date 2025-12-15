@@ -26,7 +26,7 @@ const CommunityGallery = () => {
     <section className="py-24 bg-gray-50 text-black overflow-hidden">
       <div className="w-full mx-auto">
         {/* Title */}
-        <h2 className="text-3xl font-semibold text-center mb-16">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-16">
           Glimpses of our community events
         </h2>
 
@@ -37,7 +37,7 @@ const CommunityGallery = () => {
             {[...topRowImages, ...topRowImages].map((src, i) => (
               <div
                 key={i}
-                className="flex-none w-80 h-64 md:w-98 md:h-54 rounded-2xl overflow-hidden group cursor-pointer"
+                className="flex-none w-60 h-38 sm:w-80 sm:h-64 md:w-98 md:h-54 rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <img
                   src={src}
@@ -56,7 +56,7 @@ const CommunityGallery = () => {
             {[...bottomRowImages, ...bottomRowImages].map((src, i) => (
               <div
                 key={i}
-                className="flex-none w-80 h-64 md:w-98 md:h-54 rounded-2xl overflow-hidden group cursor-pointer"
+                className="flex-none w-60 h-38 sm:w-80 sm:h-64 md:w-98 md:h-54 rounded-2xl overflow-hidden group cursor-pointer"
               >
                 <img
                   src={src}
@@ -70,9 +70,9 @@ const CommunityGallery = () => {
 
         {/* Optional CTA */}
         <div className="flex justify-center mt-16">
-          <button className="group flex items-center gap-1 text-md font-medium border border-zinc-800 px-6 py-3 rounded-full hover:cursor-pointer hover:bg-gray-200/50">
+          <button className="group flex items-center gap-1 text-sm sm:text-md font-medium border border-zinc-800 px-6 py-3 rounded-full hover:cursor-pointer hover:bg-gray-200/50">
             Join Our Community
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>

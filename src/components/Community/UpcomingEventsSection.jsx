@@ -58,8 +58,8 @@ const UpcomingEventsSection = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-semibold text-black">Events</h2>
-          <p className="mt-2 text-gray-500 text-lg">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-black">Events</h2>
+          <p className="mt-2 text-gray-500 text-base sm:text-lg">
             Stay connected with our global community activities.
           </p>
         </div>

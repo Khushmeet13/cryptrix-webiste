@@ -58,18 +58,18 @@ const PartnersSection = () => {
 
   return (
     <section className="w-full bg-white pt-10">
-      <h2 className="text-3xl font-semibold text-center text-gray-900">
+      <h2 className="text-3xl font-semibold text-center text-gray-900 pb-4 lg:pb-0">
         Core Partners
       </h2>
 
       {/* Top Section: Logo + Description */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 mt-16 px-6 py-6 border-t border-gray-100">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:mt-16 px-6 py-6 border-t border-gray-100">
         {/* Big Logo */}
         <div className="flex justify-center">
           <img
             src={active.logo}
             alt={active.name}
-            className="w-40 h-40 object-contain transition-all duration-300"
+            className="w-30 h-30 lg:w-40 lg:h-40 object-contain transition-all duration-300"
           />
         </div>
 
@@ -83,13 +83,13 @@ const PartnersSection = () => {
       </div>
 
       {/* Bottom Icon Row */}
-      <div className="mt-20 bg-gray-100/50 py-16">
-        <div className="flex flex-wrap justify-center gap-14 px-6">
+      <div className="mt-20 bg-gray-100/50 py-10">
+        <div className="flex justify-start lg:justify-center gap-14 px-6 py-10 overflow-x-scroll flex-nowrap scrollbar-hide snap-x snap-mandatory">
           {partners.map((p, i) => (
             <div
               key={i}
               onMouseEnter={() => setActive(p)}
-              className={`
+              className={` snap-center
                 flex flex-col items-center cursor-pointer
                 transition-all duration-300
                  ${

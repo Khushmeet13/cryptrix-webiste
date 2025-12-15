@@ -3,15 +3,14 @@ import { Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const IntroSection = () => {
-  const navigate = useNavigate(); // ✅ hook
+  const navigate = useNavigate(); 
 
   const handleClick = () => {
-    navigate("/sph/"); // ✅ route jahan jana hai
+    navigate("/sph/"); 
   };
 
   return (
     <section
-      id="what-is-sph"
       className="relative w-full py-24 bg-white text-white overflow-hidden pt-60"
     >
       {/* Background Grid */}
@@ -21,15 +20,15 @@ const IntroSection = () => {
       {/* Animated Neon Orbs */}
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-indigo-500/20 blur-3xl rounded-full animate-pulse"></div>
 
-      <div className="relative max-w-6xl mx-auto px-6 text-center">
+      <div className="relative max-w-6xl mx-auto px-6 pt-42 sm:pt-0 text-center">
         {/* Floating SPH Coin */}
         <div className="flex justify-center mb-10">
           <div
-            className="w-40 h-40 rounded-full border border-indigo-400/40 shadow-[0_0_40px_rgba(168,85,247,0.5)] 
+            className="w-30 h-30 sm:w-40 sm:h-40 rounded-full border border-indigo-400/40 shadow-[0_0_40px_rgba(168,85,247,0.5)] 
           bg-gradient-to-br from-indigo-700 to-indigo-900/80 flex items-center justify-center 
           "
           >
-            <span className="text-4xl font-extrabold">SPH</span>
+            <span className="text-2xl sm:text-4xl font-extrabold">SPH</span>
           </div>
         </div>
 

@@ -22,10 +22,10 @@ const photos = [
 
 const MissionSection = () => {
   return (
-    <section className="bg-gray-100 w-full flex items-center justify-center px-6 py-15">
+    <section className="bg-gray-100 w-full flex items-center justify-center px-6 pt-236 pb-10 md:py-15">
       <div className="max-w-6xl w-full">
         {/* Main Heading */}
-        <h2 className="text-4xl font-semibold text-center mb-16 text-gray-900 flex flex-col gap-2">
+        <h2 className="text-2xl md:text-4xl font-semibold text-center mb-16 text-gray-900 flex flex-col gap-2">
           Sapher is on a mission to improve {""}
           <span className="bg-gradient-to-r from-indigo-700 via-indigo-500 to-pink-500 bg-clip-text text-transparent">
             digital productivity

@@ -105,7 +105,16 @@ const Footer = () => {
     },
     {
       title: "More",
-      links: ["Resources", "About", "Legal", "Media Coverage", "Community", "Meetups", "Contact", "Status"],
+      links: [
+        "Resources",
+        "About",
+        "Legal",
+        "Media Coverage",
+        "Community",
+        "Meetups",
+        "Contact",
+        "Status",
+      ],
     },
   ];
 
@@ -114,9 +123,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-22">
         {/* Top Contact Section */}
         <div className="mb-12 border-b border-gray-800 pb-10">
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-wrap">
             <div className="flex flex-col gap-6">
-              <h2 className="text-4xl font-semibold text-white">Contact Us</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
+                Contact Us
+              </h2>
 
               <div className="flex flex-wrap items-center gap-6 text-sm">
                 <a
@@ -141,43 +152,39 @@ const Footer = () => {
                   Whistleblower Notice
                 </a>
               </div>
+
+              <div className="flex gap-4 flex-wrap">
+                {socialIcons.map((item) => {
+                  const Icon = item.Icon;
+                  return (
+                    <a
+                      key={item.label}
+                      href="#"
+                      aria-label={item.label}
+                      className="p-3 bg-gray-900 rounded-lg hover:bg-gray-800 transition transform hover:scale-110"
+                    >
+                      <Icon className="w-4 h-4 text-gray-400 hover:text-white" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="text-xl font-semibold tracking-wider text-gray-500">
-              SAPHER BLOCKCHAIN
-            </div>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex flex-wrap items-center justify-between mt-10 w-full">
-            {/* LEFT — Social Icons */}
-            <div className="flex gap-4">
-              {socialIcons.map((item) => {
-                const Icon = item.Icon;
-                return (
+            <div className="mt-12">
+              <div className="text-md md:text-xl font-semibold tracking-wider text-gray-500">
+                SAPHER BLOCKCHAIN
+              </div>
+              <div className="flex gap-4 flex-wrap mt-5 md:mt-8">
+                {socialItems.map((item) => (
                   <a
-                    key={item.label}
+                    key={item.name}
                     href="#"
-                    aria-label={item.label}
-                    className="p-3 bg-gray-900 rounded-lg hover:bg-gray-800 transition transform hover:scale-110"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition"
                   >
-                    <Icon className="w-4 h-4 text-gray-400 hover:text-white" />
+                    <item.icon className="w-4 h-4" />
                   </a>
-                );
-              })}
-            </div>
-
-            {/* RIGHT — Social Items */}
-            <div className="flex gap-4">
-              {socialItems.map((item) => (
-                <a
-                  key={item.name}
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-lg text-xs font-medium text-gray-400 hover:text-white transition"
-                >
-                  <item.icon className="w-4 h-4" />
-                </a>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

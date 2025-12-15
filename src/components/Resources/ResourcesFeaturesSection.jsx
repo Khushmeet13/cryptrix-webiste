@@ -1,42 +1,43 @@
 import React from "react";
 
 const ResourcesFeatureSection = () => {
-  const layers = Array.from({ length: 8 });
+  const isMobile = window.innerWidth < 768;
+  const layers = Array.from({ length: isMobile ? 4 : 8 });
   return (
-    <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div className="max-w-2xl md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
       {/* LEFT TEXT SECTION */}
       <div>
-        <h1 className="text-5xl text-black font-bold">
+        <h1 className="text-3xl md:text-5xl text-black font-bold">
           Learn <br /> about <br /> SapherChain
         </h1>
 
-        <p className="text-gray-500 text-lg mt-6 max-w-lg">
+        <p className="text-gray-500 text-lg mt-6 max-w-lg text-xs md:text-base">
           Explore the essentials of SapherChain with clear, no-code learning
           resources built for beginners, developers, investors, and enthusiasts.
         </p>
 
         {/* BUTTONS */}
         <div className="flex gap-4 mt-10">
-          <button className="px-6 py-3 text-sm rounded-full bg-indigo-600 text-white font-semibold hover:opacity-80 transition">
+          <button className="px-4 py-1 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-full bg-indigo-600 text-white font-semibold hover:opacity-80 transition">
             START LEARNING
           </button>
 
-          <button className="px-6 py-3 text-sm rounded-full border border-black text-black font-semibold hover:bg-white hover:text-black transition">
+          <button className="px-4 py-1 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-full border border-black text-black font-semibold hover:bg-white hover:text-black transition">
             DEVELOPER DOCS
           </button>
         </div>
       </div>
 
       {/* RIGHT ANIMATED STACK (SOLANA STYLE) */}
-      <div className="flex justify-end">
-        <div className="relative w-72 h-72 md:w-96 md:h-96">
+      <div className="flex justify-center md:justify-end">
+        <div className="relative w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96">
           {layers.map((_, i) => (
             <div
               key={i}
               className={`
               hex-layer
               absolute left-1/2 -translate-x-1/2
-              w-[280px] h-[150px]
+              w-[200px] h-[100px] md:w-[280px] md:h-[150px]
               opacity-[0.92]
             `}
               style={{

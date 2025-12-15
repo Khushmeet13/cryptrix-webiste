@@ -40,11 +40,11 @@ const UseCases = () => {
         className="relative h-[40vh] flex flex-col items-center justify-center text-center px-6
                           bg-gradient-to-br from-indigo-950 via-indigo-900 to-black"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
           Trust Infrastructure for Every Industry
         </h1>
 
-        <p className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed">
+        <p className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed">
           Sapher powers identity, security, and automation for ecosystems.
         </p>
       </section>

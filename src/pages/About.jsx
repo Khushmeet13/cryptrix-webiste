@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="w-full min-h-screen">
       {/* Top Section */}
-      <section className="relative h-[50vh] bg-gradient-to-br from-black via-indigo-950/40 to-black flex items-start justify-center pt-32 text-white text-5xl font-semibold">
+      <section className="relative h-[50vh] bg-gradient-to-br from-black via-indigo-950/40 to-black flex items-start justify-center pt-32 text-white text-3xl md:text-5xl font-semibold">
 
 
         <div className="relative z-10">About</div>
@@ -19,13 +19,13 @@ const About = () => {
       {/* Overlapping White Section */}
       <div className="absolute top-[25vh] left-1/2 -translate-x-1/2 w-full z-30">
         <div className="max-w-7xl mx-auto bg-white p-10">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid grid-col-1 lg:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-3xl font-semibold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">
                 Why We Built Sapher Chain
               </h2>
 
-              <p className="text-gray-500 mt-3 text-md max-w-2xl">
+              <p className="text-gray-500 mt-3 text-sm sm:text-base max-w-2xl">
                 Sapher Chain was created to solve the core limitations of modern
                 blockchains— scalability, security, and real-world utility—while
                 keeping user experience simple and powerful. In a world where
@@ -33,7 +33,7 @@ const About = () => {
                 opportunity to create something more meaningful.
               </p>
 
-              <p className="text-gray-500 mt-5 text-md max-w-2xl">
+              <p className="text-gray-500 mt-5 text-sm sm:text-base max-w-2xl">
                 The Chain was born from a simple belief: that technology should
                 bring us closer together, not drive us apart. We built this
                 platform to help individuals and communities forge authentic
@@ -189,13 +189,13 @@ const About = () => {
             <div className="p-6 border rounded-md hover:shadow-lg transition-all">
               {/* Heading + Number row */}
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold">Real Web3 Utility</h3>
+                <h3 className="text-base sm:text-xl font-semibold">Real Web3 Utility</h3>
                 <span className="text-indigo-600 font-bold text-2xl opacity-80">
                   01
                 </span>
               </div>
 
-              <p className="text-gray-500 mt-1 text-sm leading-relaxed">
+              <p className="text-gray-500 mt-1 text-xs sm:text-sm  leading-relaxed">
                 Built to connect real businesses, apps, and users directly with
                 blockchain power.
               </p>
@@ -204,13 +204,13 @@ const About = () => {
             {/* Reason 2 */}
             <div className="p-6 border rounded-md hover:shadow-lg transition-all">
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold">High Performance</h3>
+                <h3 className="text-base sm:text-xl font-semibold">High Performance</h3>
                 <span className="text-indigo-600 font-bold text-2xl opacity-80">
                   02
                 </span>
               </div>
 
-              <p className="text-gray-500 mt-1 text-sm leading-relaxed">
+              <p className="text-gray-500 mt-1 text-xs sm:text-sm  leading-relaxed">
                 Ultra-fast, low-fee, scalable network designed for millions of
                 transactions.
               </p>
@@ -219,13 +219,13 @@ const About = () => {
             {/* Reason 3 */}
             <div className="p-6 border rounded-md hover:shadow-lg transition-all">
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold">Secure & Future-Ready</h3>
+                <h3 className="text-base sm:text-xl font-semibold">Secure & Future-Ready</h3>
                 <span className="text-indigo-600 font-bold text-2xl opacity-80">
                   03
                 </span>
               </div>
 
-              <p className="text-gray-500 mt-1 text-sm leading-relaxed">
+              <p className="text-gray-500 mt-1 text-xs sm:text-sm leading-relaxed">
                 Enterprise-grade security and decentralized governance built for
                 the future.
               </p>

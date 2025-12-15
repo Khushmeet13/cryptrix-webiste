@@ -30,14 +30,14 @@ const MediaPage = () => {
       <div className="relative z-10 flex items-center h-[70vh] px-4 md:px-32">
         <div className="text-start">
           {/* Main Headline */}
-          <h1 className="text-5xl  font-medium text-white mb-6">
+          <h1 className="text-3xl sm:text-5xl  font-medium text-white mb-6">
             Creating a more sovereign,
             <br />
             <span className="block">secure, and open internet</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-md text-white/90 mb-8 leading-relaxed">
+          <p className="text-sm sm:text-base text-white/90 mb-8 leading-relaxed">
             SapherChain Labs redistributes the power and value of the internet to
             its
             <br />

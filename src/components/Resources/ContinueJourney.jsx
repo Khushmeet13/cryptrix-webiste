@@ -29,10 +29,10 @@ export default function ContinueJourney() {
     <section className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-3xl font-semibold text-black">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-black">
           Continue Your Journey
         </h2>
-        <p className="mt-2 text-md text-gray-500 max-w-3xl mx-auto">
+        <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto">
           Ready to dive deeper? Explore these essential resources for YourChain developers
         </p>
 
@@ -42,18 +42,18 @@ export default function ContinueJourney() {
             <div key={index} className="text-left group">
               {/* Title + Button */}
               <div className="flex items-center justify-between">
-                <h3 className="text-xl font-bold text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-black">
                   {item.title}
                 </h3>
                 <a
                   href={item.link}
-                  className="px-6 py-3 rounded-full border border-gray-700 
+                  className="px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-gray-700 
                            text-black font-medium flex items-center gap-1
                            hover:border-indigo-500 hover:text-indigo-600
-                           transition-all duration-300 text-sm"
+                           transition-all duration-300 text-xs sm:text-sm"
                 >
                   VIEW ALL
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                 </a>
               </div>
 
@@ -61,7 +61,7 @@ export default function ContinueJourney() {
               <div className="mt-4 h-px bg-gradient-to-r from-gray-800 via-gray-600 to-transparent" />
 
               {/* Description */}
-              <p className="mt-4 text-md text-gray-500">
+              <p className="mt-4 text-sm sm:text-base text-gray-500">
                 {item.description}
               </p>
             </div>

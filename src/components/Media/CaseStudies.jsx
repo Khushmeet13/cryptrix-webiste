@@ -25,7 +25,7 @@ const caseStudies = [
 const CaseStudies = () => {
   return (
     <section className="w-full bg-white text-black py-22 px-6">
-      <h2 className="text-3xl font-semibold text-center mb-16">Case Studies</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-16">Case Studies</h2>
 
       <div className="max-w-5xl mx-auto pl-6 border-l border-indigo-600 space-y-16">
         {caseStudies.map((item, i) => (

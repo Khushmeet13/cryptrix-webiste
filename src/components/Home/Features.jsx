@@ -27,7 +27,7 @@ const Features = () => {
         <h2 className="text-3xl font-semibold text-gray-900 tracking-tight">
           SapherChain Features
         </h2>
-        <p className="text-gray-500 mt-3 text-lg">
+        <p className="text-gray-500 mt-3">
           Discover what makes SapherChain a powerful decentralized blockchain network.
         </p>
       </div>

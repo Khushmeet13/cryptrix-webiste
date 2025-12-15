@@ -8,7 +8,7 @@ const UseCaseFAQ = ({faqs}) => {
 
   return (
     <section className="py-20 px-6 bg-gray-50 text-black">
-      <h2 className="text-3xl font-semibold text-center mb-10">FAQs</h2>
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">FAQs</h2>
 
       <div className="max-w-3xl mx-auto space-y-4">
         {faqs.map((item, i) => (
@@ -19,14 +19,14 @@ const UseCaseFAQ = ({faqs}) => {
             }`}
           >
             <div
-              className="flex justify-between items-center p-2 rounded-3xl bg-gray-100 shadow cursor-pointer transition"
+              className="flex justify-between items-center p-2 pl-4 rounded-3xl bg-gray-100 shadow cursor-pointer transition"
               onClick={() => setOpen(open === i ? null : i)}
             >
-              <h3 className="text-lg font-medium">{item.q}</h3>
+              <h3 className="text-md md:text-lg font-medium">{item.q}</h3>
 
-              <div className="bg-gray-200 rounded-full p-2">
+              <div className="bg-gray-200 rounded-full p-1 md:p-2">
                 <ChevronDown
-                  className={`transition-transform duration-300 text-gray-600 ${
+                  className={`transition-transform duration-300 text-gray-600 w-4 h-4 ${
                     open === i ? "rotate-180" : ""
                   }`}
                 />
@@ -39,7 +39,7 @@ const UseCaseFAQ = ({faqs}) => {
                 maxHeight: open === i ? "500px" : "0px",
               }}
             >
-              <p className="py-4 text-gray-600">{item.a}</p>
+              <p className="py-4 text-gray-600 text-xs sm:text-base">{item.a}</p>
             </div>
           </div>
         ))}

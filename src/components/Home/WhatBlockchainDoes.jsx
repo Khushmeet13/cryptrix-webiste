@@ -42,7 +42,7 @@ const WhatBlockchainDoes = () => {
 
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-wide text-black">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-wide text-black">
             What <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 via-indigo-800 to-blue-700">
               SapherChain
             </span>{" "}
@@ -55,7 +55,7 @@ const WhatBlockchainDoes = () => {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {features.map((item, index) => (
             <div
               key={index}

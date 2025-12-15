@@ -32,7 +32,7 @@ const AmbassadorShowcase = () => {
   return (
     <section className="py-20 pt-0 bg-gradient-to-b from-white to-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-center text-3xl font-semibold mb-2 text-black">
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-2 text-black">
           Ambassador Showcase
         </h2>
         <p className="text-center text-gray-500 mb-16">
@@ -78,7 +78,7 @@ const AmbassadorShowcase = () => {
                 </div>
 
                 {/* Social Icons */}
-                <div className="flex justify-center gap-5 mt-6">
+                <div className="flex justify-center gap-5 mt-6 mb-8 sm:mb-0">
                   <a
                     href={amb.twitter}
                     className="p-3 bg-white shadow-md rounded-full hover:shadow-lg hover:-translate-y-1 transition text-indigo-600"

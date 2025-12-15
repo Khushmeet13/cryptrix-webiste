@@ -62,21 +62,21 @@ const InTheNews = () => {
     <section className="w-full bg-gradient-to-t from-gray-100 to-white text-black py-20">
       {/* Heading + Arrows */}
       <div className="flex justify-between items-center px-20 mb-10">
-        <h2 className="text-3xl font-semibold">In the news</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold">In the news</h2>
 
         <div className="flex items-center gap-4">
           <button
             onClick={scrollLeft}
-            className="w-12 h-12 rounded-full border border-black flex items-center justify-center hover:cursor-pointer hover:bg-white"
+            className="w-8 h-8 sm:w-12 sm:h-12 rounded-full border border-black flex items-center justify-center hover:cursor-pointer hover:bg-white"
           >
-            <ArrowLeft className="text-black" />
+            <ArrowLeft className="text-black w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           <button
             onClick={scrollRight}
-            className="w-12 h-12 rounded-full bg-white/10 border border-black flex items-center justify-center hover:bg-white hover:cursor-pointer"
+            className="w-8 h-8 sm:w-12 sm:h-12  rounded-full bg-white/10 border border-black flex items-center justify-center hover:bg-white hover:cursor-pointer"
           >
-            <ArrowRight className="text-black" />
+            <ArrowRight className="text-black w-4 h-4 sm:w-6 sm:h-6" />
           </button>
         </div>
       </div>

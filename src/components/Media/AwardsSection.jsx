@@ -30,7 +30,7 @@ const AwardsSection = () => {
   return (
     <>
      <section className="w-full bg-white py-16 overflow-hidden">
-      <h2 className="text-center text-black tracking-[6px] text-sm mb-10">
+      <h2 className="text-center text-black tracking-[6px] text-xs sm:text-sm mb-10">
         BACKED BY
       </h2>
 
@@ -52,7 +52,7 @@ const AwardsSection = () => {
     </section>
 
     <section className="w-full bg-gradient-to-t  from-gray-100 to-white text-black py-22 px-6">
-      <h2 className="text-3xl font-semibold text-center mb-14">Awards</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-14">Awards</h2>
 
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {awards.map((award, i) => (

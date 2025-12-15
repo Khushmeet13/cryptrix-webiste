@@ -16,22 +16,22 @@ const LearnCard = ({ part, title, description }) => {
       "
       />
 
-      <span className="text-indigo-600 text-sm font-medium tracking-wider">
+      <span className="text-indigo-600 text-xs sm:text-sm font-medium tracking-wider">
         {part}
       </span>
 
-      <h3 className="mt-3 text-2xl font-semibold text-black">{title}</h3>
+      <h3 className="mt-3 text-xl sm:text-2xl font-semibold text-black">{title}</h3>
 
-      <p className="mt-4 text-gray-500 text-base leading-relaxed">
+      <p className="mt-4 text-gray-500 text-sm sm:text-base leading-relaxed">
         {description}
       </p>
 
       <a
         href="#"
-        className="mt-10 inline-flex items-center gap-1 text-sm font-medium hover:gap-4 transition-all duration-300"
+        className="mt-10 inline-flex items-center gap-1 text-xs sm:text-sm font-medium hover:gap-4 transition-all duration-300"
       >
         READ MORE
-        <ArrowRight className="w-4 h-4" />
+        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
       </a>
     </div>
   );
@@ -102,7 +102,7 @@ export default function LearnSection() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-white text-black">
+    <section className="pt-48 pb-10 sm:py-20 sm:pt-64 md:py-20 px-6 bg-white text-black">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card, index) => (

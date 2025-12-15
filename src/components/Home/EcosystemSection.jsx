@@ -126,49 +126,76 @@ const EcosystemSection = () => {
           SapherChain Ecosystem
         </h2>
 
-        {/* Top Content */}
-        <div className="relative w-full h-72 md:h-64 overflow-hidden">
-          {ecosystemItems.map((item, index) => {
-            const isActive = index === activeIndex;
-
-            return (
-              <div
-                key={item.name}
-                className={`absolute top-0 left-0 w-full flex flex-col md:flex-row items-center justify-between transition-transform duration-500`}
-                style={{
-                  transform: isActive
-                    ? "translateX(0%)"
-                    : index < activeIndex
-                    ? "translateX(-100%)"
-                    : "translateX(100%)",
-                }}
+        <div className="grid grid-cols-[80px_1fr] lg:grid-cols-1">
+          {/* LEFT ICONS – MOBILE & MD */}
+          <div className="flex lg:hidden flex-col items-center gap-6 max-h-[370px] overflow-y-auto pr-2">
+            {ecosystemItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className="p-3 rounded-full transition opacity-60 hover:opacity-100"
               >
-                {/* Left Content */}
-                <div className="max-w-2xl">
-                  <h3 className="text-3xl font-semibold">{item.name}</h3>
-                  <p className="text-gray-400 mt-6">{item.desc}</p>
-                  <button className="mt-6 px-6 py-3 bg-black text-white rounded-full relative overflow-hidden group hover:cursor-pointer">
-                    <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700 scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-full"></span>
-                    <span className="relative z-10">Learn more</span>
-                  </button>
-                </div>
+                <item.icon
+                  size={32}
+                  className={
+                    index === activeIndex
+                      ? "text-indigo-600"
+                      : "text-gray-500 hover:text-indigo-600"
+                  }
+                />
+              </button>
+            ))}
+          </div>
+          
+          {/* Top Content */}
+          <div className="relative w-full h-76 sm:h-72 md:h-74 overflow-hidden">
+            {ecosystemItems.map((item, index) => {
+              const isActive = index === activeIndex;
 
-                {/* Right Hexagon */}
-                <div className="relative">
-                  <div
-                    className={`absolute right-20 -top-16 w-40 h-40 ${item.color} rounded-3xl rotate-45 flex items-center justify-center z-10 transition-all duration-500`}
-                  >
-                    <item.icon size={80} className="-rotate-45 text-white" />
+              return (
+                <div
+                  key={item.name}
+                  className={`absolute top-0 left-0 w-full flex flex-col md:flex-row items-center justify-between transition-transform duration-500`}
+                  style={{
+                    transform: isActive
+                      ? "translate(0%,0%)"
+                      : index < activeIndex
+                      ? window.innerWidth >= 1024
+                        ? "translateX(-100%)" // lg+ horizontal
+                        : "translateY(-100%)" // md/sm vertical
+                      : window.innerWidth >= 1024
+                      ? "translateX(100%)"
+                      : "translateY(100%)",
+                  }}
+                >
+                  {/* Left Content */}
+                  <div className="max-w-2xl p-10 text-center lg:text-left">
+                    <h3 className="text-xl md:text-3xl font-semibold">{item.name}</h3>
+                    <p className="text-gray-400 mt-4 md:mt-6">{item.desc}</p>
+                    <button className="mt-6 px-6 py-3 bg-black text-white rounded-full relative overflow-hidden group hover:cursor-pointer">
+                      <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700 scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-full"></span>
+                      <span className="relative z-10">Learn more</span>
+                    </button>
                   </div>
-                  <div className="absolute right-4 -top-20 w-28 h-28 bg-gray-200 rounded-3xl opacity-40 rotate-45"></div>
+
+                  {/* Right Hexagon */}
+                  <div className="relative hidden lg:block">
+                    <div
+                      className={`absolute right-20 -top-16 w-40 h-40 ${item.color} rounded-3xl rotate-45 flex items-center justify-center z-10 transition-all duration-500`}
+                    >
+                      <item.icon size={80} className="-rotate-45 text-white" />
+                    </div>
+                    <div className="absolute right-4 -top-20 w-28 h-28 bg-gray-200 rounded-3xl opacity-40 rotate-45"></div>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
+
       {/* Bottom Icons Row */}
-      <div className="mt-24 bg-white p-4 rounded-md flex items-center justify-center flex-wrap gap-10 max-w-6xl mx-auto">
+      <div className="hidden lg:flex mt-20 bg-white p-4 rounded-md  items-center justify-center flex-wrap gap-10 max-w-6xl mx-auto">
         {ecosystemItems.map((item, index) => (
           <div
             key={index}

@@ -26,7 +26,7 @@ const videos = [
 export default function VideoSection() {
   return (
     <div className="w-full py-22 pt-10 px-6 md:px-16 bg-gray-100 text-black">
-      <h2 className="text-center text-3xl font-semibold mb-12">Video</h2>
+      <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-12">Video</h2>
 
       {/* Video Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -37,7 +37,7 @@ export default function VideoSection() {
 
       {/* Button */}
       <div className="flex justify-center mt-12">
-        <button className="bg-black text-white px-8 py-4 rounded-full text-md hover:bg-neutral-900 transition">
+        <button className="bg-black text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base hover:bg-neutral-900 transition">
           More Videos on Youtube
         </button>
       </div>
@@ -78,7 +78,7 @@ function HoverVideoCard({ title, thumb, gif }) {
       </div>
 
       {/* Title */}
-      <p className="text-center text-lg font-medium mt-4 px-3">{title}</p>
+      <p className="text-center text-sm sm:text-lg font-medium mt-4 px-3">{title}</p>
     </div>
   );
 }

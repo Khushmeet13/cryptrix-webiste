@@ -15,8 +15,8 @@ const ContributionPaths = () => {
     <section className="py-24 bg-white text-black">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-3xl font-semibold mb-2">Contribution Paths</h2>
-        <p className="text-gray-500 text-lg">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">Contribution Paths</h2>
+        <p className="text-gray-500 text-base sm:text-lg">
           Multiple ways to grow, build, and make your mark in the community
         </p>
 

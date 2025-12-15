@@ -19,12 +19,12 @@ const Events = () => {
         {/* Main Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl">
           {/* Title */}
-          <h1 className="text-5xl font-semibold text-white mb-4 tracking-tighter">
+          <h1 className="text-3xl sm:text-5xl font-semibold text-white mb-4 tracking-tighter">
             Events
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg text-gray-300 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-lg text-gray-300 font-light max-w-xl mx-auto leading-relaxed">
             Join us at exclusive blockchain events, hackathons, and community
             meetups around the world.
           </p>
@@ -37,7 +37,7 @@ const Events = () => {
                   behavior: "smooth",
                 });
               }}
-              className="px-6 py-3 bg-indigo-600 text-white rounded-full flex items-center gap-3 mx-auto group hover:cursor-pointer"
+              className="px-6 py-3 bg-indigo-600 text-white text-sm sm:text-base rounded-full flex items-center gap-3 mx-auto group hover:cursor-pointer"
             >
               View Upcoming Events
             </button>

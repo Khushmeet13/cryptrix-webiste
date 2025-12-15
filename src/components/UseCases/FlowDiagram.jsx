@@ -42,10 +42,10 @@ const FlowDiagram = () => {
 
   return (
     <section className="py-20 px-6 bg-white text-black">
-      <h2 className="text-3xl font-semibold text-center mb-2">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-2">
         How Sapher Works in Use Cases
       </h2>
-      <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto mb-10">
+      <p className="text-xs sm:text-base text-center text-gray-600 mb-16 max-w-2xl mx-auto mb-10">
         A simple but powerful trust flow that powers payments, gaming,
         onboarding, and decentralized identity interactions.
       </p>

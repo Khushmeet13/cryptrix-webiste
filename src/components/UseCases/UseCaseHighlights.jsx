@@ -41,7 +41,7 @@ const UseCaseHighlights = () => {
       <style>{sliderCSS}</style>
 
       <section className="py-20 px-6 bg-gray-100 text-black overflow-hidden">
-        <h2 className="text-center text-3xl font-semibold mb-12">
+        <h2 className="text-center text-2xl md:text-3xl font-semibold mb-12">
           Highlights
         </h2>
 
@@ -64,14 +64,14 @@ const UseCaseHighlights = () => {
                   key={i}
                   onClick={() => setActiveIndex(isActive ? null : index)}
                   className={`
-                    min-w-[320px] bg-white
+                    max-w-[250px] md:max-w-[320px] bg-white
                     rounded-2xl p-6 cursor-pointer transition-all duration-500
                      hover:scale-[1.03]
                     ${isActive ? "scale-105 bg-white" : ""}
                   `}
                 >
                   <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-semibold">{item.industry}</h3>
+                    <h3 className="text-md md:text-lg font-semibold">{item.industry}</h3>
 
                     <ChevronDown
                       className={`transition-transform duration-500 ${
@@ -82,7 +82,7 @@ const UseCaseHighlights = () => {
 
                   {/* TRUNCATED DESCRIPTION */}
                   {!isActive && (
-                    <p className="text-gray-500 mt-2 line-clamp-1 max-w-sm">
+                    <p className="text-gray-500 mt-2 line-clamp-1 max-w-sm text-xs sm:text-md">
                       {item.desc}
                     </p>
                   )}

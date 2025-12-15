@@ -12,10 +12,10 @@ const VisionSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl font-semibold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight">
             Our Vision
           </h2>
-          <p className="mt-2 text-md text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed">
             A world where work feels effortless — where technology disappears into the background, 
             and people are free to think, create, and grow without friction.
           </p>

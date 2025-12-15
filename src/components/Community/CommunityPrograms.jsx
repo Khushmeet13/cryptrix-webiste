@@ -69,11 +69,11 @@ const CommunityPrograms = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-center text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center text-gray-800">
           Community Programs
         </h2>
         <p className="text-center text-gray-500 mt-3 mb-16">
-         Join a role that matches your passion and start contributing to the
+          Join a role that matches your passion and start contributing to the
         </p>
 
         <div className="relative">
@@ -86,35 +86,41 @@ const CommunityPrograms = () => {
               return (
                 <div
                   key={i}
-                  className={`min-w-full flex items-center justify-between transition-all duration-500 px-10 ${
-                    isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
-                  }`}
+                  className={`min-w-full flex flex-col md:flex-row items-center justify-between 
+                    transition-all duration-500 px-4 sm:px-6 md:px-10 gap-8
+                    ${
+                      isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
+                    }`}
                   style={{
                     transform: `translateX(-${current * 100}%)`,
                   }}
                 >
                   {/* LEFT CONTENT */}
-                  <div className="flex flex-col max-w-xl">
-                    <div className="mb-4">{role.icon}</div>
-                    <h3 className="text-3xl font-semibold text-gray-800">
+                  <div className="flex flex-col max-w-xl text-center md:text-left">
+                    <div className="mb-4 flex justify-center md:justify-start">
+                      {role.icon}
+                    </div>
+
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
                       {role.title}
                     </h3>
 
-                    <p className="text-gray-600 mt-4 leading-relaxed">
+                    <p className="text-gray-600 mt-4 text-sm sm:text-base leading-relaxed">
                       {role.desc}
                     </p>
 
-                    <button className="mt-6 w-fit px-7 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-md">
+                    <button className="mt-6 mx-auto md:mx-0 w-fit px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-md">
                       {role.btn}
                     </button>
                   </div>
 
                   {/* RIGHT IMAGE */}
-                  <div className="w-[45%]">
+                  <div className="w-full md:w-[45%]">
                     <img
                       src={role.img}
                       alt={role.title}
-                      className="rounded-2xl shadow-xl object-cover h-80 w-full"
+                      className="rounded-2xl shadow-xl object-cover 
+                        h-56 sm:h-64 md:h-80 w-full"
                     />
                   </div>
                 </div>
@@ -125,14 +131,14 @@ const CommunityPrograms = () => {
           {/* ARROWS */}
           <button
             onClick={prevSlide}
-            className="absolute -left-20 top-40 h-76 -translate-y-1/2 bg-gray-100/20 hover:bg-gray-50 rounded-full p-4 hover:scale-110 transition hover:cursor-pointer"
+            className="absolute -left-4 xl:-left-20 top-40 h-76 -translate-y-1/2 bg-gray-100/20 hover:bg-gray-50 rounded-full md:p-4 hover:scale-110 transition hover:cursor-pointer"
           >
             <ChevronLeft size={25} />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute -right-20 top-40 h-76 -translate-y-1/2 bg-gray-100/20 hover:bg-gray-50 shadow-md shadow-gray-50 rounded-full p-4 hover:scale-110 transition hover:cursor-pointer"
+            className="absolute -right-2 xl:-right-20 top-40 h-76 -translate-y-1/2 bg-gray-100/20 hover:bg-gray-50 shadow-md shadow-gray-50 rounded-full md:p-4 hover:scale-110 transition hover:cursor-pointer"
           >
             <ChevronRight size={25} />
           </button>

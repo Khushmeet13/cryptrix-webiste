@@ -48,10 +48,10 @@ const MarketPerformance = () => {
         </p>
 
         {/* Chart + Side Stats */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-33">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20 lg:gap-33 ">
           {/* Chart */}
-          <div className="md:col-span-3 w-full h-80">
-            <ResponsiveContainer width="110%" height="100%">
+          <div className="md:col-span-3 w-full md:w-[110%] h-56 md:h-80">
+            <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data} style={{ cursor: "pointer" }}>
                 <defs>
                   <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
@@ -102,39 +102,45 @@ const MarketPerformance = () => {
           </div>
 
           {/* Side Stats */}
-          <div className="flex flex-col gap-6 justify-center">
-            <div className="flex flex-col gap-2">
-              <p className="text-gray-400">Total Market Cap</p>
-              <p className="text-2xl font-medium">$26,224.82M</p>
+          <div
+            className="
+              grid grid-cols-3 gap-1 text-center
+              md:flex md:flex-col md:gap-6 md:text-left
+              justify-center border-t md:border-t-0 pt-6 md:pt-0
+            "
+          >
+            <div className="flex flex-col gap-2 border-r md:border-r-0">
+              <p className="text-xs sm:text-sm text-gray-400">Total Market Cap</p>
+              <p className="sm:text-2xl font-medium break-all">$26,224.82M</p>
+            </div>
+
+            <div className="flex flex-col gap-2 border-r md:border-r-0">
+              <p className="text-xs sm:text-sm text-gray-400">Global Rank</p>
+              <p className="sm:text-2xl font-medium">8</p>
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="text-gray-400">Global Rank</p>
-              <p className="text-2xl font-medium">8</p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <p className="text-gray-400">Accounts holding SPH</p>
-              <p className="text-2xl font-medium">211.11M</p>
+              <p className="text-xs sm:text-sm text-gray-400">Accounts holding SPH</p>
+              <p className="sm:text-2xl font-medium">211.11M</p>
             </div>
           </div>
         </div>
 
         {/* Bottom Stats */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 border border-gray-300 overflow-hidden text-center">
-          <div className="p-6 border-r border-gray-300">
-            <p className="text-gray-400">Current Price</p>
-            <p className="text-3xl font-medium">$0.276970</p>
+        <div className="mt-10 md:mt-14 grid grid-cols-3 border border-gray-300 overflow-hidden text-center">
+          <div className="p-3 md:p-6 border-r border-gray-300">
+            <p className="text-gray-400 text-xs md:text-lg">Current Price</p>
+            <p className="sm:text-2xl md:text-3xl font-medium break-all">$0.276970</p>
           </div>
 
-          <div className="p-6 border-r border-gray-300">
-            <p className="text-gray-400">Transaction Volume (24h)</p>
-            <p className="text-3xl font-medium">$692.85M</p>
+          <div className="p-3 md:p-6 border-r border-gray-300">
+            <p className="text-gray-400 text-xs md:text-lg">Transaction Volume (24h)</p>
+            <p className="sm:text-2xl md:text-3xl font-medium break-all">$692.85M</p>
           </div>
 
-          <div className="p-6">
-            <p className="text-gray-400">Transaction Count (24h)</p>
-            <p className="text-3xl font-medium">6.93M</p>
+          <div className="p-3 md:p-6">
+            <p className="text-gray-400 text-xs md:text-lg">Transaction Count (24h)</p>
+            <p className="sm:text-2xl md:text-3xl font-medium">6.93M</p>
           </div>
         </div>
       </div>

@@ -30,8 +30,8 @@ const BrandSection = () => {
     <section className="w-full bg-white text-black py-22 px-6">
       {/* Heading */}
       <div className="max-w-5xl mx-auto text-center mb-16">
-        <h2 className="text-3xl font-semibold mb-2">Sapher Brand Kit</h2>
-       <p className=" text-md text-gray-500 max-w-xl mx-auto leading-relaxed">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">Sapher Brand Kit</h2>
+       <p className="text-sm sm:text-base text-gray-500 max-w-xl mx-auto leading-relaxed">
           Download official assets, typography, colors, and guidelines to 
           represent the Sapher identity consistently across all brand touchpoints.
         </p>

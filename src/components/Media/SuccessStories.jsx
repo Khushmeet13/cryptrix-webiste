@@ -22,7 +22,7 @@ const stories = [
 const SuccessStories = () => {
   return (
     <section className="w-full bg-gray-100 text-black py-22 px-6">
-      <h2 className="text-3xl font-semibold text-center mb-16">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-16">
         Success Stories
       </h2>
 
@@ -40,7 +40,7 @@ const SuccessStories = () => {
               alt=""
             />
             <div className="md:w-1/2">
-              <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+              <h3 className="text-2xl sm:text-2xl font-semibold mb-4">{item.title}</h3>
               <p className="text-gray-500 leading-relaxed mb-6">{item.desc}</p>
 
               <CustomButton

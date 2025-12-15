@@ -34,7 +34,7 @@ const CompanyValues = () => {
     <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <h2 className="text-3xl font-semibold text-gray-900 mb-16 flex items-center justify-center gap-1">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-16 flex items-center justify-center gap-1">
           Our Values
           <Sparkles className="w-5 h-5 text-indigo-700 mb-2" />
         </h2>
