@@ -16,6 +16,10 @@ import UsecaseDetail from "@/pages/usecases/UsecaseDetail";
 import FaqPage from "@/pages/FaqPage";
 import NotFound from "@/components/NotFound";
 import StatusPage from "@/pages/StatusPage";
+import VotingSystem from "@/pages/governance/VotingSystem";
+import Staking from "@/pages/governance/Staking";
+import Proposals from "@/pages/governance/Proposals";
+import CommunityRules from "@/pages/governance/CommunityRules";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -37,6 +41,12 @@ export default function AppRoutes() {
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
           <Route path="/faqs" element={<FaqPage />} />
+
+          {/* Governance */}
+          <Route path="/voting" element={<VotingSystem />} />
+          <Route path="/staking" element={<Staking />} />
+          <Route path="/proposals" element={<Proposals />} />
+           <Route path="/rules" element={<CommunityRules />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />

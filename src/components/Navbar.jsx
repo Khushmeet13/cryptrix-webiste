@@ -79,18 +79,18 @@ const dropdownData = {
     {
       title: "Voting system",
       desc: "Blockchain voting process",
-      link: "/",
+      link: "/voting",
     },
-    { title: "Staking", desc: "Earn rewards by locking coins", link: "/" },
+    { title: "Staking", desc: "Earn rewards by locking coins", link: "/staking" },
     {
       title: "Proposals",
       desc: "Learn more about committee proposals",
-      link: "/",
+      link: "/proposals",
     },
     {
       title: "Community rules",
       desc: "Guidelines for participation",
-      link: "/",
+      link: "/rules",
     },
   ],
   More: [
@@ -215,6 +215,7 @@ const Navbar = () => {
                             key={index}
                             title={dItem.title}
                             desc={dItem.desc}
+                            link={dItem.link}
                             onClick={handleNavLinkClick}
                           />
                         ))}
