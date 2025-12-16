@@ -38,7 +38,7 @@ const Staking = () => {
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl sm:text-5xl text-white">SPH Staking</h2>
 
-            <p className="text-base sm:text-lg text-gray-400 max-w-xl">
+            <p className="text-base sm:text-lg text-gray-300 max-w-xl">
               TRON Network adopts the DPoS consensus mechanism. TRX holders can
               contribute to TRON’s governance while earning an APY of up to{" "}
               <span className="text-white font-medium">3.32%</span>.
