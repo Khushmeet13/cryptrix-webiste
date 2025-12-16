@@ -20,6 +20,8 @@ import VotingSystem from "@/pages/governance/VotingSystem";
 import Staking from "@/pages/governance/Staking";
 import Proposals from "@/pages/governance/Proposals";
 import CommunityRules from "@/pages/governance/CommunityRules";
+import Wallet from "@/pages/wallet/Wallet";
+import AllWallets from "@/pages/wallet/AllWallets";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -41,12 +43,14 @@ export default function AppRoutes() {
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
           <Route path="/faqs" element={<FaqPage />} />
+          <Route path="/wallets" element={<Wallet />} />
+          <Route path="/sapher-wallets" element={<AllWallets />} />
 
           {/* Governance */}
           <Route path="/voting" element={<VotingSystem />} />
           <Route path="/staking" element={<Staking />} />
           <Route path="/proposals" element={<Proposals />} />
-           <Route path="/rules" element={<CommunityRules />} />
+          <Route path="/rules" element={<CommunityRules />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />

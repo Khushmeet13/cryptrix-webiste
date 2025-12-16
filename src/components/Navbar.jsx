@@ -38,7 +38,7 @@ const dropdownData = {
     {
       title: "Wallet",
       desc: "Manage your SPH coins with ease using wallet tools.",
-      link: "/",
+      link: "/wallets",
     },
     {
       title: "Explorer",
