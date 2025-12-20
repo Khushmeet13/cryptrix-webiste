@@ -1,13 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
-import StatusHeader from "../components/Status/StatusHeader";
-import ServiceCard from "../components/Status/ServiceCard";
-import IncidentLog from "../components/Status/IncidentLog";
-import Maintenance from "../components/Status/Maintenance";
+import StatusHeader from "../../components/Status/StatusHeader";
+import ServiceCard from "../../components/Status/ServiceCard";
+import IncidentLog from "../../components/Status/IncidentLog";
+import Maintenance from "../../components/Status/Maintenance";
 import {
   SERVICES as initialServices,
   INCIDENTS as initialIncidents,
   MAINTENANCE as initialMaintenance,
-} from "../data/statusData";
+} from "../../data/statusData";
 
 const StatusPage = () => {
   const [services, setServices] = useState(initialServices);

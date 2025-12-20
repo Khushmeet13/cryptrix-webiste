@@ -34,7 +34,11 @@ const dropdownData = {
       desc: "Get answers to common questions.",
       link: "/faqs",
     },
-    { title: "Get SPH coin", desc: "Wallet details", link: "https://coin.sapherportal.com/" },
+    {
+      title: "Get SPH coin",
+      desc: "Wallet details",
+      link: "https://coin.sapherportal.com/",
+    },
     {
       title: "Wallet",
       desc: "Manage your SPH coins with ease using wallet tools.",
@@ -45,7 +49,11 @@ const dropdownData = {
       desc: "Track transactions, addresses, and blockchain activity.",
       link: "https://public-chain.sapherportal.com/",
     },
-    { title: "How to stake", desc: "Earn rewards by staking", link: "/how-to-stake" },
+    {
+      title: "How to stake",
+      desc: "Earn rewards by staking",
+      link: "/how-to-stake",
+    },
   ],
   Build: [
     {
@@ -60,24 +68,63 @@ const dropdownData = {
       desc: "Guide for contracts",
       link: "/docs/contracts",
     },
-    { title: "Testnet info", desc: "Information on testnet", link: "/docs/testnet" },
-    { title: "RPC Endpoints", desc: "Remote procedure calls", link: "/docs/rpc" },
+    {
+      title: "Testnet info",
+      desc: "Information on testnet",
+      link: "/docs/testnet",
+    },
+    {
+      title: "RPC Endpoints",
+      desc: "Remote procedure calls",
+      link: "/docs/rpc",
+    },
     {
       title: "Websocket Endpoints",
       desc: "Realtime connections",
       link: "/docs/websocket",
     },
-    { title: "SDK Downloads", desc: "Download SDKs", link: "/docs/sdk-download" },
+    {
+      title: "SDK Downloads",
+      desc: "Download SDKs",
+      link: "/docs/sdk-download",
+    },
   ],
   Ecosystem: [
-    { title: "Fast speed", desc: "High performance", link: "/" },
-    { title: "Low fee", desc: "Minimal transaction fees", link: "/" },
-    { title: "Smart contracts", desc: "Automated agreements", link: "/" },
-    { title: "Security", desc: "Secure & reliable", link: "/" },
-    { title: "Scalability", desc: "Grow without limits", link: "/" },
-    { title: "Payments", desc: "Seamless payments", link: "/" },
-    { title: "Gaming", desc: "Blockchain gaming", link: "/" },
-    { title: "NFTs", desc: "Digital collectibles", link: "/" },
+    {
+      title: "Network Overview",
+      desc: "Live statistics of the SapherChain network",
+      link: "/ecosystem",
+    },
+    {
+      title: "Validators",
+      desc: "Active validators securing the network",
+      link: "/validators",
+    },
+    {
+      title: "Nodes",
+      desc: "Global node infrastructure",
+      link: "/nodes",
+    },
+    {
+      title: "Ecosystem Growth",
+      desc: "Milestones and upcoming upgrades",
+      link: "/ecosystem-growth",
+    },
+    {
+      title: "Partners",
+      desc: "Companies and projects building on SPH",
+      link: "/partners",
+    },
+    {
+      title: "Grants Program",
+      desc: "Funding for developers & startups",
+      link: "/grants",
+    },
+    {
+      title: "Status",
+      desc: "Real-time network & service uptime",
+      link: "/status",
+    },
   ],
   Governance: [
     {
@@ -113,7 +160,7 @@ const dropdownData = {
     { title: "Community", desc: "Chat and connect", link: "/community" },
     { title: "Meetups", desc: "Events and gatherings", link: "/events" },
     { title: "Contact", desc: "Support and inquiries", link: "/contact" },
-    { title: "Status", desc: "Live uptime & incidents", link: "/status" },
+    // { title: "Status", desc: "Live uptime & incidents", link: "/status" },
   ],
 };
 
@@ -522,6 +569,5 @@ const DropdownItem = ({ title, desc, link, onClick }) => {
     </Link>
   );
 };
-
 
 export default Navbar;

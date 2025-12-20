@@ -129,7 +129,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-
 @keyframes ripple {
   0% {
     transform: scale(0.4);
@@ -455,7 +454,6 @@
   animation-delay: 0.7s;
 }
 
-
 /* community.jsx */
 @keyframes slide-down {
   from {
@@ -506,3 +504,62 @@
   box-shadow: 0 0 100px rgba(139, 92, 246, 0.4);
 }
 
+/* network overview */
+.scroll-wrapper {
+  overflow: hidden;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-wrapper:hover .scroll-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 40s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 45s linear infinite;
+}
+
+/* Pause on hover */
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}

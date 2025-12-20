@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 
-import Home from "../pages/Home";
+import Home from "../pages/getStarted/Home";
 import About from "../pages/About";
-import IntroPage from "../pages/IntroPage";
+import IntroPage from "../pages/getStarted/IntroPage";
 import ResourcesPage from "@/pages/ResourcesPage";
 import LegalPage from "@/pages/legal/LegalPage";
 import LegalDetail from "@/pages/legal/LegalDetail";
@@ -11,21 +11,26 @@ import Contact from "@/pages/Contact";
 import Events from "@/pages/Events";
 import Community from "@/pages/Community";
 import MediaPage from "@/pages/MediaPage";
-import UseCases from "@/pages/usecases/UseCases";
-import UsecaseDetail from "@/pages/usecases/UsecaseDetail";
-import FaqPage from "@/pages/FaqPage";
+import UseCases from "@/pages/getStarted/usecases/UseCases";
+import UsecaseDetail from "@/pages/getStarted/usecases/UsecaseDetail";
+import FaqPage from "@/pages/getStarted/FaqPage";
 import NotFound from "@/components/NotFound";
-import StatusPage from "@/pages/StatusPage";
+import StatusPage from "@/pages/ecosystem/StatusPage";
 import VotingSystem from "@/pages/governance/VotingSystem";
 import Staking from "@/pages/governance/Staking";
 import Proposals from "@/pages/governance/Proposals";
 import CommunityRules from "@/pages/governance/CommunityRules";
-import Wallet from "@/pages/wallet/Wallet";
-import AllWallets from "@/pages/wallet/AllWallets";
+import Wallet from "@/pages/getStarted/wallet/Wallet";
+import AllWallets from "@/pages/getStarted/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
-import HowToStakePage from "@/pages/HowToStakePage";
+import HowToStakePage from "@/pages/getStarted/HowToStakePage";
 import WhatBlockchainDoes from "@/components/Home/WhatBlockchainDoes";
-import WhatSapherChainDoes from "@/pages/WhatSapherChainDoes";
+import WhatSapherChainDoes from "@/pages/getStarted/WhatSapherChainDoes";
+import NetworkOverview from "@/pages/ecosystem/NetworkOverview";
+import ValidatorsPage from "@/pages/ecosystem/Validators";
+import NodesPage from "@/pages/ecosystem/NodesPage";
+import PartnersPage from "@/pages/ecosystem/PartnersPage";
+import GrantsPage from "@/pages/ecosystem/GrantsPage";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -58,6 +63,13 @@ export default function AppRoutes() {
           {/* Build */}
           <Route path="/docs" element={<Documentation />} />
           <Route path="/docs/:slug?" element={<Documentation />} />
+
+          {/* Ecosystem */}
+          <Route path="/ecosystem" element={<NetworkOverview />} />
+          <Route path="/validators" element={<ValidatorsPage />} />
+          <Route path="/nodes" element={<NodesPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/grants" element={<GrantsPage />} />
 
           {/* Governance */}
           <Route path="/voting" element={<VotingSystem />} />
