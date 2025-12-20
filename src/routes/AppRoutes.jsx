@@ -24,13 +24,13 @@ import Wallet from "@/pages/getStarted/wallet/Wallet";
 import AllWallets from "@/pages/getStarted/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
 import HowToStakePage from "@/pages/getStarted/HowToStakePage";
-import WhatBlockchainDoes from "@/components/Home/WhatBlockchainDoes";
 import WhatSapherChainDoes from "@/pages/getStarted/WhatSapherChainDoes";
 import NetworkOverview from "@/pages/ecosystem/NetworkOverview";
 import ValidatorsPage from "@/pages/ecosystem/Validators";
 import NodesPage from "@/pages/ecosystem/NodesPage";
 import PartnersPage from "@/pages/ecosystem/PartnersPage";
 import GrantsPage from "@/pages/ecosystem/GrantsPage";
+import EcosystemGrowth from "@/pages/ecosystem/EcosystemGrowth";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -70,6 +70,7 @@ export default function AppRoutes() {
           <Route path="/nodes" element={<NodesPage />} />
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/grants" element={<GrantsPage />} />
+          <Route path="/ecosystem-growth" element={<EcosystemGrowth />} />
 
           {/* Governance */}
           <Route path="/voting" element={<VotingSystem />} />
