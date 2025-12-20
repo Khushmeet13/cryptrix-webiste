@@ -8,7 +8,7 @@ import {
   X,
   ChevronRight,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/sapherchain-logo-white.png";
 
 // Define dropdown items with title + desc
@@ -22,7 +22,7 @@ const dropdownData = {
     {
       title: "What sapherchain does",
       desc: "Explore the main features and benefits of the SPH blockchain network.",
-      link: "/sph",
+      link: "/what-sapherchain-does",
     },
     {
       title: "Use Cases",
@@ -34,7 +34,7 @@ const dropdownData = {
       desc: "Get answers to common questions.",
       link: "/faqs",
     },
-    { title: "Get SPH coin", desc: "Wallet details", link: "/" },
+    { title: "Get SPH coin", desc: "Wallet details", link: "https://coin.sapherportal.com/" },
     {
       title: "Wallet",
       desc: "Manage your SPH coins with ease using wallet tools.",
@@ -43,27 +43,31 @@ const dropdownData = {
     {
       title: "Explorer",
       desc: "Track transactions, addresses, and blockchain activity.",
-      link: "/",
+      link: "https://public-chain.sapherportal.com/",
     },
-    { title: "How to stake", desc: "Earn rewards by staking", link: "/" },
+    { title: "How to stake", desc: "Earn rewards by staking", link: "/how-to-stake" },
   ],
   Build: [
-    { title: "API", desc: "Developer API docs", link: "/" },
-    { title: "SDK", desc: "Software development kit", link: "/" },
+    {
+      title: "Documentation",
+      desc: "Official documentation for the Sapher blockchain",
+      link: "/docs",
+    },
+    { title: "API", desc: "Developer API docs", link: "/docs/api" },
+    { title: "SDK", desc: "Software development kit", link: "/docs/sdk" },
     {
       title: "Smart contract guide",
       desc: "Guide for contracts",
-      link: "/",
+      link: "/docs/contracts",
     },
-    { title: "Node setup", desc: "Run your own node", link: "/" },
-    { title: "Testnet info", desc: "Information on testnet", link: "/" },
-    { title: "RPC Endpoints", desc: "Remote procedure calls", link: "/" },
+    { title: "Testnet info", desc: "Information on testnet", link: "/docs/testnet" },
+    { title: "RPC Endpoints", desc: "Remote procedure calls", link: "/docs/rpc" },
     {
       title: "Websocket Endpoints",
       desc: "Realtime connections",
-      link: "/",
+      link: "/docs/websocket",
     },
-    { title: "SDK Downloads", desc: "Download SDKs", link: "/" },
+    { title: "SDK Downloads", desc: "Download SDKs", link: "/docs/sdk-download" },
   ],
   Ecosystem: [
     { title: "Fast speed", desc: "High performance", link: "/" },
@@ -81,7 +85,11 @@ const dropdownData = {
       desc: "Blockchain voting process",
       link: "/voting",
     },
-    { title: "Staking", desc: "Earn rewards by locking coins", link: "/staking" },
+    {
+      title: "Staking",
+      desc: "Earn rewards by locking coins",
+      link: "/staking",
+    },
     {
       title: "Proposals",
       desc: "Learn more about committee proposals",
@@ -110,6 +118,9 @@ const dropdownData = {
 };
 
 const Navbar = () => {
+  const location = useLocation();
+  const isDocsRoute = location.pathname.startsWith("/docs");
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -141,7 +152,11 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-indigo-900 backdrop-blur-md" : "bg-transparent"
+          isDocsRoute
+            ? "bg-indigo-900"
+            : isScrolled
+            ? "bg-indigo-900 backdrop-blur-md"
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
@@ -465,24 +480,40 @@ const Navbar = () => {
 };
 
 // Menu Item Component
+// Menu Item Component
 const DropdownItem = ({ title, desc, link, onClick }) => {
-  return (
+  const isExternal = link.startsWith("http");
+
+  return isExternal ? (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-start justify-between gap-2 px-4 -mx-4 rounded-xl transition-all duration-300 cursor-pointer"
+      onClick={onClick}
+    >
+      <div className="max-w-[240px]">
+        <h4 className="text-gray-300 font-medium group-hover:text-white transition">
+          {title}
+        </h4>
+        <p className="text-xs text-gray-400 break-words">{desc}</p>
+      </div>
+      <ArrowRight
+        size={20}
+        className="text-gray-500 group-hover:text-indigo-600 transition-all duration-500 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2"
+      />
+    </a>
+  ) : (
     <Link
       to={link}
       onClick={onClick}
       className="group flex items-start justify-between gap-2 px-4 -mx-4 rounded-xl transition-all duration-300 cursor-pointer"
     >
       <div className="max-w-[240px]">
-        {" "}
-        {/* yahan width limit de di */}
         <h4 className="text-gray-300 font-medium group-hover:text-white transition">
           {title}
         </h4>
-        <p className="text-xs text-gray-400 break-words">
-          {" "}
-          {/* wrap enable */}
-          {desc}
-        </p>
+        <p className="text-xs text-gray-400 break-words">{desc}</p>
       </div>
       <ArrowRight
         size={20}
@@ -491,5 +522,6 @@ const DropdownItem = ({ title, desc, link, onClick }) => {
     </Link>
   );
 };
+
 
 export default Navbar;

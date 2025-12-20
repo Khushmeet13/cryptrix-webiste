@@ -1,6 +1,6 @@
 import CTASection from "@/components/UseCases/CTASection";
 import FlowDiagram from "@/components/UseCases/FlowDiagram";
-import UseCaseFAQ from "@/components/UseCases/UseCaseFAQ";
+import UseCaseFAQ from "@/components/FAQSection";
 import UseCaseHighlights from "@/components/UseCases/UseCaseHighlights";
 import UseCasesGrid from "@/components/UseCases/UseCasesGrid";
 import React from "react";

@@ -22,6 +22,10 @@ import Proposals from "@/pages/governance/Proposals";
 import CommunityRules from "@/pages/governance/CommunityRules";
 import Wallet from "@/pages/wallet/Wallet";
 import AllWallets from "@/pages/wallet/AllWallets";
+import Documentation from "@/pages/Documentation";
+import HowToStakePage from "@/pages/HowToStakePage";
+import WhatBlockchainDoes from "@/components/Home/WhatBlockchainDoes";
+import WhatSapherChainDoes from "@/pages/WhatSapherChainDoes";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -40,11 +44,20 @@ export default function AppRoutes() {
         <Route element={<TrailingSlashWrapper />}>
           <Route path="/" element={<Home />} />
           <Route path="/sph" element={<IntroPage />} />
+          <Route
+            path="/what-sapherchain-does"
+            element={<WhatSapherChainDoes />}
+          />
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/wallets" element={<Wallet />} />
           <Route path="/sapher-wallets" element={<AllWallets />} />
+          <Route path="/how-to-stake" element={<HowToStakePage />} />
+
+          {/* Build */}
+          <Route path="/docs" element={<Documentation />} />
+          <Route path="/docs/:slug?" element={<Documentation />} />
 
           {/* Governance */}
           <Route path="/voting" element={<VotingSystem />} />

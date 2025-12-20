@@ -3,11 +3,11 @@ import { ChevronDown } from "lucide-react";
 
 
 
-const UseCaseFAQ = ({faqs}) => {
+const UseCaseFAQ = ({faqs = [], bgColor = "bg-gray-50"}) => {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="py-20 px-6 bg-gray-50 text-black">
+    <section className={`py-20 px-6 text-black ${bgColor}`}>
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">FAQs</h2>
 
       <div className="max-w-3xl mx-auto space-y-4">

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import FeaturesSection from "./FeaturesSection";
 import NewsletterSignup from "../Community/NewsletterSignup";
-import UseCaseFAQ from "./UseCaseFAQ";
+import UseCaseFAQ from "../FAQSection";
 import CTASection from "./CTASection";
 import StatsTable from "./StatsTable";
 
