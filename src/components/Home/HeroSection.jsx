@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useMemo } from "react";
 import Globe from "react-globe.gl";
 import HexagonParticles from "./HexagonParticles";
+import VerticalTextTicker from "./VerticalTextTicker";
+import hero_bg from "../../assets/images/hero-bg.png";
 
 const particles = [...Array(30)].map(() => ({
   left: Math.random() * 100,
@@ -159,8 +161,15 @@ const HeroSection = () => {
   return (
     <div
       className="w-full h-[80vh] relative text-white bg-cover bg-center"
-      style={{ backgroundImage: `url('/background.gif')` }}
+      // style={{ backgroundImage: `url('/background.gif')` }}
+      style={{ backgroundImage: `url(${hero_bg})` }}
+
     >
+
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
+
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/50 via-purple-900/30 to-black/60 z-0"></div> */}
+      
       <div className="absolute inset-0 bg-black/10"></div>
       {/* HERO SECTION */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center">
@@ -194,9 +203,9 @@ const HeroSection = () => {
               absolute 
               top-4 left-4
               sm:top-0 sm:-left-10
-              w-40 h-40
-              sm:w-56 sm:h-56
-              lg:w-66 lg:h-66
+              w-30 h-30
+              sm:w-46 sm:h-46
+              lg:w-56 lg:h-56
               bg-cyan-600/30
               rounded-full blur-2xl animate-pulse
             "
@@ -208,10 +217,10 @@ const HeroSection = () => {
               absolute 
               top-20 right-6
               sm:right-20
-              w-44 h-44
-              sm:w-56 sm:h-56
-              lg:w-66 lg:h-66
-              bg-cyan-600/50
+              w-34 h-34
+              sm:w-46 sm:h-46
+              lg:w-56 lg:h-56
+              bg-purple-600/50
               rounded-full blur-2xl animate-pulse
             "
           />
@@ -254,7 +263,7 @@ const HeroSection = () => {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-10">
+        {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-10">
           <div
             ref={globeContainerRef}
             className="flex items-center justify-center"
@@ -278,7 +287,7 @@ const HeroSection = () => {
               hexSideColor={() => "#4f46e5"}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Background gradient */}
         <div className="absolute inset-0 bg-linear-to-r from-indigo-900/60 via-black/10 to-black/60"></div>
@@ -304,13 +313,46 @@ const HeroSection = () => {
         {/* <h1 className="absolute text-[300px] font-extrabold text-white/20 tracking-tight">
           Sapher
         </h1> */}
-        <div className="absolute text-center z-20 font-['Dancing_Script']">
-          <h2 className="sm:text-3xl lg:text-5xl font-medium italic uppercase leading-tight mt-14">
-            The Future of Decentralized
+        <div className="absolute text-center z-20 ">
+          <VerticalTextTicker />
+          <h2 className="sm:text-3xl lg:text-6xl leading-tight mt-6">
+            Safer Evolution of Decentralized
           </h2>
-          <h2 className="sm:text-3xl lg:text-5xl font-medium italic uppercase leading-tight -mt-1">
+          <h2 className="sm:text-3xl lg:text-6xl -mt-1">
             Governance
           </h2>
+
+          <p className="mt-6 text-sm sm:text-base text-gray-300 leading-relaxed">
+            Powering transparent governance with speed, security, and
+            decentralization at global scale.
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-8 flex items-center justify-center gap-4">
+            {/* Primary */}
+            <a
+              href="/docs"
+              className="group inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white text-black font-medium text-sm transition hover:scale-105"
+            >
+              Build
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+
+            {/* Secondary */}
+            <a
+              href="https://public-chain.sapherportal.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-7 py-3 rounded-full border border-white/30 text-white font-medium text-sm backdrop-blur transition hover:bg-white/10"
+            >
+              Explore Network
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 

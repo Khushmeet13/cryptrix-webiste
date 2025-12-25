@@ -36,14 +36,13 @@ const IntroSection = () => {
         <h1 className="text-3xl md:text-6xl font-semibold mb-6 tracking-wide text-black font-['Dancing_Script']">
           Introducing the{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 via-indigo-700 to-blue-700">
-            SPH Coin
+            SapherChain
           </span>
         </h1>
 
         {/* Description */}
         <p className="max-w-2xl mx-auto text-md md:text-xl text-gray-800 leading-relaxed">
-          The digital asset powering the SapherChain ecosystem. Fast, secure,
-          energy-efficient and built for the decentralized future.
+         Sapher chain is a next-generation Layer-1 blockchain built on Governed Proof of Stake (GPoS), combining fast transactions, low fees, and structured on-chain governance that protects the network from chaos while enabling steady evolution.
         </p>
 
         {/* Features */}

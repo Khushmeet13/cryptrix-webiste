@@ -44,11 +44,11 @@ const dropdownData = {
       desc: "Manage your SPH coins with ease using wallet tools.",
       link: "/wallets",
     },
-    {
-      title: "Explorer",
-      desc: "Track transactions, addresses, and blockchain activity.",
-      link: "https://public-chain.sapherportal.com/",
-    },
+    // {
+    //   title: "Explorer",
+    //   desc: "Track transactions, addresses, and blockchain activity.",
+    //   link: "https://public-chain.sapherportal.com/",
+    // },
     {
       title: "How to stake",
       desc: "Earn rewards by staking",
@@ -178,6 +178,12 @@ const Navbar = () => {
     { name: "Build", hasDropdown: true },
     { name: "Ecosystem", hasDropdown: true },
     { name: "Governance", hasDropdown: true },
+    {
+      name: "Explorer",
+      hasDropdown: false,
+      link: "https://public-chain.sapherportal.com/",
+      external: true,
+    },
     { name: "More", hasDropdown: true },
   ];
 
@@ -228,6 +234,14 @@ const Navbar = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <button
+                  onClick={() => {
+                    if (item.name === "Explorer") {
+                      window.open(
+                        "https://public-chain.sapherportal.com/",
+                        "_blank"
+                      );
+                    }
+                  }}
                   className={`
                 relative overflow-hidden
                 flex items-center gap-1 px-5 py-3 rounded-full
@@ -416,22 +430,33 @@ const Navbar = () => {
               }`}
             >
               <button
-                onClick={() =>
+                onClick={() => {
+                  if (!item.hasDropdown && item.name === "Explorer") {
+                    window.open(
+                      "https://public-chain.sapherportal.com/",
+                      "_blank"
+                    );
+                    handleNavLinkClick();
+                    return;
+                  }
+
                   setOpenMobileItem(
                     openMobileItem === item.name ? null : item.name
-                  )
-                }
+                  );
+                }}
                 className="w-full flex items-center justify-between text-lg"
               >
                 {item.name}
-                <ChevronDown
-                  className={`transition-transform ${
-                    openMobileItem === item.name
-                      ? "rotate-180 text-white"
-                      : "text-gray-400"
-                  }`}
-                  size={20}
-                />
+                {item.hasDropdown && (
+                  <ChevronDown
+                    className={`transition-transform ${
+                      openMobileItem === item.name
+                        ? "rotate-180 text-white"
+                        : "text-gray-400"
+                    }`}
+                    size={20}
+                  />
+                )}
               </button>
 
               {/* Dropdown */}
