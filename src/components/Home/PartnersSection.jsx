@@ -57,8 +57,8 @@ const PartnersSection = () => {
   const [active, setActive] = useState(partners[0]);
 
   return (
-    <section className="w-full bg-white pt-10">
-      <h2 className="text-3xl font-semibold text-center text-gray-900 pb-4 lg:pb-0">
+    <section className="w-full bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f] pt-10 text-white">
+      <h2 className="text-2xl sm:text-4xl font-semibold text-center pb-4 lg:pb-0">
         Core Partners
       </h2>
 
@@ -75,7 +75,7 @@ const PartnersSection = () => {
 
         {/* Description */}
         <div className="max-w-xl text-center lg:text-left">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+          <h3 className="text-2xl font-semibold  mb-3">
             {active.name}
           </h3>
           <p className="text-gray-400 leading-relaxed text-sm">{active.desc}</p>
@@ -83,7 +83,7 @@ const PartnersSection = () => {
       </div>
 
       {/* Bottom Icon Row */}
-      <div className="mt-20 bg-gray-100/50 py-10">
+      <div className="mt-20 bg-[#01021f] py-10">
         <div className="flex justify-start lg:justify-center gap-14 px-6 py-10 overflow-x-scroll flex-nowrap scrollbar-hide snap-x snap-mandatory">
           {partners.map((p, i) => (
             <div
@@ -112,7 +112,7 @@ const PartnersSection = () => {
                   className="w-10 h-10 object-contain"
                 />
               </div>
-              <p className="mt-3 text-gray-800 font-medium text-sm">{p.name}</p>
+              <p className="mt-3 text-gray-400 font-medium text-sm">{p.name}</p>
             </div>
           ))}
         </div>

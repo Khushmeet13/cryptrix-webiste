@@ -20,9 +20,9 @@ const insights = [
 
 const InsightsSection = () => {
   return (
-    <section className="w-full py-22 bg-white">
+    <section className="w-full py-22 bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f]">
       {/* Heading */}
-      <h2 className="text-center text-3xl font-semibold text-gray-900 mb-12">
+      <h2 className="text-center text-2xl sm:text-4xl font-semibold text-white mb-12">
         Insights
       </h2>
 

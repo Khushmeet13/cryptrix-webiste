@@ -306,7 +306,7 @@ const AllWallets = () => {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-black text-3xl font-semibold mb-12">
-            Sapher Wallets
+            Wallets
           </h2>
 
           {filteredWallets.length === 0 ? (

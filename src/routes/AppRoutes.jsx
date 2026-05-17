@@ -20,8 +20,8 @@ import VotingSystem from "@/pages/governance/VotingSystem";
 import Staking from "@/pages/governance/Staking";
 import Proposals from "@/pages/governance/Proposals";
 import CommunityRules from "@/pages/governance/CommunityRules";
-import Wallet from "@/pages/getStarted/wallet/Wallet";
-import AllWallets from "@/pages/getStarted/wallet/AllWallets";
+import Wallet from "@/pages/product/wallet/Wallet";
+import AllWallets from "@/pages/product/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
 import HowToStakePage from "@/pages/getStarted/HowToStakePage";
 import WhatSapherChainDoes from "@/pages/getStarted/WhatSapherChainDoes";
@@ -31,6 +31,8 @@ import NodesPage from "@/pages/ecosystem/NodesPage";
 import PartnersPage from "@/pages/ecosystem/PartnersPage";
 import GrantsPage from "@/pages/ecosystem/GrantsPage";
 import EcosystemGrowth from "@/pages/ecosystem/EcosystemGrowth";
+import BlogPage from "@/pages/blog/BlogPage";
+import DexExchange from "@/pages/product/DexExchange";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -48,6 +50,12 @@ export default function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route element={<TrailingSlashWrapper />}>
           <Route path="/" element={<Home />} />
+          <Route path="/wallets" element={<Wallet />} />
+          <Route path="/dex-exchange" element={<DexExchange />} />
+
+
+
+
           <Route path="/sph" element={<IntroPage />} />
           <Route
             path="/what-sapherchain-does"
@@ -56,7 +64,7 @@ export default function AppRoutes() {
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
           <Route path="/faqs" element={<FaqPage />} />
-          <Route path="/wallets" element={<Wallet />} />
+
           <Route path="/sapher-wallets" element={<AllWallets />} />
           <Route path="/how-to-stake" element={<HowToStakePage />} />
 
@@ -77,6 +85,9 @@ export default function AppRoutes() {
           <Route path="/staking" element={<Staking />} />
           <Route path="/proposals" element={<Proposals />} />
           <Route path="/rules" element={<CommunityRules />} />
+
+          {/* blog */}
+          <Route path="/blog" element={<BlogPage />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />

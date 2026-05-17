@@ -14,66 +14,67 @@ import {
 
 const ecosystemItems = [
   {
-    name: "SPH Wallet",
-    desc: "Your official gateway to the Sapher ecosystem, built for fast and secure digital transactions. Manage tokens, track activity, and interact with dApps — all in one smooth experience. Enjoy instant transfers, cross-chain support, and an intuitive interface designed for both beginners and pros.",
+    name: "Cryptrix Wallet",
+    desc: "The official Cryptrix wallet engineered for speed and security. Manage CRX assets, interact with decentralized applications, and execute instant transactions through a sleek, intuitive interface.",
     color: "bg-indigo-500",
     icon: Wallet,
   },
   {
-    name: "Vault",
-    desc: "A secure smart vault designed for long-term digital asset protection. Features automated recovery, multi-signature security, and enterprise-grade encryption. Perfect for storing high-value assets safely, with easy access controls and detailed audit trails for peace of mind.",
+    name: "Cryptrix Vault",
+    desc: "A next-generation digital vault designed for maximum asset protection. Powered by multi-signature authorization, encrypted recovery, and hardened security layers for long-term storage.",
     color: "bg-indigo-500",
     icon: VaultIcon,
   },
   {
-    name: "SPH Explorer",
-    desc: "A powerful blockchain explorer for searching transactions, wallets, and network activity. Fast, transparent, and optimized to help users track SPH data in real time. Analyze network trends, verify contracts, and gain deep insights into the blockchain ecosystem effortlessly.",
+    name: "Cryptrix Explorer",
+    desc: "A real-time blockchain explorer offering complete transparency across the Cryptrix network. Track transactions, wallets, blocks, and smart contracts with precision and speed.",
     color: "bg-indigo-500",
     icon: Aperture,
   },
   {
-    name: "Nodes Hub",
-    desc: "A decentralized hub where validators maintain network security and ultra-fast finality. Built for high performance, low energy consumption, and seamless participation. Monitor node performance, join staking programs, and actively contribute to a robust and scalable network.",
+    name: "Node Network",
+    desc: "A decentralized validator network ensuring fast finality and network integrity. Node operators power Cryptrix with efficient consensus and continuous uptime.",
     color: "bg-indigo-500",
     icon: Computer,
   },
   {
     name: "Smart Contracts",
-    desc: "Create, deploy, and manage smart contracts seamlessly. Automate workflows, reduce intermediaries, and ensure trustless execution on the blockchain.",
+    desc: "Build and deploy secure smart contracts with deterministic execution. Automate trustless logic and scale decentralized applications on Cryptrix infrastructure.",
     color: "bg-indigo-500",
     icon: Layers,
   },
   {
     name: "Network Security",
-    desc: "Advanced security protocols to safeguard transactions and data. Real-time monitoring and protection against unauthorized access or attacks.",
+    desc: "Advanced security architecture protecting transactions, data, and consensus operations. Designed to resist attacks and maintain chain integrity at all times.",
     color: "bg-indigo-500",
     icon: Shield,
   },
   {
     name: "Analytics",
-    desc: "Deep insights into network performance, token activity, and user behavior. Visualize trends and make data-driven decisions.",
+    desc: "Deep on-chain analytics delivering insights into network performance, transaction throughput, and ecosystem growth for informed decision-making.",
     color: "bg-indigo-500",
     icon: Activity,
   },
   {
     name: "Decentralized Storage",
-    desc: "Reliable distributed storage for your digital assets and files. Redundant, secure, and always accessible across the network.",
+    desc: "Secure and distributed storage for digital assets and application data. Built for redundancy, availability, and censorship resistance across the Cryptrix network.",
     color: "bg-indigo-500",
     icon: Database,
   },
   {
     name: "Validators",
-    desc: "Participate as a network validator to secure the blockchain, earn rewards, and contribute to consensus mechanisms.",
+    desc: "Participate as a validator to secure the Cryptrix network, earn rewards, and support its decentralized consensus mechanism.",
     color: "bg-indigo-500",
     icon: Server,
   },
   {
     name: "Governance",
-    desc: "Engage in ecosystem governance. Vote on proposals, shape the network’s future, and participate in decentralized decision-making.",
+    desc: "On-chain governance enabling the Cryptrix community to propose upgrades, vote on changes, and guide the network’s evolution transparently.",
     color: "bg-indigo-500",
     icon: Settings,
   },
 ];
+
 
 const EcosystemSection = () => {
   const sectionRef = useRef(null);
@@ -119,11 +120,11 @@ const EcosystemSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="w-full py-20 bg-gray-50">
+    <section ref={sectionRef} className="w-full py-20 bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f] text-white">
       <div className="max-w-5xl mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-center text-3xl font-semibold mb-16">
-          SapherChain Ecosystem
+        <h2 className="text-center text-2xl sm:text-4xl font-semibold mb-16">
+          Ecosystem
         </h2>
 
         <div className="grid grid-cols-[80px_1fr] lg:grid-cols-1">
@@ -172,8 +173,8 @@ const EcosystemSection = () => {
                   <div className="max-w-2xl p-10 text-center lg:text-left">
                     <h3 className="text-xl md:text-3xl font-semibold">{item.name}</h3>
                     <p className="text-gray-400 mt-4 md:mt-6">{item.desc}</p>
-                    <button className="mt-6 px-6 py-3 bg-black text-white rounded-full relative overflow-hidden group hover:cursor-pointer">
-                      <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700 scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-full"></span>
+                    <button className="mt-6 px-6 py-2.5 bg-white text-black rounded-full relative overflow-hidden group hover:cursor-pointer hover:text-white hover:bg-transparent hover:border-gray-200 hover:border">
+                      <span className="absolute inset-0   scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-full"></span>
                       <span className="relative z-10">Learn more</span>
                     </button>
                   </div>
@@ -181,7 +182,7 @@ const EcosystemSection = () => {
                   {/* Right Hexagon */}
                   <div className="relative hidden lg:block">
                     <div
-                      className={`absolute right-20 -top-16 w-40 h-40 ${item.color} rounded-3xl rotate-45 flex items-center justify-center z-10 transition-all duration-500`}
+                      className={`absolute right-20 -top-16 w-40 h-40 bg-blue-900 rounded-3xl rotate-45 flex items-center justify-center z-10 transition-all duration-500`}
                     >
                       <item.icon size={80} className="-rotate-45 text-white" />
                     </div>
@@ -195,7 +196,7 @@ const EcosystemSection = () => {
       </div>
 
       {/* Bottom Icons Row */}
-      <div className="hidden lg:flex mt-20 bg-white p-4 rounded-md  items-center justify-center flex-wrap gap-10 max-w-6xl mx-auto">
+      <div className="hidden lg:flex mt-16 border border-gray-200 rounded-md  items-center justify-center flex-wrap gap-10 max-w-5xl mx-auto">
         {ecosystemItems.map((item, index) => (
           <div
             key={index}
@@ -203,10 +204,10 @@ const EcosystemSection = () => {
             className="p-4 rounded-full cursor-pointer transition-all hover:opacity-100 opacity-60"
           >
             <item.icon
-              size={40}
+              size={30}
               className={`${
                 index === activeIndex
-                  ? "text-indigo-600"
+                  ? "text-white"
                   : "text-gray-600 hover:text-indigo-600"
               }`}
             />

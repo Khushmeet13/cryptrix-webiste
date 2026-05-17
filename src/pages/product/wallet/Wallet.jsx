@@ -8,7 +8,7 @@ const featureSections = [
     title: "Compliance In A Box",
     highlight: "token extensions",
     description:
-      "Solana's enterprise-ready token extensions make it easy to achieve regulatory compliance and advanced capabilities, no matter where you operate. Turn your wallet into a universal service hub that complies with complex, changing regulations—with all the benefits of blockchain.",
+      "Cryptrix's enterprise-ready token extensions make it easy to achieve regulatory compliance and advanced capabilities, no matter where you operate. Turn your wallet into a universal service hub that complies with complex, changing regulations—with all the benefits of blockchain.",
     points: [
       "Transfer Hooks let you enforce custom rules whenever a token moves between wallets.",
       "Confidential Transfers leverage ZK proofs to keep your transaction details private.",
@@ -19,12 +19,12 @@ const featureSections = [
   },
   {
     title: "One-click Commerce",
-    highlight: "Solana Pay, Solana Actions and Blinks ",
+    highlight: "Cryptrix Pay, Cryptrix Actions and Blinks ",
     description:
-      "Access new forms of commerce, whether you’re most active online or IRL. Solana wallets can enable one-click interactions via QR codes or links, without third-party app involvement.",
+      "Access new forms of commerce, whether you’re most active online or IRL. Cryptrix wallets can enable one-click interactions via QR codes or links, without third-party app involvement.",
     points: [
-      "Solana Pay is an open payments framework that offers instant transactions, near-zero fees, and access to millions of merchants and consumers worldwide via Shopify.",
-      "Solana Actions and Blinks let you turn any onchain transaction into a link that can be shared anywhere on the internet. ",
+      "Cryptrix Pay is an open payments framework that offers instant transactions, near-zero fees, and access to millions of merchants and consumers worldwide via Shopify.",
+      "Cryptrix Actions and Blinks let you turn any onchain transaction into a link that can be shared anywhere on the internet. ",
     ],
     video:
       "https://cdn.builder.io/o/assets%2Fce0c7323a97a4d91bd0baa7490ec9139%2F84b1a021d5e5400397b3ce5cd551a56c%2Fcompressed?apiKey=ce0c7323a97a4d91bd0baa7490ec9139&token=84b1a021d5e5400397b3ce5cd551a56c&alt=media&optimized=true",
@@ -46,7 +46,7 @@ const featureSections = [
     title: "Feeless Transactions",
     highlight: "Octane",
     description:
-      "Solana’s feepayer function lets builders sponsor transaction fees across a wide range of onchain interactions. The result? Easy onboarding and frictionless experiences for new and existing users alike.",
+      "Cryptrix’s feepayer function lets builders sponsor transaction fees across a wide range of onchain interactions. The result? Easy onboarding and frictionless experiences for new and existing users alike.",
     points: [
       "Octane is a feeless transaction relayer that makes it easy to cover transaction costs on behalf of users, using any SPL token.",
     ],
@@ -57,7 +57,7 @@ const featureSections = [
     title: "Simple, Secure Key Management",
     highlight: "Dynamic  Passkeys ",
     description:
-      "Intuitive key management solutions on Solana eliminate the need for seed phrases, email verifications, and passwords. Swap out manual safeguards for more secure, seamless web3 experiences.",
+      "Intuitive key management solutions on Cryptrix eliminate the need for seed phrases, email verifications, and passwords. Swap out manual safeguards for more secure, seamless web3 experiences.",
     points: [
       "Exodus Passkeys let you access and transact across multiple web3 platforms via passwordless authentication—all through one secure, user-friendly interface.",
       "Dynamic offers a suite of tools for effortless wallet creation, login, and user ",
@@ -71,7 +71,7 @@ const featureSections = [
 const multiSigData = {
   title: "Advanced Multi-Signature Functionalities",
   description:
-    "Solana’s multisig wallets give you the control, security, and automation needed to manage digital assets in any online environment.",
+    "Cryptrix’s multisig wallets give you the control, security, and automation needed to manage digital assets in any online environment.",
   points: [
     "Custom Signatures: Lock down your assets with customizable multisig approvals, so transactions are only executed when the right users sign off.",
     "Self-Executing Payments: Streamline operations by automating recurring payments like payroll, vendor payments, and token vesting schedules.",
@@ -85,19 +85,19 @@ const sectionsData = [
     id: "build",
     heading: "Build",
     subheading:
-      "Solana provides both new and experienced developers with everything they need to build their own custom wallet.",
+      "Cryptrix provides both new and experienced developers with everything they need to build their own custom wallet.",
     cards: [
       {
         title: "Just Getting Started?",
         description:
-          "Solana’s Wallet Builder’s Starter Kit provides the foundational knowledge necessary to create your own Solana wallet.",
+          "Cryptrix’s Wallet Builder’s Starter Kit provides the foundational knowledge necessary to create your own Cryptrix wallet.",
         cta: "Learn More",
         link: "#",
       },
       {
         title: "Unpack the Essentials",
         description:
-          "The Solana Wallet Guide gives a simple overview of different wallet builds, including advanced features, clients, and development environments.",
+          "The Cryptrix Wallet Guide gives a simple overview of different wallet builds, including advanced features, clients, and development environments.",
         cta: "Learn More",
         link: "#",
       },
@@ -145,7 +145,7 @@ const sectionsData = [
     id: "develop",
     heading: "Developer Resources",
     subheading:
-      "Ready to run your own Solana wallet? Here are a few example implementations to help you get started.",
+      "Ready to run your own Cryptrix wallet? Here are a few example implementations to help you get started.",
     cards: [
       {
         title: "Hello World Wallet Guide",
@@ -177,33 +177,34 @@ const Wallet = () => {
 
   return (
     <div className="w-full">
-      <section className="relative h-[70vh] bg-gradient-to-br from-indigo-900 via-indigo-950/40 to-black flex items-center justify-center">
-        <div className="text-white text-center space-y-6 max-w-3xl px-4">
-          <h3 className="text-indigo-400 text-sm tracking-widest">WALLETS</h3>
+      <section className="relative h-[80vh] bg-gradient-to-br from-[#01021f] via-[#000239] to-black flex items-center justify-center">
+        <div className="text-white text-center max-w-3xl px-4">
+          <h3 className="text-blue-400 text-sm tracking-widest">WALLETS</h3>
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-6xl font-semibold">
+              Limitless Customizations, Connections, & Control
+            </h2>
 
-          <h2 className="text-3xl md:text-6xl font-bold">
-            Limitless Customizations, Connections, & Control
-          </h2>
+            <p className="text-xl text-gray-3400 font-semibold">
+              Welcome to a more programmable, powerful way to blockchain.
+            </p>
 
-          <p className="text-xl text-gray-3400 font-semibold">
-            Welcome to a more programmable, powerful way to blockchain.
-          </p>
-
-          <p className="text-base text-gray-300">
-            Sapher wallets offer more than custody – they’re the gateway to web3
-            apps and services. Create a custom solution or amplify your
-            offerings with an existing Solana implementation.
-          </p>
+            <p className="text-base text-gray-300">
+              Cryptrix wallets offer more than custody – they’re the gateway to web3
+              apps and services. Create a custom solution or amplify your
+              offerings with an existing implementation.
+            </p>
+          </div>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <button
               type="button"
-              className={`relative px-6 py-3 bg-indigo-600 text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
+              className={`relative px-6 py-3 bg-white text-black text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
             >
               {/* Text + Icon */}
               <span className="relative z-10 flex items-center gap-1">
                 Start Building Today
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowUpRight className="w-4 h-4" />
               </span>
             </button>
 
@@ -222,18 +223,18 @@ const Wallet = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-[#01021f] py-20 px-4 text-white">
         <div
           className="relative max-w-6xl mx-auto  rounded-2xl p-10 md:p-14 
-                  border-b-2 border-indigo-500 
+                  border-b-2 border-blue-500 
                   shadow-[0_20px_40px_-12px_rgba(99,102,241,0.45)]"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-start mb-6 text-black pb-3 border-b">
+          <h2 className="text-3xl md:text-4xl font-medium text-start mb-6 pb-3 border-b">
             Unlock Programmable Money
           </h2>
 
-          <p className="text-base md:text-lg text-gray-500 text-start leading-relaxed  mx-auto">
-            Wallets built on Solana don’t just safeguard your assets—they
+          <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
+            Wallets built on Cryptrix don’t just safeguard your assets—they
             unleash full programmability. Automate an open-ended array of
             advanced wallet functionalities, including subscription services,
             KYC rules, loyalty programs, and more.
@@ -241,7 +242,7 @@ const Wallet = () => {
         </div>
       </section>
 
-      <section className="bg-white py-22">
+      <section className="bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f] text-white py-22">
         <div className="max-w-7xl mx-auto px-6 space-y-12">
           {featureSections.slice(0, 4).map((item, index) => {
             const isReversed = index % 2 !== 0;
@@ -249,19 +250,18 @@ const Wallet = () => {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center  ${
-                  isReversed ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col lg:flex-row items-center  ${isReversed ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Content */}
                 <div className="flex-1">
-                  <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                  <h2 className="text-2xl md:text-4xl font-normal mb-6">
                     {item.title}
                   </h2>
 
                   <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                    Solana’s enterprise-ready{" "}
-                    <span className="text-indigo-600 font-medium">
+                    Cryptrix enterprise-ready{" "}
+                    <span className="text-blue-400 font-medium">
                       {item.highlight}
                     </span>{" "}
                     {item.description.replace(item.highlight, "")}
@@ -270,7 +270,7 @@ const Wallet = () => {
                   <ul className="space-y-4">
                     {item.points.map((point, i) => (
                       <li key={i} className="flex gap-3 text-gray-400">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-indigo-600" />
+                        <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -299,24 +299,24 @@ const Wallet = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-[#01021f] py-20 px-4 text-white">
         <div
           className="relative max-w-6xl mx-auto  rounded-2xl p-10 md:p-14 
-                  border-b-2 border-indigo-500 
+                  border-b-2 border-blue-500 
                   shadow-[0_20px_40px_-12px_rgba(99,102,241,0.45)]"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-start mb-6 text-black pb-3 border-b">
+          <h2 className="text-3xl md:text-4xl font-semibold text-start mb-6 pb-3 border-b">
             Unrivaled Security
           </h2>
 
-          <p className="text-base md:text-lg text-gray-500 text-start leading-relaxed  mx-auto">
+          <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
             Solutions offered by Sapher wallets offer unrivaled security and
             provide the end user with a seamless, integrated web3 experience.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-22">
+      <section className="bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f] text-white py-22">
         <div className="max-w-7xl mx-auto px-6 space-y-12">
           {featureSections.slice(-1).map((item, index) => {
             const isReversed = index % 2 !== 0;
@@ -324,19 +324,18 @@ const Wallet = () => {
             return (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center  ${
-                  isReversed ? "lg:flex-row-reverse" : ""
-                }`}
+                className={`flex flex-col lg:flex-row items-center  ${isReversed ? "lg:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Content */}
                 <div className="flex-1">
-                  <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                  <h2 className="text-2xl md:text-4xl mb-6">
                     {item.title}
                   </h2>
 
                   <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                    Solana’s enterprise-ready{" "}
-                    <span className="text-indigo-600 font-medium">
+                    Cryptrix’s enterprise-ready{" "}
+                    <span className="text-blue-400 font-medium">
                       {item.highlight}
                     </span>{" "}
                     {item.description.replace(item.highlight, "")}
@@ -345,7 +344,7 @@ const Wallet = () => {
                   <ul className="space-y-4">
                     {item.points.map((point, i) => (
                       <li key={i} className="flex gap-3 text-gray-400">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-indigo-600" />
+                        <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -373,18 +372,18 @@ const Wallet = () => {
           })}
 
           <div className="max-w-6xl space-y-6 px-18">
-            <h2 className="text-3xl md:text-4xl font-bold text-black">
+            <h2 className="text-3xl md:text-4xl text-white">
               {multiSigData.title}
             </h2>
 
-            <p className="text-gray-500 text-lg leading-relaxed">
+            <p className="text-gray-400 text-lg leading-relaxed">
               {multiSigData.description}
             </p>
 
             <ul className="space-y-4 pl-8">
               {multiSigData.points.map((point, index) => (
-                <li key={index} className="flex gap-3 text-gray-600">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-indigo-600" />
+                <li key={index} className="flex gap-3 text-gray-400">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -393,17 +392,17 @@ const Wallet = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-[#01021f] text-white py-20 px-4">
         <div
           className="relative max-w-6xl mx-auto  rounded-2xl p-10 md:p-14 
-                  border-b-2 border-indigo-500 
+                  border-b-2 border-blue-500 
                   shadow-[0_20px_40px_-12px_rgba(99,102,241,0.45)]"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-start mb-6 text-black pb-3 border-b">
+          <h2 className="text-3xl md:text-4xl font-semibold text-start mb-6 pb-3 border-b">
             Powered By the Sapher Virtual Machine
           </h2>
 
-          <p className="text-base md:text-lg text-gray-500 text-start leading-relaxed  mx-auto">
+          <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
             The SPH provides the underlying infrastructure for Sapher's secure,
             high-performance wallets.
           </p>
@@ -412,8 +411,8 @@ const Wallet = () => {
         <div className="flex justify-center pt-12 px-42">
           <ul className="space-y-4 pl-8">
             {multiSigData.points.map((point, index) => (
-              <li key={index} className="flex gap-3 text-gray-600">
-                <span className="mt-2 h-2 w-2 rounded-full bg-indigo-600" />
+              <li key={index} className="flex gap-3 text-gray-400">
+                <span className="mt-2 h-2 w-2 rounded-full bg-blue-400" />
                 <span>{point}</span>
               </li>
             ))}
@@ -421,11 +420,11 @@ const Wallet = () => {
         </div>
       </section>
 
-      <section className="bg-white py-24 space-y-32">
-        {sectionsData.slice(0,2).map((section) => (
+      <section className="bg-gradient-to-br from-[#01021f] via-[#000239] to-[#01021f] text-white py-24 space-y-32">
+        {sectionsData.slice(0, 2).map((section) => (
           <div key={section.id} className="max-w-7xl mx-auto px-6">
             {/* Heading */}
-            <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-2">
               {section.heading}
             </h2>
 
@@ -447,7 +446,7 @@ const Wallet = () => {
                            hover:shadow-[inset_0_-14px_18px_-6px_rgba(99,102,241,0.45)]
                            "
                 >
-                  <h3 className="text-2xl font-medium text-black mb-4">
+                  <h3 className="text-2xl font-medium text-white mb-4">
                     {card.title}
                   </h3>
 
@@ -457,8 +456,8 @@ const Wallet = () => {
 
                   <button
                     className="inline-flex items-center rounded-full
-                                   bg-indigo-600 px-6 py-2 text-sm font-medium text-white
-                                   transition hover:bg-indigo-500"
+                                   border border-white px-6 py-2 text-sm font-medium text-white
+                                   transition hover:bg-white hover:text-black"
                   >
                     {card.cta}
                   </button>
@@ -469,21 +468,48 @@ const Wallet = () => {
         ))}
 
         <div
-          className="relative max-w-6xl mx-auto  rounded-2xl p-10 md:p-14 
-                  shadow-md bg-gray-50 flex flex-col items-center justify-center"
+          className="relative max-w-6xl mx-auto rounded-2xl p-10 md:p-14 
+              shadow-[0_20px_40px_-12px_rgba(99,102,241,0.45)] flex flex-col items-center justify-center overflow-hidden"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-black">
+          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6 text-white">
             Want to explore more options?
           </h2>
-          <button className="inline-flex items-center rounded-full bg-indigo-600 px-6 py-2 text-sm font-medium text-white ransition hover:bg-indigo-500">
+
+          <button className="inline-flex items-center rounded-full bg-white px-6 py-2 text-sm font-medium text-black transition">
             Compare Wallets
           </button>
+
+          <svg
+            viewBox="0 0 1024 1024"
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+               -z-10 w-[64rem] h-[64rem]"
+          >
+            <circle
+              r="512"
+              cx="512"
+              cy="512"
+              fill="url(#gradient)"
+              fillOpacity="0.7"
+            />
+            <defs>
+              <radialGradient
+                id="gradient"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(512 512) rotate(90) scale(512)"
+              >
+                <stop stopColor="#7775D6" />
+                <stop offset="1" stopColor="#E935C1" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+          </svg>
         </div>
+
 
         {sectionsData.slice(-1).map((section) => (
           <div key={section.id} className="max-w-7xl mx-auto px-6">
             {/* Heading */}
-            <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold  mb-2">
               {section.heading}
             </h2>
 
@@ -505,7 +531,7 @@ const Wallet = () => {
                            hover:shadow-[inset_0_-14px_18px_-6px_rgba(99,102,241,0.45)]
                            "
                 >
-                  <h3 className="text-2xl font-medium text-black mb-4">
+                  <h3 className="text-2xl font-medium mb-4">
                     {card.title}
                   </h3>
 
@@ -515,8 +541,8 @@ const Wallet = () => {
 
                   <button
                     className="inline-flex items-center rounded-full
-                                   bg-indigo-600 px-6 py-2 text-sm font-medium text-white
-                                   transition hover:bg-indigo-500"
+                                    border border-white px-6 py-2 text-sm font-medium text-white
+                                   transition hover:bg-white hover:text-black"
                   >
                     {card.cta}
                   </button>

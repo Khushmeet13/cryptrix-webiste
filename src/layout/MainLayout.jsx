@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BottomBar from "../components/BottomBar";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 export default function MainLayout() {
   useEffect(() => {
@@ -35,7 +36,8 @@ export default function MainLayout() {
         <Footer />
 
         <BottomBar />
-
+{/* 
+        <ChatbotWidget /> */}
         <div className="h-[22vh]" />
       </div>
     </>

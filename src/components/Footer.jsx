@@ -57,18 +57,30 @@ const Footer = () => {
 
   const footerLinks = [
     {
-      title: "Get Started",
+      title: "Product",
       links: [
-        "Learn",
-        "What is TRX?",
-        "TRON USDT",
-        "Whitepaper",
-        "FAQs",
-        "Quick Start",
-        "Get TRX",
-        "Select a Wallet",
-        "Explorer",
-        "Developer Center",
+        "Platform",
+        "Wallet",
+        "DEX / Exchange",
+        "NFT Platform",
+        "Staking",
+        "Dashboard",
+        "Technology",
+        "Smart Contracts",
+        "APIs & SDKs",
+        "Integrations",
+        "Testnet",
+        "Explorer"
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        "DeFi",
+        "Developer Tools",
+        "GitHub",
+        "Audit Reports",
+        "Bug Bounty",
       ],
     },
     {
@@ -81,19 +93,19 @@ const Footer = () => {
         "Bug Bounty",
       ],
     },
-    {
-      title: "Ecosystem",
-      links: [
-        "Fast speed",
-        "Low fee",
-        "Smart contracts",
-        "Security",
-        "Scalability",
-        "Payments",
-        "Gaming",
-        "NFTs",
-      ],
-    },
+    // {
+    //   title: "Ecosystem",
+    //   links: [
+    //     "Fast speed",
+    //     "Low fee",
+    //     "Smart contracts",
+    //     "Security",
+    //     "Scalability",
+    //     "Payments",
+    //     "Gaming",
+    //     "NFTs",
+    //   ],
+    // },
     {
       title: "Governance",
       links: [
@@ -119,7 +131,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black border-t border-gray-800">
+    <footer className="bg-[#01021f] border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-22">
         {/* Top Contact Section */}
         <div className="mb-12 border-b border-gray-800 pb-10">
@@ -131,25 +143,18 @@ const Footer = () => {
 
               <div className="flex flex-wrap items-center gap-6 text-sm">
                 <a
-                  href="mailto:press@sapher.network"
+                  href="mailto:press@cryptrix.network"
                   className="flex items-center gap-2 text-gray-400 hover:text-white transition"
                 >
                   <Mail className="w-5 h-5 text-indigo-500" />
-                  press@sapher.network
+                  press@cryptrix.network
                 </a>
                 <a
-                  href="mailto:service@sapher.network"
+                  href="mailto:service@cryptrix.network"
                   className="flex items-center gap-2 text-gray-400 hover:text-white transition"
                 >
                   <Mail className="w-5 h-5 text-indigo-500" />
-                  service@sapher.network
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 text-gray-400 hover:text-white transition"
-                >
-                  <Shell className="w-5 h-5 text-indigo-500" />
-                  Whistleblower Notice
+                  service@cryptrix.network
                 </a>
               </div>
 
@@ -172,7 +177,7 @@ const Footer = () => {
 
             <div className="mt-12">
               <div className="text-md md:text-xl font-semibold tracking-wider text-gray-500">
-                SAPHER BLOCKCHAIN
+                CRYPTRIX
               </div>
               <div className="flex gap-4 flex-wrap mt-5 md:mt-8">
                 {socialItems.map((item) => (

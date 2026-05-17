@@ -10,11 +10,11 @@ export default function BottomBar() {
           {/* Left Section */}
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
             <span className="text-2xl sm:text-3xl font-bold tracking-tighter">
-              SAPHER
+              CRYPTRIX
             </span>
 
             <span className="text-xs sm:text-sm opacity-90 leading-relaxed">
-              Copyright © 2017–2025 SAPHER Tech Limited. | All rights reserved.{" "}
+              Copyright © 2017–2025 CRYPTRIX Tech Limited. | All rights reserved.{" "}
               <a href="#" className="underline hover:no-underline">
                 Privacy Policy
               </a>

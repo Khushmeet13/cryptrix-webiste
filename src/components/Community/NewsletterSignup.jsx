@@ -5,7 +5,7 @@ const NewsletterSignup = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="relative py-32 pt-20 overflow-hidden bg-white">
+    <section className="relative py-22 overflow-hidden bg-[#01021f]">
       {/* Floating 3D Background Shapes - Pure CSS */}
       <div className="absolute inset-0 pointer-events-none hidden md:block">
         <div className="absolute top-10 left-10 w-96 h-96 opacity-20">
@@ -38,12 +38,12 @@ const NewsletterSignup = () => {
       <div className="relative z-10 max-w-2xl sm:max-w-6xl mx-auto md:px-6">
         <div className="backdrop-blur-xl bg-white/5 border rounded-2xl p-8 sm:p-12 md:p-16 text-center border border-gray-200">
           {/* Small Upper Text */}
-          <p className="text-indigo-600 font-medium tracking-widest text-xs sm:text-sm uppercase mb-3">
+          <p className="text-blue-400 font-medium tracking-widest text-xs sm:text-sm uppercase mb-3">
             Stay up to date
           </p>
 
           {/* Main Title */}
-          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-8 leading-tight">
             Get our newsletter
           </h2>
 
@@ -55,17 +55,17 @@ const NewsletterSignup = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-6 py-3 md:px-8 md:py-5 bg-white/10 border border-gray-500 rounded-full text-black placeholder-gray-500 
-                         focus:outline-none focus:border-indigo-600 focus:bg-white/15 transition-all duration-300
+                className="w-full px-6 py-3 md:px-8 md:py-3  border border-gray-500 rounded-full text-white placeholder-gray-400 
+                         focus:outline-none focus:border-blue-400  transition-all duration-300
                          text-xs md:text-base backdrop-blur-md"
               />
             </div>
 
             <button
               type="submit"
-              className="relative px-4 py-2 sm:px-6 sm:py-3 bg-black text-white text-xs sm:text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/40 transform hover:scale-105 hover:cursor-pointer"
+              className="relative px-4 py-2 sm:px-6 sm:py-3 bg-white text-black text-xs sm:text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/40 transform hover:cursor-pointer hover:text-white"
             >
-              <span className="absolute inset-0 bg-indigo-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full" />
+              <span className="absolute inset-0 bg-blue-400  translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full" />
               <span className="relative z-10 flex items-center gap-1">
                 Subscribe
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />

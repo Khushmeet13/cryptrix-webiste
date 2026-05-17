@@ -3,32 +3,33 @@ import { Cpu, Layers, ShieldCheck } from "lucide-react";
 
 const features = [
   {
-    title: "High-throughput",
-    desc: "SapherChain offers extremely high TPS performance, making it efficient for daily transactions and scalable as network demand grows.",
-    icon: <Cpu size={28} className="text-indigo-500" />,
+    title: "High Throughput",
+    desc: "Cryptrix is engineered for ultra-high transaction throughput, enabling thousands of transactions per second with near-instant finality.",
+    icon: <Cpu size={28} className="text-blue-500" />,
   },
   {
-    title: "High-scalability",
-    desc: "Smart contracts and modular chain architecture allow developers to deploy diverse applications, supporting a massive and growing user ecosystem.",
-    icon: <Layers size={28} className="text-indigo-500" />,
+    title: "Infinite Scalability",
+    desc: "Modular architecture and optimized smart contract execution allow Cryptrix to scale seamlessly as users, validators, and applications grow.",
+    icon: <Layers size={28} className="text-blue-500" />,
   },
   {
-    title: "High-availability",
-    desc: "SapherChain’s decentralized consensus ensures network reliability, user asset security, and uninterrupted operations across the network.",
-    icon: <ShieldCheck size={28} className="text-indigo-500" />,
+    title: "Always Available",
+    desc: "A decentralized validator network ensures maximum uptime, fault tolerance, and continuous access to assets and applications worldwide.",
+    icon: <ShieldCheck size={28} className="text-blue-500" />,
   },
 ];
 
+
 const Features = () => {
   return (
-    <section className="w-full py-22 pb-36 bg-white">
+    <section className="w-full py-22 pb-36 bg-[#01021f] text-white">
       {/* Heading */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl font-semibold text-gray-900 tracking-tight">
-          SapherChain Features
+        <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight">
+          Our Features
         </h2>
-        <p className="text-gray-500 mt-3">
-          Discover what makes SapherChain a powerful decentralized blockchain network.
+        <p className="text-gray-400 mt-3">
+          Discover what makes a powerful decentralized blockchain network.
         </p>
       </div>
 
@@ -38,9 +39,9 @@ const Features = () => {
           <div
             key={index}
             className="
-              bg-white border border-gray-100 rounded-2xl p-8 shadow-sm 
-              hover:shadow-xl hover:-translate-y-1 transition-all duration-300
-              relative
+               border border-gray-100 hover:border-blue-900 rounded-2xl p-8 
+              hover:shadow-[0_0_20px_rgba(0,122,255,0.35)] hover:-translate-y-1 transition-all duration-300
+              relative text-white
             "
           >
             {/* Icon */}
@@ -49,7 +50,7 @@ const Features = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-semibold text-gray-900">
+            <h3 className="text-xl font-semibold">
               {item.title}
             </h3>
 
@@ -57,7 +58,7 @@ const Features = () => {
             <div className="w-full h-px bg-gray-200 my-5"></div>
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+            <p className="text-gray-400 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>

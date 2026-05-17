@@ -3,6 +3,7 @@ import Globe from "react-globe.gl";
 import HexagonParticles from "./HexagonParticles";
 import VerticalTextTicker from "./VerticalTextTicker";
 import hero_bg from "../../assets/images/hero-bg.png";
+import TypewriterText from "../Common/TypewriterText ";
 
 const particles = [...Array(30)].map(() => ({
   left: Math.random() * 100,
@@ -160,16 +161,22 @@ const HeroSection = () => {
 
   return (
     <div
-      className="w-full h-[80vh] relative text-white bg-cover bg-center"
+      className="w-full h-[80vh] relative text-white  overflow-hidden bg-cover bg-center"
       // style={{ backgroundImage: `url('/background.gif')` }}
       style={{ backgroundImage: `url(${hero_bg})` }}
 
     >
 
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+      <div
+        className="absolute inset-0  opacity-40 bg-cover bg-center"
+        style={{ backgroundImage: "url('/background.gif')" }}
+      ></div>
+
+
+      <div className="absolute inset-0 bg-black/20 z-0"></div>
 
       {/* <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/50 via-purple-900/30 to-black/60 z-0"></div> */}
-      
+
       <div className="absolute inset-0 bg-black/10"></div>
       {/* HERO SECTION */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center">
@@ -263,7 +270,7 @@ const HeroSection = () => {
             backgroundSize: "80px 80px",
           }}
         />
-        {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-10">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none mt-10">
           <div
             ref={globeContainerRef}
             className="flex items-center justify-center"
@@ -287,7 +294,7 @@ const HeroSection = () => {
               hexSideColor={() => "#4f46e5"}
             />
           </div>
-        </div> */}
+        </div>
 
         {/* Background gradient */}
         <div className="absolute inset-0 bg-linear-to-r from-indigo-900/60 via-black/10 to-black/60"></div>
@@ -315,17 +322,15 @@ const HeroSection = () => {
         </h1> */}
         <div className="absolute text-center z-20 ">
           <VerticalTextTicker />
-          <h2 className="sm:text-3xl lg:text-6xl leading-tight mt-6">
-            Safer Evolution of Decentralized
+          <h2 className="sm:text-3xl lg:text-5xl leading-tight mt-6">
+            Connecting the World Through Trustless Systems.
           </h2>
-          <h2 className="sm:text-3xl lg:text-6xl -mt-1">
-            Governance
-          </h2>
+          <TypewriterText />
 
-          <p className="mt-6 text-sm sm:text-base text-gray-300 leading-relaxed">
-            Powering transparent governance with speed, security, and
-            decentralization at global scale.
+          <p className="mt-6 text-sm sm:text-xl text-gray-300 leading-relaxed">
+            Enabling trustless governance through secure, scalable, and decentralized infrastructure.
           </p>
+
 
           {/* Buttons */}
           <div className="mt-8 flex items-center justify-center gap-4">
@@ -342,9 +347,7 @@ const HeroSection = () => {
 
             {/* Secondary */}
             <a
-              href="https://public-chain.sapherportal.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/ecosystem"
               className="group inline-flex items-center gap-2 px-7 py-3 rounded-full border border-white/30 text-white font-medium text-sm backdrop-blur transition hover:bg-white/10"
             >
               Explore Network
@@ -356,6 +359,8 @@ const HeroSection = () => {
         </div>
       </section>
 
+      
+
       {/* STATS SECTION */}
       <section className="relative w-full flex justify-center">
         <div
@@ -365,13 +370,13 @@ const HeroSection = () => {
           }}
         >
           {/* Top Strip */}
-          <div className="bg-indigo-900/80 text-white py-4 text-center text-base">
-            Boasting over 349 million accounts and 12.2 billion transactions,
-            SAPHER is the world’s fastest-growing public chain.
+          <div className="bg-indigo-950 text-white py-4 text-center text-base">
+            Trusted by a growing global community, Cryptrix delivers secure, scalable, and transparent blockchain infrastructure for next-generation decentralized applications.
           </div>
 
+
           {/* Stats Grid */}
-          <div className="py-0 lg:py-4 lg:px-6 px-0">
+          {/* <div className="py-0 lg:py-4 lg:px-6 px-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
               <StatBox label="Total Number of Accounts" value="349,751,624" />
               <StatBox
@@ -382,7 +387,7 @@ const HeroSection = () => {
               <StatBox label="Total Value Locked" value="$22,956,679,23" />
               <StatBox label="Transfer Volume (24h)" value="$29,923,907,157" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

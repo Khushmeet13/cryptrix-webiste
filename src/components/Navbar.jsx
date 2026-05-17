@@ -8,50 +8,60 @@ import {
   X,
   ChevronRight,
 } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/sapherchain-logo-white.png";
 
 // Define dropdown items with title + desc
 const dropdownData = {
-  "Get Started": [
+  Product: [
     {
-      title: "What is SPH",
-      desc: "Quick overview of blockchain",
-      link: "/sph",
+      title: "Wallet",
+      desc: "Store, send, and manage tokens securely.",
+      link: "/wallets",
     },
     {
-      title: "What sapherchain does",
-      desc: "Explore the main features and benefits of the SPH blockchain network.",
-      link: "/what-sapherchain-does",
+      title: "DEX / Exchange",
+      desc: "Trade tokens instantly on a decentralized exchange.",
+      link: "/dex-exchange",
     },
     {
-      title: "Use Cases",
-      desc: "Explore real examples and practical applications.",
+      title: "NFT Platform",
+      desc: "Mint, trade, and manage NFTs on-chain.",
       link: "/use-cases",
     },
     {
-      title: "FAQs",
-      desc: "Get answers to common questions.",
+      title: "Staking",
+      desc: "Stake SPH tokens and earn rewards.",
       link: "/faqs",
     },
     {
-      title: "Get SPH coin",
-      desc: "Wallet details",
+      title: "Dashboard",
+      desc: "Track balances, rewards, and activity.",
+      link: "/faqs",
+    },
+    {
+      title: "Smart Contracts",
+      desc: "Build and deploy smart contracts.",
       link: "https://coin.sapherportal.com/",
     },
     {
-      title: "Wallet",
-      desc: "Manage your SPH coins with ease using wallet tools.",
+      title: "APIs & SDKs",
+      desc: "Integrate SapherChain into your apps.",
       link: "/wallets",
     },
-    // {
-    //   title: "Explorer",
-    //   desc: "Track transactions, addresses, and blockchain activity.",
-    //   link: "https://public-chain.sapherportal.com/",
-    // },
     {
-      title: "How to stake",
-      desc: "Earn rewards by staking",
+      title: "Integrations",
+      desc: "Connect with external tools and services.",
+      link: "/",
+    },
+    {
+      title: "Testnet",
+      desc: "Test features in a safe environment.",
+      link: "/how-to-stake",
+    },
+    {
+      title: "Explorer",
+      desc: "Explore blocks, transactions, and addresses.",
       link: "/how-to-stake",
     },
   ],
@@ -89,34 +99,34 @@ const dropdownData = {
       link: "/docs/sdk-download",
     },
   ],
-  Ecosystem: [
+  Solutions: [
     {
-      title: "Network Overview",
+      title: "DeFi",
       desc: "Live statistics of the SapherChain network",
       link: "/ecosystem",
     },
     {
-      title: "Validators",
+      title: "Gaming",
       desc: "Active validators securing the network",
       link: "/validators",
     },
     {
-      title: "Nodes",
+      title: "Enterprises",
       desc: "Global node infrastructure",
       link: "/nodes",
     },
     {
-      title: "Ecosystem Growth",
+      title: "Payments",
       desc: "Milestones and upcoming upgrades",
       link: "/ecosystem-growth",
     },
     {
-      title: "Partners",
+      title: "Identity",
       desc: "Companies and projects building on SPH",
       link: "/partners",
     },
     {
-      title: "Grants Program",
+      title: "Supply Chain",
       desc: "Funding for developers & startups",
       link: "/grants",
     },
@@ -124,6 +134,28 @@ const dropdownData = {
       title: "Status",
       desc: "Real-time network & service uptime",
       link: "/status",
+    },
+  ],
+  Token: [
+    {
+      title: "Token Utility",
+      desc: "How SPH is used across the ecosystem",
+      link: "/token/utility",
+    },
+    {
+      title: "Tokenomics",
+      desc: "Supply, distribution & economics",
+      link: "/token/tokenomics",
+    },
+    {
+      title: "Staking & Rewards",
+      desc: "Earn rewards by staking SPH",
+      link: "/token/staking",
+    },
+    {
+      title: "Vesting",
+      desc: "Unlock schedules & allocations",
+      link: "/token/vesting",
     },
   ],
   Governance: [
@@ -148,6 +180,33 @@ const dropdownData = {
       link: "/rules",
     },
   ],
+  Resources: [
+    {
+      title: "Whitepaper",
+      desc: "Blockchain voting process",
+      link: "/voting",
+    },
+    {
+      title: "Roadmap",
+      desc: "Earn rewards by locking coins",
+      link: "/staking",
+    },
+    {
+      title: "Blog",
+      desc: "Learn more about committee proposals",
+      link: "/proposals",
+    },
+    {
+      title: "FAQs",
+      desc: "Guidelines for participation",
+      link: "/rules",
+    },
+    {
+      title: "Security & Audits",
+      desc: "Guidelines for participation",
+      link: "/rules",
+    },
+  ],
   More: [
     {
       title: "Resources",
@@ -165,6 +224,7 @@ const dropdownData = {
 };
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const isDocsRoute = location.pathname.startsWith("/docs");
 
@@ -174,16 +234,12 @@ const Navbar = () => {
   const [openMobileItem, setOpenMobileItem] = useState(null);
 
   const navItems = [
-    { name: "Get Started", hasDropdown: true },
+    { name: "Product", hasDropdown: true },
+    { name: "Solutions", hasDropdown: true },
     { name: "Build", hasDropdown: true },
-    { name: "Ecosystem", hasDropdown: true },
+    { name: "Token", hasDropdown: true },
     { name: "Governance", hasDropdown: true },
-    {
-      name: "Explorer",
-      hasDropdown: false,
-      link: "https://public-chain.sapherportal.com/",
-      external: true,
-    },
+    { name: "Resources", hasDropdown: true },
     { name: "More", hasDropdown: true },
   ];
 
@@ -204,22 +260,21 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-          isDocsRoute
-            ? "bg-indigo-900"
-            : isScrolled
-            ? "bg-indigo-900 backdrop-blur-md"
+        className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${isDocsRoute
+          ? "bg-blue-950"
+          : isScrolled
+            ? "bg-blue-950 backdrop-blur-md"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           {/* LEFT LOGO */}
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-white">
               <img
-                src={logo}
+                src="/cryptrix-logo-light.png"
                 alt="SapherChain Logo"
-                className="h-6 w-auto object-contain"
+                className="h-9 w-auto object-contain"
               />
             </Link>
           </div>
@@ -235,11 +290,12 @@ const Navbar = () => {
               >
                 <button
                   onClick={() => {
-                    if (item.name === "Explorer") {
-                      window.open(
-                        "https://public-chain.sapherportal.com/",
-                        "_blank"
-                      );
+                    if (!item.hasDropdown) {
+                      if (item.external) {
+                        window.open(item.link, "_blank");
+                      } else {
+                        navigate(item.link);
+                      }
                     }
                   }}
                   className={`
@@ -255,11 +311,10 @@ const Navbar = () => {
                   {item.hasDropdown && (
                     <ChevronDown
                       size={18}
-                      className={`transition-all duration-300 ${
-                        hoveredItem === item.name
-                          ? "opacity-100 z-10"
-                          : "opacity-0"
-                      }`}
+                      className={`transition-all duration-300 ${hoveredItem === item.name
+                        ? "opacity-100 z-10"
+                        : "opacity-0"
+                        }`}
                     />
                   )}
                   <span
@@ -268,11 +323,10 @@ const Navbar = () => {
                   bg-black backdrop-blur-md shadow-lg
                   transition-transform duration-500
                   transform -translate-x-full
-                  ${
-                    hoveredItem === item.name
-                      ? "translate-x-0"
-                      : "-translate-x-full"
-                  }
+                  ${hoveredItem === item.name
+                        ? "translate-x-0"
+                        : "-translate-x-full"
+                      }
                 `}
                   ></span>
                 </button>
@@ -280,11 +334,11 @@ const Navbar = () => {
                 {/* DROPDOWN */}
                 {item.hasDropdown && hoveredItem === item.name && (
                   <div
-                    className={`absolute top-full mt-0.5 w-max min-w-[200px] bg-black backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl p-6 ${
-                      item.name === "More" ? "right-0" : "left-0"
-                    } `}
+                    className={`absolute top-full mt-0.5 w-max min-w-[200px] bg-black backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl p-6 ${item.name === "More" ? "right-0" : "left-0"
+                      } `}
                   >
-                    {item.name === "Governance" ? (
+                    {(item.name === "Governance" || item.name === "Token") ? (
+
                       <div className="flex flex-col gap-4">
                         {dropdownData[item.name].map((dItem, index) => (
                           <DropdownItem
@@ -296,19 +350,19 @@ const Navbar = () => {
                           />
                         ))}
                       </div>
-                    ) : item.name === "Get Started" ? (
+                    ) : item.name === "Product" ? (
                       <div className="flex flex-row">
                         <div className="pr-6 flex flex-col gap-4 space-y-5">
                           <div className="flex items-center gap-2 mb-2">
-                            <div className="bg-indigo-600 rounded-full p-1.5">
+                            <div className="bg-blue-500 rounded-full p-1.5">
                               <BookOpen color="white" size={14} />
                             </div>
                             <h3 className="text-gray-300 text-sm font-semibold">
-                              Learn
+                              Platform
                             </h3>
                           </div>
                           {dropdownData[item.name]
-                            .slice(0, 4)
+                            .slice(0, 5)
                             .map((dItem, index) => (
                               <DropdownItem
                                 key={index}
@@ -323,15 +377,15 @@ const Navbar = () => {
                         <div className="w-px bg-white/20 mr-6" />
                         <div className="flex flex-col gap-4 space-y-5">
                           <div className="flex items-center gap-2 mb-2">
-                            <div className="bg-indigo-600 rounded-full p-1.5">
+                            <div className="bg-blue-500 rounded-full p-1.5">
                               <Zap color="white" size={14} />
                             </div>
                             <h3 className="text-gray-300 text-sm font-semibold">
-                              Quick Start
+                              Technology
                             </h3>
                           </div>
                           {dropdownData[item.name]
-                            .slice(4)
+                            .slice(5)
                             .map((dItem, index) => (
                               <DropdownItem
                                 key={index}
@@ -406,9 +460,8 @@ const Navbar = () => {
 
       {/* MOBILE MENU OVERLAY */}
       <div
-        className={`fixed inset-0 z-[999] bg-black text-white transform transition-transform duration-300 ${
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`fixed inset-0 z-[999] bg-black text-white transform transition-transform duration-300 ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
@@ -423,19 +476,19 @@ const Navbar = () => {
           {navItems.map((item) => (
             <div
               key={item.name}
-              className={`border-b border-white/10 pb-4 ${
-                openMobileItem === item.name
-                  ? "text-white font-semibold"
-                  : "text-gray-300"
-              }`}
+              className={`border-b border-white/10 pb-4 ${openMobileItem === item.name
+                ? "text-white font-semibold"
+                : "text-gray-300"
+                }`}
             >
               <button
                 onClick={() => {
-                  if (!item.hasDropdown && item.name === "Explorer") {
-                    window.open(
-                      "https://public-chain.sapherportal.com/",
-                      "_blank"
-                    );
+                  if (!item.hasDropdown) {
+                    if (item.external) {
+                      window.open(item.link, "_blank");
+                    } else {
+                      navigate(item.link);
+                    }
                     handleNavLinkClick();
                     return;
                   }
@@ -449,11 +502,10 @@ const Navbar = () => {
                 {item.name}
                 {item.hasDropdown && (
                   <ChevronDown
-                    className={`transition-transform ${
-                      openMobileItem === item.name
-                        ? "rotate-180 text-white"
-                        : "text-gray-400"
-                    }`}
+                    className={`transition-transform ${openMobileItem === item.name
+                      ? "rotate-180 text-white"
+                      : "text-gray-400"
+                      }`}
                     size={20}
                   />
                 )}
@@ -464,15 +516,14 @@ const Navbar = () => {
                 className={`
                   overflow-hidden transition-[max-height,opacity]
                   duration-500 ease-in-out
-                  ${
-                    openMobileItem === item.name
-                      ? "max-h-[800px] opacity-100 mt-4"
-                      : "max-h-0 opacity-0"
+                  ${openMobileItem === item.name
+                    ? "max-h-[800px] opacity-100 mt-4"
+                    : "max-h-0 opacity-0"
                   }
                 `}
               >
                 {/* GET STARTED – SPECIAL LAYOUT */}
-                {item.name === "Get Started" ? (
+                {item.name === "Product" ? (
                   <div className="space-y-6 pl-2">
                     {/* Learn */}
                     <div>
@@ -483,7 +534,7 @@ const Navbar = () => {
                         Learn
                       </div>
                       <div className="space-y-3">
-                        {dropdownData["Get Started"].slice(0, 4).map((d, i) => (
+                        {dropdownData["Product"].slice(0, 4).map((d, i) => (
                           <Link
                             key={i}
                             to={d.link}
@@ -505,7 +556,7 @@ const Navbar = () => {
                         Quick Start
                       </div>
                       <div className="space-y-3">
-                        {dropdownData["Get Started"].slice(4).map((d, i) => (
+                        {dropdownData["Product"].slice(4).map((d, i) => (
                           <Link
                             key={i}
                             to={d.link}

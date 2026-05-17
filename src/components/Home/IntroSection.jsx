@@ -1,78 +1,84 @@
 import React from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const IntroSection = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/sph/"); 
+    navigate("/sph/"); // or change to your real route
   };
 
   return (
-    <section
-      className="relative w-full py-24 bg-white text-white overflow-hidden pt-60"
-    >
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,70,255,0.15),transparent_60%)]"></div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.05),transparent)]"></div>
+    <section className="relative w-full min-h-screen flex items-center bg-[#01021f] text-white overflow-hidden">
+      {/* Animated background grid + subtle noise */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(30,0,60,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(30,0,60,0.4)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30"></div>
 
-      {/* Animated Neon Orbs */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-indigo-500/20 blur-3xl rounded-full animate-pulse"></div>
+      {/* Big glowing orb gradients */}
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute -bottom-60 -right-40 w-[800px] h-[800px] bg-blue-600/15 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-42 sm:pt-0 text-center">
-        {/* Floating SPH Coin */}
-        <div className="flex justify-center mb-10">
-          <div
-            className="w-30 h-30 sm:w-40 sm:h-40 rounded-full border border-indigo-400/40 shadow-[0_0_40px_rgba(168,85,247,0.5)] 
-          bg-gradient-to-br from-indigo-700 to-indigo-900/80 flex items-center justify-center 
-          "
-          >
-            <span className="text-2xl sm:text-4xl font-extrabold">SPH</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-10 text-center">
+        {/* Floating Cryptrix Token / Logo Orb */}
+        <div className="relative inline-block mb-12 md:mb-8 group">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/40 to-blue-600/40 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+          <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full border border-blue-500/50 bg-gradient-to-br from-[#1a0033] to-[#0f0026] backdrop-blur-lg flex items-center justify-center ">
+            <img
+              src="/cryptrix-favicon.png" 
+              alt="Cryptrix Logo"
+              className="w-20 h-20 md:w-28 md:h-28 object-contain"
+            />
           </div>
+
         </div>
 
-        {/* Title */}
-        <h1 className="text-3xl md:text-6xl font-semibold mb-6 tracking-wide text-black font-['Dancing_Script']">
-          Introducing the{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 via-indigo-700 to-blue-700">
-            SapherChain
+        {/* Main Title - Futuristic font style */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 tracking-tight leading-tight">
+          Welcome to{" "}
+          <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+            Cryptrix
           </span>
         </h1>
 
-        {/* Description */}
-        <p className="max-w-2xl mx-auto text-md md:text-xl text-gray-800 leading-relaxed">
-         Sapher chain is a next-generation Layer-1 blockchain built on Governed Proof of Stake (GPoS), combining fast transactions, low fees, and structured on-chain governance that protects the network from chaos while enabling steady evolution.
+        {/* Subtitle / Description */}
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-purple-200/80 font-light leading-relaxed mb-12 md:mb-12">
+          Powering the future of decentralized networks with blazing-fast transactions, minimal fees, and truly transparent governance.
         </p>
 
-        {/* Features */}
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
+
+        {/* Feature Cards - Glassmorphism style */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {[
-            "Ultra-Fast Transactions",
-            "Low Gas Fees",
-            "Eco-Friendly Protocol",
-          ].map((item, index) => (
+            { title: "Lightning Speed", desc: "Sub-second finality" },
+            { title: "Near-Zero Fees", desc: "Best-in-class economics" },
+            { title: "On-Chain Governance", desc: "Community-driven evolution" },
+          ].map((item, i) => (
             <div
-              key={index}
-              className="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 
-              hover:border-indigo-400/40 hover:shadow-[0_0_25px_rgba(99,102,241,0.55)]
-              transition-all duration-300"
+              key={i}
+              className="group relative p-2 py-2.5 rounded-full bg-white/5 backdrop-blur-xl border border-purple-500/20 hover:border-blue-500/50 transition-all duration-400 hover:shadow-[0_0_20px_rgba(0,122,255,0.3)] flex flex-col items-center text-center"
             >
-              <Sparkles className="mx-auto mb-3 text-black" />
-              <p className="text-gray-700 font-medium">{item}</p>
+              {/* Gradient hover effect */}
+              <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-purple-600/30 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
+
+              {/* Icon + Title row */}
+              <div className="flex items-center justify-center space-x-2 ">
+                <Sparkles className="w-5 h-5 text-blue-600 group-hover:text-purple-300 transition-colors" />
+                <h3 className="text-base">{item.title}</h3>
+              </div>
+
             </div>
+
           ))}
         </div>
 
-        {/* CTA */}
-        <button
-          onClick={handleClick}
-          className="mt-12 px-8 py-4 rounded-full text-lg font-medium 
-        bg-gradient-to-r from-indigo-900 to-indigo-700 
-        shadow-[0_0_20px_rgba(139,92,246,0.6)] hover:shadow-[0_0_25px_rgba(99,102,241,0.55)]
-        transition-all hover:cursor-pointer"
-        >
-          Learn More About SPH
+        {/* CTA Button - Neon glow effect */}
+        <button type="button"
+          class="relative px-6 py-3 border border-white/30 font-medium backdrop-blur text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-blue-500/40">
+          <span class="absolute inset-0 bg-blue-900 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full"></span>
+          <span class="relative z-10 flex items-center gap-1">View Active Votes
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-700" />
+          </span>
         </button>
       </div>
     </section>

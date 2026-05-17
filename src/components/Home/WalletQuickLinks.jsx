@@ -3,38 +3,38 @@ import { Wallet, Compass, Code2, BarChart3 } from "lucide-react";
 
 const quickLinks = [
   {
-    title: "Sapher Wallet",
-    desc: "Securely manage your SPH coins, NFTs, and on-chain assets with our official wallet.",
-    icon: <Wallet size={30} className="text-indigo-500" />,
+    title: "Cryptrix Wallet",
+    desc: "A secure and intuitive wallet to store, send, stake, and manage Cryptrix assets with full self-custody.",
+    icon: <Wallet size={30} className="text-blue-500" />,
     link: "#",
   },
   {
-    title: "Chain Explorer",
-    desc: "Track transactions, accounts, blocks, and on-chain activities in real time.",
-    icon: <Compass size={30} className="text-indigo-500" />,
+    title: "Cryptrix Explorer",
+    desc: "Explore blocks, transactions, validators, and real-time network activity with complete transparency.",
+    icon: <Compass size={30} className="text-blue-500" />,
     link: "#",
   },
   {
-    title: "Developer Docs",
-    desc: "Build on SapherChain with APIs, SDKs, and smart contract documentation.",
-    icon: <Code2 size={30} className="text-indigo-500" />,
+    title: "Developer Hub",
+    desc: "Build scalable dApps on Cryptrix using smart contracts, SDKs, APIs, and detailed documentation.",
+    icon: <Code2 size={30} className="text-blue-500" />,
     link: "#",
   },
   {
     title: "Tokenomics",
-    desc: "Learn how SPH coin works, distribution model, and economics behind the system.",
-    icon: <BarChart3 size={30} className="text-indigo-500" />,
+    desc: "Understand Cryptrix economics, staking rewards, governance model, and supply mechanics.",
+    icon: <BarChart3 size={30} className="text-blue-500" />,
     link: "#",
   },
 ];
 
 const WalletQuickLinks = () => {
   return (
-    <section className="w-full py-22 pb-32 bg-gray-50">
+    <section className="w-full py-20 pb-32 bg-[#01021f] text-white">
       <div className="text-center mb-14">
-        <h2 className="text-3xl font-semibold text-gray-900">SapherChain Hub</h2>
-        <p className="text-gray-500 mt-3 text-lg">
-          Everything you need — wallet, explorer, developer tools and more.
+        <h2 className="text-2xl sm:text-4xl font-semibold">Cryptrix Hub</h2>
+        <p className="text-gray-400 mt-3 text-lg">
+          Wallet, explorer, developer tools, and everything powering the Cryptrix ecosystem.
         </p>
       </div>
 
@@ -44,33 +44,45 @@ const WalletQuickLinks = () => {
             key={index}
             href={item.link}
             className="
-              group bg-white p-7 rounded-2xl border border-gray-100 shadow-sm
-              hover:shadow-xl hover:-translate-y-1 transition-all duration-300
-              flex flex-col gap-4 relative
+              group relative  p-7 rounded-2xl
+              border border-white/10
+              hover:-translate-y-1 transition-all duration-300
+              flex flex-col gap-4 overflow-hidden
             "
           >
+            {/* Bottom Soft Border Animation */}
+            <span
+              className="
+                absolute bottom-0 left-1/2 -translate-x-1/2
+                h-[2px] w-0 bg-indigo-900
+                group-hover:w-full transition-all duration-500
+                origin-center rounded-full
+                shadow-[0_0_8px_rgba(99,102,241,0.8)]
+              "
+            />
+
             {/* Icon */}
             <div
               className="
-                w-14 h-14 bg-indigo-50 rounded-xl flex items-center justify-center 
-                group-hover:bg-indigo-100 transition-colors duration-300
+               flex items-center justify-start
+                 transition-colors duration-300
               "
             >
               {item.icon}
             </div>
 
             {/* Title */}
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold">
               {item.title}
             </h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               {item.desc}
             </p>
 
-            {/* Button */}
-            <span className="text-indigo-600 font-medium text-sm mt-auto group-hover:underline">
+            {/* CTA */}
+            <span className="text-blue-600 font-medium text-sm mt-auto">
               Open →
             </span>
           </a>

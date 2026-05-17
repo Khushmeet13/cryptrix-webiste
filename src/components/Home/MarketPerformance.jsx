@@ -35,11 +35,11 @@ const MarketPerformance = () => {
   };
 
   return (
-    <section className="w-full py-22 bg-white text-black">
+    <section className="w-full py-22 bg-[#01021f] text-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-center text-3xl font-semibold">
-          SPH Market Performance
+        <h2 className="text-center text-4xl font-semibold">
+          Market Performance
         </h2>
 
         <p className="text-center text-gray-500 mt-2">
@@ -157,7 +157,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     <div className="bg-white shadow-xl rounded-sm p-4 min-w-[100px]">
       <div className="flex items-center justify-between mb-2">
         {/* Price */}
-        <p className="text-indigo-500 font-semibold text-sm">
+        <p className="text-indigo-900 font-semibold text-sm">
           Price ${price.toFixed(6)}
         </p>
 
