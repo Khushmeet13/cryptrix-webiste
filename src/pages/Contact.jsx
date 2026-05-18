@@ -51,7 +51,7 @@ const Contact = () => {
       </section>
 
       <ContactCommunity />
-      <SupportSection />
+      {/* <SupportSection /> */}
       <ContactForm />
     </div>
   );

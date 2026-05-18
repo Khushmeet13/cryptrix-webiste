@@ -85,7 +85,7 @@ const DexKeyFeatures = () => {
           {/* Badge */}
           <div className="flex justify-center mb-9">
             <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[.07em] text-indigo-400"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[.07em] text-blue-400"
               style={{ background: "rgba(99,102,241,0.12)", border: "0.5px solid rgba(99,102,241,0.35)" }}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
@@ -96,7 +96,7 @@ const DexKeyFeatures = () => {
           {/* Heading */}
           <h2 className="text-center text-3xl md:text-[28px] font-bold text-[#f0f0ff] leading-tight mb-2.5">
             Built for Secure &{" "}
-            <span className="text-indigo-400">Efficient</span> Trading
+            <span className="text-blue-400">Efficient</span> Trading
           </h2>
           <p className="text-center text-[13px] text-[#3d3d5c] mb-11 max-w-sm mx-auto leading-relaxed">
             Everything you need for a fast, secure, and decentralized trading experience.
@@ -123,7 +123,7 @@ const DexKeyFeatures = () => {
                   <span className="hidden sm:block h-1 w-1 rounded-full bg-[#1a1a2e]" />
                 )}
                 <div className="text-center">
-                  <div className="text-lg font-bold text-indigo-400">{s.value}</div>
+                  <div className="text-lg font-bold text-blue-400">{s.value}</div>
                   <div className="mt-0.5 text-[10px] uppercase tracking-[.06em] text-[#2a2a42]">
                     {s.label}
                   </div>

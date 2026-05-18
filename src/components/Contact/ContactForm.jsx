@@ -136,10 +136,10 @@ const ContactForm = () => {
                 <div>
                   <div className="text-mds font-semibold text-white">Email</div>
                   <a
-                    href="mailto:hello@sapherchain.com"
+                    href="mailto:hello@cryptrixchain.com"
                     className="text-gray-400 hover:underline text-lg"
                   >
-                    hello@sapherchain.com
+                    hello@cryptrixchain.com
                   </a>
                 </div>
               </div>
@@ -151,7 +151,7 @@ const ContactForm = () => {
                 <div>
                   <div className="text-md font-semibold text-white">Phone</div>
                   <a
-                    href="mailto:hello@sapherchain.com"
+                    href="mailto:hello@cryptrixchain.com"
                     className="text-gray-400 hover:underline text-lg"
                   >
                     +1 (456)123-4567
@@ -166,7 +166,7 @@ const ContactForm = () => {
                 <div>
                   <div className="text-md font-semibold text-white">Location</div>
                   <a
-                    href="mailto:hello@sapherchain.com"
+                    href="mailto:hello@cryptrixchain.com"
                     className="text-gray-400 text-lg"
                   >
                     New York, USA

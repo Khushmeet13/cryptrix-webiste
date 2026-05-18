@@ -1,129 +1,286 @@
 // src/components/HowTradingWorks.tsx
-import { motion } from "framer-motion";
-import { ArrowRight, Wallet, Coins, Settings, CheckCircle } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { Wallet, Coins, Settings, CheckCircle } from "lucide-react";
 
 const steps = [
   {
-    number: 1,
+    number: "01",
     title: "Connect Wallet",
-    description: "Connect MetaMask, WalletConnect or any supported wallet.",
+    description:
+      "Connect MetaMask, WalletConnect or any supported wallet in seconds.",
     icon: Wallet,
-    gradient: "from-blue-500 to-indigo-600",
+    accent: "#5EEAD4", // teal
+    glow: "rgba(94, 234, 212, 0.15)",
+    tag: "One-click auth",
   },
   {
-    number: 2,
+    number: "02",
     title: "Select Token Pair",
-    description: "Choose the tokens you want to swap instantly.",
+    description: "Choose from thousands of tokens across multiple chains.",
     icon: Coins,
-    gradient: "from-purple-500 to-pink-600",
+    accent: "#A78BFA", // violet
+    glow: "rgba(167, 139, 250, 0.15)",
+    tag: "Multi-chain",
   },
   {
-    number: 3,
-    title: "Set Amount & Slippage",
-    description: "Adjust slippage for best price execution.",
+    number: "03",
+    title: "Set Slippage",
+    description: "Fine-tune slippage tolerance for optimal price execution.",
     icon: Settings,
-    gradient: "from-amber-500 to-orange-600",
+    accent: "#FB923C", // orange
+    glow: "rgba(251, 146, 60, 0.15)",
+    tag: "Smart routing",
   },
   {
-    number: 4,
+    number: "04",
     title: "Confirm Swap",
-    description: "Approve and confirm the swap directly from your wallet.",
+    description: "Sign the transaction and receive tokens directly in your wallet.",
     icon: CheckCircle,
-    gradient: "from-emerald-500 to-teal-600",
+    accent: "#34D399", // emerald
+    glow: "rgba(52, 211, 153, 0.15)",
+    tag: "Non-custodial",
   },
 ];
 
 export default function HowTradingWorks() {
+  const [activeStep, setActiveStep] = useState(null);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  const lineWidth = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "100%"]);
+
   return (
-    <section className="relative py-20 md:py-28 bg-black overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section
+      ref={containerRef}
+      className="relative py-18 md:py-22 bg-[#01021f] overflow-hidden"
+    >
+      {/* Faint grid background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
+          `,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Ambient radial gradient */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(94,234,212,0.06) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl">
+
+        {/* ── Header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            How Trading Works on <span className="text-primary">Cryptix</span>
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-5">
+            <span
+              className="inline-block h-px w-10"
+              style={{ background: "#60A5FA" }}
+            />
+            <span
+              className="text-xs font-semibold tracking-[0.2em] uppercase"
+              style={{ color: "#60A5FA", fontFamily: "'Space Mono', monospace" }}
+            >
+              How it works
+            </span>
+          </div>
+
+          <h2
+            className="text-5xl font-medium leading-[1.05] tracking-tight text-white max-w-2xl"
+            
+          >
+            Trade in{" "}
+            <span
+              className="relative inline-block"
+              style={{
+                color: "transparent",
+                WebkitTextStroke: "1.5px #60A5FA",
+              }}
+            >
+              4 steps
+            </span>
+            .<br />
+            <span className="text-white/40">No friction.</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            A simple, secure 4-step process to trade crypto on Cryptix DEX.
-          </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 relative z-10">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-
-              return (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15, duration: 0.6 }}
-                  className="relative"
-                >
-                  <div className="group h-full rounded-3xl p-6 md:p-8 bg-background/60 backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-2xl transition-all">
-                    {/* Step Number */}
-                    <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-background border border-white/20 flex items-center justify-center font-bold shadow">
-                      {step.number}
-                    </div>
-
-                    {/* Icon */}
-                    <div
-                      className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
-                    >
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-
-                    <h3 className="text-xl font-semibold mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-
-                    {/* Arrow */}
-                    {index < steps.length - 1 && (
-                      <div className="hidden md:block absolute top-1/2 -right-8 -translate-y-1/2">
-                        <ArrowRight className="w-6 h-6 text-muted-foreground/40" />
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+        {/* ── Progress line (desktop) ── */}
+        <div className="hidden lg:block relative mb-2">
+          <div className="absolute top-0 left-[11%] right-[11%] h-px bg-white/8" />
+          <motion.div
+            className="absolute top-0 left-[11%] h-px"
+            style={{
+              width: lineWidth,
+              background:
+                "linear-gradient(90deg, #5EEAD4, #A78BFA, #FB923C, #34D399)",
+            }}
+          />
         </div>
 
-        {/* Illustration */}
+        {/* ── Steps Grid ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            const isActive = activeStep === i;
+
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 48 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: i * 0.12,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                onMouseEnter={() => setActiveStep(i)}
+                onMouseLeave={() => setActiveStep(null)}
+                className="relative cursor-default"
+              >
+                <motion.div
+                  animate={{
+                    backgroundColor: isActive ? step.glow : "rgba(255,255,255,0.02)",
+                    borderColor: isActive ? step.accent + "55" : "rgba(255,255,255,0.07)",
+                  }}
+                  transition={{ duration: 0.25 }}
+                  className="h-full rounded-2xl border p-6 lg:p-7 flex flex-col gap-5"
+                  style={{ background: "rgba(255,255,255,0.02)" }}
+                >
+                  {/* Top row: number + tag */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="font-black text-sm tracking-widest"
+                      style={{
+                        fontFamily: "'Space Mono', monospace",
+                        color: step.accent,
+                      }}
+                    >
+                      {step.number}
+                    </span>
+                    <span
+                      className="text-[10px] font-semibold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full"
+                      style={{
+                        background: step.accent + "18",
+                        color: step.accent,
+                        border: `1px solid ${step.accent}33`,
+                      }}
+                    >
+                      {step.tag}
+                    </span>
+                  </div>
+
+                  {/* Icon */}
+                  <motion.div
+                    animate={{ scale: isActive ? 1.08 : 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="w-14 h-14 rounded-xl flex items-center justify-center"
+                    style={{
+                      background: step.accent + "18",
+                      border: `1px solid ${step.accent}33`,
+                    }}
+                  >
+                    <Icon
+                      size={24}
+                      style={{ color: step.accent }}
+                      strokeWidth={1.5}
+                    />
+                  </motion.div>
+
+                  {/* Text */}
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <h3
+                      className="text-lg font-bold text-white leading-tight"
+                      style={{ fontFamily: "'Syne', sans-serif" }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-white/45 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom accent bar */}
+                  <motion.div
+                    animate={{ scaleX: isActive ? 1 : 0 }}
+                    initial={{ scaleX: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="h-px origin-left rounded-full"
+                    style={{ background: step.accent }}
+                  />
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* ── Bottom CTA strip ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-20 text-center"
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-white/8 px-8 py-6"
+          style={{ background: "rgba(255,255,255,0.025)" }}
         >
-          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <img
-              src="https://pixelplex.io/wp-content/uploads/2023/10/how-can-you-create-a-DEX-in-11-steps.jpg"
-              alt="Cryptix DEX trading flow"
-              className="w-full h-auto"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-              <p className="text-white text-base font-medium">
-                Visual overview of the Cryptix DEX trading flow
-              </p>
-            </div>
+          <div className="flex items-center gap-4">
+            {/* Live dot */}
+            <span className="relative flex h-3 w-3">
+              <span
+                className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                style={{ background: "#34D399" }}
+              />
+              <span
+                className="relative inline-flex rounded-full h-3 w-3"
+                style={{ background: "#34D399" }}
+              />
+            </span>
+            <span
+              className="text-sm text-white/60"
+              style={{ fontFamily: "'Space Mono', monospace" }}
+            >
+              <span className="text-white font-semibold">$2.4B+</span> in swaps
+              processed ·{" "}
+              <span className="text-white font-semibold">99.97%</span> uptime
+            </span>
           </div>
+
+          <button
+            className="group flex items-center gap-2.5 text-sm font-semibold text-black rounded-xl px-5 py-2.5 transition-all hover:brightness-110 active:scale-95 bg-blue-400"
+           
+          >
+            Start trading now
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </motion.div>
       </div>
     </section>
