@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import governanceBg from "../../assets/images/governance-bg.jpg";
-import { FileText, Wrench, Coins, Scale, } from "lucide-react";
+import { FileText, Wrench, Coins, Scale, Users, Globe } from "lucide-react";
 import proposals from "../../assets/images/proposals.jpg";
 import ProposalLifecycle from "@/components/Governance/ProposalLifecycle";
 import CustomButton from "@/components/Common/CustomButton";
@@ -13,7 +13,7 @@ const sections = [
     title: "What is a Proposal?",
     icon: <FileText size={22} />,
     desc: `A proposal is a formal governance mechanism that allows community members
-to suggest changes, improvements, or initiatives within the Sapher ecosystem.
+to suggest changes, improvements, or initiatives within the Cryptrix ecosystem.
 Proposals serve as the foundation of decentralized decision-making and ensure
 that all major actions are transparent and community-driven.
 Each proposal follows a defined lifecycle, from submission and discussion
@@ -39,7 +39,7 @@ maintaining trust across the ecosystem.`,
     title: "Funding Requests",
     icon: <Coins size={22} />,
     desc: `Funding proposals enable builders, developers, and contributors
-to request resources from the Sapher treasury.
+to request resources from the Cryptrix treasury.
 These proposals outline objectives, timelines, and expected outcomes
 to ensure responsible allocation of funds.
 Community voting ensures treasury capital is used efficiently
@@ -56,70 +56,52 @@ that guide how decisions are made within the network.
 They may include changes to voting thresholds, proposal requirements,
 or participation incentives.
 By allowing governance policies to adapt over time,
-Sapher remains flexible in a changing ecosystem.
+Cryptrix remains flexible in a changing ecosystem.
 Community consensus ensures governance remains fair,
 decentralized, and resilient as the network grows.`,
   },
 ];
 
-const proposalCards = [
+const proposalCategories = [
   {
     title: "Core Protocol",
-    desc: `Core Protocol proposals govern changes to Sapher’s underlying
-    technology. These include network upgrades, performance optimizations,
-    security improvements, and feature enhancements that directly impact
-    protocol stability and scalability. Such proposals undergo rigorous review
-    to ensure long-term network integrity.`,
-    bg: "bg-gray-300/50",
-    color: "text-black",
-    text: "text-gray-800",
+    desc: "Network upgrades, performance optimizations, and security improvements that directly impact protocol stability.",
+    icon: Wrench,
+    accent: "#60A5FA",
+    bg: "#12132c",
     top: "top-20",
   },
   {
     title: "Treasury",
-    desc: `Treasury proposals focus on the allocation and management of
-    Sapher’s shared resources. They cover funding requests for development,
-    research, partnerships, grants, and ecosystem growth initiatives.
-    Community approval ensures transparency, accountability, and responsible
-    use of funds.`,
-    bg: "bg-gray-400",
-    color: "text-black",
-    text: "text-gray-800",
+    desc: "Funding requests for development, research, partnerships, and grants — allocated with full transparency.",
+    icon: Coins,
+    accent: "#34D399",
+    bg: "#0e0f26",
     top: "top-40",
   },
   {
     title: "Community Initiatives",
-    desc: `Community Initiative proposals empower contributors to shape the
-    ecosystem beyond core development. These proposals support education,
-    marketing, governance tooling, events, and engagement programs that
-    strengthen participation and foster a sustainable, decentralized
-    community.`,
-    bg: "bg-gray-500",
-    color: "text-white",
-    text: "text-gray-200",
+    desc: "Education, marketing, governance tooling, and events that strengthen participation across the ecosystem.",
+    icon: Users,
+    accent: "#A78BFA",
+    bg: "#0a0b1f",
     top: "top-64",
   },
   {
     title: "Governance Process",
-    desc: `Governance Process proposals refine how decisions are made within
-    Sapher. They may introduce changes to voting mechanisms, quorum thresholds,
-    delegation models, or proposal lifecycles to improve fairness, efficiency,
-    and long-term decentralization.`,
-    bg: "bg-gray-600",
-    color: "text-white",
-    text: "text-gray-300",
+    desc: "Changes to voting mechanisms, quorum thresholds, or delegation models that refine how decisions get made.",
+    icon: Scale,
+    accent: "#818cf8",
+    bg: "#070818",
     top: "top-80",
   },
   {
     title: "Ecosystem Expansion",
-    desc: `Ecosystem Expansion proposals aim to grow Sapher’s reach and
-    adoption. These include strategic partnerships, integrations, incentive
-    programs, and cross-chain initiatives designed to attract developers,
-    users, and long-term collaborators to the network.`,
-    bg: "bg-gray-800",
-    color: "text-white",
-    text: "text-gray-300",
+    desc: "Strategic partnerships, integrations, and cross-chain initiatives that grow Cryptrix's reach and adoption.",
+    bg: "#040512",
     top: "top-[26rem]",
+    icon: Globe,
+    accent: "#06b6d4",
   },
 ];
 
@@ -136,35 +118,35 @@ const activeProposals = [
     status: "Open",
     votes: { yes: 92, total: 100 },
   },
-  {
-    id: 3,
-    title: "Add support for cross-chain bridging",
-    status: "Passed",
-    votes: { yes: 87, total: 100 },
-  },
 ];
 
 const pastProposals = [
   {
     id: 101,
+    title: "Add support for cross-chain bridging",
+    status: "Passed",
+    outcome: "Implemented and live on mainnet",
+  },
+  {
+    id: 102,
     title: "Reduce proposal submission fee from 1000 to 500",
     status: "Passed",
     outcome: "Implemented on January 15, 2025",
   },
   {
-    id: 102,
+    id: 103,
     title: "Introduce quadratic voting mechanism",
     status: "Rejected",
     outcome: "Community feedback led to revision",
   },
   {
-    id: 103,
+    id: 104,
     title: "Burn 10% of unclaimed rewards",
     status: "Passed",
     outcome: "Executed successfully",
   },
   {
-    id: 104,
+    id: 105,
     title: "Add new treasury allocation for marketing",
     status: "Rejected",
     outcome: "Insufficient support",
@@ -174,13 +156,13 @@ const pastProposals = [
 const getStatusStyle = (status) => {
   switch (status) {
     case "Open":
-      return "bg-blue-100 text-blue-700 border-blue-300";
+      return { color: "#60A5FA", bg: "rgba(96,165,250,0.12)", border: "rgba(96,165,250,0.35)" };
     case "Passed":
-      return "bg-green-100 text-green-700 border-green-300";
+      return { color: "#34D399", bg: "rgba(52,211,153,0.12)", border: "rgba(52,211,153,0.35)" };
     case "Rejected":
-      return "bg-red-100 text-red-700 border-red-300";
+      return { color: "#F87171", bg: "rgba(248,113,113,0.12)", border: "rgba(248,113,113,0.35)" };
     default:
-      return "bg-gray-100 text-gray-700 border-gray-300";
+      return { color: "#9ca3af", bg: "rgba(255,255,255,0.06)", border: "rgba(255,255,255,0.15)" };
   }
 };
 
@@ -200,88 +182,104 @@ const Proposals = () => {
       { threshold: 0.5 }
     );
 
-    Object.values(refs.current).forEach((el) => observer.observe(el));
+    Object.values(refs.current).forEach((el) => el && observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const [activeCategory, setActiveCategory] = useState(0);
+  const categoryRefs = useRef({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveCategory(Number(entry.target.dataset.index));
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    Object.values(categoryRefs.current).forEach((el) => el && observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="w-full">
-      <section className="relative h-[50vh] flex items-start px-6 sm:px-12 lg:px-24 pt-28 overflow-hidden">
-        {/* Background */}
+    <div className="w-full bg-[#01021f] text-white">
+      {/* ───────── Hero ───────── */}
+      <section className="relative min-h-[60vh] flex items-center px-6 sm:px-12 lg:px-24 pt-28 pb-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${governanceBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-indigo-950/60 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#01021f] via-indigo-950/70 to-black/90" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-3xl text-white space-y-2">
-          {/* Breadcrumb */}
-          <p className="text-sm uppercase tracking-widest text-indigo-300">
-            Governance / Proposals
-          </p>
+        <div className="relative z-10 max-w-3xl text-white space-y-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 w-fit">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Governance / Proposals
+            </span>
+          </div>
 
-          {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl">Governance Proposals</h1>
+          <h1 className="text-3xl sm:text-5xl font-semibold leading-tight">Governance Proposals</h1>
 
-          {/* Description */}
-          <p className="text-base sm:text-lg text-gray-300">
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl">
             Create, review, and vote on proposals that shape the future of the
-            Sapher ecosystem.
+            Cryptrix ecosystem.
           </p>
 
-          {/* CTA */}
           <div className="flex flex-wrap gap-4">
-            <button className="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2">
-              View Proposals <ArrowRight size={16} />
-            </button>
-
-            <button className="border border-white/20 hover:bg-white/10 px-6 py-3 rounded-full text-sm font-medium">
+            <a
+              href="#proposal-list"
+              className="inline-flex items-center gap-1.5 px-6 py-3 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30"
+            >
+              View Proposals
+              <ArrowRight size={16} />
+            </a>
+            <button className="px-6 py-3 border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40">
               Create Proposal
             </button>
           </div>
 
           {/* Quick Stats */}
-          <div className="mt-8 grid grid-cols-3 gap-6 max-w-xl">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-              <p className="text-2xl font-semibold">12</p>
-              <p className="text-xs uppercase tracking-wide text-gray-300">
-                Active Proposals
-              </p>
+          <div className="grid grid-cols-3 gap-4 max-w-xl pt-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">2</p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">Active Proposals</p>
             </div>
-
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-              <p className="text-2xl font-semibold">48.2K</p>
-              <p className="text-xs uppercase tracking-wide text-gray-300">
-                Total Votes
-              </p>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">7</p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">Total Proposals</p>
             </div>
-
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-center">
-              <p className="text-2xl font-semibold">SPH</p>
-              <p className="text-xs uppercase tracking-wide text-gray-300">
-                Governance Token
-              </p>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">SPH</p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">Governance Token</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro section */}
-      <section
-        id="about-proposals"
-        className="bg-white py-22 px-6 sm:px-12 lg:px-20"
-      >
+      {/* ───────── Understanding Proposals ───────── */}
+      <section id="about-proposals" className="relative py-20 md:py-24 px-6 sm:px-12 lg:px-20 border-t border-white/10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-14">
           {/* Left – Sticky intro */}
           <div className="lg:sticky lg:top-32 space-y-4 h-fit">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-black">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                Basics
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white">
               Understanding Proposals
             </h2>
-            <p className="text-sm sm:text-base text-gray-500">
+            <p className="text-sm sm:text-base text-gray-400">
               Learn how proposals guide decision-making and shape the future of
-              the Sapher ecosystem.
+              the Cryptrix ecosystem.
             </p>
 
             {/* Scroll indicator */}
@@ -289,14 +287,10 @@ const Proposals = () => {
               {sections.map((s) => (
                 <div
                   key={s.id}
-                  className={`text-sm cursor-pointer transition ${
-                    activeId === s.id
-                      ? "text-indigo-600 font-medium"
-                      : "text-gray-400"
+                  className={`text-sm cursor-pointer transition-colors ${
+                    activeId === s.id ? "text-blue-400 font-medium" : "text-gray-500 hover:text-gray-300"
                   }`}
-                  onClick={() =>
-                    refs.current[s.id].scrollIntoView({ behavior: "smooth" })
-                  }
+                  onClick={() => refs.current[s.id]?.scrollIntoView({ behavior: "smooth" })}
                 >
                   {s.title}
                 </div>
@@ -305,22 +299,23 @@ const Proposals = () => {
           </div>
 
           {/* Right – Content */}
-          <div className="lg:col-span-2 space-y-20">
+          <div className="lg:col-span-2 space-y-16">
             {sections.map((s) => (
               <div
                 key={s.id}
                 id={s.id}
                 ref={(el) => (refs.current[s.id] = el)}
                 className={`transition-all duration-500 ${
-                  activeId === s.id
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-50 translate-x-2"
+                  activeId === s.id ? "opacity-100 translate-x-0" : "opacity-50 translate-x-2"
                 }`}
               >
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
-                  {s.title}
-                </h3>
-                <p className="mt-4 text-gray-600 max-w-4xl leading-relaxed text-justify">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-indigo-500/15 border border-indigo-500/30 text-blue-400 shrink-0">
+                    {s.icon}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white">{s.title}</h3>
+                </div>
+                <p className="text-gray-400 max-w-4xl leading-relaxed whitespace-pre-line">
                   {s.desc}
                 </p>
               </div>
@@ -329,42 +324,102 @@ const Proposals = () => {
         </div>
       </section>
 
-      {/* Proposal types */}
-      <section className="bg-gray-50 text-black min-h-screen">
-        {/* Main Container */}
+      {/* ───────── Proposal Types (sticky stack) ───────── */}
+      <section className="bg-[#01021f] text-white border-t border-white/10 min-h-screen">
         <div className="flex flex-col lg:flex-row items-start justify-center p-8 lg:p-16 gap-16 max-w-7xl mx-auto">
           {/* Left Side - Fixed Text */}
           <div className="lg:w-1/2 lg:sticky lg:top-20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                Categories
+              </span>
+            </div>
             <h1 className="text-2xl sm:text-3xl leading-tight mb-2 font-semibold">
               Proposal Types
             </h1>
-            <p className="text-sm sm:text-base text-gray-500 mb-10">
-              The pillars that drive Sapher’s on-chain governance
+            <p className="text-sm sm:text-base text-gray-400 mb-10">
+              The pillars that drive Cryptrix's on-chain governance
             </p>
-            <button className="bg-black text-white px-6 py-3 rounded-full flex items-center gap-3 hover:bg-gray-200 transition mb-5">
+            <button className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 mb-6">
               Start Building →
             </button>
 
-            <img src={proposals} className="rounded-2xl" />
+            <div className="rounded-2xl overflow-hidden border border-white/10 mb-6">
+              <img src={proposals} className="w-full h-48 object-cover" alt="Proposal categories" />
+            </div>
+
+            {/* Scroll-tracked indicator */}
+            <div className="flex items-center gap-3">
+              <span
+                className="text-xs font-mono transition-colors duration-300"
+                style={{ color: proposalCategories[activeCategory].accent }}
+              >
+                {String(activeCategory + 1).padStart(2, "0")} / {String(proposalCategories.length).padStart(2, "0")}
+              </span>
+              <span className="text-sm text-white font-medium transition-all duration-300">
+                {proposalCategories[activeCategory].title}
+              </span>
+              <div className="flex gap-1.5 ml-auto">
+                {proposalCategories.map((cat, i) => (
+                  <span
+                    key={cat.title}
+                    className="h-1.5 rounded-full transition-all duration-300"
+                    style={{
+                      width: i === activeCategory ? 18 : 6,
+                      background: i === activeCategory ? cat.accent : "rgba(255,255,255,0.15)",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right Side - Stacked Sticky Cards */}
           <div className="lg:w-1/2 space-y-12">
-            {proposalCards.map((card, i) => (
-              <div
-                key={i}
-                className={`sticky ${card.top} ${card.bg} p-10 rounded-2xl shadow-2xl`}
-              >
-                <h2
-                  className={`${card.color} text-2xl mb-3 font-normal underline`}
+            {proposalCategories.map((cat, i) => {
+              const Icon = cat.icon;
+              return (
+                <div
+                  key={cat.title}
+                  id={`category-${i}`}
+                  data-index={i}
+                  ref={(el) => (categoryRefs.current[i] = el)}
+                  className={`relative sticky ${cat.top} p-10 rounded-2xl border border-white/10 shadow-2xl overflow-hidden`}
+                  style={{ background: cat.bg }}
                 >
-                  {card.title}
-                </h2>
-                <p className={`${card.text} text-base leading-relaxed`}>
-                  {card.desc}
-                </p>
-              </div>
-            ))}
+                  {/* Top accent bar */}
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: cat.accent }} />
+
+                  {/* Corner glow */}
+                  <div
+                    className="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-[70px] pointer-events-none"
+                    style={{ background: cat.accent + "30" }}
+                  />
+
+                  {/* Ghost number */}
+                  <span
+                    className="absolute top-6 right-8 font-semibold select-none pointer-events-none"
+                    style={{ fontSize: "4.5rem", lineHeight: 1, color: "rgba(255,255,255,0.04)" }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                        style={{ background: cat.accent + "18", border: `1px solid ${cat.accent}35` }}
+                      >
+                        <Icon size={19} style={{ color: cat.accent }} strokeWidth={1.75} />
+                      </div>
+                      <h2 className="text-2xl font-medium text-white">{cat.title}</h2>
+                    </div>
+                    <p className="text-gray-400 text-base leading-relaxed max-w-md">{cat.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
 
             {/* Spacer for scroll */}
             <div className="h-screen" />
@@ -374,64 +429,67 @@ const Proposals = () => {
 
       <ProposalLifecycle />
 
-      <section className="bg-gray-50 py-20">
+      {/* ───────── Active + Past Proposals ───────── */}
+      <section id="proposal-list" className="scroll-mt-24 relative py-20 md:py-24 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                Live &amp; Archive
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">
               Governance Proposals
             </h2>
-            <p className="text-sm sm:text-base text-gray-500 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base text-gray-400 max-w-3xl mx-auto">
               View current active proposals and explore the history of past
-              decisions
+              decisions.
             </p>
           </div>
 
           {/* Active Proposals */}
           <div className="mb-24">
-            <h3 className="text-xl text-gray-900 mb-8 flex items-center gap-3">
-              <span className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></span>
+            <h3 className="text-xl text-white mb-8 flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-400" />
+              </span>
               Active Proposals
             </h3>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {activeProposals.map((prop) => {
-                const yesPercent = Math.round(
-                  (prop.votes.yes / prop.votes.total) * 100
-                );
+                const yesPercent = Math.round((prop.votes.yes / prop.votes.total) * 100);
+                const style = getStatusStyle(prop.status);
                 return (
                   <div
                     key={prop.id}
-                    className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-blue-300 transition-all duration-300"
+                    className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20"
                   >
-                    <h4 className="text-lg text-gray-900 mb-4 line-clamp-2">
-                      {prop.title}
-                    </h4>
+                    <h4 className="text-lg text-white mb-4 leading-snug">{prop.title}</h4>
 
-                    <div className="flex items-center gap-3 mb-4">
-                      <span
-                        className={`inline-block px-4 py-1 rounded-full text-sm font-medium border ${getStatusStyle(
-                          prop.status
-                        )}`}
-                      >
-                        {prop.status}
-                      </span>
-                    </div>
+                    <span
+                      className="inline-block px-3 py-1 rounded-full text-xs font-semibold border mb-5"
+                      style={{ color: style.color, background: style.bg, borderColor: style.border }}
+                    >
+                      {prop.status}
+                    </span>
 
-                    <div className="mb-4">
-                      <div className="flex justify-between text-sm text-gray-600 mb-2">
+                    <div className="mb-5">
+                      <div className="flex justify-between text-sm text-gray-400 mb-2">
                         <span>Votes</span>
                         <span>{yesPercent}% Yes</span>
                       </div>
-                      <div className="relative h-3 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="relative h-2 bg-white/10 rounded-full overflow-hidden">
                         <div
-                          className="absolute h-full bg-indigo-500 transition-all duration-500"
+                          className="absolute h-full bg-blue-400 rounded-full transition-all duration-500"
                           style={{ width: `${yesPercent}%` }}
-                        ></div>
+                        />
                       </div>
                     </div>
 
-                    <button className="w-full py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">
+                    <button className="w-full py-2.5 border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:border-white/40">
                       View Details
                     </button>
                   </div>
@@ -442,78 +500,72 @@ const Proposals = () => {
 
           {/* Past Proposals */}
           <div>
-            <h3 className="text-xl text-gray-900 mb-8">
-              Past Proposals in the  Archive
-            </h3>
+            <h3 className="text-xl text-white mb-8">Past Proposals in the Archive</h3>
 
-            <div className="space-y-6">
-              {pastProposals.map((prop) => (
-                <div
-                  key={prop.id}
-                  className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition"
-                >
-                  <div>
-                    <h4 className="text-lg text-gray-900 mb-2">
-                      {prop.title}
-                    </h4>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span
-                        className={`px-3 py-1 rounded-full font-medium ${getStatusStyle(
-                          prop.status
-                        )}`}
-                      >
-                        {prop.status}
-                      </span>
-                      <span className="text-gray-600">{prop.outcome}</span>
+            <div className="space-y-4">
+              {pastProposals.map((prop) => {
+                const style = getStatusStyle(prop.status);
+                return (
+                  <div
+                    key={prop.id}
+                    className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-xl border border-white/10 bg-white/[0.02] transition-colors duration-300 hover:bg-white/[0.04]"
+                  >
+                    <div>
+                      <h4 className="text-base text-white mb-2">{prop.title}</h4>
+                      <div className="flex items-center gap-3 text-sm">
+                        <span
+                          className="px-3 py-1 rounded-full text-xs font-semibold border"
+                          style={{ color: style.color, background: style.bg, borderColor: style.border }}
+                        >
+                          {prop.status}
+                        </span>
+                        <span className="text-gray-500">{prop.outcome}</span>
+                      </div>
                     </div>
-                  </div>
 
-                  <button className="px-6 py-3 bg-black text-white border border-gray-300 rounded-full hover:bg-gray-100 transition whitespace-nowrap">
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <button className="px-5 py-2.5 border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:border-white/40 whitespace-nowrap shrink-0">
+                      View Details
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-       <section className="bg-white py-22">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl font-semibold text-black">
+      {/* ───────── Final CTA ───────── */}
+      <section className="relative py-20 md:py-24 border-t border-white/10 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">
             Ready to take action?
           </h2>
-
-          {/* Sub text */}
-          <p className="mt-4 text-gray-500 text-sm sm:text-base">
+          <p className="mt-4 text-gray-400 text-sm sm:text-base">
             Start by creating a new proposal or learn more about the guidelines.
           </p>
 
-          {/* CTA Buttons */}
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <button
-            type="button"
-            className={`relative px-6 py-3 bg-indigo-600 text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
-          >
-            {/* Sliding colored layer */}
-            {/* <span
-              className={`absolute inset-0 bg-black translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full`}
-            /> */}
-
-            {/* Text + Icon */}
-            <span className="relative z-10 flex items-center gap-1">
-              Create Proposal
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </button>
-          <CustomButton text="View Proposal Guidelines" />
+              type="button"
+              className="relative px-6 py-3 bg-white text-black text-sm font-medium rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/30 transform hover:scale-105"
+            >
+              <span className="relative z-10 flex items-center gap-1">
+                Create Proposal
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </button>
+            <CustomButton
+              text="View Proposal Guidelines"
+              bgColor="border border-white/20 bg-white/[0.03]"
+              slideColor="bg-indigo-600"
+            />
           </div>
         </div>
       </section>
 
       <NewsletterSignup />
-
     </div>
   );
 };

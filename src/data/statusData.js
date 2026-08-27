@@ -3,7 +3,7 @@ export const SERVICES = [
   {
     id: "rpc",
     name: "RPC",
-    url: "https://rpc.sapherchain.io",
+    url: "https://rpc.cryptrixchain.io",
     status: "operational", // operational | degraded | down | maintenance
     latencyMs: 48,
     errorRate: 0.02,
@@ -13,7 +13,7 @@ export const SERVICES = [
   {
     id: "explorer",
     name: "Explorer",
-    url: "https://explorer.sapherchain.io",
+    url: "https://explorer.cryptrixchain.io",
     status: "operational",
     latencyMs: 140,
     errorRate: 0.01,
@@ -23,7 +23,7 @@ export const SERVICES = [
   {
     id: "wallet",
     name: "Wallet",
-    url: "https://wallet.sapherchain.io",
+    url: "https://wallet.cryptrixchain.io",
     status: "degraded",
     latencyMs: 210,
     errorRate: 0.28,
@@ -33,7 +33,7 @@ export const SERVICES = [
   {
     id: "mainnet",
     name: "Mainnet",
-    url: "https://mainnet.sapherchain.io",
+    url: "https://mainnet.cryptrixchain.io",
     status: "operational",
     latencyMs: 0,
     errorRate: 0.0,
@@ -49,7 +49,7 @@ export const SERVICES = [
   {
     id: "testnet",
     name: "Testnet",
-    url: "https://testnet.sapherchain.io",
+    url: "https://testnet.cryptrixchain.io",
     status: "operational",
     latencyMs: 61,
     errorRate: 0.01,

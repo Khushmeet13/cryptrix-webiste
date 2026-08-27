@@ -12,7 +12,7 @@ export default function StatusHeader({ overall, lastUpdated }) {
         <div>
           <div className="flex items-center gap-4">
             <div className={`w-4 h-4 rounded-full ${statusColor(overall.status)}`} />
-            <h1 className="text-2xl font-semibold">SapherChain Status</h1>
+            <h1 className="text-2xl font-semibold">Cryptrix Status</h1>
           </div>
           <p className="text-sm text-slate-200 mt-2 max-w-xl">
             {overall.status === "operational"

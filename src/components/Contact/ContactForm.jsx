@@ -14,7 +14,8 @@ import {
 const ContactForm = () => {
   return (
     <section
-      className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-fixed"
+      id="contact-form"
+      className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-fixed scroll-mt-20"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}

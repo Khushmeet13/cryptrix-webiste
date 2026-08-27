@@ -66,7 +66,7 @@ const EcosystemGrowth = () => {
             },
             {
               title: "Developer Adoption",
-              desc: "SDKs, APIs & tools for builders on SapherChain.",
+              desc: "SDKs, APIs & tools for builders on Cryptrix.",
             },
             {
               title: "Real-World Utility",
@@ -132,7 +132,7 @@ const EcosystemGrowth = () => {
       {/* CTA */}
       <section className="py-24 text-center px-6 bg-white text-black">
         <h2 className="text-3xl font-semibold mb-4">
-          Join the SapherChain Ecosystem
+          Join the Cryptrix Ecosystem
         </h2>
         <p className="text-gray-400 mb-8">
           Build, stake, and grow with the SPH community.

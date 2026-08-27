@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 
@@ -16,6 +17,7 @@ const stats = [
 
 const DexIntro = () => {
     const particleData = useMemo(() => particles, []);
+    const navigate = useNavigate();
 
     return (
         <div className="w-full h-[80vh] sm:h-[70vh] lg:h-[80vh] bg-indigo-950 text-white">
@@ -85,7 +87,7 @@ const DexIntro = () => {
 
                             <button
                                 type="button"
-                                onClick={() => navigate("/sapher-wallets")}
+                                onClick={() => navigate("/all-wallets")}
                                 className={`relative px-6 py-3 bg-transparent border border-white text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
                             >
                                 {/* Text + Icon */}

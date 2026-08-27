@@ -94,7 +94,7 @@ const apps = [
   },
   {
     title: "SPH Bridge",
-    desc: "Seamless bridge between SapherChain and other networks.",
+    desc: "Seamless bridge between Cryptrix and other networks.",
     image:
       "https://media.istockphoto.com/id/1254894480/photo/the-modern-creative-communication-and-internet-network-connect-in-smart-city.webp?a=1&b=1&s=612x612&w=0&k=20&c=rtxZndNFOR61C4NY-lbO4Lkib_8qMNqGE1XStygS_V0=",
     cta: "Explore",
@@ -300,7 +300,7 @@ const NetworkOverview = () => {
           <h1 className="text-4xl md:text-5xl  mb-6">Network Overview</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Live performance, infrastructure health, and real-time activity of
-            the SapherChain blockchain.
+            the Cryptrix blockchain.
           </p>
 
           {/* Status */}
@@ -443,7 +443,7 @@ const NetworkOverview = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-2xl sm:text-3xl mb-2 text-black font-semibold">
-            Update From Sapher
+            Update From Cryptrix
           </h1>
           <p className="text-lg text-gray-500">
             Latest protocol news, releases, and development updates.
@@ -561,7 +561,7 @@ const NetworkOverview = () => {
       {/* ---------------- FINAL CTA ---------------- */}
       <section className="bg-gray-50 py-22 px-6 text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-black">
-          Build on SapherChain
+          Build on Cryptrix
         </h2>
         <p className="text-gray-500 mb-10 max-w-xl mx-auto">
           Start building decentralized applications or participate in securing

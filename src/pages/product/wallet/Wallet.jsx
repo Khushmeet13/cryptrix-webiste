@@ -150,7 +150,7 @@ const sectionsData = [
       {
         title: "Hello World Wallet Guide",
         description:
-          "An introduction to create a sapher wallet frontend using Tailwind nd CLI",
+          "An introduction to create a Cryptrix wallet frontend using Tailwind nd CLI",
         cta: "Learn More",
         link: "#",
       },
@@ -210,7 +210,7 @@ const Wallet = () => {
 
             <button
               type="button"
-              onClick={() => navigate("/sapher-wallets")}
+              onClick={() => navigate("/all-wallets")}
               className={`relative px-6 py-3 bg-transparent border border-white text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
             >
               {/* Text + Icon */}
@@ -310,7 +310,7 @@ const Wallet = () => {
           </h2>
 
           <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
-            Solutions offered by Sapher wallets offer unrivaled security and
+            Solutions offered by Cryptrix wallets offer unrivaled security and
             provide the end user with a seamless, integrated web3 experience.
           </p>
         </div>
@@ -399,11 +399,11 @@ const Wallet = () => {
                   shadow-[0_20px_40px_-12px_rgba(99,102,241,0.45)]"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-start mb-6 pb-3 border-b">
-            Powered By the Sapher Virtual Machine
+            Powered By the Cryptrix Virtual Machine
           </h2>
 
           <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
-            The SPH provides the underlying infrastructure for Sapher's secure,
+            The SPH provides the underlying infrastructure for Cryptrix's secure,
             high-performance wallets.
           </p>
         </div>

@@ -44,11 +44,11 @@ export const nftsUseCase = {
   features: [
     {
       title: "Authentic Creator Verification",
-      text: "Verify creators instantly before they mint NFTs. Prevent impersonation, fake drops, and copied collections using Sapher’s decentralized identity layer.",
+      text: "Verify creators instantly before they mint NFTs. Prevent impersonation, fake drops, and copied collections using Cryptrix’s decentralized identity layer.",
     },
     {
       title: "Marketplace Fraud Prevention",
-      text: "Sapher detects duplicate accounts, fake listings, and suspicious wallet behavior to secure NFT marketplaces from scams and wash trading.",
+      text: "Cryptrix detects duplicate accounts, fake listings, and suspicious wallet behavior to secure NFT marketplaces from scams and wash trading.",
     },
     {
       title: "Secure Asset Transfers",
@@ -56,11 +56,11 @@ export const nftsUseCase = {
     },
     {
       title: "Compliance-Ready KYC for High-Value Trades",
-      text: "For premium collections and institutional buyers, Sapher enables fast KYC/AML checks without disrupting the trading experience.",
+      text: "For premium collections and institutional buyers, Cryptrix enables fast KYC/AML checks without disrupting the trading experience.",
     },
     {
       title: "Protect Against Botting on Mint Drops",
-      text: "Sapher flags bot-driven mint attempts, ensuring fair distribution and reducing gas wars or spam.",
+      text: "Cryptrix flags bot-driven mint attempts, ensuring fair distribution and reducing gas wars or spam.",
     },
     {
       title: "Frictionless User & Collector Onboarding",
@@ -71,7 +71,7 @@ export const nftsUseCase = {
   // =========================
   // ⭐ TOP NFT PLATFORMS (DUMMY DATA)
   // =========================
-  tabelTitle: "Top NFT Platforms Using Sapher",
+  tabelTitle: "Top NFT Platforms Using Cryptrix",
   tableData: [
     { name: "MintSquare", tvl: 624.14, holders: 3210 },
     { name: "ArtFi Market", tvl: 488.22, holders: 2597 },
@@ -90,27 +90,27 @@ export const nftsUseCase = {
   // =========================
   faq: [
     {
-      q: "How does Sapher prevent fake or duplicated NFT collections?",
-      a: "Sapher verifies creator identity and analyzes source signals to stop impersonators before minting begins.",
+      q: "How does Cryptrix prevent fake or duplicated NFT collections?",
+      a: "Cryptrix verifies creator identity and analyzes source signals to stop impersonators before minting begins.",
     },
     {
       q: "Is NFT verification done on-chain?",
       a: "Identity checks remain off-chain for privacy, but authenticity proofs can be anchored on-chain for transparency.",
     },
     {
-      q: "Can Sapher stop bots from mass minting NFTs?",
-      a: "Yes. Sapher detects bot-like behavior and duplicate wallet actors to ensure fair mint participation.",
+      q: "Can Cryptrix stop bots from mass minting NFTs?",
+      a: "Yes. Cryptrix detects bot-like behavior and duplicate wallet actors to ensure fair mint participation.",
     },
     {
-      q: "Does Sapher store user or wallet data?",
+      q: "Does Cryptrix store user or wallet data?",
       a: "No. User data is encrypted, privacy-preserving, and stored off-chain, ensuring collector security.",
     },
     {
-      q: "Can Sapher protect NFT marketplaces from scams?",
-      a: "Yes. Sapher flags fraudulent listings, suspicious buyers, and wallet manipulation attempts.",
+      q: "Can Cryptrix protect NFT marketplaces from scams?",
+      a: "Yes. Cryptrix flags fraudulent listings, suspicious buyers, and wallet manipulation attempts.",
     },
     {
-      q: "Does Sapher support KYC for high-value NFT purchases?",
+      q: "Does Cryptrix support KYC for high-value NFT purchases?",
       a: "Yes. Premium platforms can enable KYC flows for collectors purchasing valuable or regulated assets.",
     },
     {
@@ -118,8 +118,8 @@ export const nftsUseCase = {
       a: "Absolutely. Platforms can tailor creator verification, trade thresholds, and anti-bot filters.",
     },
     {
-      q: "Is Sapher suitable for large-scale or Web3 marketplaces?",
-      a: "Yes. Sapher supports high-traffic, Web3-native NFT ecosystems with real-time checks.",
+      q: "Is Cryptrix suitable for large-scale or Web3 marketplaces?",
+      a: "Yes. Cryptrix supports high-traffic, Web3-native NFT ecosystems with real-time checks.",
     },
   ],
 };

@@ -116,7 +116,7 @@ const Documentation = () => {
           className="flex-1 overflow-y-auto px-6 py-8 text-black scrollbar-hide "
         >
           {/* Header */}
-          <p className="text-indigo-600 text-sm mb-2">Sapher Documentation</p>
+          <p className="text-indigo-600 text-sm mb-2">Cryptrix Documentation</p>
           <h1 className="text-4xl font-semibold mb-10 text-black">
             Solana Documentation
           </h1>

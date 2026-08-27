@@ -12,23 +12,23 @@ const faqs = [
   },
   {
     q: "How fast are checks?",
-    a: "Most identity checks finalize under 40ms using Sapher’s decentralized scoring engine.",
+    a: "Most identity checks finalize under 40ms using Cryptrix’s decentralized scoring engine.",
   },
   {
     q: "Is user data stored securely?",
-    a: "Absolutely. Sapher ensures all user data is encrypted, privacy-preserving, and stored off-chain, minimizing risk.",
+    a: "Absolutely. Cryptrix ensures all user data is encrypted, privacy-preserving, and stored off-chain, minimizing risk.",
   },
   {
-    q: "Does Sapher support multi-factor verification?",
-    a: "Yes, Sapher supports multiple verification layers, including decentralized credentials, biometrics, and third-party attestations.",
+    q: "Does Cryptrix support multi-factor verification?",
+    a: "Yes, Cryptrix supports multiple verification layers, including decentralized credentials, biometrics, and third-party attestations.",
   },
   {
     q: "Can organizations customize verification flows?",
     a: "Yes, organizations can configure workflows, scoring rules, and thresholds to meet their compliance and security requirements.",
   },
   {
-    q: "Is Sapher suitable for gaming and payments?",
-    a: "Yes, Sapher’s trust flows are optimized for fast, secure, and frictionless identity verification in gaming, payments, and other real-time applications.",
+    q: "Is Cryptrix suitable for gaming and payments?",
+    a: "Yes, Cryptrix’s trust flows are optimized for fast, secure, and frictionless identity verification in gaming, payments, and other real-time applications.",
   },
 ];
 
@@ -45,7 +45,7 @@ const UseCases = () => {
         </h1>
 
         <p className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed">
-          Sapher powers identity, security, and automation for ecosystems.
+          Cryptrix powers identity, security, and automation for ecosystems.
         </p>
       </section>
       <UseCasesGrid />

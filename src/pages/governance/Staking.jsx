@@ -1,461 +1,459 @@
 import {
   ArrowRight,
-  CheckCircle,
   Shield,
   Gift,
   Lock,
   Vote,
-  ArrowUpRight,
   Coins,
+  Star,
+  TrendingUp,
+  TrendingDown,
+  ChevronDown,
+  HelpCircle,
 } from "lucide-react";
-import React from "react";
-import CustomButton from "@/components/Common/CustomButton";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const getGovernanceData = [
+const governanceData = [
+  { title: "Delegate to a Validator", icon: Vote },
+  { title: "Secure the Network", icon: Shield },
+  { title: "Share in the Rewards", icon: Gift },
+];
+
+const validators = [
+  { name: "Meridian Node", apy: "9.8%", top: true },
+  { name: "Northstar Validators", apy: "9.6%" },
+  { name: "Apex Chain Ops", apy: "9.5%" },
+  { name: "Blockwave Infrastructure", apy: "9.3%" },
+];
+
+const maxApy = Math.max(...validators.map((v) => parseFloat(v.apy)));
+
+const activityMeta = {
+  staked: { color: "#34D399", label: "Staked", icon: TrendingUp },
+  unstaked: { color: "#F87171", label: "Unstaked", icon: TrendingDown },
+  claimed: { color: "#60A5FA", label: "Claimed", icon: Gift },
+};
+
+const ACTIONS = ["staked", "unstaked", "claimed"];
+
+const seedActivity = [
+  { address: "0x7a3f...92c1", action: "staked", amount: "5,200 SPH", minutesAgo: 2 },
+  { address: "0xb14e...d403", action: "claimed", amount: "184 SPH", minutesAgo: 5 },
+  { address: "0x2c9a...6f18", action: "staked", amount: "12,000 SPH", minutesAgo: 9 },
+  { address: "0xf051...3ab7", action: "unstaked", amount: "900 SPH", minutesAgo: 14 },
+];
+
+const randomAddress = () => {
+  const hex = () => Math.floor(Math.random() * 16).toString(16);
+  const part = (n) => Array.from({ length: n }, hex).join("");
+  return `0x${part(4)}...${part(4)}`;
+};
+
+const randomActivity = () => {
+  const action = ACTIONS[Math.floor(Math.random() * ACTIONS.length)];
+  const base = action === "claimed" ? Math.floor(Math.random() * 400) + 20 : Math.floor(Math.random() * 15000) + 500;
+  return {
+    id: `live-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+    address: randomAddress(),
+    action,
+    amount: `${base.toLocaleString()} SPH`,
+    timestamp: Date.now(),
+  };
+};
+
+const timeAgo = (ts, now) => {
+  const diff = Math.max(0, Math.floor((now - ts) / 1000));
+  if (diff < 60) return "just now";
+  const mins = Math.floor(diff / 60);
+  if (mins < 60) return `${mins}m ago`;
+  return `${Math.floor(mins / 60)}h ago`;
+};
+
+const stakingFaqs = [
   {
-    title: "Vote in Elections",
-    desc: "Token holders can stake assets to participate in on-chain elections and help select network representatives.",
-    icon: CheckCircle,
+    question: "Is there a minimum to stake?",
+    answer: "No strict protocol minimum, though very small stakes may not be gas-efficient.",
+    icon: Coins,
+    accent: "#60A5FA",
   },
   {
-    title: "Secure the Network",
-    desc: "Elected validators produce blocks and maintain network security through a transparent DPoS mechanism.",
+    question: "How long does unstaking take?",
+    answer: "SPH enters a 7-day cooldown before it's available in your wallet.",
+    icon: Lock,
+    accent: "#818cf8",
+  },
+  {
+    question: "Can I lose my stake to slashing?",
+    answer: "Validators that go offline or act maliciously are slashed. Delegators share this risk proportionally — choose a reliable validator.",
     icon: Shield,
+    accent: "#F87171",
   },
   {
-    title: "Share Block Rewards",
-    desc: "Validators earn block rewards which are shared with voters based on participation ratios.",
+    question: "How often are rewards paid?",
+    answer: "Rewards accrue every epoch and can be claimed or auto-compounded anytime.",
     icon: Gift,
+    accent: "#34D399",
   },
 ];
 
-const Staking = () => {
-  return (
-    <div className="w-full">
-      <section className="bg-gradient-to-br from-indigo-900 via-indigo-950/40 to-black pt-20 pb-10">
-        <div className="px-6 lg:px-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-5xl text-white">SPH Staking</h2>
+/* ── Reusable tile shell ─────────────────────────────── */
+const Tile = ({ span = "col-span-2", className = "", children }) => (
+  <div
+    className={`relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] ${span} ${className}`}
+  >
+    {children}
+  </div>
+);
 
-            <p className="text-base sm:text-lg text-gray-300 max-w-xl">
-              TRON Network adopts the DPoS consensus mechanism. TRX holders can
-              contribute to TRON’s governance while earning an APY of up to{" "}
-              <span className="text-white font-medium">3.32%</span>.
+const StatTile = ({ value, label, accent = "text-white", span }) => (
+  <Tile span={span} className="p-5 flex flex-col justify-center">
+    <div className={`text-2xl md:text-3xl font-semibold ${accent}`}>{value}</div>
+    <div className="mt-1 text-xs text-gray-500">{label}</div>
+  </Tile>
+);
+
+/* ── Live activity ticker (compact) ──────────────────── */
+const LiveActivityTile = () => {
+  const [activity, setActivity] = useState(() => {
+    const base = Date.now();
+    return seedActivity.map((a, i) => ({ ...a, id: `seed-${i}`, timestamp: base - a.minutesAgo * 60000 }));
+  });
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const clock = setInterval(() => setNow(Date.now()), 15000);
+    return () => clearInterval(clock);
+  }, []);
+
+  useEffect(() => {
+    const feed = setInterval(() => {
+      setActivity((prev) => [randomActivity(), ...prev].slice(0, 5));
+    }, 6000);
+    return () => clearInterval(feed);
+  }, []);
+
+  return (
+    <Tile span="col-span-2 sm:col-span-3 md:col-span-3 row-span-2" className="p-5 flex flex-col">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+        </span>
+        <span className="text-sm font-semibold text-white">Live Activity</span>
+      </div>
+
+      <div className="flex-1 space-y-1 overflow-hidden">
+        <AnimatePresence initial={false}>
+          {activity.map((item) => {
+            const meta = activityMeta[item.action];
+            const Icon = meta.icon;
+            return (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35 }}
+                className="flex items-center gap-2.5 py-2 border-b border-white/5 last:border-0"
+              >
+                <div
+                  className="w-6 h-6 rounded-md flex items-center justify-center shrink-0"
+                  style={{ background: meta.color + "18" }}
+                >
+                  <Icon size={11} style={{ color: meta.color }} />
+                </div>
+                <span className="text-xs font-mono text-gray-500 shrink-0">{item.address}</span>
+                <span className="text-xs text-white font-medium ml-auto shrink-0">{item.amount}</span>
+                <span className="text-[11px] text-gray-600 shrink-0 w-12 text-right">{timeAgo(item.timestamp, now)}</span>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+    </Tile>
+  );
+};
+
+/* ── Validators (compact) ────────────────────────────── */
+const ValidatorsTile = () => (
+  <Tile span="col-span-2 sm:col-span-3 md:col-span-3 row-span-2" className="p-5">
+    <div className="flex items-center justify-between mb-4">
+      <span className="text-sm font-semibold text-white">Top Validators</span>
+      <span className="text-[11px] text-gray-500">by APY</span>
+    </div>
+    <div className="space-y-3">
+      {validators.map((v, i) => {
+        const pct = (parseFloat(v.apy) / maxApy) * 100;
+        return (
+          <div key={v.name} className="flex items-center gap-3">
+            <span className="text-xs font-mono text-white/20 w-4 shrink-0">{i + 1}</span>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-gray-300 truncate flex items-center gap-1.5">
+                  {v.name}
+                  {v.top && <Star size={9} className="text-amber-400 shrink-0" fill="currentColor" />}
+                </span>
+                <span className="text-xs font-semibold text-blue-400 shrink-0">{v.apy}</span>
+              </div>
+              <div className="h-1 rounded-full bg-white/10 overflow-hidden">
+                <div className="h-full rounded-full bg-blue-400/70" style={{ width: `${pct}%` }} />
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </Tile>
+);
+
+/* ── Governance model (compact) ──────────────────────── */
+const GovernanceTile = () => (
+  <Tile span="col-span-2 sm:col-span-3 md:col-span-3" className="p-5">
+    <span className="text-sm font-semibold text-white mb-4 block">Governance Model</span>
+    <div className="space-y-3">
+      {governanceData.map((item) => {
+        const Icon = item.icon;
+        return (
+          <div key={item.title} className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-blue-500/15 border border-blue-500/30 shrink-0">
+              <Icon size={13} className="text-blue-400" />
+            </div>
+            <span className="text-xs text-gray-300">{item.title}</span>
+          </div>
+        );
+      })}
+    </div>
+  </Tile>
+);
+
+/* ── Calculator (compact) ────────────────────────────── */
+const CalculatorTile = () => {
+  const [amount, setAmount] = useState("10,000");
+  const [term, setTerm] = useState(3);
+  const numeric = parseFloat(amount.replace(/,/g, "")) || 0;
+  const reward = Math.round(numeric * 0.098 * term);
+
+  return (
+    <Tile span="col-span-2 sm:col-span-3 md:col-span-3" className="p-5">
+      <span className="text-sm font-semibold text-white mb-4 block">Estimate Rewards</span>
+
+      <div className="flex items-center justify-between border border-white/15 rounded-xl px-4 py-2.5 bg-white/[0.02] mb-3">
+        <input
+          type="text"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="text-sm font-semibold outline-none w-full bg-transparent text-white"
+        />
+        <span className="text-xs text-gray-500 shrink-0">SPH</span>
+      </div>
+
+      <div className="flex gap-1.5 mb-4">
+        {[1, 3, 5].map((y) => (
+          <button
+            key={y}
+            onClick={() => setTerm(y)}
+            className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+              term === y ? "bg-white text-black" : "bg-white/[0.03] text-gray-400 border border-white/10"
+            }`}
+          >
+            {y}Y
+          </button>
+        ))}
+      </div>
+
+      <div className="flex items-center justify-between">
+        <span className="text-xs text-gray-500">Est. Rewards</span>
+        <span className="text-sm font-semibold text-blue-400">+{reward.toLocaleString()} SPH</span>
+      </div>
+    </Tile>
+  );
+};
+
+/* ── My Stake (dashboard preview) ────────────────────── */
+const MyStakeTile = () => (
+  <Tile span="col-span-2 sm:col-span-3 md:col-span-3 row-span-2" className="p-6 flex flex-col">
+    <div className="flex items-center justify-between mb-6">
+      <span className="text-sm font-semibold text-white">Your Stake</span>
+      <span className="text-[11px] text-gray-500">Wallet not connected</span>
+    </div>
+
+    <div className="flex-1 grid grid-cols-2 gap-5 blur-[2px] opacity-40 pointer-events-none select-none">
+      <div>
+        <div className="text-xl font-semibold text-white">0 SPH</div>
+        <div className="text-xs text-gray-500 mt-1">Staked</div>
+      </div>
+      <div>
+        <div className="text-xl font-semibold text-blue-400">0 SPH</div>
+        <div className="text-xs text-gray-500 mt-1">Pending Rewards</div>
+      </div>
+      <div>
+        <div className="text-xl font-semibold text-white">9.8%</div>
+        <div className="text-xs text-gray-500 mt-1">Your APY</div>
+      </div>
+      <div>
+        <div className="text-xl font-semibold text-white">—</div>
+        <div className="text-xs text-gray-500 mt-1">Delegated To</div>
+      </div>
+    </div>
+
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 bg-[#01021f]/50">
+      <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mb-4">
+        <Lock size={16} className="text-blue-400" />
+      </div>
+      <p className="text-sm text-gray-300 mb-5 max-w-[15rem]">Connect your wallet to view your stake</p>
+      <button className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-white text-black text-xs font-semibold rounded-full transition-all duration-300 hover:scale-105">
+        Connect Wallet
+        <ArrowRight className="w-3.5 h-3.5" />
+      </button>
+    </div>
+  </Tile>
+);
+
+/* ── FAQ (compact accordion) ─────────────────────────── */
+const FaqTile = () => {
+  const [open, setOpen] = useState(0);
+
+  return (
+    <Tile span="col-span-2 sm:col-span-6 md:col-span-6" className="p-5">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-sm font-semibold text-white">Staking Questions</span>
+        <a href="/contact/" className="inline-flex items-center gap-1 text-[11px] text-gray-500 hover:text-white transition-colors">
+          <HelpCircle size={11} />
+          Contact Support
+        </a>
+      </div>
+
+      <div className="divide-y divide-white/5">
+        {stakingFaqs.map((faq, i) => {
+          const Icon = faq.icon;
+          const isOpen = open === i;
+          return (
+            <div key={faq.question}>
+              <button
+                onClick={() => setOpen(isOpen ? -1 : i)}
+                className="w-full flex items-center gap-3 py-3 text-left"
+              >
+                <Icon size={14} style={{ color: faq.accent }} className="shrink-0" />
+                <span className="flex-1 text-xs sm:text-sm text-gray-200">{faq.question}</span>
+                <ChevronDown
+                  size={14}
+                  className="shrink-0 text-gray-600 transition-transform duration-300"
+                  style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </button>
+              <div className="grid transition-all duration-300" style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}>
+                <div className="overflow-hidden">
+                  <p className="pb-3 pl-[1.65rem] text-xs text-gray-500 leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Tile>
+  );
+};
+
+/* ── Page ─────────────────────────────────────────────── */
+const Staking = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="w-full bg-[#01021f] text-white">
+      {/* ───────── Hero ───────── */}
+      <section className="bg-gradient-to-br from-indigo-950 via-indigo-950/40 to-black pt-32 pb-16">
+        <div className="px-6 lg:px-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 w-fit">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                Governance
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-5xl text-white font-semibold leading-tight">
+              SPH Staking
+            </h1>
+
+            <p className="text-base sm:text-lg text-gray-400 max-w-xl">
+              Cryptrix uses a delegated proof-of-stake consensus. SPH holders
+              can secure the network and shape its governance while earning
+              rewards up to{" "}
+              <span className="text-white font-medium">9.8% APY</span>.
             </p>
 
             <button
               type="button"
-              className="
-                inline-flex w-fit items-center gap-1
-                px-6 py-3
-                bg-black text-white text-sm
-                rounded-full
-                transition-all duration-300
-                hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/30
-              "
+              className="inline-flex w-fit items-center gap-1.5 px-6 py-3 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30"
             >
               Connect Wallet
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Right Image */}
           <div className="relative flex justify-center lg:justify-end">
             <img
               src="https://media.istockphoto.com/id/2217121589/photo/gen-z-female-investor-working-on-defi-projects-crypto-staking-research-decentralized-finance.webp?a=1&b=1&s=612x612&w=0&k=20&c=ikP47Hz2pAGk7K3XEi5WLeyGYHGTJDVzmo_UwSLUEcs="
               alt="Staking"
-              className="
-                w-full max-w-md
-                h-64 sm:h-72 md:h-80
-                object-cover
-                opacity-80
-                [mask-image:linear-gradient(to_left,transparent,black_15%,black_75%,transparent)]
-                [-webkit-mask-image:linear-gradient(to_left,transparent,black_15%,black_75%,transparent)]
-                
-                "
+              className="w-full max-w-md h-64 sm:h-72 md:h-80 object-cover opacity-80 [mask-image:linear-gradient(to_left,transparent,black_15%,black_75%,transparent)] [-webkit-mask-image:linear-gradient(to_left,transparent,black_15%,black_75%,transparent)]"
             />
           </div>
         </div>
       </section>
 
-      <section className="relative w-full flex justify-center">
+      {/* ───────── Bento dashboard ───────── */}
+      <section className="relative py-16 border-t border-white/10 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[150px] pointer-events-none" />
+
         <div
-          className="bg-gray-100 w-full shadow-xl"
-          style={{
-            marginTop: window.innerWidth < 504 ? "-6.5rem" : undefined,
-          }}
+          className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-6 md:grid-cols-6 auto-rows-[minmax(120px,auto)] gap-4"
+          style={{ gridAutoFlow: "dense" }}
         >
-          {/* Stats Grid */}
-          <div className="py-0 lg:py-4 lg:px-6 px-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 ">
-              <StatBox label="SPH Staked" value="349,751,624" />
-              <StatBox
-                label="SPH Staking Rate"
-                value="48.24%"
-                isSecond={true}
-              />
-              <StatBox
-                label="Cumulative TRX Block Rewards"
-                value="22,956,679,237"
-              />
-              <StatBox label="Highest APY" value="3.32 %" />
-            </div>
-          </div>
-        </div>
-      </section>
+          <MyStakeTile />
+          <StatTile span="col-span-1 sm:col-span-2 md:col-span-1" value="9.8%" label="Highest APY" accent="text-blue-400" />
+          <StatTile span="col-span-1 sm:col-span-2 md:col-span-2" value="182.4M" label="SPH Staked" />
+          <StatTile span="col-span-1 sm:col-span-2 md:col-span-1" value="61.5%" label="Staking Rate" />
+          <StatTile span="col-span-1 sm:col-span-4 md:col-span-2" value="$420M+" label="Rewards Distributed" accent="text-emerald-400" />
 
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Image */}
-          <div className="flex justify-center lg:justify-start">
-            <img
-              src="https://media.istockphoto.com/id/1716489243/photo/business-man-uses-a-computer-and-house-law-icons-on-the-dashboard-screen-to-study-or-search.jpg?s=612x612&w=0&k=20&c=5YZtlTDUigwTExn7FiLDsY-2GpIxrKilzlDBp-Rw4j4="
-              alt="Governance Model"
-              className="w-full max-w-md object-contain rounded-2xl"
-            />
-          </div>
+          <LiveActivityTile />
+          <ValidatorsTile />
 
-          {/* Right Content */}
-          <div className="flex flex-col gap-10">
-            {/* Heading */}
+          <GovernanceTile />
+          <CalculatorTile />
+
+          <FaqTile />
+
+          {/* CTA strip */}
+          <Tile span="col-span-2 sm:col-span-6 md:col-span-6" className="p-6 flex flex-col sm:flex-row items-center justify-between gap-5">
             <div>
-              <h2 className="text-2xl sm:text-3xl text-black font-semibold">
-                Governance Model
-              </h2>
-              <p className="mt-2 text-gray-500 text-sm sm:text-base">
-                Open, transparent, and fully on-chain
-              </p>
+              <h2 className="text-lg font-semibold text-white">Ready to participate in governance?</h2>
+              <p className="text-sm text-gray-400 mt-1">Stake your SPH and help shape Cryptrix's future.</p>
             </div>
-
-            {/* Points */}
-            <div className="flex flex-col gap-8">
-              {getGovernanceData.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="flex gap-4">
-                    <Icon className="w-6 h-6 mt-1 text-indigo-600" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900">
-                        {item.title}
-                      </h4>
-                      <p className="text-gray-600 mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          {/* Top Heading */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-black">
-              Contribute to Governance
-            </h2>
-            <p className="mt-3 text-gray-500 text-sm sm:text-base">
-              Get voting rewards and free resources in return
-            </p>
-          </div>
-
-          {/* Sub heading */}
-          <div className="flex items-center gap-3 mb-10">
-            <h3 className="text-xl font-semibold text-gray-900">
-              A More Flexible and Efficient Staking Mechanism
-            </h3>
-            <span className="px-2 py-0.5 text-xs font-medium bg-indigo-400 text-white rounded">
-              2.0
-            </span>
-          </div>
-
-          {/* Cards Wrapper */}
-          <div className="flex flex-col gap-8">
-            {/* Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-              {/* Left Big Card */}
-              <div className="bg-white rounded-2xl p-10 shadow-sm">
-                {/* Heading */}
-                <h4 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Get SPH Power for Governance
-                </h4>
-
-                <p className="text-gray-600 max-w-xl mb-12">
-                  By staking SPH tokens, users obtain SPH Power which can be
-                  used to participate in governance voting and earn protocol
-                  rewards.
-                </p>
-
-                {/* Flow Chart */}
-                <div className="flex flex-col gap-14">
-                  {/* Flow 1 */}
-                  <div className="flex items-center justify-between">
-                    {/* Left */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100">
-                        <Lock className="w-6 h-6 text-indigo-600" />
-                      </div>
-                      <span className="font-medium text-gray-900">
-                        Stake SPH
-                      </span>
-                    </div>
-
-                    {/* Arrow */}
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <span className="text-sm">Get SPH Power</span>
-                      <ArrowRight />
-                    </div>
-
-                    {/* Right */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100">
-                        <Vote className="w-6 h-6 text-indigo-600" />
-                      </div>
-                      <span className="font-medium text-gray-900">
-                        SPH Power
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Flow 2 */}
-                  <div className="flex items-center justify-between">
-                    {/* Left */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100">
-                        <Vote className="w-6 h-6 text-indigo-600" />
-                      </div>
-                      <span className="font-medium text-gray-900">
-                        SPH Power
-                      </span>
-                    </div>
-
-                    {/* Arrow */}
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <span className="text-sm">
-                        Vote on proposals & validators
-                      </span>
-                      <ArrowRight />
-                    </div>
-
-                    {/* Right */}
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100">
-                        <Coins className="w-6 h-6 text-indigo-600" />
-                      </div>
-                      <span className="font-medium text-gray-900">
-                        Governance Rewards
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Right Card 1 */}
-                <div className="bg-white rounded-2xl p-10 shadow-sm relative">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                    Get Resources for Free Transactions
-                  </h4>
-                  <p className="text-gray-600">
-                    By staking TRX, you can obtain free resources on the network
-                    to cover the fee of transactions. The resources used will
-                    dynamically recover after a certain period.
-                  </p>
-
-                  <ArrowUpRight className="absolute bottom-6 right-6 text-gray-400" />
-                </div>
-
-                {/* Right Card 2 */}
-                <div className="bg-white rounded-2xl p-10 shadow-sm relative">
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                    Delegate Idle Resources to Others
-                  </h4>
-                  <p className="text-gray-600">
-                    You may delegate idle resources to others and can reclaim
-                    the resources anytime.
-                  </p>
-
-                  <ArrowUpRight className="absolute bottom-6 right-6 text-gray-400" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="max-w-8xl mx-auto px-6 lg:px-16">
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-12">
-            Calculate Your Staking Rewards
-          </h2>
-
-          {/* Card */}
-          <div className="bg-gray-50 rounded-3xl p-10 lg:p-14">
-            <div className="flex flex-col lg:flex-row gap-16">
-              {/* Left */}
-              <div className="flex-1">
-                <p className="text-lg font-medium text-gray-900 mb-4">
-                  I want to stake
-                </p>
-
-                {/* Input */}
-                <div className="flex items-center justify-between border rounded-xl px-6 py-4 max-w-xl">
-                  <input
-                    type="text"
-                    defaultValue="10,000"
-                    className="text-2xl font-semibold outline-none w-full"
-                  />
-
-                  <div className="flex items-center gap-2 ml-4">
-                    <img
-                      src="/sapherchain-favicon-light.png"
-                      alt="TRX"
-                      className="w-6 h-6"
-                    />
-                    <span className="font-medium">SPH</span>
-                  </div>
-                </div>
-
-                {/* Rewards */}
-                <p className="mt-6 text-gray-700">
-                  Est. Rewards{" "}
-                  <span className="text-indigo-600 font-semibold">
-                    +996.90 SPH
-                  </span>
-                </p>
-
-                {/* Note */}
-                <p className="mt-6 text-sm text-gray-400 max-w-xl">
-                  * The estimated TRX rewards here are calculated based on the
-                  staking duration selected and the TRX amount entered. The
-                  actual APY and TRX rewards may vary.
-                </p>
-              </div>
-
-              {/* Right */}
-              <div className="flex-1 flex flex-col items-start">
-                {/* APY */}
-                <p className="text-lg text-gray-900 mb-2">Highest APY</p>
-                <p className="text-3xl font-semibold text-indigo-600 ">3.32%</p>
-
-                {/* Chart */}
-                <div className="w-full max-w-md">
-                  <svg viewBox="0 0 400 160" className="w-full">
-                    {/* Grey line */}
-                    <polyline
-                      points="20,120 100,110 180,95 260,75 340,45"
-                      fill="none"
-                      stroke="#e5e7eb"
-                      strokeWidth="3"
-                    />
-
-                    {/* Active line */}
-                    <polyline
-                      points="20,120 100,110 180,95 260,75"
-                      fill="none"
-                      stroke="#4f46e5"
-                      strokeWidth="3"
-                    />
-
-                    {/* Points */}
-                    {[100, 180, 260].map((x, i) => (
-                      <g key={i}>
-                        <circle
-                          cx={x}
-                          cy={[110, 95, 75][i]}
-                          r="5"
-                          fill="#fff"
-                          stroke="#4f46e5"
-                          strokeWidth="2"
-                        />
-                        <line
-                          x1={x}
-                          y1={[110, 95, 75][i]}
-                          x2={x}
-                          y2="130"
-                          stroke="#27227fff"
-                          strokeDasharray="4"
-                        />
-                      </g>
-                    ))}
-                  </svg>
-
-                  {/* X labels */}
-                  <div className="flex justify-between text-sm text-gray-400 px-2 mt-2">
-                    <span>1Y</span>
-                    <span>2Y</span>
-                    <span className="text-indigo-600 font-medium border border-indigo-600 rounded-full px-3">
-                      3Y
-                    </span>
-                    <span>4Y</span>
-                    <span>5Y</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* CTA */}
-            <div className="flex justify-center mt-10">
-              <button className="w-64 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-900 transition">
-                Stake Now →
+            <div className="flex gap-3 shrink-0">
+              <button
+                type="button"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-white text-black text-xs font-semibold rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Stake SPH Now
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/voting")}
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 border border-white/20 text-white text-xs font-semibold rounded-full transition-all duration-300 hover:border-white/40"
+              >
+                View Governance
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white pb-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl font-semibold text-black">
-            Ready to Participate in Governance?
-          </h2>
-
-          {/* Sub text */}
-          <p className="mt-4 text-gray-500 text-sm sm:text-base">
-            Stake your SPH tokens, earn rewards, and help shape the future of
-            the Sapher ecosystem.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <button
-            type="button"
-            className={`relative px-6 py-3 bg-indigo-600 text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
-          >
-            {/* Sliding colored layer */}
-            {/* <span
-              className={`absolute inset-0 bg-black translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full`}
-            /> */}
-
-            {/* Text + Icon */}
-            <span className="relative z-10 flex items-center gap-1">
-              Stake SPH Now
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </button>
-          <CustomButton text="View Governance" />
-          </div>
+          </Tile>
         </div>
       </section>
     </div>
   );
 };
-
-const StatBox = ({ label, value, isSecond }) => (
-  <div
-    className={`
-    py-4 lg:py-0 px-4 text-center
-    border-b border-gray-200
-    lg:border-b-0
-    last:border-r-0 ${isSecond ? "border-r-0 lg:border-r" : "sm:border-r "}
-  `}
-  >
-    <p className="text-gray-400 mt-2 text-sm">{label}</p>
-    <h3 className="text-2xl font-medium text-black">{value}</h3>
-  </div>
-);
 
 export default Staking;

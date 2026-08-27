@@ -186,10 +186,10 @@ export const sections = [
           If you have questions or concerns regarding these Terms, you may
           contact our support team at:{" "}
           <a
-            href="mailto:support@sapherchain.com"
+            href="mailto:support@cryptrixchain.com"
             className="text-indigo-400 underline"
           >
-            support@sapherchain.com
+            support@cryptrixchain.com
           </a>
         </p>
       </>

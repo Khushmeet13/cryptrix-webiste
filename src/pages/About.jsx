@@ -1,245 +1,230 @@
-import CompanyValues from "@/components/About/CompanyValues";
-import MissionSection from "@/components/About/MissionSection";
-import VisionSection from "@/components/About/VisionSection";
-import FloatingChains from "@/components/FloatingChains";
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
+import Manifesto from "@/components/About/Manifesto";
+import MissionStatement from "@/components/About/MissionStatement";
+import JourneyTimeline from "@/components/About/JourneyTimeline";
+import BehindTheBuild from "@/components/About/BehindTheBuild";
+
+const stats = [
+  { value: "2021", label: "Founded" },
+  { value: "$2.4B+", label: "Value Secured" },
+  { value: "50K+", label: "Community" },
+  { value: "120+", label: "Countries" },
+];
 
 const About = () => {
   return (
-    <div className="w-full min-h-screen">
-      {/* Top Section */}
-      <section className="relative h-[50vh] bg-gradient-to-br from-black via-indigo-950/40 to-black flex items-start justify-center pt-32 text-white text-3xl md:text-5xl font-semibold">
+    <div className="w-full bg-[#01021f]">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
+        .about-serif { font-family: 'Fraunces', ui-serif, Georgia, serif; }
+      `}</style>
 
+      {/* ───────── Hero ───────── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden px-6 md:px-16 py-32">
+        {/* Giant ghost watermark */}
+        <div
+          aria-hidden="true"
+          className="about-serif absolute -right-16 md:right-0 top-1/2 -translate-y-1/2 text-[16rem] md:text-[22rem] italic leading-none select-none pointer-events-none text-white/[0.025]"
+        >
+          01
+        </div>
 
-        <div className="relative z-10">About</div>
+        {/* Ambient glow */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+        {/* Spine label */}
+        <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 -rotate-90 origin-left items-center gap-3 text-xs tracking-[0.3em] uppercase text-gray-500">
+          <span className="w-8 h-px bg-indigo-500" />
+          Est. 2021 — Cryptrix Labs
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-14 items-center">
+          {/* Left: copy */}
+          <div className="lg:col-span-7">
+            <span className="block text-sm uppercase tracking-[0.3em] text-blue-400 mb-6">
+              About Cryptrix
+            </span>
+
+            <h1 className="about-serif text-5xl md:text-6xl lg:text-[4.75rem] leading-[1.05] text-white">
+              We're building the{" "}
+              <em className="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-300">
+                rails
+              </em>
+              <br />
+              for an open economy.
+            </h1>
+
+            <p className="mt-8 max-w-xl text-lg text-gray-400 leading-relaxed">
+              Cryptrix is infrastructure for a world where value moves as
+              freely as information — non-custodial, verifiable, and owned by
+              the people who create it.
+            </p>
+
+            {/* Stat strip */}
+            <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-lg">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div className="about-serif text-3xl text-white">{s.value}</div>
+                  <div className="mt-1 text-xs uppercase tracking-widest text-gray-500">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: framed visual */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="https://media.istockphoto.com/id/866600030/photo/abstract-cyberspace-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=sr0u60I1nxRvq1mZaWAgw2Wf8_YdBOqUWCn6ngQtN_M="
+                alt="Cryptrix network infrastructure"
+                className="w-full h-[420px] md:h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#01021f] via-transparent to-indigo-950/20" />
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-2.5 rounded-full bg-[#01021f] border border-white/10 px-5 py-3 shadow-2xl">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+              </span>
+              <span className="text-xs text-gray-300">
+                <span className="text-white font-semibold">Mainnet</span> live since 2023
+              </span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="bg-white w-full min-h-screen -mt-20 relative"></section>
+      {/* ───────── Origin ───────── */}
+      <section className="relative py-24 md:py-32 px-6 md:px-16 border-t border-white/10 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <span className="about-serif italic text-3xl text-blue-400">02</span>
+            <h2 className="about-serif text-3xl md:text-4xl text-white mt-4 leading-tight">
+              Why we
+              <br />
+              exist
+            </h2>
 
-      {/* Overlapping White Section */}
-      <div className="absolute top-[25vh] left-1/2 -translate-x-1/2 w-full z-30">
-        <div className="max-w-7xl mx-auto bg-white p-10">
-          <div className="grid grid-col-1 lg:grid-cols-2 gap-10">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">
-                Why We Built Sapher Chain
-              </h2>
-
-              <p className="text-gray-500 mt-3 text-sm sm:text-base max-w-2xl">
-                Sapher Chain was created to solve the core limitations of modern
-                blockchains— scalability, security, and real-world utility—while
-                keeping user experience simple and powerful. In a world where
-                digital connections often feel superficial, we saw an
-                opportunity to create something more meaningful.
-              </p>
-
-              <p className="text-gray-500 mt-5 text-sm sm:text-base max-w-2xl">
-                The Chain was born from a simple belief: that technology should
-                bring us closer together, not drive us apart. We built this
-                platform to help individuals and communities forge authentic
-                relationships that stand the test of time.
-              </p>
-            </div>
-            {/* Right Side: Pure SVG 3D Polygon Logo (No Image) */}
-            <div className="hidden md:flex justify-center items-center">
-              <div className="relative">
-                {/* Connection lines with glow */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="absolute w-96 h-80">
-                    {/* Horizontal line */}
-                    <div className="absolute top-1/2 left-0 right-0 h-px bg-purple-400 opacity-30 blur-sm"></div>
-                    <div className="absolute top-1/2 left-0 right-0 h-px bg-purple-300 opacity-50"></div>
-
-                    {/* Diagonal lines */}
-                    <div className="absolute top-0 left-10 bottom-0 w-px bg-purple-400 opacity-30 blur-sm rotate-45 origin-center"></div>
-                    <div className="absolute top-0 left-10 bottom-0 w-px bg-purple-300 opacity-40 rotate-45 origin-center"></div>
-
-                    <div className="absolute top-0 right-10 bottom-0 w-px bg-purple-400 opacity-30 blur-sm -rotate-45 origin-center"></div>
-                    <div className="absolute top-0 right-10 bottom-0 w-px bg-purple-300 opacity-40 -rotate-45 origin-center"></div>
-                  </div>
+            {/* Hexagon mark */}
+            <div className="relative mt-16 hidden md:block h-56 opacity-90">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52">
+                <div className="absolute top-1/2 left-1/2 -translate-x-[85%] -translate-y-1/2 w-32 h-40">
+                  <svg viewBox="0 0 100 120" className="w-full h-full drop-shadow-2xl rotate-25">
+                    <defs>
+                      <linearGradient id="aboutGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#818cf8" />
+                        <stop offset="50%" stopColor="#6366f1" />
+                        <stop offset="100%" stopColor="#4338ca" />
+                      </linearGradient>
+                      <filter id="aboutGlow">
+                        <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                        <feMerge>
+                          <feMergeNode in="coloredBlur" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <path
+                      d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z"
+                      fill="url(#aboutGrad1)"
+                      stroke="#7656f7"
+                      strokeWidth="2"
+                      filter="url(#aboutGlow)"
+                      className="opacity-90"
+                    />
+                    <path d="M50 25 L75 40 L75 60 L50 75 L25 60 L25 40 Z" fill="#4c1d95" opacity="0.6" />
+                  </svg>
                 </div>
-
-                {/* Main Logo - Two connected hexagons */}
-                <div className="relative w-64 h-64 transform-gpu hover:scale-110 transition-transform duration-500">
-                  {/* Left Hexagon */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-[95%] -translate-y-1/2 w-40 h-48">
-                    <svg
-                      viewBox="0 0 100 120"
-                      className="w-full h-full drop-shadow-2xl rotate-25"
-                    >
-                      <defs>
-                        <linearGradient
-                          id="grad1"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" className="stop-color-purple-400" />
-                          <stop
-                            offset="50%"
-                            className="stop-color-purple-500"
-                          />
-                          <stop
-                            offset="100%"
-                            className="stop-color-purple-700"
-                          />
-                        </linearGradient>
-                        <filter id="glow">
-                          <feGaussianBlur
-                            stdDeviation="4"
-                            result="coloredBlur"
-                          />
-                          <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                      </defs>
-
-                      {/* Main hexagon body */}
-                      <path
-                        d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z"
-                        fill="url(#grad1)"
-                        stroke="#7656f7ff"
-                        strokeWidth="2"
-                        filter="url(#glow)"
-                        className="opacity-90"
-                      />
-
-                      {/* Inner cutout */}
-                      <path
-                        d="M50 25 L75 40 L75 60 L50 75 L25 60 L25 40 Z"
-                        fill="#4c1d95"
-                        opacity="0.6"
-                      />
-
-                      {/* Top highlight */}
-                      <path
-                        d="M50 10 L65 18 L65 35 L50 45 Z"
-                        fill="#ddd6fe"
-                        opacity="0.4"
-                      />
-                    </svg>
-                  </div>
-
-                  {/* Right Hexagon */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 w-40 h-48">
-                    <svg
-                      viewBox="-15 10 100 120"
-                      className="w-full h-full drop-shadow-2xl rotate-45"
-                    >
-                      <defs>
-                        <linearGradient
-                          id="grad2"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" className="stop-color-purple-500" />
-                          <stop
-                            offset="50%"
-                            className="stop-color-purple-600"
-                          />
-                          <stop
-                            offset="100%"
-                            className="stop-color-indigo-800"
-                          />
-                        </linearGradient>
-                      </defs>
-
-                      {/* Main hexagon body */}
-                      <path
-                        d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z"
-                        fill="url(#grad2)"
-                        stroke="#4c1d95"
-                        strokeWidth="2"
-                        filter="url(#glow)"
-                      />
-
-                      {/* Inner cutout */}
-                      <path
-                        d="M50 25 L75 40 L75 60 L50 75 L25 60 L25 40 Z"
-                        fill="#1e1b4b"
-                        opacity="0.7"
-                      />
-
-                      {/* Top highlight */}
-                      <path
-                        d="M50 10 L65 18 L65 35 L50 45 Z"
-                        fill="#c4b5fd"
-                        opacity="0.5"
-                      />
-                    </svg>
-                  </div>
-
-                  {/* Connection glow between the two */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20">
-                    <div className="absolute inset-0 bg-purple-400 rounded-full blur-3xl opacity-40 animate-pulse"></div>
-                  </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 w-32 h-40">
+                  <svg viewBox="-15 10 100 120" className="w-full h-full drop-shadow-2xl rotate-45">
+                    <defs>
+                      <linearGradient id="aboutGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#818cf8" />
+                        <stop offset="50%" stopColor="#4f46e5" />
+                        <stop offset="100%" stopColor="#312e81" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M50 10 L85 30 L85 70 L50 90 L15 70 L15 30 Z"
+                      fill="url(#aboutGrad2)"
+                      stroke="#4c1d95"
+                      strokeWidth="2"
+                      filter="url(#aboutGlow)"
+                    />
+                    <path d="M50 25 L75 40 L75 60 L50 75 L25 60 L25 40 Z" fill="#1e1b4b" opacity="0.7" />
+                  </svg>
+                </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16">
+                  <div className="absolute inset-0 bg-indigo-400 rounded-full blur-3xl opacity-40 animate-pulse" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* 3 Feature Reasons */}
-          <div className="grid md:grid-cols-3 gap-10 mt-10">
-            {/* Reason 1 */}
-            <div className="p-6 border rounded-md hover:shadow-lg transition-all">
-              {/* Heading + Number row */}
-              <div className="flex items-center justify-between">
-                <h3 className="text-base sm:text-xl font-semibold">Real Web3 Utility</h3>
-                <span className="text-indigo-600 font-bold text-2xl opacity-80">
-                  01
-                </span>
-              </div>
+          <div className="md:col-span-8 md:border-l md:border-white/10 md:pl-12">
+            <p className="about-serif text-2xl md:text-[1.85rem] text-white/90 leading-snug mb-8">
+              <span className="about-serif float-left text-7xl text-blue-400 leading-[0.8] mr-3 mt-1">
+                C
+              </span>
+              ryptrix was created to solve the core limitations of modern
+              blockchains — scalability, security, and real-world utility —
+              while keeping the experience simple and powerful. In a world
+              where digital trust often feels fragile, we saw an opportunity
+              to build something more dependable.
+            </p>
+            <p className="text-gray-400 leading-relaxed max-w-2xl">
+              Cryptrix was born from a simple belief: that value should move
+              as freely as information. We built this platform so individuals
+              and communities can trade, hold, and govern their assets
+              without relying on anyone else — verified by code, not by
+              permission.
+            </p>
 
-              <p className="text-gray-500 mt-1 text-xs sm:text-sm  leading-relaxed">
-                Built to connect real businesses, apps, and users directly with
-                blockchain power.
-              </p>
-            </div>
-
-            {/* Reason 2 */}
-            <div className="p-6 border rounded-md hover:shadow-lg transition-all">
-              <div className="flex items-center justify-between">
-                <h3 className="text-base sm:text-xl font-semibold">High Performance</h3>
-                <span className="text-indigo-600 font-bold text-2xl opacity-80">
-                  02
-                </span>
-              </div>
-
-              <p className="text-gray-500 mt-1 text-xs sm:text-sm  leading-relaxed">
-                Ultra-fast, low-fee, scalable network designed for millions of
-                transactions.
-              </p>
-            </div>
-
-            {/* Reason 3 */}
-            <div className="p-6 border rounded-md hover:shadow-lg transition-all">
-              <div className="flex items-center justify-between">
-                <h3 className="text-base sm:text-xl font-semibold">Secure & Future-Ready</h3>
-                <span className="text-indigo-600 font-bold text-2xl opacity-80">
-                  03
-                </span>
-              </div>
-
-              <p className="text-gray-500 mt-1 text-xs sm:text-sm leading-relaxed">
-                Enterprise-grade security and decentralized governance built for
-                the future.
-              </p>
-            </div>
+            <a
+              href="/dex-exchange/"
+              className="group mt-10 inline-flex items-center gap-2 text-white border-b border-white/20 pb-1 hover:border-blue-400 hover:text-blue-400 transition-colors duration-300"
+            >
+              See it in action
+              <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </div>
         </div>
+      </section>
 
-        <div>
-          <CompanyValues />
+      <BehindTheBuild />
+      <Manifesto />
+      <MissionStatement />
+      <JourneyTimeline />
+
+      {/* ───────── Closing CTA ───────── */}
+      <section className="relative py-24 md:py-32 px-6 text-center border-t border-white/10 overflow-hidden">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="relative z-10">
+          <h2 className="about-serif text-3xl md:text-5xl text-white leading-tight max-w-2xl mx-auto">
+            Come build the rails with us.
+          </h2>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="/community/"
+              className="inline-flex items-center gap-1.5 px-7 py-3.5 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30"
+            >
+              Join the Community
+              <ArrowUpRight size={16} />
+            </a>
+            <a
+              href="/contact/"
+              className="inline-flex items-center gap-1.5 px-7 py-3.5 border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
-      </div>
-
-      <MissionSection />
-      <VisionSection />
+      </section>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/sapherchain-logo-white.png";
+const logo = "/cryptrix-logo-light.png";
 
 // Define dropdown items with title + desc
 const dropdownData = {
@@ -42,11 +42,11 @@ const dropdownData = {
     {
       title: "Smart Contracts",
       desc: "Build and deploy smart contracts.",
-      link: "https://coin.sapherportal.com/",
+      link: "https://coin.cryptrixportal.com/",
     },
     {
       title: "APIs & SDKs",
-      desc: "Integrate SapherChain into your apps.",
+      desc: "Integrate Cryptrix into your apps.",
       link: "/wallets",
     },
     {
@@ -68,7 +68,7 @@ const dropdownData = {
   Build: [
     {
       title: "Documentation",
-      desc: "Official documentation for the Sapher blockchain",
+      desc: "Official documentation for the Cryptrix blockchain",
       link: "/docs",
     },
     { title: "API", desc: "Developer API docs", link: "/docs/api" },
@@ -102,7 +102,7 @@ const dropdownData = {
   Solutions: [
     {
       title: "DeFi",
-      desc: "Live statistics of the SapherChain network",
+      desc: "Live statistics of the Cryptrix network",
       link: "/ecosystem",
     },
     {
@@ -183,28 +183,28 @@ const dropdownData = {
   Resources: [
     {
       title: "Whitepaper",
-      desc: "Blockchain voting process",
-      link: "/voting",
+      desc: "The technical vision behind Cryptrix",
+      link: "/whitepaper",
     },
     {
       title: "Roadmap",
-      desc: "Earn rewards by locking coins",
-      link: "/staking",
+      desc: "Where Cryptrix is headed, phase by phase",
+      link: "/roadmap",
     },
     {
       title: "Blog",
-      desc: "Learn more about committee proposals",
-      link: "/proposals",
+      desc: "News and updates from the Cryptrix team",
+      link: "/blog",
     },
     {
       title: "FAQs",
-      desc: "Guidelines for participation",
-      link: "/rules",
+      desc: "Answers to common Cryptrix questions",
+      link: "/faqs",
     },
     {
       title: "Security & Audits",
-      desc: "Guidelines for participation",
-      link: "/rules",
+      desc: "How Cryptrix keeps your funds secure",
+      link: "/security",
     },
   ],
   More: [
@@ -273,7 +273,7 @@ const Navbar = () => {
             <Link to="/" className="text-2xl font-bold text-white">
               <img
                 src="/cryptrix-logo-light.png"
-                alt="SapherChain Logo"
+                alt="Cryptrix Logo"
                 className="h-9 w-auto object-contain"
               />
             </Link>

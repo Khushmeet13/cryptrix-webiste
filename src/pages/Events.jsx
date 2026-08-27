@@ -14,13 +14,21 @@ const Events = () => {
         }}
       >
         {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-indigo-950/60 to-black/85" />
 
         {/* Main Content */}
         <div className="relative z-10 text-center px-6 max-w-5xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Events
+            </span>
+          </div>
+
           {/* Title */}
           <h1 className="text-3xl sm:text-5xl font-semibold text-white mb-4 tracking-tighter">
-            Events
+            Meet Cryptrix in Real Life
           </h1>
 
           {/* Subtitle */}
@@ -37,7 +45,7 @@ const Events = () => {
                   behavior: "smooth",
                 });
               }}
-              className="px-6 py-3 bg-indigo-600 text-white text-sm sm:text-base rounded-full flex items-center gap-3 mx-auto group hover:cursor-pointer"
+              className="px-6 py-3 bg-white text-black text-sm sm:text-base font-medium rounded-full flex items-center gap-3 mx-auto group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30 hover:cursor-pointer"
             >
               View Upcoming Events
             </button>

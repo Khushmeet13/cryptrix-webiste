@@ -44,11 +44,11 @@ export const govtUseCase = {
   features: [
     {
       title: "Secure Digital Identity Verification",
-      text: "Governments can validate citizen identities instantly using Sapher’s privacy-preserving and tamper-proof identity layer.",
+      text: "Governments can validate citizen identities instantly using Cryptrix’s privacy-preserving and tamper-proof identity layer.",
     },
     {
       title: "Fraud Prevention in Public Schemes",
-      text: "Sapher prevents duplicate beneficiaries, fake identities, and fraudulent claims in welfare and subsidy programs.",
+      text: "Cryptrix prevents duplicate beneficiaries, fake identities, and fraudulent claims in welfare and subsidy programs.",
     },
     {
       title: "Safe Access to E-Governance Services",
@@ -71,7 +71,7 @@ export const govtUseCase = {
   // =========================
   // ⭐ GOVERNMENT PROTOCOLS / PLATFORMS
   // =========================
-  tabelTitle: "Top Government Platforms Using Sapher",
+  tabelTitle: "Top Government Platforms Using Cryptrix",
   tableData: [
     { name: "CivicID Portal", tvl: 912.12, holders: 54000 },
     { name: "GovSecure", tvl: 756.45, holders: 38210 },
@@ -90,27 +90,27 @@ export const govtUseCase = {
   // =========================
   faq: [
     {
-      q: "Is Sapher compliant with government privacy requirements?",
-      a: "Yes. Sapher uses encrypted, privacy-preserving identity verification aligned with national and regional compliance standards.",
+      q: "Is Cryptrix compliant with government privacy requirements?",
+      a: "Yes. Cryptrix uses encrypted, privacy-preserving identity verification aligned with national and regional compliance standards.",
     },
     {
-      q: "Does Sapher run on centralized or decentralized systems?",
+      q: "Does Cryptrix run on centralized or decentralized systems?",
       a: "Identity checks run off-chain for speed, while verification proofs can be placed on-chain for auditability.",
     },
     {
-      q: "Can Sapher reduce welfare or subsidy fraud?",
-      a: "Absolutely. Sapher eliminates duplicate, fake, or ghost beneficiaries through unique identity verification.",
+      q: "Can Cryptrix reduce welfare or subsidy fraud?",
+      a: "Absolutely. Cryptrix eliminates duplicate, fake, or ghost beneficiaries through unique identity verification.",
     },
     {
-      q: "Does Sapher store citizen data?",
-      a: "No. Raw citizen information never leaves the source. Sapher only processes encrypted validation proofs.",
+      q: "Does Cryptrix store citizen data?",
+      a: "No. Raw citizen information never leaves the source. Cryptrix only processes encrypted validation proofs.",
     },
     {
       q: "Can government departments share verified identity data?",
-      a: "Yes, using Sapher’s interoperability layer, departments can share trust signals without exposing private data.",
+      a: "Yes, using Cryptrix’s interoperability layer, departments can share trust signals without exposing private data.",
     },
     {
-      q: "Does Sapher support digital certificates?",
+      q: "Does Cryptrix support digital certificates?",
       a: "Yes. Governments can issue tamper-proof digital documents anchored on-chain for secure verification.",
     },
     {
@@ -118,8 +118,8 @@ export const govtUseCase = {
       a: "Yes. Governments can configure workflows for public services, welfare programs, or citizen onboarding.",
     },
     {
-      q: "Is Sapher suitable for national-level systems?",
-      a: "Yes. Sapher scales to support millions of identity checks per day with low latency.",
+      q: "Is Cryptrix suitable for national-level systems?",
+      a: "Yes. Cryptrix scales to support millions of identity checks per day with low latency.",
     },
   ],
 };

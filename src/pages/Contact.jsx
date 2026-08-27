@@ -1,51 +1,61 @@
 import ContactCommunity from "@/components/Contact/ContactCommunity";
 import ContactForm from "@/components/Contact/ContactForm";
 import SupportSection from "@/components/Contact/SupportSection";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import React from "react";
 
 const Contact = () => {
   return (
     <div className="w-full">
-      {/* EPIC Animated Banner - No Framer Motion */}
-      <section className="relative h-[50vh] overflow-hidden bg-black flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-indigo-950/60 to-purple-950/40" />
+      {/* Header */}
+      <section className="relative overflow-hidden bg-[#01021f] py-28 md:py-32">
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
 
-        {/* Animated Floating Orbs (Pure CSS) */}
-        <div className="absolute inset-0">
-          {/* Orb 1 */}
-          <div className="absolute top-10 left-10 w-76 h-76 md:w-[600px] md:h-[600px] bg-cyan-600/40 rounded-full blur-3xl animate-float-slow" />
-
-          {/* Orb 2 */}
-          <div className="absolute bottom-20 right-10 w-70 h-70 md:w-[500px] md:h-[500px] bg-indigo-600/30 rounded-full blur-3xl animate-float-reverse" />
-
-          {/* Center Glow Pulse */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow" />
-        </div>
-
-        {/* Subtle Moving Grid Lines */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="h-full w-full bg-gradient-to-r from-transparent via-purple-500/40 to-transparent bg-[length:60px_60px] animate-slide-grid" />
-        </div>
+        {/* Ambient glow */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[130px] animate-float-slow pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-cyan-500/15 rounded-full blur-[130px] animate-float-reverse pointer-events-none" />
 
         {/* Main Content */}
-        <div className="relative z-10 text-center px-6">
-          <h1 className="text-5xl font-semibold tracking-tighter text-white">
-            Contact
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-7">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Get in Touch
+            </span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-semibold text-white leading-tight tracking-tight">
+            Let's Start a <span className="text-blue-400">Conversation</span>
           </h1>
 
-          {/* Animated Underline */}
-          <div className="h-1 bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 rounded-full mt-4 mx-auto max-w-xs animate-expand-width origin-left" />
-
-          {/* Subtitle */}
-          <p className="text-xl text-gray-300 mt-8 font-light tracking-wider opacity-0 animate-fade-in delay-700">
-            Let's connect to know more about sapherchain
+          <p className="text-lg text-gray-400 mt-6 max-w-xl mx-auto leading-relaxed">
+            Questions about Cryptrix, partnership ideas, or press inquiries —
+            our team typically replies within 24 hours.
           </p>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <div className="w-7 h-12 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white/60 rounded-full mt-3 animate-bounce" />
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:hello@cryptrixchain.com"
+              className="relative inline-flex items-center gap-1.5 px-6 py-3 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30"
+            >
+              Email Us
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#contact-form"
+              className="relative inline-flex items-center gap-1.5 px-6 py-3 bg-transparent border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Send a Message
+            </a>
           </div>
         </div>
       </section>

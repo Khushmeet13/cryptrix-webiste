@@ -1,73 +1,115 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, ScrollText, Compass, Wallet } from "lucide-react";
 
 const resources = [
   {
     title: "Documentation",
-    description: "Official SapherChain documentation and API references",
+    description:
+      "Official Cryptrix documentation and API references — everything a developer needs to start building.",
     link: "/docs",
-  },
-  {
-    title: "Community Rules",
-    description: "Code snippets and recipes for common tasks",
-    link: "/cookbook",
-  },
-  {
-    title: "Use Cases",
-    description: "Structured learning paths for SapherChain development",
-    link: "/courses",
+    icon: BookOpen,
+    accent: "#60A5FA",
+    featured: true,
   },
   {
     title: "Wallets",
-    description: "Explore SapherChain wallets to manage your assets",
+    description: "Explore Cryptrix wallets to manage and secure your assets.",
     link: "/wallets",
+    icon: Wallet,
+    accent: "#06b6d4",
   },
-  // Add more if needed (Tools, Grants, etc.)
+  {
+    title: "Use Cases",
+    description: "Real-world applications built on Cryptrix, from DeFi to gaming.",
+    link: "/use-cases",
+    icon: Compass,
+    accent: "#A78BFA",
+  },
+  {
+    title: "Community Rules",
+    description: "Guidelines for participation across Cryptrix community channels.",
+    link: "/rules",
+    icon: ScrollText,
+    accent: "#34D399",
+  },
 ];
 
 export default function ContinueJourney() {
+  const [featured, ...rest] = resources;
+
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl font-semibold text-black">
-          Continue Your Journey
-        </h2>
-        <p className="mt-2 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto">
-          Ready to dive deeper? Explore these essential resources for YourChain developers
-        </p>
+    <section className="relative py-20 md:py-24 px-6 bg-[#01021f] overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-        {/* Grid of Resources */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
-          {resources.map((item, index) => (
-            <div key={index} className="text-left group">
-              {/* Title + Button */}
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg sm:text-xl font-bold text-black">
-                  {item.title}
-                </h3>
-                <a
-                  href={item.link}
-                  className="px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-gray-700 
-                           text-black font-medium flex items-center gap-1
-                           hover:border-indigo-500 hover:text-indigo-600
-                           transition-all duration-300 text-xs sm:text-sm"
-                >
-                  VIEW ALL
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                </a>
-              </div>
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-5">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Keep Going
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+            Continue Your Journey
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-gray-400 max-w-lg mx-auto">
+            Ready to dive deeper? Explore these essential resources for
+            Cryptrix developers.
+          </p>
+        </div>
 
-              {/* Divider Line */}
-              <div className="mt-4 h-px bg-gradient-to-r from-gray-800 via-gray-600 to-transparent" />
+        {/* Bento grid */}
+        <div className="grid md:grid-cols-3 gap-5 md:h-[380px]">
+          {/* Featured tile */}
+          <ResourceTile item={featured} className="md:col-span-2 md:row-span-2" large />
 
-              {/* Description */}
-              <p className="mt-4 text-sm sm:text-base text-gray-500">
-                {item.description}
-              </p>
-            </div>
-          ))}
+          {/* Secondary tiles */}
+          <div className="grid gap-5 md:grid-rows-2">
+            {rest.slice(0, 2).map((item) => (
+              <ResourceTile key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Third tile — full width row below */}
+        <div className="mt-5">
+          <ResourceTile item={rest[2]} wide />
         </div>
       </div>
     </section>
+  );
+}
+
+function ResourceTile({ item, className = "", large = false, wide = false }) {
+  const Icon = item.icon;
+  return (
+    <a
+      href={item.link}
+      className={`group relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-7 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 flex flex-col ${
+        wide ? "md:flex-row md:items-center md:justify-between" : "justify-between"
+      } ${className}`}
+    >
+      <div className={wide ? "flex items-center gap-4" : ""}>
+        <div
+          className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+          style={{ background: item.accent + "18", border: `1px solid ${item.accent}35` }}
+        >
+          <Icon size={20} style={{ color: item.accent }} strokeWidth={1.75} />
+        </div>
+
+        <div className={wide ? "" : "mt-5"}>
+          <h3 className={`font-bold text-white ${large ? "text-2xl" : "text-lg"}`}>
+            {item.title}
+          </h3>
+          <p className={`text-gray-400 mt-1.5 ${large ? "text-base max-w-md" : "text-sm"}`}>
+            {item.description}
+          </p>
+        </div>
+      </div>
+
+      <span className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gray-300 group-hover:text-white group-hover:gap-2.5 transition-all duration-300 ${wide ? "shrink-0" : "mt-6"}`}>
+        View all
+        <ArrowRight className="w-3.5 h-3.5" />
+      </span>
+    </a>
   );
 }

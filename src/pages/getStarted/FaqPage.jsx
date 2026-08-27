@@ -3,23 +3,23 @@ import React, { useState } from "react";
 
 const faqData = [
   {
-    q: "What is SapherChain?",
-    a: "SapherChain is a high-performance Layer-1 blockchain designed for security-first applications, scalable decentralized infrastructure, and enterprise-level deployments.",
+    q: "What is Cryptrix?",
+    a: "Cryptrix is a high-performance Layer-1 blockchain designed for security-first applications, scalable decentralized infrastructure, and enterprise-level deployments.",
   },
   {
-    q: "What makes SapherChain different from other blockchains?",
-    a: `SapherChain focuses on real-world security and data integrity. It uses a trustless validation layer, modular architecture, and on-chain identity verification to provide a secure blockchain environment for enterprises and developers.`,
+    q: "What makes Cryptrix different from other blockchains?",
+    a: `Cryptrix focuses on real-world security and data integrity. It uses a trustless validation layer, modular architecture, and on-chain identity verification to provide a secure blockchain environment for enterprises and developers.`,
   },
   {
-    q: "How does staking work on SapherChain?",
-    a: `SapherChain allows users to stake SAPHER tokens to help secure the network. Validators receive staking rewards, while delegators earn a percentage of validator rewards. Staked tokens remain non-custodial and can be un-staked anytime after the cooldown period.`,
+    q: "How does staking work on Cryptrix?",
+    a: `Cryptrix allows users to stake SPH tokens to help secure the network. Validators receive staking rewards, while delegators earn a percentage of validator rewards. Staked tokens remain non-custodial and can be un-staked anytime after the cooldown period.`,
   },
   {
-    q: "What consensus mechanism does SapherChain use?",
-    a: "SapherChain uses a Delegated Proof-of-Stake (DPoS) + Byzantine Fault Tolerance hybrid mechanism to achieve high throughput, low latency, and strong network resilience.",
+    q: "What consensus mechanism does Cryptrix use?",
+    a: "Cryptrix uses a Delegated Proof-of-Stake (DPoS) + Byzantine Fault Tolerance hybrid mechanism to achieve high throughput, low latency, and strong network resilience.",
   },
   {
-    q: "What can developers build on SapherChain?",
+    q: "What can developers build on Cryptrix?",
     a: `Developers can build:
 • Smart contract applications  
 • Secure identity-based dApps  
@@ -27,14 +27,14 @@ const faqData = [
 • DeFi protocols  
 • NFT + token ecosystems  
 • High-throughput micro-services  
-SapherChain supports EVM compatibility for easy migration.`,
+Cryptrix supports EVM compatibility for easy migration.`,
   },
   {
-    q: "Is SapherChain compatible with MetaMask?",
-    a: "Yes. SapherChain is fully EVM compatible. Developers and users can connect through MetaMask by adding the Sapher RPC and chain ID.",
+    q: "Is Cryptrix compatible with MetaMask?",
+    a: "Yes. Cryptrix is fully EVM compatible. Developers and users can connect through MetaMask by adding the Cryptrix RPC and chain ID.",
   },
   {
-    q: "What is the SAPHER token used for?",
+    q: "What is the SPH token used for?",
     a: `SAPHEL is used for:  
 • Gas fees  
 • Staking  
@@ -44,20 +44,20 @@ SapherChain supports EVM compatibility for easy migration.`,
 • Access to premium on-chain features`,
   },
   {
-    q: "Does SapherChain support NFTs?",
-    a: "Yes. SapherChain supports an optimized NFT framework with low minting fees and high-speed transactions, making it suitable for gaming and digital asset ecosystems.",
+    q: "Does Cryptrix support NFTs?",
+    a: "Yes. Cryptrix supports an optimized NFT framework with low minting fees and high-speed transactions, making it suitable for gaming and digital asset ecosystems.",
   },
   {
-    q: "How fast is SapherChain?",
-    a: "SapherChain can process up to 10,000+ transactions per second with sub-second finality thanks to its parallel execution engine and optimized consensus mechanism.",
+    q: "How fast is Cryptrix?",
+    a: "Cryptrix can process up to 10,000+ transactions per second with sub-second finality thanks to its parallel execution engine and optimized consensus mechanism.",
   },
   {
-    q: "Does SapherChain have a native bridge?",
-    a: `Yes. SapherChain includes a trust-minimized cross-chain bridge that supports the transfer of tokens, NFTs, and arbitrary data between major Layer-1 and Layer-2 blockchains.`,
+    q: "Does Cryptrix have a native bridge?",
+    a: `Yes. Cryptrix includes a trust-minimized cross-chain bridge that supports the transfer of tokens, NFTs, and arbitrary data between major Layer-1 and Layer-2 blockchains.`,
   },
   {
-    q: "How secure is SapherChain?",
-    a: `SapherChain includes:
+    q: "How secure is Cryptrix?",
+    a: `Cryptrix includes:
 • Multi-layer consensus  
 • Slashing for malicious validators  
 • On-chain monitoring  
@@ -66,7 +66,7 @@ SapherChain supports EVM compatibility for easy migration.`,
 Security is a core part of the protocol design.`,
   },
   {
-    q: "What kind of applications benefit the most from SapherChain?",
+    q: "What kind of applications benefit the most from Cryptrix?",
     a: `Ideal use cases include:
 • Financial platforms  
 • Identity-based systems  
@@ -76,20 +76,20 @@ Security is a core part of the protocol design.`,
 • Enterprise real-time analytics`,
   },
   {
-    q: "Does SapherChain have governance?",
-    a: "Yes. SAPHER token holders can vote on protocol upgrades, economic parameters, validator rules, and ecosystem grants.",
+    q: "Does Cryptrix have governance?",
+    a: "Yes. SPH token holders can vote on protocol upgrades, economic parameters, validator rules, and ecosystem grants.",
   },
   {
-    q: "How do I become a validator on SapherChain?",
+    q: "How do I become a validator on Cryptrix?",
     a: `To become a validator, you need:
-• Minimum required SAPHER stake  
-• A node running SapherChain Validator software  
+• Minimum required SPH stake  
+• A node running Cryptrix Validator software  
 • Stable uptime and performance  
 Validators earn rewards but may face slashing for malicious behavior.`,
   },
   {
-    q: "Where can I track SapherChain transactions?",
-    a: "You can track all transactions, smart contracts, and on-chain data through the official Sapher Explorer.",
+    q: "Where can I track Cryptrix transactions?",
+    a: "You can track all transactions, smart contracts, and on-chain data through the official Cryptrix Explorer.",
   },
 ];
 

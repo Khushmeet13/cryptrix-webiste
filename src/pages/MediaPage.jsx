@@ -24,27 +24,31 @@ const MediaPage = () => {
       </video>
 
       {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-indigo-950/50 to-black/80" />
 
-      {/* Content Container - Centered */}
+      {/* Content Container */}
       <div className="relative z-10 flex items-center h-[70vh] px-4 md:px-32">
-        <div className="text-start">
+        <div className="text-start max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Media
+            </span>
+          </div>
+
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl  font-medium text-white mb-6">
+          <h1 className="text-3xl sm:text-5xl font-medium text-white mb-6 leading-tight">
             Creating a more sovereign,
             <br />
             <span className="block">secure, and open internet</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-white/90 mb-8 leading-relaxed">
-            SapherChain Labs redistributes the power and value of the internet to
-            its
-            <br />
-            users, by building a network of open source protocols that provide
-            unified
-            <br />
-            liquidity, unlimited scalability and interoperability for builders.
+          <p className="text-sm sm:text-base text-gray-400 mb-8 leading-relaxed max-w-2xl">
+            Cryptrix Labs redistributes the power and value of the internet to
+            its users, by building a network of open source protocols that
+            provide unified liquidity, unlimited scalability and
+            interoperability for builders.
           </p>
         </div>
       </div>

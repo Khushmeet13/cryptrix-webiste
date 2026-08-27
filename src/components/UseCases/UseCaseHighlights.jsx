@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 const highlights = [
   { 
     industry: "Payments", 
-    desc: "Fraud detection, wallet identity, compliant KYC layers. Payments on Sapher use decentralized identity scoring, compliant KYC flows, fraud-resistant wallets, and instant risk evaluation."
+    desc: "Fraud detection, wallet identity, compliant KYC layers. Payments on Cryptrix use decentralized identity scoring, compliant KYC flows, fraud-resistant wallets, and instant risk evaluation."
   },
   { 
     industry: "Gaming", 
@@ -13,7 +13,7 @@ const highlights = [
   },
   { 
     industry: "NFTs", 
-    desc: "Creator verification and anti-bot minting protection. NFTs use Sapher for creator identity, trust minting, and secure collector onboarding."
+    desc: "Creator verification and anti-bot minting protection. NFTs use Cryptrix for creator identity, trust minting, and secure collector onboarding."
   },
   { 
     industry: "Government", 

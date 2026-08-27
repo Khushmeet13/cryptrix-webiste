@@ -1,104 +1,70 @@
 import React from "react";
+import { Search, BookOpen, PlayCircle, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const ResourcesFeatureSection = () => {
-  const isMobile = window.innerWidth < 768;
-  const layers = Array.from({ length: isMobile ? 4 : 8 });
+const quickLinks = [
+  { label: "Documentation", to: "/docs", icon: BookOpen },
+  { label: "Video Library", to: "#videos", icon: PlayCircle },
+  { label: "Community", to: "/community/", icon: Users },
+];
+
+const ResourcesFeaturesSection = ({ search, onSearchChange }) => {
   return (
-    <div className="max-w-2xl md:max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-      {/* LEFT TEXT SECTION */}
-      <div>
-        <h1 className="text-3xl md:text-5xl text-black font-bold">
-          Learn <br /> about <br /> SapherChain
-        </h1>
-
-        <p className="text-gray-500 text-lg mt-6 max-w-lg text-xs md:text-base">
-          Explore the essentials of SapherChain with clear, no-code learning
-          resources built for beginners, developers, investors, and enthusiasts.
-        </p>
-
-        {/* BUTTONS */}
-        <div className="flex gap-4 mt-10">
-          <button className="px-4 py-1 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-full bg-indigo-600 text-white font-semibold hover:opacity-80 transition">
-            START LEARNING
-          </button>
-
-          <button className="px-4 py-1 sm:px-6 sm:py-3 text-xs sm:text-sm rounded-full border border-black text-black font-semibold hover:bg-white hover:text-black transition">
-            DEVELOPER DOCS
-          </button>
-        </div>
+    <div className="max-w-3xl mx-auto px-6 text-center">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6">
+        <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+        <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+          Resources
+        </span>
       </div>
 
-      {/* RIGHT ANIMATED STACK (SOLANA STYLE) */}
-      <div className="flex justify-center md:justify-end">
-        <div className="relative w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96">
-          {layers.map((_, i) => (
-            <div
-              key={i}
-              className={`
-              hex-layer
-              absolute left-1/2 -translate-x-1/2
-              w-[200px] h-[100px] md:w-[280px] md:h-[150px]
-              opacity-[0.92]
-            `}
-              style={{
-                top: `${i * 35}px`,
-                transform: ` rotate(${i * 2.5}deg)`,
-                zIndex: 50 - i,
-                animationDelay: `${i * 0.15}s`,
-              }}
+      <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-tight tracking-tight">
+        Everything you need
+        <br />
+        to build with <span className="text-blue-400">Cryptrix</span>
+      </h1>
+
+      <p className="text-gray-400 mt-6 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+        Clear, no-code guides, videos, and references — built for beginners,
+        developers, and investors alike.
+      </p>
+
+      {/* Search */}
+      <div className="relative mt-10 max-w-xl mx-auto">
+        <Search
+          size={18}
+          className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
+        />
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder="Search guides — wallets, staking, fees, NFTs..."
+          className="w-full pl-12 pr-5 py-4 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-400/50 focus:bg-white/[0.05] transition-all duration-300"
+        />
+      </div>
+
+      {/* Quick links */}
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-8">
+        {quickLinks.map((q) => {
+          const Icon = q.icon;
+          const isHash = q.to.startsWith("#");
+          const Tag = isHash ? "a" : Link;
+          const linkProps = isHash ? { href: q.to } : { to: q.to };
+          return (
+            <Tag
+              key={q.label}
+              {...linkProps}
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors duration-300"
             >
-              <div className="hex-shape"></div>
-            </div>
-          ))}
-        </div>
+              <Icon size={15} className="text-blue-400" />
+              {q.label}
+            </Tag>
+          );
+        })}
       </div>
-
-      <style>{`
-        .hex-shape {
-          width: 100%;
-          height: 100%;
-          clip-path: polygon(
-            25% 0%, 
-            75% 0%, 
-            100% 50%, 
-            75% 100%, 
-            25% 100%, 
-            0% 50%
-          );
-          background: linear-gradient(90deg,
-            rgba(130,0,255,0.7),
-            rgba(0,220,200,0.7),
-            rgba(130,0,255,0.7)
-          );
-          background-size: 200% 200%;
-          filter: blur(2px);
-          border-radius: 12px;
-          animation: glowMove 6s ease-in-out infinite alternate,
-                     floatLayer 4s ease-in-out infinite;
-        }
-
-        @keyframes glowMove {
-          0% {
-            background-position: 0% 50%;
-            opacity: 0.85;
-          }
-          100% {
-            background-position: 100% 50%;
-            opacity: 1;
-          }
-        }
-
-        @keyframes floatLayer {
-          0% {
-            transform: translateY(0px);
-          }
-          100% {
-            transform: translateY(-8px);
-          }
-        }
-      `}</style>
     </div>
   );
 };
 
-export default ResourcesFeatureSection;
+export default ResourcesFeaturesSection;

@@ -17,11 +17,11 @@ export const gamingUseCase = {
   features: [
     {
       title: "Instant Player Verification",
-      text: "Verify players within milliseconds before they enter matches, tournaments, or marketplaces. Stop fake users, smurf accounts, and exploiters through Sapher’s real-time decentralized identity layer.",
+      text: "Verify players within milliseconds before they enter matches, tournaments, or marketplaces. Stop fake users, smurf accounts, and exploiters through Cryptrix’s real-time decentralized identity layer.",
     },
     {
       title: "Anti-Cheat & Fraud Detection",
-      text: "Sapher analyzes device behavior, identity proofs, wallet history, and gameplay patterns to detect suspicious activity — helping gaming platforms eliminate bots and cheaters instantly.",
+      text: "Cryptrix analyzes device behavior, identity proofs, wallet history, and gameplay patterns to detect suspicious activity — helping gaming platforms eliminate bots and cheaters instantly.",
     },
     {
       title: "In-Game Asset & Marketplace Protection",
@@ -29,11 +29,11 @@ export const gamingUseCase = {
     },
     {
       title: "Compliance-Ready KYC for Tournaments & Rewards",
-      text: "Esports payouts, reward claims, and high-value trades can require KYC. Sapher enables seamless checks without breaking the gaming experience.",
+      text: "Esports payouts, reward claims, and high-value trades can require KYC. Cryptrix enables seamless checks without breaking the gaming experience.",
     },
     {
       title: "Secure Web3 Gaming Transactions",
-      text: "For blockchain-based games, Sapher ensures wallet actions, asset minting, and token transfers are tied to real, verified users — reducing multi-account abuse and botting.",
+      text: "For blockchain-based games, Cryptrix ensures wallet actions, asset minting, and token transfers are tied to real, verified users — reducing multi-account abuse and botting.",
     },
     {
       title: "Fast & Frictionless Player Onboarding",
@@ -44,7 +44,7 @@ export const gamingUseCase = {
   // =========================
   // ⭐ TOP GAMING PROTOCOLS / PROJECTS (DUMMY DATA)
   // =========================
-  tabelTitle: "Top Gaming Protocols on Sapher",
+  tabelTitle: "Top Gaming Protocols on Cryptrix",
   tableData: [
     { name: "GameVerseX", tvl: 912.45, holders: 4210 },
     { name: "MetaArena", tvl: 701.32, holders: 3187 },
@@ -63,8 +63,8 @@ export const gamingUseCase = {
   // =========================
   faq: [
     {
-      q: "How does Sapher help prevent cheating and bot accounts?",
-      a: "Sapher verifies player identity, device signals, and behavior patterns to instantly detect bots, smurf accounts, and exploiters before they affect gameplay.",
+      q: "How does Cryptrix help prevent cheating and bot accounts?",
+      a: "Cryptrix verifies player identity, device signals, and behavior patterns to instantly detect bots, smurf accounts, and exploiters before they affect gameplay.",
     },
     {
       q: "Is player verification done on-chain or off-chain?",
@@ -72,27 +72,27 @@ export const gamingUseCase = {
     },
     {
       q: "How fast are gaming-related checks?",
-      a: "Most checks complete in under 30–40ms, making Sapher ideal for matchmaking systems, esports events, and real-time in-game transactions.",
+      a: "Most checks complete in under 30–40ms, making Cryptrix ideal for matchmaking systems, esports events, and real-time in-game transactions.",
     },
     {
-      q: "Does Sapher store sensitive player information?",
-      a: "No. Player data is encrypted, privacy-preserving, and stored off-chain. Sapher never stores raw gameplay data or personal files.",
+      q: "Does Cryptrix store sensitive player information?",
+      a: "No. Player data is encrypted, privacy-preserving, and stored off-chain. Cryptrix never stores raw gameplay data or personal files.",
     },
     {
-      q: "Can Sapher protect NFT and token-based game economies?",
-      a: "Yes. Sapher verifies identity and intent before trades, reducing scams, duplicate accounts, and asset abuse in Web3 games.",
+      q: "Can Cryptrix protect NFT and token-based game economies?",
+      a: "Yes. Cryptrix verifies identity and intent before trades, reducing scams, duplicate accounts, and asset abuse in Web3 games.",
     },
     {
-      q: "Does Sapher support KYC for esports rewards?",
-      a: "Yes. Tournament payouts, high-value trades, and reward claims can all be KYC-enabled using Sapher’s automated verification workflows.",
+      q: "Does Cryptrix support KYC for esports rewards?",
+      a: "Yes. Tournament payouts, high-value trades, and reward claims can all be KYC-enabled using Cryptrix’s automated verification workflows.",
     },
     {
       q: "Can gaming studios customize verification flows?",
       a: "Absolutely. Studios can configure trust scoring, anti-cheat logic, risk thresholds, and gameplay-specific identity checks.",
     },
     {
-      q: "Is Sapher suitable for large multiplayer or Web3 games?",
-      a: "Yes. Sapher is optimized for high-traffic gaming platforms, real-time multiplayer games, and blockchain-based experiences.",
+      q: "Is Cryptrix suitable for large multiplayer or Web3 games?",
+      a: "Yes. Cryptrix is optimized for high-traffic gaming platforms, real-time multiplayer games, and blockchain-based experiences.",
     },
   ],
 };

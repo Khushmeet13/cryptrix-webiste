@@ -309,16 +309,16 @@ const HeroSection = () => {
                drop-shadow-2xl
                [text-shadow:0_0_80px_rgba(255,255,255,0.15)]"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='0.15'/%3E%3Cstop offset='50%25' stop-color='%23ffffff' stop-opacity='0.05'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0.02'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='68' font-family='Impact, Arial Black, sans-serif' font-size='90' fill='url(%23grad)' text-anchor='middle'%3ESapher%3C/text%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='0.15'/%3E%3Cstop offset='50%25' stop-color='%23ffffff' stop-opacity='0.05'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0.02'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50' y='68' font-family='Impact, Arial Black, sans-serif' font-size='90' fill='url(%23grad)' text-anchor='middle'%3ECryptrix%3C/text%3E%3C/svg%3E")`,
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
             }}
           >
-            Sapher
+            Cryptrix
           </span>
         </h1> */}
         {/* <h1 className="absolute text-[300px] font-extrabold text-white/20 tracking-tight">
-          Sapher
+          Cryptrix
         </h1> */}
         <div className="absolute text-center z-20 ">
           <VerticalTextTicker />

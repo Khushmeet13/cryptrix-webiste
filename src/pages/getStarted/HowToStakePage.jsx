@@ -6,7 +6,7 @@ import NewsletterSignup from "@/components/Community/NewsletterSignup";
 const stakingSteps = [
   {
     title: "Connect Your Wallet",
-    desc: "Use a supported wallet like Phantom or Solflare to connect to SapherChain.",
+    desc: "Use a supported wallet like Phantom or Solflare to connect to Cryptrix.",
     icon: <Lock size={24} className="text-indigo-600" />,
   },
   {
@@ -29,7 +29,7 @@ const stakingSteps = [
 const securityTips = [
   "Never share your wallet private key.",
   "Double-check the URL before connecting your wallet.",
-  "Only use official SapherChain apps and dApps.",
+  "Only use official Cryptrix apps and dApps.",
   "Monitor your staking rewards regularly.",
 ];
 
@@ -166,7 +166,7 @@ const HowToStakePage = () => {
           {/* Info Note */}
           <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-6 text-sm text-indigo-900">
             <strong>Note:</strong> Always ensure you are using the official
-            SapherChain staking interface before connecting your wallet.
+            Cryptrix staking interface before connecting your wallet.
           </div>
         </div>
       </section>
@@ -329,7 +329,7 @@ const HowToStakePage = () => {
                 <Info size={20} />
               </div>
               <p className="text-sm text-yellow-800 leading-relaxed">
-                <strong>Important:</strong> SapherChain will never ask for your
+                <strong>Important:</strong> Cryptrix will never ask for your
                 private keys, recovery phrase, or wallet passwords. If anyone
                 does, it is a scam.
               </p>

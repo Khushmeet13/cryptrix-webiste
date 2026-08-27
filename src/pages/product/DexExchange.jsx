@@ -6,6 +6,8 @@ import HowTradingWorks from '@/components/Product/HowTradingWorks'
 import LiquidityProviders from '@/components/Product/LiquidityProviders'
 import LiveAnalytics from '@/components/Product/LiveAnalytics'
 import SecurityAndTrust from '@/components/Product/SecurityAndTrust'
+import TradingOptions from '@/components/Product/TradingOptions'
+import WhyCryptix from '@/components/Product/WhyCryptix'
 import React from 'react'
 
 const DexExchange = () => {
@@ -24,6 +26,12 @@ const DexExchange = () => {
 
                         {/* Left Content */}
                         <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6">
+                                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                                    About Cryptix DEX
+                                </span>
+                            </div>
 
                             <h1 className="text-2xl md:text-4xl font-semibold text-white leading-tight mb-6">
                                 What is <span className="text-blue-400">Cryptix DEX</span>?
@@ -38,7 +46,7 @@ const DexExchange = () => {
 
                         {/* Right Card */}
                         <div className="relative">
-                            <div className="rounded-3xl border border-gray-200 backdrop-blur-xl p-8 shadow-lg">
+                            <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8 shadow-lg">
                                 <h3 className="text-xl font-semibold text-white mb-4">
                                     Why Cryptix DEX?
                                 </h3>
@@ -65,9 +73,11 @@ const DexExchange = () => {
             </section>
 
             <DexKeyFeatures />
+            <TradingOptions />
             <HowTradingWorks />
             <LiquidityProviders />
             <FeesAndEconomics />
+            <WhyCryptix />
             <SecurityAndTrust />
             <LiveAnalytics />
             <Faq />

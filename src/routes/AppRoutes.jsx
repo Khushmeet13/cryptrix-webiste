@@ -24,7 +24,7 @@ import Wallet from "@/pages/product/wallet/Wallet";
 import AllWallets from "@/pages/product/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
 import HowToStakePage from "@/pages/getStarted/HowToStakePage";
-import WhatSapherChainDoes from "@/pages/getStarted/WhatSapherChainDoes";
+import WhatCryptrixDoes from "@/pages/getStarted/WhatCryptrixDoes";
 import NetworkOverview from "@/pages/ecosystem/NetworkOverview";
 import ValidatorsPage from "@/pages/ecosystem/Validators";
 import NodesPage from "@/pages/ecosystem/NodesPage";
@@ -32,7 +32,11 @@ import PartnersPage from "@/pages/ecosystem/PartnersPage";
 import GrantsPage from "@/pages/ecosystem/GrantsPage";
 import EcosystemGrowth from "@/pages/ecosystem/EcosystemGrowth";
 import BlogPage from "@/pages/blog/BlogPage";
+import BlogDetail from "@/pages/blog/BlogDetail";
 import DexExchange from "@/pages/product/DexExchange";
+import Whitepaper from "@/pages/Whitepaper";
+import Roadmap from "@/pages/Roadmap";
+import Security from "@/pages/Security";
 
 function TrailingSlashWrapper() {
   const location = useLocation();
@@ -58,14 +62,14 @@ export default function AppRoutes() {
 
           <Route path="/sph" element={<IntroPage />} />
           <Route
-            path="/what-sapherchain-does"
-            element={<WhatSapherChainDoes />}
+            path="/what-cryptrix-does"
+            element={<WhatCryptrixDoes />}
           />
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/use-cases/:slug" element={<UsecaseDetail />} />
           <Route path="/faqs" element={<FaqPage />} />
 
-          <Route path="/sapher-wallets" element={<AllWallets />} />
+          <Route path="/all-wallets" element={<AllWallets />} />
           <Route path="/how-to-stake" element={<HowToStakePage />} />
 
           {/* Build */}
@@ -88,9 +92,13 @@ export default function AppRoutes() {
 
           {/* blog */}
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
 
           {/* More links */}
           <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/whitepaper" element={<Whitepaper />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/about" element={<About />} />
           <Route path="/legal" element={<LegalPage />} />
           <Route path="/legal/:slug" element={<LegalDetail />} />

@@ -1,12 +1,12 @@
 import React from "react";
 import { Download } from "lucide-react";
-import logo from "../../assets/sapherchain-logo-dark.png";
+const logo = "/cryptrix-logo-dark.png";
 
 const brandAssets = [
   {
     title: "Logo Pack",
-    desc: "Official Sapher logos in PNG, SVG & EPS format.",
-    img: "/sapherchain-favicon-light.png",
+    desc: "Official Cryptrix logos in PNG, SVG & EPS format.",
+    img: "/cryptrix-favicon.png",
   },
   {
     title: "Color Palette",
@@ -20,29 +20,38 @@ const brandAssets = [
   },
   {
     title: "Iconography",
-    desc: "Sapher icons, shapes, marks & line icons.",
+    desc: "Cryptrix icons, shapes, marks & line icons.",
     img: logo,
   },
 ];
 
 const BrandSection = () => {
   return (
-    <section className="w-full bg-white text-black py-22 px-6">
+    <section className="relative w-full bg-[#01021f] text-white py-20 md:py-24 px-6 overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none" />
+
       {/* Heading */}
-      <div className="max-w-5xl mx-auto text-center mb-16">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">Sapher Brand Kit</h2>
-       <p className="text-sm sm:text-base text-gray-500 max-w-xl mx-auto leading-relaxed">
-          Download official assets, typography, colors, and guidelines to 
-          represent the Sapher identity consistently across all brand touchpoints.
+      <div className="relative z-10 max-w-5xl mx-auto text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-5">
+          <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+          <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+            Brand Kit
+          </span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-white">Cryptrix Brand Kit</h2>
+        <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
+          Download official assets, typography, colors, and guidelines to
+          represent the Cryptrix identity consistently across all brand
+          touchpoints.
         </p>
       </div>
 
       {/* Asset Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto hover:cursor-pointer">
+      <div className="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {brandAssets.map((item, i) => (
           <div
             key={i}
-            className=" border border-white/10 rounded-2xl shadow-xl overflow-hidden hover:border-indigo-500/30 transition"
+            className="group rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 cursor-pointer"
           >
             <img
               src={item.img}
@@ -51,13 +60,13 @@ const BrandSection = () => {
             />
 
             <div className="p-5">
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-black leading-relaxed">
+              <h3 className="text-lg font-semibold mb-2 text-white">{item.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
                 {item.desc}
               </p>
 
-              <button className="mt-4 flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-600 transition">
-                <Download size={18} /> Download
+              <button className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition">
+                <Download size={16} /> Download
               </button>
             </div>
           </div>
@@ -65,8 +74,8 @@ const BrandSection = () => {
       </div>
 
       {/* CTA Button */}
-      <div className="mt-16 flex justify-center">
-        <button className="px-8 py-3 text-white rounded-full bg-indigo-600 transition text-sm flex items-center gap-2">
+      <div className="relative z-10 mt-14 flex justify-center">
+        <button className="inline-flex items-center gap-2 px-8 py-3 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30">
           <Download size={16} />
           Download Full Brand Kit
         </button>

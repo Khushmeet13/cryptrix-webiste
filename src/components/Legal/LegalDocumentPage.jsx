@@ -146,11 +146,11 @@ const LegalDocumentPage = ({ title, lastUpdated, sections }) => {
           </div>
         </section>
       </div>
-      <section className="bg-white h-hull">
-        <div className="max-w-7xl bg-white mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row gap-12">
+      <section className="bg-[#01021f]">
+        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20 flex flex-col lg:flex-row gap-12">
           {/* Desktop Sidebar */}
-          <aside className="hidden lg:block w-90 flex-shrink-0 bg-gray-100/50 rounded-xl">
-            <div className="sticky top-24 space-y-8">
+          <aside className="hidden lg:block w-90 flex-shrink-0 rounded-2xl border border-white/10 bg-white/[0.02]">
+            <div className="sticky top-24 space-y-8 p-2">
               <nav className="">
                 {sections.map((sec, i) => (
                   <button
@@ -158,22 +158,20 @@ const LegalDocumentPage = ({ title, lastUpdated, sections }) => {
                     onClick={() => scrollTo(sec.id)}
                     className={`w-full text-left px-6 py-4 rounded-xl flex items-center gap-2 text-lg transition-all ${
                       activeSection === sec.id
-                        ? " text-black "
-                        : "text-gray-400"
+                        ? "bg-white/[0.05] text-white"
+                        : "text-gray-400 hover:text-white hover:bg-white/[0.03]"
                     }`}
                   >
                     <span
                       className={`w-8 ${
-                        activeSection === sec.id
-                          ? " text-black "
-                          : "text-gray-500 hover:text-white hover:bg-white/5"
+                        activeSection === sec.id ? "text-blue-400" : "text-gray-500"
                       }`}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="flex-1 text-left">{sec.title}</span>
                     {activeSection === sec.id && (
-                      <ChevronRight className="w-5 h-5" />
+                      <ChevronRight className="w-5 h-5 text-blue-400" />
                     )}
                   </button>
                 ))}
@@ -186,12 +184,12 @@ const LegalDocumentPage = ({ title, lastUpdated, sections }) => {
             <div className="space-y-20">
               {sections.map((sec, i) => (
                 <section key={sec.id} id={sec.id} className="scroll-mt-32">
-                  <div className="border-l-1 border-indigo-600 pl-8">
-                    <h2 className="text-3xl font-semibold mb-3">
+                  <div className="border-l border-indigo-500/40 pl-8">
+                    <h2 className="text-3xl font-semibold mb-3 text-white">
                       {i + 1}. {sec.title}
                     </h2>
 
-                    <div className="text-md text-gray-500 leading-relaxed space-y-4">
+                    <div className="text-md text-gray-400 leading-relaxed space-y-4">
                       {sec.content}
                     </div>
                   </div>

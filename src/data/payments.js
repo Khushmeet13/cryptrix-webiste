@@ -52,11 +52,11 @@ export const paymentsUseCase = {
   features: [
     {
       title: "Instant Identity Verification",
-      text: "Verify users in milliseconds before a transaction is initiated. Reduce fraudulent payments, fake accounts, and repeat offenders through real-time identity checks powered by Sapher’s decentralized identity layer.",
+      text: "Verify users in milliseconds before a transaction is initiated. Reduce fraudulent payments, fake accounts, and repeat offenders through real-time identity checks powered by Cryptrix’s decentralized identity layer.",
     },
     {
       title: "Fraud Detection & Risk Scoring",
-      text: "Sapher automatically analyzes device behavior, wallets, biometrics, and identity trust signals to produce a high-accuracy fraud risk score — helping payment apps block risky transactions instantly.",
+      text: "Cryptrix automatically analyzes device behavior, wallets, biometrics, and identity trust signals to produce a high-accuracy fraud risk score — helping payment apps block risky transactions instantly.",
     },
     {
       title: "Chargeback & Refund Fraud Prevention",
@@ -64,19 +64,19 @@ export const paymentsUseCase = {
     },
     {
       title: "Compliance-Ready KYC & AML",
-      text: "Meet global KYC, AML, and transaction monitoring standards without slowing down your user experience. Sapher handles verification, screening, and intent checks automatically.",
+      text: "Meet global KYC, AML, and transaction monitoring standards without slowing down your user experience. Cryptrix handles verification, screening, and intent checks automatically.",
     },
     {
       title: "Seamless Cross-Border Payments",
-      text: "Enable users to pay globally with confidence. Sapher provides identity consistency across geographies, devices, and payment methods — reducing friction in cross-border transfers and remittances.",
+      text: "Enable users to pay globally with confidence. Cryptrix provides identity consistency across geographies, devices, and payment methods — reducing friction in cross-border transfers and remittances.",
     },
     {
       title: "Faster & Frictionless User Onboarding",
-      text: "Give users a one-tap onboarding experience. Once verified through Sapher, they stay verified across multiple payment actions, reducing drop-off and increasing conversion.",
+      text: "Give users a one-tap onboarding experience. Once verified through Cryptrix, they stay verified across multiple payment actions, reducing drop-off and increasing conversion.",
     },
   ],
 
-  tabelTitle: "Top Payment Protocols on Sapher",
+  tabelTitle: "Top Payment Protocols on Cryptrix",
   tableData: [
     { name: "PayWave", tvl: 842.15, holders: 2104 },
     { name: "SwiftPay", tvl: 610.42, holders: 1349 },
@@ -92,8 +92,8 @@ export const paymentsUseCase = {
 
   faq: [
     {
-      q: "How does Sapher enhance payment security?",
-      a: "Sapher provides real-time identity scoring and fraud detection, ensuring every transaction is verified before processing.",
+      q: "How does Cryptrix enhance payment security?",
+      a: "Cryptrix provides real-time identity scoring and fraud detection, ensuring every transaction is verified before processing.",
     },
     {
       q: "Are payment verifications processed on-chain or off-chain?",
@@ -101,27 +101,27 @@ export const paymentsUseCase = {
     },
     {
       q: "How fast are payment-related checks?",
-      a: "Most payment risk checks finalize in under 35ms using Sapher’s decentralized scoring engine—perfect for real-time transfers.",
+      a: "Most payment risk checks finalize in under 35ms using Cryptrix’s decentralized scoring engine—perfect for real-time transfers.",
     },
     {
-      q: "Does Sapher store any sensitive user payment data?",
-      a: "No. Sapher never stores raw payment details. All user data is encrypted, privacy-preserving, and kept off-chain for maximum security.",
+      q: "Does Cryptrix store any sensitive user payment data?",
+      a: "No. Cryptrix never stores raw payment details. All user data is encrypted, privacy-preserving, and kept off-chain for maximum security.",
     },
     {
-      q: "Can Sapher detect fraud during a transaction?",
-      a: "Yes. Sapher analyzes behavioral patterns, device signals, and identity proofs to flag suspicious activity instantly.",
+      q: "Can Cryptrix detect fraud during a transaction?",
+      a: "Yes. Cryptrix analyzes behavioral patterns, device signals, and identity proofs to flag suspicious activity instantly.",
     },
     {
-      q: "Does Sapher support KYC/AML workflows for payments?",
-      a: "Absolutely. Sapher integrates with KYC providers, offers decentralized credentials, and supports AML scoring for compliant transactions.",
+      q: "Does Cryptrix support KYC/AML workflows for payments?",
+      a: "Absolutely. Cryptrix integrates with KYC providers, offers decentralized credentials, and supports AML scoring for compliant transactions.",
     },
     {
       q: "Can payment companies customize verification rules?",
       a: "Yes, organizations can tailor scoring thresholds, approval logic, and verification layers based on their compliance needs.",
     },
     {
-      q: "Is Sapher suitable for large-scale payment platforms?",
-      a: "Yes, Sapher is optimized for high-throughput systems such as wallets, remittance apps, fintech platforms, and merchant services.",
+      q: "Is Cryptrix suitable for large-scale payment platforms?",
+      a: "Yes, Cryptrix is optimized for high-throughput systems such as wallets, remittance apps, fintech platforms, and merchant services.",
     },
   ],
 };

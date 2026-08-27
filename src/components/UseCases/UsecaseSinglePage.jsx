@@ -246,14 +246,14 @@ const UsecaseSinglePage = ({ data }) => {
               Works With Your Existing {title} Stack
             </h3>
             <p className="text-gray-500 text-lg">
-              Sapher integrates seamlessly with every major finance and payment
+              Cryptrix integrates seamlessly with every major finance and payment
               rail — from UPI to crypto on-chain settlements. No migration. No
               friction. Full compliance.
             </p>
             <p className="text-gray-500 text-lg">
-              Sapher integrates seamlessly with every major finance and payment
+              Cryptrix integrates seamlessly with every major finance and payment
               rail — from UPI to crypto on-chain settlements. No migration. No
-              friction. Full compliance. Sapher integrates seamlessly with every
+              friction. Full compliance. Cryptrix integrates seamlessly with every
               major finance and payment rail — from UPI to crypto on-chain
               settlements. No migration. No friction. Full compliance.
             </p>

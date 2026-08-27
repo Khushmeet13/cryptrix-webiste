@@ -6,7 +6,7 @@ const features = [
   {
     title: "Fast Speed",
     short: "Sub-second finality with high throughput.",
-    long: "SapherChain processes transactions with extremely low latency, enabling real-time applications such as payments, gaming, and DeFi without congestion.",
+    long: "Cryptrix processes transactions with extremely low latency, enabling real-time applications such as payments, gaming, and DeFi without congestion.",
     image:
       "https://media.istockphoto.com/id/2219130406/photo/cloud-computing-symbol-connects-to-server-datacenter-network.webp?a=1&b=1&s=612x612&w=0&k=20&c=1XxVguSOsoiD0ND8F1He0rYbYgX_C_xlqnbfbhfVyXU=",
   },
@@ -27,7 +27,7 @@ const features = [
   {
     title: "Security",
     short: "Validator staking & network-level protection.",
-    long: "SapherChain uses validator staking, slashing mechanisms, and cryptographic guarantees to protect the network from malicious activity.",
+    long: "Cryptrix uses validator staking, slashing mechanisms, and cryptographic guarantees to protect the network from malicious activity.",
     image:
       "https://plus.unsplash.com/premium_photo-1661878265739-da90bc1af051?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2VjdXJpdHl8ZW58MHx8MHx8fDA%3D",
   },
@@ -40,7 +40,7 @@ const features = [
   },
 ];
 
-const WhatSapherChainDoes = () => {
+const WhatCryptrixDoes = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -54,11 +54,11 @@ const WhatSapherChainDoes = () => {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-semibold text-white leading-tight">
-            What SapherChain Does
+            What Cryptrix Does
           </h1>
 
           <p className="mt-6 max-w-3xl mx-auto text-gray-400 text-lg">
-            SapherChain is a high-performance blockchain designed for fast
+            Cryptrix is a high-performance blockchain designed for fast
             execution, ultra-low fees, and secure decentralized applications
             powered by the SPH coin.
           </p>
@@ -90,10 +90,10 @@ const WhatSapherChainDoes = () => {
 
           <div className="bg-gray-50 rounded-3xl p-10">
             <h3 className="text-2xl font-semibold text-black mb-4">
-              SapherChain Solution
+              Cryptrix Solution
             </h3>
             <p className="text-gray-600">
-              SapherChain introduces an optimized execution layer and efficient
+              Cryptrix introduces an optimized execution layer and efficient
               consensus that enables fast finality, low fees, and secure smart
               contract execution at scale.
             </p>
@@ -182,7 +182,7 @@ const WhatSapherChainDoes = () => {
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12">
-            What Can You Build on SapherChain
+            What Can You Build on Cryptrix
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -216,7 +216,7 @@ const WhatSapherChainDoes = () => {
           </h2>
 
           <p className="max-w-2xl mx-auto text-gray-600 mb-10">
-            All transactions and smart contracts on SapherChain are publicly
+            All transactions and smart contracts on Cryptrix are publicly
             verifiable.
           </p>
 
@@ -236,7 +236,7 @@ const WhatSapherChainDoes = () => {
           <div>
             <h2 className="text-3xl font-semibold mb-4">SPH Coin Utility</h2>
             <p className="text-gray-500">
-              SPH is the native coin of SapherChain, powering the network
+              SPH is the native coin of Cryptrix, powering the network
               economy.
             </p>
           </div>
@@ -254,7 +254,7 @@ const WhatSapherChainDoes = () => {
       <section className="bg-gray-50 pb-22">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12">
-            How SapherChain Works
+            How Cryptrix Works
           </h2>
 
           <div className="flex flex-col md:flex-row gap-10">
@@ -276,7 +276,7 @@ const WhatSapherChainDoes = () => {
       <section className="bg-white py-22 text-black">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-semibold mb-2">
-            Start Building on SapherChain
+            Start Building on Cryptrix
           </h2>
           <p className="text-gray-500 mb-10">
             Stake SPH, explore the network, or build your next dApp today.
@@ -298,4 +298,4 @@ const WhatSapherChainDoes = () => {
   );
 };
 
-export default WhatSapherChainDoes;
+export default WhatCryptrixDoes;

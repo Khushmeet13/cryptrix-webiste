@@ -65,7 +65,7 @@ const docsConfig = {
     toc: tocItems,
     pages: getPagesFromSidebar(sidebarData),
     title: "Solana Documentation",
-    subtitle: "Sapher Documentation",
+    subtitle: "Cryptrix Documentation",
     contentType: "docs",
   },
 
@@ -74,7 +74,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(apiSidebarData),
     title: "API Reference",
-    subtitle: "Sapher API",
+    subtitle: "Cryptrix API",
     contentType: "api",
   },
 
@@ -83,7 +83,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(sdkSidebarData),
     title: "SDKs",
-    subtitle: "Sapher SDKs",
+    subtitle: "Cryptrix SDKs",
     contentType: "sdk",
   },
 
@@ -92,7 +92,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(cookbookSidebarData),
     title: "Cookbook",
-    subtitle: "Sapher Cookbook",
+    subtitle: "Cryptrix Cookbook",
     contentType: "cookbook",
   },
 
@@ -101,7 +101,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(contractsSidebarData),
     title: "Contracts",
-    subtitle: "Sapher Contracts",
+    subtitle: "Cryptrix Contracts",
     contentType: "contracts",
   },
 
@@ -110,7 +110,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(testnetSidebarData),
     title: "Testnet",
-    subtitle: "Sapher Testnet",
+    subtitle: "Cryptrix Testnet",
     contentType: "testnet",
   },
 
@@ -119,7 +119,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(websocketSidebarData),
     title: "Websocket",
-    subtitle: "Sapher Websocket",
+    subtitle: "Cryptrix Websocket",
     contentType: "websocket",
   },
 
@@ -128,7 +128,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(sdkDownloadSidebarData),
     title: "SDK Downloads",
-    subtitle: "Sapher SDK Downloads",
+    subtitle: "Cryptrix SDK Downloads",
     contentType: "sdk_download",
   },
 
@@ -137,7 +137,7 @@ const docsConfig = {
     toc: tocItems, 
     pages: getPagesFromSidebar(supportSidebarData),
     title: "Get Support",
-    subtitle: "Sapher Support",
+    subtitle: "Cryptrix Support",
     contentType: "support",
   },
 };

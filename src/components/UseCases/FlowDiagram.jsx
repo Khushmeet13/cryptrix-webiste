@@ -43,7 +43,7 @@ const FlowDiagram = () => {
   return (
     <section className="py-20 px-6 bg-white text-black">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-2">
-        How Sapher Works in Use Cases
+        How Cryptrix Works in Use Cases
       </h2>
       <p className="text-xs sm:text-base text-center text-gray-600 mb-16 max-w-2xl mx-auto mb-10">
         A simple but powerful trust flow that powers payments, gaming,
@@ -89,7 +89,7 @@ const FlowDiagram = () => {
                     {index === 0 &&
                       "User requests access to a protected resource."}
                     {index === 1 &&
-                      "Sapher verifies decentralized identity credentials."}
+                      "Cryptrix verifies decentralized identity credentials."}
                     {index === 2 &&
                       "User meets requirements → access granted securely."}
                     {index === 3 &&

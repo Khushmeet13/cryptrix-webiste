@@ -60,7 +60,7 @@ const SupportSection = () => {
 
                 <button
                   onClick={() =>
-                    window.open("https://support.sapherchain.com", "_blank")
+                    window.open("https://support.cryptrixchain.com", "_blank")
                   }
                   className="relative px-6 py-3 bg-black text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/40 transform hover:scale-105 hover:cursor-pointer"
                 >

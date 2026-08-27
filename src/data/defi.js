@@ -41,7 +41,7 @@ export const defiUseCase = {
   features: [
     {
       title: "Secure Wallet Risk Scoring",
-      text: "Sapher analyzes wallet history, on-chain behavior, and identity trust markers to prevent Sybil attacks and malicious activity in DeFi platforms.",
+      text: "Cryptrix analyzes wallet history, on-chain behavior, and identity trust markers to prevent Sybil attacks and malicious activity in DeFi platforms.",
     },
     {
       title: "Rug Pull & Scam Prevention",
@@ -57,7 +57,7 @@ export const defiUseCase = {
     },
     {
       title: "Bot-Free Token Launches",
-      text: "Sapher reduces sniping, automated bot trading, and multi-wallet farming during token launches or IDOs.",
+      text: "Cryptrix reduces sniping, automated bot trading, and multi-wallet farming during token launches or IDOs.",
     },
     {
       title: "Seamless User Onboarding",
@@ -68,7 +68,7 @@ export const defiUseCase = {
   // =========================
   // ⭐ DEFI PROTOCOLS (DUMMY DATA)
   // =========================
-  tabelTitle: "Top DeFi Protocols Using Sapher",
+  tabelTitle: "Top DeFi Protocols Using Cryptrix",
   tableData: [
     { name: "LendSphere", tvl: 1245.55, holders: 15240 },
     { name: "YieldMatrix", tvl: 987.11, holders: 10980 },
@@ -87,36 +87,36 @@ export const defiUseCase = {
   // =========================
   faq: [
     {
-      q: "How does Sapher reduce Sybil attacks in DeFi?",
-      a: "Sapher verifies users and scores wallet behavior to detect multi-account setups and malicious actors.",
+      q: "How does Cryptrix reduce Sybil attacks in DeFi?",
+      a: "Cryptrix verifies users and scores wallet behavior to detect multi-account setups and malicious actors.",
     },
     {
-      q: "Does Sapher run verification on-chain?",
+      q: "Does Cryptrix run verification on-chain?",
       a: "Identity checks run privately off-chain, while risk proofs can be anchored on-chain for transparency.",
     },
     {
-      q: "Can Sapher prevent bot attacks during token launches?",
-      a: "Yes. Sapher identifies bot-like or automated trading behavior, protecting IDOs and liquidity events.",
+      q: "Can Cryptrix prevent bot attacks during token launches?",
+      a: "Yes. Cryptrix identifies bot-like or automated trading behavior, protecting IDOs and liquidity events.",
     },
     {
-      q: "Does Sapher store wallet or transaction data?",
-      a: "No. Sapher never stores raw wallet data — only encrypted trust signals.",
+      q: "Does Cryptrix store wallet or transaction data?",
+      a: "No. Cryptrix never stores raw wallet data — only encrypted trust signals.",
     },
     {
-      q: "Is Sapher useful for DeFi lending protocols?",
+      q: "Is Cryptrix useful for DeFi lending protocols?",
       a: "Yes. Verified borrowers reduce loan defaults and improve protocol security.",
     },
     {
-      q: "Does Sapher support AML requirements?",
-      a: "Sapher enables privacy-friendly AML checks for institutional DeFi integrations.",
+      q: "Does Cryptrix support AML requirements?",
+      a: "Cryptrix enables privacy-friendly AML checks for institutional DeFi integrations.",
     },
     {
       q: "Can DeFi apps customize verification rules?",
       a: "Absolutely. Protocols can configure trust thresholds, wallet flags, and risk levels.",
     },
     {
-      q: "Is Sapher suitable for large DeFi ecosystems?",
-      a: "Yes. Sapher scales globally with real-time verification even under high network load.",
+      q: "Is Cryptrix suitable for large DeFi ecosystems?",
+      a: "Yes. Cryptrix scales globally with real-time verification even under high network load.",
     },
   ],
 };
