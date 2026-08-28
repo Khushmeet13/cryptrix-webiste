@@ -30,11 +30,11 @@ const features = [
   {
     icon: TrendingUp,
     title: "Staking Rewards",
-    desc: "Earn passive income by staking your SPH tokens with competitive APY rates.",
+    desc: "Earn passive income by staking your CRX tokens with competitive APY rates.",
   },
 ];
 
-function WhyChooseSPH() {
+function WhyChooseCRX() {
   return (
     <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -44,7 +44,7 @@ function WhyChooseSPH() {
             Features
           </p>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Why Choose{" "} SPH ?
+            Why Choose{" "} CRX ?
           </h2>
           <p className=" text-gray-500 max-w-3xl mx-auto">
             Built with cutting-edge technology to deliver the best blockchain experience
@@ -78,4 +78,4 @@ function WhyChooseSPH() {
   );
 }
 
-export default WhyChooseSPH;
+export default WhyChooseCRX;

@@ -74,7 +74,7 @@ export const posts = [
     slug: "how-on-chain-governance-works",
     title: "How On-Chain Governance Actually Works",
     excerpt:
-      "From proposal to execution — a walkthrough of how SPH holders shape the protocol, and why votes enforce themselves without anyone's approval.",
+      "From proposal to execution — a walkthrough of how CRX holders shape the protocol, and why votes enforce themselves without anyone's approval.",
     category: "Governance",
     author: { name: "Jonas Weber", role: "Protocol Governance", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
     date: "2026-06-30",
@@ -84,9 +84,9 @@ export const posts = [
       { type: "p", text: "Governance only means something if the outcome is actually binding. On most platforms, a \"community vote\" is really just a temperature check — a core team still decides what ships. Cryptrix governance works differently: once a proposal passes, execution happens automatically through a timelocked contract call, with no manual step for anyone to override." },
       { type: "h2", text: "The lifecycle of a proposal" },
       { type: "list", items: [
-        "Draft — any SPH holder above the proposal threshold can submit one",
+        "Draft — any CRX holder above the proposal threshold can submit one",
         "Discussion — a public comment period before voting opens",
-        "Voting — SPH holders and their delegated validators vote on-chain",
+        "Voting — CRX holders and their delegated validators vote on-chain",
         "Timelock — a delay window before a passed proposal executes, giving the network time to react",
         "Execution — the change applies automatically, enforced by the contract itself",
       ] },

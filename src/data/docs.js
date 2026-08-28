@@ -6,9 +6,9 @@ export const sidebarData = [
         title: "Installation",
         children: [
           "Install Dependencies",
-          "Solana CLI Basics",
-          "Anchor CLI Basics",
-          "Surfpool CLI Basics",
+          "Cryptrix CLI Basics",
+          "Smart Contract CLI Basics",
+          "Local Testnet CLI Basics",
         ],
       },
       {
@@ -36,7 +36,7 @@ export const sidebarData = [
     ],
   },
   {
-    title: "Tokens on Solana",
+    title: "Tokens on Cryptrix",
     children: [
       { title: "Basics", children: [] },
       { title: "Extensions", children: [] },
@@ -56,7 +56,7 @@ export const sidebarData = [
   },
   { title: "Frontend", children: [] },
   {
-    title: "Solana SDKs",
+    title: "Cryptrix SDKs",
     children: [
       { title: "Official SDKs", children: ["Rust SDK", "Typescript SDK"] },
       { title: "Community SDKs", children: [] },

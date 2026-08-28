@@ -72,7 +72,7 @@ const cards = [
     icon: Layers,
     title: "Introduction to Cryptrix Tokens",
     description:
-      "Explore the different types of tokens on Cryptrix – native SPH, stablecoins, wrapped assets, and project tokens.",
+      "Explore the different types of tokens on Cryptrix – native CRX, stablecoins, wrapped assets, and project tokens.",
   },
   {
     part: "07",
@@ -86,9 +86,9 @@ const cards = [
     part: "08",
     category: "staking",
     icon: Fuel,
-    title: "Introduction to SPH Coin",
+    title: "Introduction to CRX Coin",
     description:
-      "Everything about SPH, the native coin powering gas fees, staking rewards, and governance across the Cryptrix network.",
+      "Everything about CRX, the native coin powering gas fees, staking rewards, and governance across the Cryptrix network.",
   },
   {
     part: "09",

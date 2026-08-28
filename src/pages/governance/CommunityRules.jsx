@@ -1,325 +1,587 @@
-import NewsletterSignup from "@/components/Community/NewsletterSignup";
-import React from "react";
-import CustomButton from "@/components/Common/CustomButton";
-import { ArrowUpRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Eye,
+  HeartHandshake,
+  Network,
+  ShieldCheck,
+  Users,
+  ClipboardCheck,
+  Ban,
+  MessageCircle,
+  HandCoins,
+  Target,
+  Fingerprint,
+  FileCheck,
+  Scale,
+  BookOpen,
+  AlertTriangle,
+  MessagesSquare,
+  AlertCircle,
+  Clock,
+  Lock,
+  XCircle,
+  Gavel,
+  FileText,
+  ListChecks,
+  EyeOff,
+  RefreshCw,
+  ShieldAlert,
+  Vote,
+  Coins,
+} from "lucide-react";
+import governanceBg from "../../assets/images/governance-bg.jpg";
+
+const exploreLinks = [
+  {
+    title: "Proposals",
+    desc: "Browse active and past governance proposals.",
+    icon: FileText,
+    href: "/proposals",
+    accent: "#60A5FA",
+  },
+  {
+    title: "Voting System",
+    desc: "See how votes are cast, weighted, and finalized.",
+    icon: Vote,
+    href: "/voting",
+    accent: "#818cf8",
+  },
+  {
+    title: "Staking",
+    desc: "Stake CRX to earn rewards and voting power.",
+    icon: Coins,
+    href: "/staking",
+    accent: "#38BDF8",
+  },
+  {
+    title: "Security & Trust",
+    desc: "Audits, safeguards, and the network's security posture.",
+    icon: ShieldCheck,
+    href: "/security",
+    accent: "#6366F1",
+  },
+];
+
+const actionTiles = [
+  {
+    title: "Revisit the Guidelines",
+    desc: "Jump back to any section, from core principles to enforcement.",
+    icon: BookOpen,
+    href: "#core-principles",
+    cta: "Read guidelines",
+  },
+  {
+    title: "Create a Proposal",
+    desc: "Draft a governance proposal that follows ethical conduct standards.",
+    icon: FileCheck,
+    href: "/proposals",
+    cta: "Start a proposal",
+  },
+  {
+    title: "Report a Violation",
+    desc: "Flag spam, vote manipulation, or abuse for DAO review.",
+    icon: ShieldAlert,
+    href: "#reporting-violations",
+    cta: "Report now",
+  },
+];
 
 const sections = [
   {
+    id: "core-principles",
     title: "Core Principles",
     subtitle:
-      "The foundational values that guide behavior, decision-making, and collaboration across the SPH ecosystem.",
-
-    bgColor: "bg-white",
+      "The foundational values that guide behavior, decision-making, and collaboration across the CRX ecosystem.",
+    accent: "#60A5FA",
     items: [
       {
         title: "Transparency",
         desc: "All actions, decisions, and discussions are open and verifiable.",
-        image:
-          "https://media.istockphoto.com/id/1892804148/photo/blockchain-technology-empowers-businessman-pointing-icon-with-innovative-solutions.jpg?s=612x612&w=0&k=20&c=pXeQ4a9V8WJGldm7H5w_xFu-zHvUkYzlcNLe84HEeUg=",
+        icon: Eye,
       },
       {
         title: "Respect",
         desc: "Treat every member with courtesy and professionalism.",
-        image:
-          "https://media.istockphoto.com/id/1207635058/photo/abstract-blue-backgrounds.jpg?s=612x612&w=0&k=20&c=zXXs7nZ2hCP0ih0jgfeZ6L1qSCMrg9G7Cx3uHyz9Dcc=",
+        icon: HeartHandshake,
       },
       {
         title: "Decentralization",
         desc: "Community-driven governance with no central authority.",
-        image:
-          "https://media.istockphoto.com/id/1376741142/photo/defi-decentralized-finance-innovation-technology-banking-fintech.jpg?s=612x612&w=0&k=20&c=tHXXUS0N7_g4cf0ziGVYpHNHKLDDCrj_8QhjMzOrLuU=",
+        icon: Network,
       },
       {
         title: "Security First",
         desc: "Protect users and assets from malicious activity.",
-        image:
-          "https://media.istockphoto.com/id/1343499203/photo/lock-data-concept.jpg?s=612x612&w=0&k=20&c=2di3kdMyF-h8_pIIF8sbjAlV3HVR0Sut_wBBbFunc_8=",
+        icon: ShieldCheck,
       },
       {
         title: "Inclusivity",
         desc: "Every voice matters regardless of stake size or role.",
-        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+        icon: Users,
       },
       {
         title: "Accountability",
         desc: "Members are responsible for their actions and decisions.",
-        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+        icon: ClipboardCheck,
       },
     ],
   },
-
   {
+    id: "participation-rules",
     title: "Participation Rules",
     subtitle:
       "Clear guidelines to ensure healthy discussions, prevent abuse, and protect the integrity of the community.",
-    bgColor: "bg-gray-50",
+    accent: "#818cf8",
     items: [
       {
         title: "No Spam or Scams",
         desc: "No promotional posts, phishing links, or fraud.",
-        image:
-          "https://media.istockphoto.com/id/1400359666/photo/network-security-security-security-system-technology-internet-safety-big-data-encryption.jpg?s=612x612&w=0&k=20&c=1SxT2Ngr1TowbqY2IpWRpv0mAI02F56sNv876EDEnQE=",
+        icon: Ban,
       },
       {
         title: "Respectful Discussions",
         desc: "No harassment, hate speech, or toxic behavior.",
-        image:
-          "https://media.istockphoto.com/id/2229943365/photo/businesswoman-talking-to-colleague-with-hand-on-shoulder-in-supportive-gesture-at-corporate.jpg?s=612x612&w=0&k=20&c=2SiIcDn-YuiqVuWYcpqoppgKAaBgmzf0NeOq9-v5XRA=",
+        icon: MessageCircle,
       },
       {
         title: "No Vote Manipulation",
         desc: "Bribing or coercing votes is strictly prohibited.",
-        image:
-          "https://media.istockphoto.com/id/2196855890/photo/businessmans-hand-touching-futuristic-technological-interface-financial-planning-cost.jpg?s=612x612&w=0&k=20&c=Bn00YnOGDrOAmbfuYdH3s3tUU9cPKshTviyWLKaQGdU=",
+        icon: HandCoins,
       },
       {
         title: "Stay On Topic",
         desc: "Keep discussions relevant to governance and proposals.",
-        image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61",
+        icon: Target,
       },
       {
         title: "One Person, One Voice",
         desc: "Sybil attacks or duplicate accounts are forbidden.",
-        image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca",
+        icon: Fingerprint,
       },
     ],
   },
-
   {
+    id: "governance-conduct",
     title: "Governance Conduct",
     subtitle:
       "Standards for creating proposals and voting responsibly to maintain fairness and trust.",
-    bgColor: "bg-white",
+    accent: "#34D399",
     items: [
       {
         title: "Ethical Proposal Creation",
         desc: "Proposals must benefit the ecosystem, not individuals.",
-        image:
-          "https://media.istockphoto.com/id/2167219949/photo/blockchain-technology-concept-revolutionizing-industries-exploring-the-boundless-potential-of.jpg?s=612x612&w=0&k=20&c=R7vWba4-T8bpLPfxMnBcSRJHuI7DWmzc5q9buY7Nbsw=",
+        icon: FileCheck,
       },
       {
         title: "Fair Voting",
         desc: "Votes should be based on merit and long-term value.",
-        image:
-          "https://media.istockphoto.com/id/1017718838/photo/ballot-box-on-a-laptop-3d-illustration.jpg?s=612x612&w=0&k=20&c=QYWyhp4a-fobcKvbQLjLbSTuSo9b7dBMHjjW4RAjdxs=",
+        icon: Scale,
       },
       {
         title: "Informed Decisions",
         desc: "Review proposals thoroughly before voting.",
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+        icon: BookOpen,
       },
       {
         title: "Conflict Disclosure",
         desc: "Declare conflicts of interest transparently.",
-        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f",
+        icon: AlertTriangle,
       },
       {
         title: "Community Feedback",
         desc: "Engage with community feedback before final submission.",
-        image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70",
+        icon: MessagesSquare,
       },
     ],
   },
-
   {
+    id: "enforcement",
     title: "Enforcement",
     subtitle:
       "Actions taken to address violations and maintain a safe ecosystem.",
-    bgColor: "bg-gray-50",
+    accent: "#F87171",
     items: [
       {
         title: "Warnings",
         desc: "Minor violations receive an official warning.",
-        image:
-          "https://media.istockphoto.com/id/2191724228/photo/futuristic-digital-interface-with-compliance-checklist-and-security-icons-on-dark-background.jpg?s=612x612&w=0&k=20&c=xG43wcOk_e-GbpaW4xb8QgFH5M8Ui8UEyGlPgdU3NPU=",
+        icon: AlertCircle,
       },
       {
         title: "Temporary Bans",
         desc: "Repeated violations lead to limited access.",
-        image:
-          "https://media.istockphoto.com/id/1479348342/photo/yellow-glowing-chains-connecting-multiple-chains-on-black-background.jpg?s=612x612&w=0&k=20&c=FMWkvLVq1-sSn6uLt4tdVm96a4nkXdMH8Zq2_5s8DcA=",
+        icon: Clock,
       },
       {
         title: "Permanent Restrictions",
         desc: "Severe violations result in permanent bans.",
-        image:
-          "https://media.istockphoto.com/id/919742166/photo/bitcoin-blockchain-with-lock-on-encrypted-data.jpg?s=612x612&w=0&k=20&c=zAE9lPagJo_0WvOgK2DAuT-UmEKBAtfoFGM4_bbt9wM=",
+        icon: Lock,
       },
       {
         title: "Proposal Rejection",
         desc: "Malicious proposals are immediately rejected.",
-        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+        icon: XCircle,
       },
       {
         title: "DAO Intervention",
         desc: "Critical cases are escalated to DAO voting.",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+        icon: Gavel,
       },
     ],
   },
-
   {
+    id: "reporting-violations",
     title: "Reporting Violations",
     subtitle: "Simple and transparent ways to report abuse or misconduct.",
-    bgColor: "bg-white",
+    accent: "#60A5FA",
     items: [
       {
         title: "How to Report",
         desc: "Use Discord or submit a governance ticket.",
-        image:
-          "https://media.istockphoto.com/id/1413177962/photo/data-analysis-business-intelligence-business-analytics-businessman-working-on-laptop-with.jpg?s=612x612&w=0&k=20&c=PksGCFGFW6pB1APAxnAwgRt89UvKQW69TFz2K-y8Xto=",
+        icon: FileText,
       },
       {
         title: "What to Include",
         desc: "Provide evidence, timestamps, and usernames.",
-        image:
-          "https://media.istockphoto.com/id/2178462011/photo/businessman-showing-a-smart-contract-and-executing-a-cryptocurrency-transaction-with.jpg?s=612x612&w=0&k=20&c=Kd3P060NZpnovYtFdYDC1ubZBlvwUBe8XbVBS6ohL7U=",
+        icon: ListChecks,
       },
       {
         title: "Confidentiality",
         desc: "Reports are handled privately and securely.",
-        image:
-          "https://media.istockphoto.com/id/2216086609/photo/technology-intelligence-concepts-with-fingerprint-identification-personal-identity.jpg?s=612x612&w=0&k=20&c=RB-W4oo-_hH63_b_iwmIx8uUjpFaNxLipe2ZmAz6K7U=",
+        icon: EyeOff,
       },
       {
         title: "Follow-Up Process",
         desc: "Track report status transparently.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+        icon: RefreshCw,
       },
       {
         title: "False Reports",
         desc: "Misuse of reporting tools may result in penalties.",
-        image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
+        icon: ShieldAlert,
       },
     ],
   },
 ];
 
+const totalGuidelines = sections.reduce((sum, s) => sum + s.items.length, 0);
+const pad = (n) => String(n).padStart(2, "0");
+
 const CommunityRules = () => {
+  const [activeId, setActiveId] = useState(sections[0].id);
+  const refs = useRef({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    Object.values(refs.current).forEach((el) => el && observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="w-full">
-      {/* Top Section */}
-      <section className="relative h-[30vh] flex items-center justify-center px-6 sm:px-12 lg:px-24 pt-28 overflow-hidden">
-        {/* Content */}
-        <div className="relative z-10 text-center text-white space-y-3">
-          {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl">Community guidelines</h1>
+    <div className="w-full bg-[#01021f] text-white">
+      {/* ───────── Hero ───────── */}
+      <section className="relative min-h-[55vh] flex items-center px-6 sm:px-12 lg:px-24 pt-28 pb-16 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${governanceBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#01021f] via-indigo-950/70 to-black/90" />
 
-          {/* Description */}
-          <p className="text-sm sm:text-base text-gray-300 max-w-3xl">
+        <div className="relative z-10 max-w-3xl text-white space-y-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 w-fit">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Governance / Community Rules
+            </span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl font-semibold leading-tight">
+            Community Guidelines
+          </h1>
+
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl">
             Building a respectful, decentralized ecosystem that puts community
-            first. Every voice matters, every vote counts, and trust drives our
-            growth.
-          </p>
-        </div>
-      </section>
-
-      <div className="relative overflow-hidden">
-        {/* All Sections */}
-        <div className="">
-          {sections.map((section, index) => (
-            <section key={index} className={`${section.bgColor} py-24`}>
-              <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Heading */}
-                <div className="flex flex-col items-center">
-                  <h2 className="text-2xl sm:text-3xl font-semibold mb-2 text-center text-black">
-                    {section.title}
-                  </h2>
-
-                  <p className="text-sm sm:text-base text-gray-500 text-center mb-12 max-w-2xl">
-                    {section.subtitle}
-                  </p>
-                </div>
-
-                {/* Cards Layout */}
-                <div className="space-y-10">
-                  {/* Top Row – 2 Cards */}
-                  <div className="grid md:grid-cols-2 gap-10">
-                    {section.items.slice(0, 2).map((item, i) => (
-                      <Card key={i} item={item} />
-                    ))}
-                  </div>
-
-                  {/* Bottom Row – 3 or 4 Cards */}
-                  {section.items.length > 2 && (
-                    <div
-                      className={`grid gap-10 ${
-                        section.items.slice(2).length === 3
-                          ? "md:grid-cols-3"
-                          : "md:grid-cols-2 lg:grid-cols-4"
-                      }`}
-                    >
-                      {section.items.slice(2).map((item, i) => (
-                        <Card key={i} item={item} />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </section>
-          ))}
-        </div>
-      </div>
-
-      <section className="bg-gray-50 py-22">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl font-semibold text-black">
-            Ready to take action?
-          </h2>
-
-          {/* Sub text */}
-          <p className="mt-4 text-gray-500 text-sm sm:text-base">
-            Start by creating a new proposal or learn more about the guidelines.
+            first. Every voice matters, every vote counts, and trust drives
+            our growth.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              type="button"
-              className={`relative px-6 py-3 bg-indigo-600 text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-indigo-500/40 transform hover:scale-105`}
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#core-principles"
+              className="inline-flex items-center gap-1.5 px-6 py-3 bg-white text-black text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30"
             >
-              {/* Sliding colored layer */}
-              {/* <span
-              className={`absolute inset-0 bg-black translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full`}
-            /> */}
+              Read the Guidelines
+              <ArrowRight size={16} />
+            </a>
+            <a
+              href="#reporting-violations"
+              className="px-6 py-3 border border-white/20 text-white text-sm font-medium rounded-full transition-all duration-300 hover:scale-105 hover:border-white/40"
+            >
+              Report a Violation
+            </a>
+          </div>
 
-              {/* Text + Icon */}
-              <span className="relative z-10 flex items-center gap-1">
-                Create Proposal
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </button>
-            <CustomButton text="View Proposal Guidelines" />
+          {/* Quick Stats */}
+          <div className="grid grid-cols-3 gap-4 max-w-xl pt-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">
+                {sections.length}
+              </p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">
+                Sections
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">
+                {totalGuidelines}
+              </p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">
+                Guidelines
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 text-center">
+              <p className="text-2xl font-semibold text-white">4</p>
+              <p className="text-xs uppercase tracking-wide text-gray-400 mt-1">
+                Enforcement Tiers
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <NewsletterSignup />
-    </div>
-  );
-};
+      {/* ───────── Body ───────── */}
+      <section className="relative border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-[240px_1fr] gap-12">
+          {/* Sticky side nav */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-32 space-y-1">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-500 mb-4 px-4">
+                On this page
+              </p>
+              {sections.map((s, i) => {
+                const isActive = activeId === s.id;
+                return (
+                  <a
+                    key={s.id}
+                    href={`#${s.id}`}
+                    className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm transition-all duration-300"
+                    style={{
+                      background: isActive ? "rgba(255,255,255,0.05)" : "transparent",
+                      color: isActive ? "#ffffff" : "#9ca3af",
+                      borderLeft: `2px solid ${isActive ? s.accent : "transparent"}`,
+                    }}
+                  >
+                    <span className="text-[10px] tabular-nums text-gray-600">
+                      {pad(i + 1)}
+                    </span>
+                    {s.title}
+                  </a>
+                );
+              })}
+            </div>
+          </aside>
 
-const Card = ({ item }) => {
-  return (
-    <div className="group relative h-[380px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500">
-      <img
-        src={item.image}
-        alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
+          {/* Mobile quick nav */}
+          <div className="lg:hidden flex gap-2 overflow-x-auto pb-2 -mx-6 px-6">
+            {sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="shrink-0 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-xs font-medium text-gray-300 whitespace-nowrap"
+              >
+                {s.title}
+              </a>
+            ))}
+          </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+          {/* Sections */}
+          <div>
+            {sections.map((section, index) => (
+              <section
+                key={section.id}
+                id={section.id}
+                ref={(el) => (refs.current[section.id] = el)}
+                className={`scroll-mt-28 pb-20 last:pb-0 ${
+                  index > 0 ? "pt-20 border-t border-white/10" : ""
+                }`}
+              >
+                {/* Header */}
+                <div className="flex items-start gap-5 mb-10">
+                  <span
+                    className="text-5xl sm:text-6xl font-bold leading-none select-none"
+                    style={{ color: section.accent + "20" }}
+                  >
+                    {pad(index + 1)}
+                  </span>
+                  <div>
+                    <div
+                      className="w-8 h-1 rounded-full mb-3"
+                      style={{ background: section.accent }}
+                    />
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">
+                      {section.title}
+                    </h2>
+                    <p className="text-sm sm:text-base text-gray-400 max-w-2xl">
+                      {section.subtitle}
+                    </p>
+                  </div>
+                </div>
 
-      <div className="absolute top-8 left-8 z-10">
-        <h3 className="text-2xl font-medium text-white drop-shadow-lg">
-          {item.title}
-        </h3>
-      </div>
+                {/* Item cards */}
+                <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                  {section.items.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <div
+                        key={item.title}
+                        className="group relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20"
+                      >
+                        <div
+                          className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                          style={{
+                            background: section.accent + "18",
+                            border: `1px solid ${section.accent}35`,
+                            color: section.accent,
+                          }}
+                        >
+                          <Icon size={20} />
+                        </div>
+                        <h3 className="text-base font-semibold text-white mb-1.5">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-400 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <div className="absolute bottom-8 left-8 right-8 z-10">
-        <p className="text-gray-200 text-lg leading-relaxed">{item.desc}</p>
-      </div>
+      {/* ───────── Closing CTA: Next Steps ───────── */}
+      <section className="relative py-20 md:py-24 border-t border-white/10 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-5">
+            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+              Next Steps
+            </span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+            You know the rules. Now put them to work.
+          </h2>
+          <p className="mt-3 text-gray-400 max-w-lg mx-auto">
+            Whether you're proposing a change, flagging misconduct, or just
+            want a refresher — here's where to go next.
+          </p>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-5 text-left">
+            {actionTiles.map((tile) => {
+              const Icon = tile.icon;
+              return (
+                <a
+                  key={tile.title}
+                  href={tile.href}
+                  className="group relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mb-4 text-blue-400">
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="text-base font-semibold text-white mb-1.5">
+                    {tile.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                    {tile.desc}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors">
+                    {tile.cta}
+                    <ArrowRight
+                      size={12}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────── Continue Exploring Governance ───────── */}
+      <section className="relative py-20 md:py-24 border-t border-white/10 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-4">
+                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-blue-400">
+                  Keep Exploring
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+                More of Cryptrix governance
+              </h2>
+            </div>
+            <p className="text-sm text-gray-400 max-w-sm">
+              These guidelines are just one piece of how the network governs
+              itself.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {exploreLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  className="group relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+                >
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                    style={{
+                      background: link.accent + "18",
+                      border: `1px solid ${link.accent}35`,
+                      color: link.accent,
+                    }}
+                  >
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="text-base font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                    {link.title}
+                    <ArrowUpRight
+                      size={14}
+                      className="text-gray-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                    />
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    {link.desc}
+                  </p>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

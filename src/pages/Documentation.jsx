@@ -116,9 +116,9 @@ const Documentation = () => {
           className="flex-1 overflow-y-auto px-6 py-8 text-black scrollbar-hide "
         >
           {/* Header */}
-          <p className="text-indigo-600 text-sm mb-2">Cryptrix Documentation</p>
+          <p className="text-indigo-600 text-sm mb-2">Developer Docs</p>
           <h1 className="text-4xl font-semibold mb-10 text-black">
-            Solana Documentation
+            Cryptrix Documentation
           </h1>
 
           {/* Getting Started */}
@@ -131,7 +131,7 @@ const Documentation = () => {
               <div className="bg-gray-100 border border-gray-200 rounded-xl p-6 hover:border-gray-300 transition">
                 <h3 className="text-indigo-600 mb-2">Quickstart</h3>
                 <p className="text-sm text-gray-500">
-                  Build your first Solana program directly in the browser.
+                  Build your first Cryptrix program directly in the browser.
                 </p>
               </div>
 
@@ -140,7 +140,7 @@ const Documentation = () => {
                   Setup Local Environment
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Install dependencies and tools for Solana development.
+                  Install dependencies and tools for Cryptrix development.
                 </p>
               </div>
             </div>
@@ -149,24 +149,24 @@ const Documentation = () => {
           {/* Deploy First App */}
           <section id="deploy-first-app" className="mb-20">
             <h2 className="text-2xl font-semibold text-black mb-4">
-              Deploy Your First Solana Application
+              Deploy Your First Cryptrix Application
             </h2>
             <p className="leading-relaxed  ">
-              In this guide, you’ll deploy a simple Solana application using the
-              Anchor framework. You’ll learn how programs work, how accounts are
-              created, and how transactions are executed on Solana.
+              In this guide, you’ll deploy a simple Cryptrix application using
+              the Cryptrix SDK. You’ll learn how programs work, how accounts
+              are created, and how transactions are executed on Cryptrix.
             </p>
           </section>
 
-          {/* Try Solana */}
+          {/* Try Cryptrix */}
           <section id="try-solana" className="mb-20">
             <h2 className="text-2xl font-semibold text-black mb-4">
-              Try Solana: Play 2048
+              Try Cryptrix: Play 2048
             </h2>
             <p className="leading-relaxed">
-              Explore Solana by interacting with a fun on-chain version of the
-              2048 game. This helps you understand transactions, program calls,
-              and wallet interactions in a practical way.
+              Explore Cryptrix by interacting with a fun on-chain version of
+              the 2048 game. This helps you understand transactions, program
+              calls, and wallet interactions in a practical way.
             </p>
           </section>
 
@@ -176,8 +176,8 @@ const Documentation = () => {
               Start Learning
             </h2>
             <p className="leading-relaxed">
-              Begin your Solana journey by understanding core blockchain
-              concepts, Solana architecture, and how programs differ from
+              Begin your Cryptrix journey by understanding core blockchain
+              concepts, Cryptrix architecture, and how programs differ from
               traditional smart contracts.
             </p>
           </section>
@@ -188,7 +188,7 @@ const Documentation = () => {
               Client Side Development
             </h2>
             <p className="leading-relaxed">
-              Learn how to interact with Solana programs from frontend
+              Learn how to interact with Cryptrix programs from frontend
               applications using JavaScript, TypeScript, and official SDKs.
             </p>
           </section>
@@ -199,7 +199,7 @@ const Documentation = () => {
               Official SDKs
             </h2>
             <p className="leading-relaxed">
-              Solana provides official SDKs for Rust and TypeScript to help
+              Cryptrix provides official SDKs for Rust and TypeScript to help
               developers build secure and efficient applications.
             </p>
           </section>
@@ -210,8 +210,8 @@ const Documentation = () => {
               Community SDKs
             </h2>
             <p className="leading-relaxed">
-              Explore community-maintained SDKs and tools that extend Solana’s
-              ecosystem with additional features and integrations.
+              Explore community-maintained SDKs and tools that extend
+              Cryptrix’s ecosystem with additional features and integrations.
             </p>
           </section>
 
@@ -221,8 +221,9 @@ const Documentation = () => {
               Running a Validator
             </h2>
             <p className="leading-relaxed">
-              Validators help secure the Solana network. This section explains
-              how to set up, configure, and operate a Solana validator node.
+              Validators help secure the Cryptrix network. This section
+              explains how to set up, configure, and operate a Cryptrix
+              validator node.
             </p>
           </section>
 

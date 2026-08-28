@@ -14,10 +14,10 @@ export const tocItems = [
     id: "getting-started",
     label: "Getting Started",
     children: [
-      { id: "deploy-first-app", label: "Deploy Your First Solana Application" },
+      { id: "deploy-first-app", label: "Deploy Your First Cryptrix Application" },
     ],
   },
-  { id: "try-solana", label: "Try Solana: Play 2048" },
+  { id: "try-solana", label: "Try Cryptrix: Play 2048" },
   {
     id: "start-learning",
     label: "Start Learning",
@@ -64,7 +64,7 @@ const docsConfig = {
     sidebar: sidebarData,
     toc: tocItems,
     pages: getPagesFromSidebar(sidebarData),
-    title: "Solana Documentation",
+    title: "Cryptrix Documentation",
     subtitle: "Cryptrix Documentation",
     contentType: "docs",
   },

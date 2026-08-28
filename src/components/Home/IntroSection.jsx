@@ -6,7 +6,7 @@ const IntroSection = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/sph/"); // or change to your real route
+    navigate("/voting");
   };
 
   return (
@@ -73,10 +73,14 @@ const IntroSection = () => {
         </div>
 
         {/* CTA Button - Neon glow effect */}
-        <button type="button"
-          class="relative px-6 py-3 border border-white/30 font-medium backdrop-blur text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-blue-500/40">
-          <span class="absolute inset-0 bg-blue-900 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full"></span>
-          <span class="relative z-10 flex items-center gap-1">View Active Votes
+        <button
+          type="button"
+          onClick={handleClick}
+          className="relative px-6 py-3 border border-white/30 font-medium backdrop-blur text-white text-sm rounded-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:cursor-pointer hover:shadow-blue-500/40"
+        >
+          <span className="absolute inset-0 bg-blue-900 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700 ease-out rounded-full"></span>
+          <span className="relative z-10 flex items-center gap-1">
+            View Active Votes
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-700" />
           </span>
         </button>

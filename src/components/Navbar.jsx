@@ -31,7 +31,7 @@ const dropdownData = {
     },
     {
       title: "Staking",
-      desc: "Stake SPH tokens and earn rewards.",
+      desc: "Stake CRX tokens and earn rewards.",
       link: "/faqs",
     },
     {
@@ -122,7 +122,7 @@ const dropdownData = {
     },
     {
       title: "Identity",
-      desc: "Companies and projects building on SPH",
+      desc: "Companies and projects building on CRX",
       link: "/partners",
     },
     {
@@ -139,7 +139,7 @@ const dropdownData = {
   Token: [
     {
       title: "Token Utility",
-      desc: "How SPH is used across the ecosystem",
+      desc: "How CRX is used across the ecosystem",
       link: "/token/utility",
     },
     {
@@ -149,7 +149,7 @@ const dropdownData = {
     },
     {
       title: "Staking & Rewards",
-      desc: "Earn rewards by staking SPH",
+      desc: "Earn rewards by staking CRX",
       link: "/token/staking",
     },
     {

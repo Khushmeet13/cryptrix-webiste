@@ -21,8 +21,8 @@ import CustomButton from "@/components/Common/CustomButton";
 const workCards = [
   {
     title: "Token-Weighted Voting",
-    p1: "Voting power is calculated based on the total SPH token balance at the time of the vote snapshot. Holders with larger stakes have greater influence, while quorum rules maintain decentralization.",
-    p2: "Token-weighted voting ensures governance decisions reflect economic stake in the network. By tying voting power to ownership, SPH maintains a secure and manipulation-resistant governance model.",
+    p1: "Voting power is calculated based on the total CRX token balance at the time of the vote snapshot. Holders with larger stakes have greater influence, while quorum rules maintain decentralization.",
+    p2: "Token-weighted voting ensures governance decisions reflect economic stake in the network. By tying voting power to ownership, CRX maintains a secure and manipulation-resistant governance model.",
     media: { type: "video", src: token_voting },
   },
   {
@@ -45,7 +45,7 @@ const workCards = [
 const steps = [
   {
     title: "Proposal Created",
-    desc: "Anyone holding SPH tokens can submit a proposal outlining changes, upgrades, or governance actions.",
+    desc: "Anyone holding CRX tokens can submit a proposal outlining changes, upgrades, or governance actions.",
     image:
       "https://media.istockphoto.com/id/2157367771/photo/hands-laptop-and-typing-in-office-at-desk-for-crypto-trading-on-stock-market-with-financial.webp?a=1&b=1&s=612x612&w=0&k=20&c=PicQ4Q6NvCJ4-oaJ9csGgtMoRSPTsR8txeNGXo_uWFA=",
   },
@@ -56,7 +56,7 @@ const steps = [
   },
   {
     title: "Voting Phase",
-    desc: "SPH holders cast votes based on token-weighted governance during the active voting window.",
+    desc: "CRX holders cast votes based on token-weighted governance during the active voting window.",
     image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7",
   },
   {
@@ -113,7 +113,7 @@ const votingPaths = [
     accent: "#60A5FA",
     tagline: "Full control over every vote you cast.",
     points: [
-      "Hold the minimum required SPH balance",
+      "Hold the minimum required CRX balance",
       "Connect a supported wallet — MetaMask or WalletConnect",
       "No identity verification or sign-up required",
     ],
@@ -126,7 +126,7 @@ const votingPaths = [
     tagline: "Stay represented without voting on every proposal.",
     points: [
       "Choose a validator or trusted community member",
-      "Your SPH voting power transfers to their decisions",
+      "Your CRX voting power transfers to their decisions",
       "Reclaim your delegated power at any time, no lock-up",
     ],
   },
@@ -163,7 +163,7 @@ const VotingSystem = () => {
             Decentralized Voting System
           </h1>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl">
-            SPH holders participate directly in network decisions using secure
+            CRX holders participate directly in network decisions using secure
             on-chain voting. Every vote helps guide upgrades, policies, and
             the future direction of Cryptrix.
           </p>
@@ -223,7 +223,7 @@ const VotingSystem = () => {
           Who Can Vote
         </h2>
         <p className="mb-12 text-gray-400 text-base sm:text-lg max-w-2xl">
-          Governance is permissionless — if you hold SPH, you already have a
+          Governance is permissionless — if you hold CRX, you already have a
           voice. Choose how you use it.
         </p>
 
@@ -269,14 +269,14 @@ const VotingSystem = () => {
               Voting Power, Explained
             </span>
             <p className="mt-2 text-gray-300 text-sm md:text-base leading-relaxed">
-              Voting power scales 1:1 with your SPH balance at the snapshot
+              Voting power scales 1:1 with your CRX balance at the snapshot
               block — no bonus multipliers, no hidden weighting.
             </p>
           </div>
           <div className="flex items-center gap-4 md:gap-5 shrink-0">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-semibold text-white">10,000</div>
-              <div className="text-xs text-gray-500 mt-1">SPH Staked</div>
+              <div className="text-xs text-gray-500 mt-1">CRX Staked</div>
             </div>
             <span className="text-gray-600 text-xl">=</span>
             <div className="text-center">

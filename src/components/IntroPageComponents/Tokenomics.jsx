@@ -1,8 +1,8 @@
 import React from "react";
 
 const tokenDetails = [
-  { label: "Token Name", value: "SPH Coin" },
-  { label: "Token Symbol", value: "SPH" },
+  { label: "Token Name", value: "CRX Coin" },
+  { label: "Token Symbol", value: "CRX" },
   { label: "Total Supply", value: "1,000,000,000" },
   { label: "Network", value: "Ethereum (ERC-20)" },
   { label: "Decimals", value: "18" },

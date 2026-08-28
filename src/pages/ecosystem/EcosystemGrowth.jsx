@@ -5,7 +5,7 @@ const roadmap = [
     phase: "Phase 1",
     title: "Foundation Launch",
     points: [
-      "SPH Coin deployment",
+      "CRX Coin deployment",
       "Website & branding launch",
       "Initial community building",
     ],
@@ -51,7 +51,7 @@ const EcosystemGrowth = () => {
           </h1>
           <p className="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
             Building the future of decentralized infrastructure powered by
-            <span className="text-indigo-400 font-medium"> SPH Coin</span>.
+            <span className="text-indigo-400 font-medium"> CRX Coin</span>.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ const EcosystemGrowth = () => {
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold text-center mb-16 text-black">
-            SPH Coin Roadmap
+            CRX Coin Roadmap
           </h2>
 
           <div className="relative border-l border-gray-200 ml-4 space-y-16">
@@ -135,10 +135,10 @@ const EcosystemGrowth = () => {
           Join the Cryptrix Ecosystem
         </h2>
         <p className="text-gray-400 mb-8">
-          Build, stake, and grow with the SPH community.
+          Build, stake, and grow with the CRX community.
         </p>
         <button className="px-6 py-3 text-white rounded-full bg-indigo-500 hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/30">
-          Explore SPH Coin
+          Explore CRX Coin
         </button>
       </section>
     </div>

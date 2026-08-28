@@ -7,7 +7,7 @@ const walletFilters = [
   "Non-Custodial / Self-Custodial",
   "Token Extensions",
   "Blinks and Actions",
-  "Solana Pay",
+  "Cryptrix Pay",
   "Buy Crypto",
   "Sell Crypto",
   "Hold NFTs",
@@ -100,7 +100,7 @@ const wallets = [
   {
     name: "Phantom",
     description:
-      "A friendly and powerful Solana wallet for managing tokens, NFTs, and interacting with Web3 apps.",
+      "A friendly and powerful Cryptrix wallet for managing tokens, NFTs, and interacting with Web3 apps.",
     icon: "👻",
     link: "#",
     categories: [
@@ -114,7 +114,7 @@ const wallets = [
   {
     name: "Solflare",
     description:
-      "Secure and feature-rich Solana wallet supporting staking, NFTs, and Ledger hardware wallets.",
+      "Secure and feature-rich Cryptrix wallet supporting staking, NFTs, and Ledger hardware wallets.",
     icon: "🔥",
     link: "#",
     categories: [
@@ -128,7 +128,7 @@ const wallets = [
   {
     name: "Backpack",
     description:
-      "Next-gen wallet built for xNFTs, trading, and deep Solana ecosystem integrations.",
+      "Next-gen wallet built for xNFTs, trading, and deep Cryptrix ecosystem integrations.",
     icon: "🎒",
     link: "#",
     categories: [
@@ -140,7 +140,7 @@ const wallets = [
   },
   {
     name: "Glow",
-    description: "Simple and intuitive wallet focused on NFTs and Solana DeFi.",
+    description: "Simple and intuitive wallet focused on NFTs and Cryptrix DeFi.",
     icon: "✨",
     link: "#",
     categories: ["All Wallets", "Non-Custodial / Self-Custodial", "Hold NFTs"],
@@ -148,7 +148,7 @@ const wallets = [
   {
     name: "Ledger",
     description:
-      "Industry-leading hardware wallet providing maximum security for Solana assets.",
+      "Industry-leading hardware wallet providing maximum security for Cryptrix assets.",
     icon: "🔐",
     link: "#",
     categories: ["All Wallets", "Hardware", "Private Key Infrastructure"],
@@ -215,7 +215,7 @@ const wallets = [
       "Custodial",
       "Buy Crypto",
       "Sell Crypto",
-      "Solana Pay",
+      "Cryptrix Pay",
     ],
   },
   {

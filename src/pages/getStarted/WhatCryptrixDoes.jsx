@@ -13,7 +13,7 @@ const features = [
   {
     title: "Low Fees",
     short: "Minimal and predictable transaction costs.",
-    long: "SPH coin is optimized for efficiency, ensuring transaction fees remain low and stable even during high network activity.",
+    long: "CRX coin is optimized for efficiency, ensuring transaction fees remain low and stable even during high network activity.",
     image:
       "https://media.istockphoto.com/id/1617946218/photo/businessman-using-mobile-with-zero-percentage.webp?a=1&b=1&s=612x612&w=0&k=20&c=1Hf01Fuup6ltTNRcQ3hc0BI0dXn6N9WBO4bYJT6WcCM=",
   },
@@ -60,7 +60,7 @@ const WhatCryptrixDoes = () => {
           <p className="mt-6 max-w-3xl mx-auto text-gray-400 text-lg">
             Cryptrix is a high-performance blockchain designed for fast
             execution, ultra-low fees, and secure decentralized applications
-            powered by the SPH coin.
+            powered by the CRX coin.
           </p>
 
           <div className="mt-10 flex justify-center gap-4">
@@ -234,9 +234,9 @@ const WhatCryptrixDoes = () => {
       <section className="bg-gray-50 py-22 text-black">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-3xl font-semibold mb-4">SPH Coin Utility</h2>
+            <h2 className="text-3xl font-semibold mb-4">CRX Coin Utility</h2>
             <p className="text-gray-500">
-              SPH is the native coin of Cryptrix, powering the network
+              CRX is the native coin of Cryptrix, powering the network
               economy.
             </p>
           </div>
@@ -279,7 +279,7 @@ const WhatCryptrixDoes = () => {
             Start Building on Cryptrix
           </h2>
           <p className="text-gray-500 mb-10">
-            Stake SPH, explore the network, or build your next dApp today.
+            Stake CRX, explore the network, or build your next dApp today.
           </p>
 
           <div className="flex justify-center gap-4">
@@ -287,7 +287,7 @@ const WhatCryptrixDoes = () => {
               Get Started
             </button>
             <button className="px-6 py-3 rounded-full border border-gray-300">
-              Stake SPH
+              Stake CRX
             </button>
           </div>
         </div>

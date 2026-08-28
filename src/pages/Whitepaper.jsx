@@ -218,7 +218,7 @@ const Whitepaper = () => {
         <Section id="consensus" num="04" title="Consensus Mechanism">
           <p>
             Cryptrix uses a delegated proof-of-stake (PoS) consensus model.
-            Token holders delegate SPH to validators, who are responsible for
+            Token holders delegate CRX to validators, who are responsible for
             producing and finalizing blocks. Validators that act
             maliciously or go offline are subject to slashing, aligning
             economic incentives with honest participation.
@@ -230,11 +230,11 @@ const Whitepaper = () => {
           </p>
         </Section>
 
-        <Section id="token" num="05" title="The SPH Token & Tokenomics">
+        <Section id="token" num="05" title="The CRX Token & Tokenomics">
           <p>
-            SPH is the native coin of the Cryptrix network. It's used to pay
+            CRX is the native coin of the Cryptrix network. It's used to pay
             transaction fees, to stake in support of network security, and
-            to participate in on-chain governance. Every fee paid in SPH
+            to participate in on-chain governance. Every fee paid in CRX
             is split transparently on-chain — a portion rewards the
             validator that processed the transaction, and a portion funds
             the protocol treasury.
@@ -282,7 +282,7 @@ const Whitepaper = () => {
           <p>
             Protocol changes — from parameter adjustments to treasury
             allocations — move through an on-chain proposal and voting
-            process. SPH holders and their delegated validators vote
+            process. CRX holders and their delegated validators vote
             directly on proposals, and outcomes are enforced automatically
             once a vote concludes.
           </p>

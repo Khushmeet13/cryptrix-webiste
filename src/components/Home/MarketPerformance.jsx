@@ -43,7 +43,7 @@ const MarketPerformance = () => {
         </h2>
 
         <p className="text-center text-gray-500 mt-2">
-          Listed on over 130 exchanges, SPH connects millions of value investors
+          Listed on over 130 exchanges, CRX connects millions of value investors
           across the globe.
         </p>
 
@@ -120,7 +120,7 @@ const MarketPerformance = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="text-xs sm:text-sm text-gray-400">Accounts holding SPH</p>
+              <p className="text-xs sm:text-sm text-gray-400">Accounts holding CRX</p>
               <p className="sm:text-2xl font-medium">211.11M</p>
             </div>
           </div>

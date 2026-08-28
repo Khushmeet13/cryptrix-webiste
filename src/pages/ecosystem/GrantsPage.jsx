@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: "Do I need to repay the grant?",
-    a: "No. SPH grants are non-dilutive and do not require repayment. However, funded projects are expected to meet agreed milestones and provide progress updates.",
+    a: "No. CRX grants are non-dilutive and do not require repayment. However, funded projects are expected to meet agreed milestones and provide progress updates.",
   },
   {
     q: "Can individuals apply for a grant?",
-    a: "Yes. Individual developers, teams, startups, and organizations are all eligible to apply as long as the proposal aligns with the SPH ecosystem goals.",
+    a: "Yes. Individual developers, teams, startups, and organizations are all eligible to apply as long as the proposal aligns with the CRX ecosystem goals.",
   },
   {
     q: "What types of projects are eligible?",
@@ -53,11 +53,11 @@ const GrantsPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-700 via-indigo-950/50 to-black" />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl mb-6">
-            SPH Grants Program
+            CRX Grants Program
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto mb-12">
             Funding builders, startups, and innovators shaping the future of the
-            SPH ecosystem.
+            CRX ecosystem.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">

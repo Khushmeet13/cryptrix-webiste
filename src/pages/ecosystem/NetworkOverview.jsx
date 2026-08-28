@@ -86,14 +86,14 @@ const featuresBottom = [
 
 const apps = [
   {
-    title: "SPH Stable",
+    title: "CRX Stable",
     desc: "Decentralized stable asset backed by on-chain collateral.",
     image:
       "https://media.istockphoto.com/id/2160225701/photo/chain-link-concept-chain-symbol-on-futuristic-background-productivity-evolution-futuristic.webp?a=1&b=1&s=612x612&w=0&k=20&c=xxSvegx_0X3givvIeNfcaTiXPUAIHtXW7Ye-Znu3fvo=",
     cta: "Learn More",
   },
   {
-    title: "SPH Bridge",
+    title: "CRX Bridge",
     desc: "Seamless bridge between Cryptrix and other networks.",
     image:
       "https://media.istockphoto.com/id/1254894480/photo/the-modern-creative-communication-and-internet-network-connect-in-smart-city.webp?a=1&b=1&s=612x612&w=0&k=20&c=rtxZndNFOR61C4NY-lbO4Lkib_8qMNqGE1XStygS_V0=",
@@ -107,15 +107,15 @@ const apps = [
     cta: "View",
   },
   {
-    title: "SPH Markets",
+    title: "CRX Markets",
     desc: "Supply & borrow assets with optimized yields.",
     image:
       "https://media.istockphoto.com/id/1834332268/photo/digital-money-evolution-of-bitcoin-dollar-binary-in-financial-industry-and-its-impact-on.webp?a=1&b=1&s=612x612&w=0&k=20&c=W3a---uc3XDAJyFDBtyBCtnoRauTzTfsJ23s8nWwKyQ=",
     cta: "Open Markets",
   },
   {
-    title: "Stake SPH",
-    desc: "Stake SPH tokens and earn protocol rewards.",
+    title: "Stake CRX",
+    desc: "Stake CRX tokens and earn protocol rewards.",
     image:
       "https://media.istockphoto.com/id/2123105830/photo/businessman-pointing-to-blockchain-icon-and-data-for-global-decentralized-network-on-graphic.webp?a=1&b=1&s=612x612&w=0&k=20&c=-mwHbatapwNZvIEv9ESlY_XZkuIYo1l1NLF0kwuquXY=",
     cta: "Stake Now",
@@ -332,7 +332,7 @@ const NetworkOverview = () => {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-12 text-center text-black">
-            Why Use SPH
+            Why Use CRX
           </h2>
 
           <div className="relative max-w-7xl mx-auto space-y-12">
@@ -402,7 +402,7 @@ const NetworkOverview = () => {
 
           <p className="text-gray-400 mt-2 max-w-xl">
             A powerful and user-friendly suite of applications built around the
-            SPH Coin ecosystem.
+            CRX Coin ecosystem.
           </p>
         </div>
 

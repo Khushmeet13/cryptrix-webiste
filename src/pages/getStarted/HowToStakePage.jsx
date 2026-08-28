@@ -11,7 +11,7 @@ const stakingSteps = [
   },
   {
     title: "Select Amount",
-    desc: "Choose the number of SPH coins you want to stake. Minimum staking applies.",
+    desc: "Choose the number of CRX coins you want to stake. Minimum staking applies.",
     icon: <CheckCircle size={24} className="text-indigo-600" />,
   },
   {
@@ -21,7 +21,7 @@ const stakingSteps = [
   },
   {
     title: "Earn Rewards",
-    desc: "Your SPH coins are locked. Monitor your rewards and unstake when eligible.",
+    desc: "Your CRX coins are locked. Monitor your rewards and unstake when eligible.",
     icon: <ShieldCheck size={24} className="text-indigo-600" />,
   },
 ];
@@ -36,7 +36,7 @@ const securityTips = [
 const faqs = [
   {
     q: "What is the minimum staking amount?",
-    a: "The minimum amount is 100 SPH coins. You cannot stake less than this amount.",
+    a: "The minimum amount is 100 CRX coins. You cannot stake less than this amount.",
   },
   {
     q: "Can I unstake early?",
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "What is the minimum staking amount?",
-    a: "The minimum amount is 100 SPH coins. You cannot stake less than this amount.",
+    a: "The minimum amount is 100 CRX coins. You cannot stake less than this amount.",
   },
   {
     q: "Can I unstake early?",
@@ -66,10 +66,10 @@ const HowToStakePage = () => {
       {/* Top Section */}
       <section className="relative h-[30vh] bg-gradient-to-br from-black via-indigo-950/40 to-black flex flex-col items-center justify-center pt-12 ">
         <h1 className="text-white text-3xl md:text-5xl font-semibold mb-4">
-          How to Stake SPH Coins
+          How to Stake CRX Coins
         </h1>
         <p className="text-gray-400 text-lg">
-          Learn how to stake your SPH coins, earn rewards, and participate in
+          Learn how to stake your CRX coins, earn rewards, and participate in
           network governance.
         </p>
       </section>
@@ -84,7 +84,7 @@ const HowToStakePage = () => {
             </h2>
             <p className="text-gray-500 mt-2">
               Make sure you meet the following requirements before staking your
-              SPH coins
+              CRX coins
             </p>
           </div>
 
@@ -119,7 +119,7 @@ const HowToStakePage = () => {
                     Minimum Stake
                   </h3>
                   <p className="text-gray-600 mt-1 text-sm">
-                    You must stake at least <strong>100 SPH coins</strong> to
+                    You must stake at least <strong>100 CRX coins</strong> to
                     participate.
                   </p>
                 </div>
@@ -203,7 +203,7 @@ const HowToStakePage = () => {
               Rewards Dashboard
             </h2>
             <p className="text-gray-500 mt-2">
-              Track your staked SPH coins, rewards growth, and annual yield
+              Track your staked CRX coins, rewards growth, and annual yield
             </p>
           </div>
 
@@ -213,7 +213,7 @@ const HowToStakePage = () => {
             <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl p-6 shadow-sm">
               <p className="text-gray-500">Total Staked</p>
               <p className="text-3xl font-bold text-indigo-900 mt-2">
-                1,500 <span className="text-lg font-medium">SPH</span>
+                1,500 <span className="text-lg font-medium">CRX</span>
               </p>
               <p className="text-sm text-gray-400 mt-1">
                 Locked in network security
@@ -223,7 +223,7 @@ const HowToStakePage = () => {
             {/* Rewards */}
             <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100  rounded-2xl p-6 shadow-sm">
               <p className="text-gray-500">Rewards Earned</p>
-              <p className="text-3xl font-bold text-indigo-900 mt-2">45 SPH</p>
+              <p className="text-3xl font-bold text-indigo-900 mt-2">45 CRX</p>
               <p className="text-sm text-gray-400 mt-1">
                 Updated every 24 hours
               </p>
@@ -305,7 +305,7 @@ const HowToStakePage = () => {
               Security Best Practices
             </h2>
             <p className="text-gray-600 mt-2">
-              Follow these essential guidelines to keep your SPH coins and
+              Follow these essential guidelines to keep your CRX coins and
               wallet safe while staking.
             </p>
           </div>

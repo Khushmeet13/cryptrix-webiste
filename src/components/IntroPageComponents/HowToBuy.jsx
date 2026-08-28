@@ -17,14 +17,14 @@ const steps = [
   },
   {
     number: "03",
-    title: "Swap for SPH",
-    desc: "Connect to Uniswap or our official swap and exchange ETH for SPH tokens.",
+    title: "Swap for CRX",
+    desc: "Connect to Uniswap or our official swap and exchange ETH for CRX tokens.",
     icon: ArrowRightLeft,
   },
   {
     number: "04",
     title: "Hold & Earn",
-    desc: "Keep your SPH in your wallet or stake them to earn passive rewards.",
+    desc: "Keep your CRX in your wallet or stake them to earn passive rewards.",
     icon: CircleCheckBig,
   },
 ];
@@ -39,10 +39,10 @@ function HowToBuy() {
             Get Started
           </p>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            How to Buy SPH
+            How to Buy CRX
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto">
-            Get your SPH tokens in just a few simple steps
+            Get your CRX tokens in just a few simple steps
           </p>
         </div>
 
@@ -83,7 +83,7 @@ function HowToBuy() {
           <Button className="group px-8 py-6 bg-black relative overflow-hidden text-white text-sm rounded-full shadow-2xl hover:cursor-pointer">
             <span className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-700 scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-full"></span>
 
-            <span className="relative z-10">Buy SPH Now</span>
+            <span className="relative z-10">Buy CRX Now</span>
           </Button>
         </div>
       </div>

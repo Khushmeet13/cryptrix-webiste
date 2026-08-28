@@ -27,7 +27,7 @@ const steps = [
     icon: <Vote size={20} />,
     accent: "#A78BFA",
     description:
-      "SPH holders vote using their governance tokens to approve or reject.",
+      "CRX holders vote using their governance tokens to approve or reject.",
   },
   {
     title: "Accepted",

@@ -12,7 +12,7 @@ const faqData = [
   },
   {
     q: "How does staking work on Cryptrix?",
-    a: `Cryptrix allows users to stake SPH tokens to help secure the network. Validators receive staking rewards, while delegators earn a percentage of validator rewards. Staked tokens remain non-custodial and can be un-staked anytime after the cooldown period.`,
+    a: `Cryptrix allows users to stake CRX tokens to help secure the network. Validators receive staking rewards, while delegators earn a percentage of validator rewards. Staked tokens remain non-custodial and can be un-staked anytime after the cooldown period.`,
   },
   {
     q: "What consensus mechanism does Cryptrix use?",
@@ -34,7 +34,7 @@ Cryptrix supports EVM compatibility for easy migration.`,
     a: "Yes. Cryptrix is fully EVM compatible. Developers and users can connect through MetaMask by adding the Cryptrix RPC and chain ID.",
   },
   {
-    q: "What is the SPH token used for?",
+    q: "What is the CRX token used for?",
     a: `SAPHEL is used for:  
 • Gas fees  
 • Staking  
@@ -77,12 +77,12 @@ Security is a core part of the protocol design.`,
   },
   {
     q: "Does Cryptrix have governance?",
-    a: "Yes. SPH token holders can vote on protocol upgrades, economic parameters, validator rules, and ecosystem grants.",
+    a: "Yes. CRX token holders can vote on protocol upgrades, economic parameters, validator rules, and ecosystem grants.",
   },
   {
     q: "How do I become a validator on Cryptrix?",
     a: `To become a validator, you need:
-• Minimum required SPH stake  
+• Minimum required CRX stake  
 • A node running Cryptrix Validator software  
 • Stable uptime and performance  
 Validators earn rewards but may face slashing for malicious behavior.`,

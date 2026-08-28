@@ -403,7 +403,7 @@ const Wallet = () => {
           </h2>
 
           <p className="text-base md:text-lg text-gray-400 text-start leading-relaxed  mx-auto">
-            The SPH provides the underlying infrastructure for Cryptrix's secure,
+            The CRX provides the underlying infrastructure for Cryptrix's secure,
             high-performance wallets.
           </p>
         </div>

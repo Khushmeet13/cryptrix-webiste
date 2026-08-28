@@ -20,6 +20,10 @@ import VotingSystem from "@/pages/governance/VotingSystem";
 import Staking from "@/pages/governance/Staking";
 import Proposals from "@/pages/governance/Proposals";
 import CommunityRules from "@/pages/governance/CommunityRules";
+import TokenUtility from "@/pages/token/TokenUtility";
+import TokenomicsPage from "@/pages/token/TokenomicsPage";
+import TokenStaking from "@/pages/token/TokenStaking";
+import TokenVesting from "@/pages/token/TokenVesting";
 import Wallet from "@/pages/product/wallet/Wallet";
 import AllWallets from "@/pages/product/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
@@ -60,7 +64,7 @@ export default function AppRoutes() {
 
 
 
-          <Route path="/sph" element={<IntroPage />} />
+          <Route path="/crx" element={<IntroPage />} />
           <Route
             path="/what-cryptrix-does"
             element={<WhatCryptrixDoes />}
@@ -89,6 +93,12 @@ export default function AppRoutes() {
           <Route path="/staking" element={<Staking />} />
           <Route path="/proposals" element={<Proposals />} />
           <Route path="/rules" element={<CommunityRules />} />
+
+          {/* Token */}
+          <Route path="/token/utility" element={<TokenUtility />} />
+          <Route path="/token/tokenomics" element={<TokenomicsPage />} />
+          <Route path="/token/staking" element={<TokenStaking />} />
+          <Route path="/token/vesting" element={<TokenVesting />} />
 
           {/* blog */}
           <Route path="/blog" element={<BlogPage />} />

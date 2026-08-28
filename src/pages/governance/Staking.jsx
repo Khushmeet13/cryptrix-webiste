@@ -39,10 +39,10 @@ const activityMeta = {
 const ACTIONS = ["staked", "unstaked", "claimed"];
 
 const seedActivity = [
-  { address: "0x7a3f...92c1", action: "staked", amount: "5,200 SPH", minutesAgo: 2 },
-  { address: "0xb14e...d403", action: "claimed", amount: "184 SPH", minutesAgo: 5 },
-  { address: "0x2c9a...6f18", action: "staked", amount: "12,000 SPH", minutesAgo: 9 },
-  { address: "0xf051...3ab7", action: "unstaked", amount: "900 SPH", minutesAgo: 14 },
+  { address: "0x7a3f...92c1", action: "staked", amount: "5,200 CRX", minutesAgo: 2 },
+  { address: "0xb14e...d403", action: "claimed", amount: "184 CRX", minutesAgo: 5 },
+  { address: "0x2c9a...6f18", action: "staked", amount: "12,000 CRX", minutesAgo: 9 },
+  { address: "0xf051...3ab7", action: "unstaked", amount: "900 CRX", minutesAgo: 14 },
 ];
 
 const randomAddress = () => {
@@ -58,7 +58,7 @@ const randomActivity = () => {
     id: `live-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     address: randomAddress(),
     action,
-    amount: `${base.toLocaleString()} SPH`,
+    amount: `${base.toLocaleString()} CRX`,
     timestamp: Date.now(),
   };
 };
@@ -80,7 +80,7 @@ const stakingFaqs = [
   },
   {
     question: "How long does unstaking take?",
-    answer: "SPH enters a 7-day cooldown before it's available in your wallet.",
+    answer: "CRX enters a 7-day cooldown before it's available in your wallet.",
     icon: Lock,
     accent: "#818cf8",
   },
@@ -247,7 +247,7 @@ const CalculatorTile = () => {
           onChange={(e) => setAmount(e.target.value)}
           className="text-sm font-semibold outline-none w-full bg-transparent text-white"
         />
-        <span className="text-xs text-gray-500 shrink-0">SPH</span>
+        <span className="text-xs text-gray-500 shrink-0">CRX</span>
       </div>
 
       <div className="flex gap-1.5 mb-4">
@@ -266,7 +266,7 @@ const CalculatorTile = () => {
 
       <div className="flex items-center justify-between">
         <span className="text-xs text-gray-500">Est. Rewards</span>
-        <span className="text-sm font-semibold text-blue-400">+{reward.toLocaleString()} SPH</span>
+        <span className="text-sm font-semibold text-blue-400">+{reward.toLocaleString()} CRX</span>
       </div>
     </Tile>
   );
@@ -282,11 +282,11 @@ const MyStakeTile = () => (
 
     <div className="flex-1 grid grid-cols-2 gap-5 blur-[2px] opacity-40 pointer-events-none select-none">
       <div>
-        <div className="text-xl font-semibold text-white">0 SPH</div>
+        <div className="text-xl font-semibold text-white">0 CRX</div>
         <div className="text-xs text-gray-500 mt-1">Staked</div>
       </div>
       <div>
-        <div className="text-xl font-semibold text-blue-400">0 SPH</div>
+        <div className="text-xl font-semibold text-blue-400">0 CRX</div>
         <div className="text-xs text-gray-500 mt-1">Pending Rewards</div>
       </div>
       <div>
@@ -375,11 +375,11 @@ const Staking = () => {
             </div>
 
             <h1 className="text-3xl sm:text-5xl text-white font-semibold leading-tight">
-              SPH Staking
+              CRX Staking
             </h1>
 
             <p className="text-base sm:text-lg text-gray-400 max-w-xl">
-              Cryptrix uses a delegated proof-of-stake consensus. SPH holders
+              Cryptrix uses a delegated proof-of-stake consensus. CRX holders
               can secure the network and shape its governance while earning
               rewards up to{" "}
               <span className="text-white font-medium">9.8% APY</span>.
@@ -415,7 +415,7 @@ const Staking = () => {
         >
           <MyStakeTile />
           <StatTile span="col-span-1 sm:col-span-2 md:col-span-1" value="9.8%" label="Highest APY" accent="text-blue-400" />
-          <StatTile span="col-span-1 sm:col-span-2 md:col-span-2" value="182.4M" label="SPH Staked" />
+          <StatTile span="col-span-1 sm:col-span-2 md:col-span-2" value="182.4M" label="CRX Staked" />
           <StatTile span="col-span-1 sm:col-span-2 md:col-span-1" value="61.5%" label="Staking Rate" />
           <StatTile span="col-span-1 sm:col-span-4 md:col-span-2" value="$420M+" label="Rewards Distributed" accent="text-emerald-400" />
 
@@ -431,14 +431,14 @@ const Staking = () => {
           <Tile span="col-span-2 sm:col-span-6 md:col-span-6" className="p-6 flex flex-col sm:flex-row items-center justify-between gap-5">
             <div>
               <h2 className="text-lg font-semibold text-white">Ready to participate in governance?</h2>
-              <p className="text-sm text-gray-400 mt-1">Stake your SPH and help shape Cryptrix's future.</p>
+              <p className="text-sm text-gray-400 mt-1">Stake your CRX and help shape Cryptrix's future.</p>
             </div>
             <div className="flex gap-3 shrink-0">
               <button
                 type="button"
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-white text-black text-xs font-semibold rounded-full transition-all duration-300 hover:scale-105"
               >
-                Stake SPH Now
+                Stake CRX Now
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
               <button
