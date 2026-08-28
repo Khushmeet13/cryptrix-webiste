@@ -35,7 +35,7 @@ Cryptrix supports EVM compatibility for easy migration.`,
   },
   {
     q: "What is the CRX token used for?",
-    a: `SAPHEL is used for:  
+    a: `CRX is used for:
 • Gas fees  
 • Staking  
 • Validator rewards  

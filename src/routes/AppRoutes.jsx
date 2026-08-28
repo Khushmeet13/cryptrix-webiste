@@ -24,6 +24,12 @@ import TokenUtility from "@/pages/token/TokenUtility";
 import TokenomicsPage from "@/pages/token/TokenomicsPage";
 import TokenStaking from "@/pages/token/TokenStaking";
 import TokenVesting from "@/pages/token/TokenVesting";
+import DeFi from "@/pages/solutions/DeFi";
+import Gaming from "@/pages/solutions/Gaming";
+import Enterprises from "@/pages/solutions/Enterprises";
+import Payments from "@/pages/solutions/Payments";
+import Identity from "@/pages/solutions/Identity";
+import SupplyChain from "@/pages/solutions/SupplyChain";
 import Wallet from "@/pages/product/wallet/Wallet";
 import AllWallets from "@/pages/product/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
@@ -99,6 +105,14 @@ export default function AppRoutes() {
           <Route path="/token/tokenomics" element={<TokenomicsPage />} />
           <Route path="/token/staking" element={<TokenStaking />} />
           <Route path="/token/vesting" element={<TokenVesting />} />
+
+          {/* Solutions */}
+          <Route path="/solutions/defi" element={<DeFi />} />
+          <Route path="/solutions/gaming" element={<Gaming />} />
+          <Route path="/solutions/enterprises" element={<Enterprises />} />
+          <Route path="/solutions/payments" element={<Payments />} />
+          <Route path="/solutions/identity" element={<Identity />} />
+          <Route path="/solutions/supply-chain" element={<SupplyChain />} />
 
           {/* blog */}
           <Route path="/blog" element={<BlogPage />} />

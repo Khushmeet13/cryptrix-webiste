@@ -3,12 +3,12 @@ import React from "react";
 
 const statusBadge = (s) =>
   s === "operational"
-    ? "text-emerald-600 bg-emerald-50"
+    ? "text-emerald-400 bg-emerald-500/10 border border-emerald-500/25"
     : s === "degraded"
-    ? "text-amber-700 bg-amber-50"
+    ? "text-amber-400 bg-amber-500/10 border border-amber-500/25"
     : s === "down"
-    ? "text-red-600 bg-red-50"
-    : "text-sky-600 bg-sky-50";
+    ? "text-red-400 bg-red-500/10 border border-red-500/25"
+    : "text-sky-400 bg-sky-500/10 border border-sky-500/25";
 
 function Sparkline({ values = [], height = 36 }) {
   if (!values || values.length === 0) return null;
@@ -32,29 +32,29 @@ export default function ServiceCard({ service }) {
   const { name, status, latencyMs, errorRate, uptime24h, sparkline, meta } = service;
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl hover:border-white/20 transition-colors p-4 flex flex-col">
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <div className={`w-3 h-3 rounded-full ${status === "operational" ? "bg-emerald-500" : status === "degraded" ? "bg-amber-400" : status === "down" ? "bg-red-500" : "bg-sky-500"}`} />
-            <h3 className="text-lg font-semibold">{name}</h3>
+            <div className={`w-3 h-3 rounded-full ${status === "operational" ? "bg-emerald-400" : status === "degraded" ? "bg-amber-400" : status === "down" ? "bg-red-400" : "bg-sky-400"}`} />
+            <h3 className="text-lg font-semibold text-white">{name}</h3>
             <span className={`ml-2 px-2 py-0.5 text-xs rounded-full ${statusBadge(status)}`}>{status}</span>
           </div>
 
-          <div className="mt-2 text-xs text-slate-500">
+          <div className="mt-2 text-xs text-gray-500">
             {meta && meta.blockHeight ? (
-              <div>Block: <span className="font-medium text-slate-700">{meta.blockHeight}</span></div>
+              <div>Block: <span className="font-medium text-gray-300">{meta.blockHeight}</span></div>
             ) : null}
-            <div>Uptime (24h): <span className="font-medium text-slate-700">{uptime24h}%</span></div>
+            <div>Uptime (24h): <span className="font-medium text-gray-300">{uptime24h}%</span></div>
           </div>
         </div>
 
         <div className="text-right">
-          <div className="text-xs text-slate-400">Latency</div>
-          <div className="text-sm font-medium">{latencyMs ? `${latencyMs} ms` : "—"}</div>
+          <div className="text-xs text-gray-500">Latency</div>
+          <div className="text-sm font-medium text-white">{latencyMs ? `${latencyMs} ms` : "—"}</div>
 
-          <div className="text-xs text-slate-400 mt-2">Error rate</div>
-          <div className="text-sm font-medium">{(errorRate * 100).toFixed(2)}%</div>
+          <div className="text-xs text-gray-500 mt-2">Error rate</div>
+          <div className="text-sm font-medium text-white">{(errorRate * 100).toFixed(2)}%</div>
         </div>
       </div>
 

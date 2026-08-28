@@ -102,33 +102,33 @@ const dropdownData = {
   Solutions: [
     {
       title: "DeFi",
-      desc: "Live statistics of the Cryptrix network",
-      link: "/ecosystem",
+      desc: "Trade, stake, and earn — natively on Cryptrix",
+      link: "/solutions/defi",
     },
     {
       title: "Gaming",
-      desc: "Active validators securing the network",
-      link: "/validators",
+      desc: "Real-time, near-zero-fee infrastructure for game economies",
+      link: "/solutions/gaming",
     },
     {
       title: "Enterprises",
-      desc: "Global node infrastructure",
-      link: "/nodes",
+      desc: "Reliable, compliance-ready infrastructure for businesses",
+      link: "/solutions/enterprises",
     },
     {
       title: "Payments",
-      desc: "Milestones and upcoming upgrades",
-      link: "/ecosystem-growth",
+      desc: "Instant, near-zero-fee payments infrastructure",
+      link: "/solutions/payments",
     },
     {
       title: "Identity",
-      desc: "Companies and projects building on CRX",
-      link: "/partners",
+      desc: "Decentralized identity, verified once, trusted everywhere",
+      link: "/solutions/identity",
     },
     {
       title: "Supply Chain",
-      desc: "Funding for developers & startups",
-      link: "/grants",
+      desc: "Tamper-proof custody tracking, origin to shelf",
+      link: "/solutions/supply-chain",
     },
     {
       title: "Status",
