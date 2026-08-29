@@ -27,22 +27,22 @@ const dropdownData = {
     {
       title: "NFT Platform",
       desc: "Mint, trade, and manage NFTs on-chain.",
-      link: "/use-cases",
+      link: "/nft-platform",
     },
     {
       title: "Staking",
       desc: "Stake CRX tokens and earn rewards.",
-      link: "/faqs",
+      link: "/staking-dashboard",
     },
     {
       title: "Dashboard",
       desc: "Track balances, rewards, and activity.",
-      link: "/faqs",
+      link: "/dashboard",
     },
     {
       title: "Smart Contracts",
       desc: "Build and deploy smart contracts.",
-      link: "https://coin.cryptrixportal.com/",
+      link: "/smart-contracts",
     },
     {
       title: "APIs & SDKs",
@@ -57,12 +57,12 @@ const dropdownData = {
     {
       title: "Testnet",
       desc: "Test features in a safe environment.",
-      link: "/how-to-stake",
+      link: "/testnet",
     },
     {
       title: "Explorer",
       desc: "Explore blocks, transactions, and addresses.",
-      link: "/how-to-stake",
+      link: "/explorer",
     },
   ],
   Build: [

@@ -24,11 +24,11 @@ const SidebarItem = ({
           setActiveItem(label);
           hasChildren && setOpen(!open);
         }}
-        className={`w-full flex items-center justify-between text-sm text-left mx-2 px-3 py-2 rounded-sm transition cursor-pointer
+        className={`w-full flex items-center justify-between text-sm text-left mx-2 px-3 py-2 rounded-lg transition cursor-pointer
           ${
             isActive
-              ? "bg-gray-100 text-black "
-              : "text-gray-500 hover:bg-gray-100 hover:text-black"
+              ? "bg-white/[0.06] text-white"
+              : "text-gray-500 hover:bg-white/[0.04] hover:text-white"
           }`}
         style={{ paddingLeft: `${level * 14 + 12}px` }}
       >
@@ -38,17 +38,17 @@ const SidebarItem = ({
       </button>
 
       {hasChildren && open && (
-        <div className="mt-1 border-l border-gray-200 ml-3">
+        <div className="mt-1 border-l border-white/10 ml-3">
           {item.children.map((child, idx) =>
             typeof child === "string" ? (
               <div
                 key={idx}
                 onClick={() => setActiveItem(child)}
-                className={`cursor-pointer mx-2 px-3 py-1.5 text-sm rounded-sm transition
+                className={`cursor-pointer mx-2 px-3 py-1.5 text-sm rounded-lg transition
                   ${
                     activeItem === child
-                      ? "bg-gray-100 text-black "
-                      : "text-gray-500 hover:bg-gray-100 hover:text-black"
+                      ? "bg-white/[0.06] text-white"
+                      : "text-gray-500 hover:bg-white/[0.04] hover:text-white"
                   }`}
                 style={{ paddingLeft: `${level * 14 + 28}px` }}
               >
@@ -74,7 +74,7 @@ const DocsSidebar = ({sidebarData}) => {
   const [activeItem, setActiveItem] = useState("Installation");
 
   return (
-    <aside className="w-72 h-screen overflow-y-auto border-r border-gray-300 bg-white px-4 py-4">
+    <aside className="w-72 h-screen overflow-y-auto border-r border-white/10 bg-[#01021f] px-4 py-4">
       {sidebarData.map((section, idx) => (
         <SidebarItem
           key={idx}

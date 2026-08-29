@@ -104,7 +104,7 @@ const FaqPage = () => {
   return (
     <div>
       {/* Top Section */}
-      <section className="relative h-[40vh] bg-gradient-to-br from-indigo-900 via-indigo-950/40 to-black flex flex-col items-center justify-center text-white pt-20">
+      <section className="relative h-[40vh] bg-gradient-to-br from-[#01021f] via-indigo-950/70 to-black/90 flex flex-col items-center justify-center text-white pt-20">
         {/* Heading */}
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold mb-6 text-center">
           Frequently Asked Questions
@@ -138,7 +138,7 @@ const FaqPage = () => {
       </section>
 
       {/* Content Section */}
-      <section className="bg-white min-h-screen py-2 px-8 md:px-20">
+      <section className="bg-[#01021f] min-h-screen py-2 px-8 md:px-20">
         {faqData
           .filter(
             (item) =>
@@ -148,12 +148,12 @@ const FaqPage = () => {
           .map((item, i) => (
             <div key={i} className="py-4">
               {/* Question */}
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">
+              <h2 className="text-xl font-semibold text-white mb-3">
                 {item.q}
               </h2>
 
               {/* Answer (expand/collapse) */}
-              <div className="text-gray-500 text-sm leading-relaxed whitespace-pre-line border-b border-gray-200 pb-2">
+              <div className="text-gray-400 text-sm leading-relaxed whitespace-pre-line border-b border-white/10 pb-2">
                 {openIndex === i ? (
                   <>{item.a}</>
                 ) : (
@@ -168,7 +168,7 @@ const FaqPage = () => {
                 {item.a.length > 240 && (
                   <button
                     onClick={() => toggle(i)}
-                    className="mt-3 text-sm text-red-400 flex items-center gap-1 hover:cursor-pointer"
+                    className="mt-3 text-sm text-blue-400 flex items-center gap-1 hover:cursor-pointer"
                   >
                     {openIndex === i ? (
                       <span className="flex items-center gap-1 ">

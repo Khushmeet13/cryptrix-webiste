@@ -45,12 +45,12 @@ const DocsPrevNext = ({ pages }) => {
       {prev ? (
         <button
           onClick={() => scrollTo(prev.id)}
-          className="bg-gray-50 border border-gray-200 rounded-md px-6 py-3.5 text-left hover:border-gray-300 transition cursor-pointer"
+          className="rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-xl px-6 py-3.5 text-left hover:border-white/20 transition cursor-pointer"
         >
           <div className="flex items-center gap-1 text-gray-500 text-sm mb-1">
             <ChevronLeft size={16} /> Previous
           </div>
-          <div className="text-indigo-600 font-medium text-sm">
+          <div className="text-blue-400 font-medium text-sm">
             {prev.title}
           </div>
         </button>
@@ -59,12 +59,12 @@ const DocsPrevNext = ({ pages }) => {
       {next && (
         <button
           onClick={() => scrollTo(next.id)}
-          className="bg-gray-50 border border-gray-200 rounded-md px-6 py-3.5 text-right hover:border-gray-300 transition cursor-pointer"
+          className="rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur-xl px-6 py-3.5 text-right hover:border-white/20 transition cursor-pointer"
         >
           <div className="flex justify-end items-center gap-1 text-gray-500 text-sm mb-1">
             Next <ChevronRight size={16} />
           </div>
-          <div className="text-indigo-600 font-medium text-sm">
+          <div className="text-blue-400 font-medium text-sm">
             {next.title}
           </div>
         </button>

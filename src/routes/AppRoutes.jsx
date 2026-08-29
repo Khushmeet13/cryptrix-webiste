@@ -30,6 +30,12 @@ import Enterprises from "@/pages/solutions/Enterprises";
 import Payments from "@/pages/solutions/Payments";
 import Identity from "@/pages/solutions/Identity";
 import SupplyChain from "@/pages/solutions/SupplyChain";
+import NFTPlatform from "@/pages/product/NFTPlatform";
+import StakingDashboard from "@/pages/product/StakingDashboard";
+import Dashboard from "@/pages/product/Dashboard";
+import SmartContracts from "@/pages/product/SmartContracts";
+import Explorer from "@/pages/product/Explorer";
+import Testnet from "@/pages/product/Testnet";
 import Wallet from "@/pages/product/wallet/Wallet";
 import AllWallets from "@/pages/product/wallet/AllWallets";
 import Documentation from "@/pages/Documentation";
@@ -113,6 +119,12 @@ export default function AppRoutes() {
           <Route path="/solutions/payments" element={<Payments />} />
           <Route path="/solutions/identity" element={<Identity />} />
           <Route path="/solutions/supply-chain" element={<SupplyChain />} />
+          <Route path="/nft-platform" element={<NFTPlatform />} />
+          <Route path="/staking-dashboard" element={<StakingDashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/smart-contracts" element={<SmartContracts />} />
+          <Route path="/explorer" element={<Explorer />} />
+          <Route path="/testnet" element={<Testnet />} />
 
           {/* blog */}
           <Route path="/blog" element={<BlogPage />} />

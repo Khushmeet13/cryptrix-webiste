@@ -16,7 +16,7 @@ const TocItem = ({ item, level = 0, activeId, onClick }) => {
     <Fragment>
       <li
         className={`cursor-pointer transition-colors leading-snug
-          ${isActive ? "text-black font-medium" : "text-gray-500 hover:text-gray-900"}
+          ${isActive ? "text-white font-medium" : "text-gray-500 hover:text-gray-300"}
         `}
         style={{ paddingLeft: `${level * 16}px` }}
         onClick={() => onClick(item.id)}
@@ -109,10 +109,10 @@ const DocsTOC = ({ items }) => {
       {/* TOC */}
       <div className="relative pl-4">
         {/* Vertical Line */}
-        <div className="absolute left-0 top-0 h-full w-[2px] bg-gray-200">
+        <div className="absolute left-0 top-0 h-full w-[2px] bg-white/10">
           <div
             ref={indicatorRef}
-            className="absolute top-0 w-[2px] h-6 bg-gray-700 transition-transform duration-300"
+            className="absolute top-0 w-[2px] h-6 bg-blue-400 transition-transform duration-300"
           />
         </div>
 
@@ -133,7 +133,7 @@ const DocsTOC = ({ items }) => {
       </div>
 
       {/* Edit Page */}
-      <div className="mt-4 text-gray-500 flex items-center gap-2 cursor-pointer hover:text-gray-900">
+      <div className="mt-4 text-gray-500 flex items-center gap-2 cursor-pointer hover:text-white">
         <Github size={14} /> Edit Page
       </div>
 
@@ -141,7 +141,7 @@ const DocsTOC = ({ items }) => {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="mt-3 flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition"
+          className="mt-3 flex items-center gap-2 text-sm text-gray-500 hover:text-white transition"
         >
           <ArrowUp size={14} />
           Back to top
