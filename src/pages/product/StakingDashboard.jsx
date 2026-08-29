@@ -247,10 +247,10 @@ const StakingDashboard = () => {
   return (
     <div className="w-full bg-[#01021f] text-white min-h-screen">
       {/* ───────── App header ───────── */}
-      <section className="relative px-6 sm:px-12 lg:px-24 pt-28 pb-6 border-b border-white/10 overflow-hidden">
+      <section className="relative px-6 sm:px-12 lg:px-24 pt-28 pb-8 border-b border-white/10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="relative max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="relative max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <StakeOrb />
             <div>
@@ -264,31 +264,70 @@ const StakingDashboard = () => {
           </div>
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition-all duration-300 w-fit"
+            className="lg:hidden inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-xs font-medium shrink-0"
           >
-            <Wallet size={15} />
-            Connect Wallet
+            <Wallet size={13} />
+            Connect
           </button>
-        </div>
-
-        {/* Tabs */}
-        <div className="max-w-6xl mx-auto flex gap-1 mt-8 border-b border-white/10 -mb-px">
-          {TABS.map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
-                tab === t
-                  ? "border-blue-400 text-white"
-                  : "border-transparent text-gray-500 hover:text-gray-300"
-              }`}
-            >
-              {t}
-            </button>
-          ))}
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-[220px_1fr] gap-8">
+        {/* ───────── Sidebar ───────── */}
+        <aside className="lg:sticky lg:top-24 lg:self-start">
+          <nav className="flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 mb-6">
+            {TABS.map((t) => {
+              const Icon = NAV_ICONS[t];
+              const isActive = tab === t;
+              return (
+                <button
+                  key={t}
+                  onClick={() => setTab(t)}
+                  className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-colors ${
+                    isActive
+                      ? "bg-white/[0.06] text-white border border-white/10"
+                      : "text-gray-500 hover:text-gray-300 border border-transparent"
+                  }`}
+                >
+                  <Icon size={16} className={isActive ? "text-blue-400" : ""} />
+                  {t}
+                </button>
+              );
+            })}
+          </nav>
+
+          <div className="hidden lg:block">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 px-3 mb-2">
+              Quick Links
+            </p>
+            <div className="space-y-1 mb-6">
+              {quickLinks.map((l) => {
+                const Icon = l.icon;
+                return (
+                  <Link
+                    key={l.title}
+                    to={l.href}
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm text-gray-500 hover:text-gray-200 hover:bg-white/[0.04] transition-colors"
+                  >
+                    <Icon size={15} />
+                    {l.title}
+                  </Link>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition-all duration-300"
+            >
+              <Wallet size={15} />
+              Connect Wallet
+            </button>
+          </div>
+        </aside>
+
+        {/* ───────── Main ───────── */}
+        <main>
       {/* ───────── Tab content ───────── */}
       <AnimatePresence mode="wait">
       {tab === "Overview" && (
@@ -298,9 +337,9 @@ const StakingDashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
-          className="px-6 sm:px-12 lg:px-24 py-10"
+          className=""
         >
-          <div className="max-w-6xl mx-auto">
+          <div>
             {/* Reward-cycle cards */}
             <div className="grid sm:grid-cols-3 gap-4 mb-6">
               {validators.slice(0, 3).map((v, i) => (
@@ -469,9 +508,9 @@ const StakingDashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
-          className="px-6 sm:px-12 lg:px-24 py-10"
+          className=""
         >
-          <div className="max-w-6xl mx-auto">
+          <div>
             {/* Staking offerings — card grid */}
             <h3 className="text-sm font-semibold text-white mb-4">Staking Offerings</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -594,9 +633,9 @@ const StakingDashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
-          className="px-6 sm:px-12 lg:px-24 py-10"
+          className=""
         >
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="space-y-8">
             {/* Personal history — honest empty state */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-10 text-center">
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mx-auto mb-5">
@@ -714,38 +753,36 @@ const StakingDashboard = () => {
       </AnimatePresence>
 
       {/* ───────── FAQ ───────── */}
-      <section className="px-6 sm:px-12 lg:px-24 py-14 border-t border-white/10">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <HelpCircle size={16} className="text-blue-400" />
-            <h2 className="text-lg font-semibold text-white">
-              Quick answers
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {faqs.map((f) => (
-              <div
-                key={f.q}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-5"
-              >
-                <h3 className="text-sm font-semibold text-white mb-1.5">
-                  {f.q}
-                </h3>
-                <p className="text-xs text-gray-400 leading-relaxed">{f.a}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 flex items-start gap-2 text-xs text-gray-500">
-            <ShieldAlert size={13} className="text-rose-400 shrink-0 mt-0.5" />
-            Staking is a network security role, not a deposit account —
-            rewards reflect participation, not a guaranteed return.
-          </div>
+      <section className="pt-10 mt-8 border-t border-white/10">
+        <div className="flex items-center gap-2 mb-6">
+          <HelpCircle size={16} className="text-blue-400" />
+          <h2 className="text-lg font-semibold text-white">
+            Quick answers
+          </h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {faqs.map((f) => (
+            <div
+              key={f.q}
+              className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-5"
+            >
+              <h3 className="text-sm font-semibold text-white mb-1.5">
+                {f.q}
+              </h3>
+              <p className="text-xs text-gray-400 leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 flex items-start gap-2 text-xs text-gray-500">
+          <ShieldAlert size={13} className="text-rose-400 shrink-0 mt-0.5" />
+          Staking is a network security role, not a deposit account —
+          rewards reflect participation, not a guaranteed return.
         </div>
       </section>
 
       {/* ───────── Footer note ───────── */}
-      <section className="px-6 sm:px-12 lg:px-24 py-10 border-t border-white/10 text-center">
-        <div className="max-w-md mx-auto flex items-center justify-center gap-2 text-xs text-gray-500">
+      <section className="py-10 mt-4 border-t border-white/10 text-center">
+        <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
           <CheckCircle2 size={13} className="text-emerald-400" />
           Non-custodial — CRX never leaves your wallet
         </div>
@@ -759,6 +796,8 @@ const StakingDashboard = () => {
           </Link>
         </div>
       </section>
+        </main>
+      </div>
     </div>
   );
 };

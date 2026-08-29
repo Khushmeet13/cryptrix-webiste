@@ -47,12 +47,12 @@ const dropdownData = {
     {
       title: "APIs & SDKs",
       desc: "Integrate Cryptrix into your apps.",
-      link: "/wallets",
+      link: "/docs/api",
     },
     {
       title: "Integrations",
       desc: "Connect with external tools and services.",
-      link: "/",
+      link: "/integrations",
     },
     {
       title: "Testnet",

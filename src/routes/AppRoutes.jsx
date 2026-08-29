@@ -34,6 +34,7 @@ import NFTPlatform from "@/pages/product/NFTPlatform";
 import StakingDashboard from "@/pages/product/StakingDashboard";
 import Dashboard from "@/pages/product/Dashboard";
 import SmartContracts from "@/pages/product/SmartContracts";
+import Integrations from "@/pages/product/Integrations";
 import Explorer from "@/pages/product/Explorer";
 import Testnet from "@/pages/product/Testnet";
 import Wallet from "@/pages/product/wallet/Wallet";
@@ -123,6 +124,7 @@ export default function AppRoutes() {
           <Route path="/staking-dashboard" element={<StakingDashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/smart-contracts" element={<SmartContracts />} />
+          <Route path="/integrations" element={<Integrations />} />
           <Route path="/explorer" element={<Explorer />} />
           <Route path="/testnet" element={<Testnet />} />
 
